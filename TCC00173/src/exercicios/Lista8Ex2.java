@@ -1,6 +1,6 @@
 package exercicios;
 
-public class List8Ex2 {
+public class Lista8Ex2 {
 
   public static void main(String[] args) {
   }

@@ -1,6 +1,6 @@
 package exercicios;
 
-public class List8Rx7 {
+public class Lista8Ex7 {
 
   public static void main(String[] args) {
     float[][] m1 = {{2, 3}, {4, 5}};
