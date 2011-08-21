@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package genericos.exemplos.pilha;
 
 import java.util.Collection;
 

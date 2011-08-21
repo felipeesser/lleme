@@ -1,5 +1,6 @@
-package heranca.exemplos;
+package heranca.exemplos.pessoa;
 
+import heranca.exemplos.pessoa.Servidor;
 import java.util.Date;
 
 public class Administrativo extends Servidor {

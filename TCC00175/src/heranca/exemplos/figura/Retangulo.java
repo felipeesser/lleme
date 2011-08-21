@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package heranca.exemplos.figura;
 
 public class Retangulo extends Figura {
     public float a;

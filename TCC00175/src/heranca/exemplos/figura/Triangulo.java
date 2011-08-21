@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package heranca.exemplos.figura;
 
 public class Triangulo extends Figura {
     public float c;

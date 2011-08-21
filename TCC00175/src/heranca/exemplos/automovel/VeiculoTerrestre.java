@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package heranca.exemplos.automovel;
 
 public abstract class VeiculoTerrestre {
 

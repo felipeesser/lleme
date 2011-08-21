@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package heranca.exemplos.pessoa;
 
 public class Aluno extends Pessoa {
 }

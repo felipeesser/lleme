@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package heranca.exemplos.pessoa;
 
 public abstract interface Operacoes1 {
     

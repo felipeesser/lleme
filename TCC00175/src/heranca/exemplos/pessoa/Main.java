@@ -1,4 +1,9 @@
-package heranca.exemplos;
+package heranca.exemplos.pessoa;
+
+import heranca.exemplos.pessoa.Aluno;
+import heranca.exemplos.pessoa.Pessoa;
+import heranca.exemplos.pessoa.Professor;
+import heranca.exemplos.pessoa.Pesquisador;
 
 public class Main {
     public Main() {

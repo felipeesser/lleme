@@ -1,4 +1,4 @@
-package heranca.exemplos;
+package heranca.exemplos.pessoa;
 
 import java.util.Date;
 
