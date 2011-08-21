@@ -1,4 +1,4 @@
-package aulas;
+package exemplos;
 
 public class Lista9Ex6_1 {
 
