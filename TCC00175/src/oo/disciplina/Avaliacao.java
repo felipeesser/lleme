@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package oo.disciplina;
 
-/**
- *
- * @author Luiz Leme
- */
 public class Avaliacao {
     private float notaTrab, notaP3;
     private int matricula;
@@ -16,6 +8,13 @@ public class Avaliacao {
         this.notaTrab  = nt;
         this.notaP3    = np3;
         this.matricula = m;
+    }
+    public Avaliacao(int m, float nt){
+        this.notaTrab  = nt;
+        this.matricula = m;
+    }
+    public Avaliacao(){
+
     }
 
     public void setNotaP3(float notaP3) {
