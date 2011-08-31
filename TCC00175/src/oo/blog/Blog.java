@@ -1,9 +1,10 @@
 package oo.blog;
 
-import java.util.Collection;
-import java.util.HashSet;
+public class Blog implements InterfaceBlog{
 
-public class Blog {
+    public Conteudo[] conteudos;
 
-    public Collection<Conteudo> conteudos = new HashSet<Conteudo>();
+    public void operacao() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
