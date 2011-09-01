@@ -9,48 +9,45 @@ import javax.swing.border.TitledBorder;
 
 public abstract class Funcao extends JPanel {
 
-	private String nomeFuncao;
+    private String nomeFuncao;
+    private Mostrador mostrador = null;
+    private Botoeira botoeira = null;
 
-	private Mostrador mostrador = null;
+    public Funcao(String nome) {
+        this.nomeFuncao = nome;
+        iniComponents();
+    }
 
-	private Botoeira botoeira = null;
+    private void iniComponents() {
+        Border loweredetched = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
+        TitledBorder title = BorderFactory.createTitledBorder(loweredetched,
+                nomeFuncao);
+        title.setTitleJustification(TitledBorder.CENTER);
+        setBorder(title);
+        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+    }
 
-	public Funcao(String nome) {
-		this.nomeFuncao = nome;
-		iniComponents();
-	}
+    public String getNomeFuncao() {
+        return nomeFuncao;
+    }
 
-	private void iniComponents() {
-		Border loweredetched = BorderFactory
-				.createEtchedBorder(EtchedBorder.LOWERED);
-		TitledBorder title = BorderFactory.createTitledBorder(loweredetched,
-				nomeFuncao);
-		title.setTitleJustification(TitledBorder.CENTER);
-		setBorder(title);
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-	}
+    public void setNomeFuncao(String nomeFuncao) {
+        this.nomeFuncao = nomeFuncao;
+    }
 
-	public String getNomeFuncao() {
-		return nomeFuncao;
-	}
+    public Mostrador getMostrador() {
+        return mostrador;
+    }
 
-	public void setNomeFuncao(String nomeFuncao) {
-		this.nomeFuncao = nomeFuncao;
-	}
+    public void setMostrador(Mostrador mostrador) {
+        this.mostrador = mostrador;
+    }
 
-	public Mostrador getMostrador() {
-		return mostrador;
-	}
+    public Botoeira getBotoeira() {
+        return botoeira;
+    }
 
-	public void setMostrador(Mostrador mostrador) {
-		this.mostrador = mostrador;
-	}
-
-	public Botoeira getBotoeira() {
-		return botoeira;
-	}
-
-	public void setBotoeira(Botoeira botoeira) {
-		this.botoeira = botoeira;
-	}
+    public void setBotoeira(Botoeira botoeira) {
+        this.botoeira = botoeira;
+    }
 }

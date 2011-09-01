@@ -11,294 +11,277 @@ import java.util.Calendar;
 
 import javax.swing.JPanel;
 
-import lleme.lib.visitor.Element;
 import lleme.temporizador.model.Temporizador;
-import lleme.lib.observer.Observer;
 
 public abstract class Mostrador extends JPanel implements Observer, Element {
 
-	private Temporizador mySubjectTemporizador = null;
+    private Temporizador mySubjectTemporizador = null;
+    private Point2D origemHoras = null;
+    private Point2D origemCentesimos = null;
+    private double r1 = 0.0;
+    private double r2 = 0.0;
+    private double hora = 0.0;
+    private double minuto = 0.0;
+    private double segundo = 0.0;
+    private double centesimo = 0.0;
 
-	private Point2D origemHoras = null;
+    public Mostrador(int tamanho) {
+        setOpaque(true);
+        setPreferredSize(new Dimension(tamanho, tamanho));
+        final double fat = 4.0, partes = 12.0;
+        double deltaR = 0.0;
+        r1 = tamanho / 2.0 * 10.0 / partes;
+        r2 = tamanho / 2.0 * 3.0 / partes;
+        deltaR = tamanho / 2.0 / partes;
+        origemHoras = new Point2D.Double(tamanho / 2.0, tamanho / 2.0);
+        origemCentesimos = new Point2D.Double(origemHoras.getX(), origemHoras.getY()
+                + fat * deltaR);
+    }
 
-	private Point2D origemCentesimos = null;
+    public Temporizador getTemporizador() {
+        return mySubjectTemporizador;
+    }
 
-	private double r1 = 0.0;
+    public void setTemporizador(Temporizador temporizador) {
+        this.mySubjectTemporizador = temporizador;
+    }
 
-	private double r2 = 0.0;
+    public void paint(Graphics g) {
+        super.paint(g);
+    }
 
-	private double hora = 0.0;
+    protected void paintContorno(Graphics g) {
+        final BasicStroke stroke = new BasicStroke(2.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        g2.draw(new Ellipse2D.Double(origemHoras.getX() - r1, origemHoras.getY()
+                - r1, 2.0 * r1, 2.0 * r1));
+    }
 
-	private double minuto = 0.0;
+    protected void paintHoras(Graphics g) {
+        final double deltaAng = 2.0 * Math.PI / 12.0;
+        final double maxAng = 2.0 * Math.PI;
+        final BasicStroke stroke = new BasicStroke(2.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        for (double ang = 0.0; ang <= maxAng; ang += deltaAng)
+            g2.draw(new Line2D.Double(xy(origemHoras, r1 - 15, ang), xy(
+                    origemHoras, r1, ang)));
+    }
 
-	private double segundo = 0.0;
+    protected void paintMinutos(Graphics g) {
+        final double deltaAng = 2.0 * Math.PI / 60.0;
+        final double maxAng = 2.0 * Math.PI;
+        final BasicStroke stroke = new BasicStroke(2.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        for (double ang = 0.0; ang <= maxAng; ang += deltaAng)
+            g2.draw(new Line2D.Double(xy(origemHoras, r1 - 5, ang), xy(
+                    origemHoras, r1, ang)));
+    }
 
-	private double centesimo = 0.0;
+    protected void paintSegundos(Graphics g) {
+        final double deltaAng = 2.0 * Math.PI / 60.0;
+        final double maxAng = 2.0 * Math.PI;
+        final BasicStroke stroke = new BasicStroke(2.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        for (double ang = 0.0; ang <= maxAng; ang += deltaAng)
+            g2.draw(new Line2D.Double(xy(origemHoras, r1 - 5, ang), xy(
+                    origemHoras, r1, ang)));
+    }
 
-	public Mostrador(int tamanho) {
-		setOpaque(true);
-		setPreferredSize(new Dimension(tamanho, tamanho));
-		final double fat = 4.0, partes = 12.0;
-		double deltaR = 0.0;
-		r1 = tamanho / 2.0 * 10.0 / partes;
-		r2 = tamanho / 2.0 * 3.0 / partes;
-		deltaR = tamanho / 2.0 / partes;
-		origemHoras = new Point2D.Double(tamanho / 2.0, tamanho / 2.0);
-		origemCentesimos = new Point2D.Double(origemHoras.getX(), origemHoras
-				.getY()
-				+ fat * deltaR);
-	}
+    protected void paintCentesimos(Graphics g) {
+        final double deltaAng = 2.0 * Math.PI / 20.0;
+        final double maxAng = 2.0 * Math.PI;
+        final BasicStroke stroke = new BasicStroke(2.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        for (double ang = 0.0; ang <= maxAng; ang += deltaAng)
+            g2.draw(new Line2D.Double(xy(origemCentesimos, r2 - 5, ang), xy(
+                    origemCentesimos, r2, ang)));
+    }
 
-	public Temporizador getTemporizador() {
-		return mySubjectTemporizador;
-	}
+    protected void paintPonteiroHora(Graphics g) {
+        double ang = 0.0;
+        final BasicStroke stroke = new BasicStroke(3.0f);
+        // Point2D x0y0 = new Point2D.Double(250.0 / 2.0, 250.0 / 2.0);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        ang = Math.PI / 2.0 - (Math.PI / 6.0 * hora);
+        g2.draw(new Line2D.Double(xy(origemHoras, 0, 0), xy(origemHoras,
+                r1 - 35, ang)));
+    }
 
-	public void setTemporizador(Temporizador temporizador) {
-		this.mySubjectTemporizador = temporizador;
-	}
+    protected void paintPonteiroMinuto(Graphics g) {
+        double ang = 0.0;
+        final BasicStroke stroke = new BasicStroke(3.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        ang = Math.PI / 2.0 - (Math.PI / 2.0 / 15.0 * minuto);
+        g2.draw(new Line2D.Double(xy(origemHoras, 0, 0), xy(origemHoras,
+                r1 - 20, ang)));
+    }
 
-	public void paint(Graphics g) {
-		super.paint(g);
-	}
+    protected void paintPonteiroSegundo(Graphics g) {
+        double ang = 0.0;
+        final BasicStroke stroke = new BasicStroke(1.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        ang = Math.PI / 2.0 - (Math.PI / 2.0 / 15.0 * segundo);
+        g2.draw(new Line2D.Double(xy(origemHoras, 0, 0), xy(origemHoras,
+                r1 - 20, ang)));
+    }
 
-	protected void paintContorno(Graphics g) {
-		final BasicStroke stroke = new BasicStroke(2.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		g2.draw(new Ellipse2D.Double(origemHoras.getX() - r1, origemHoras
-				.getY()
-				- r1, 2.0 * r1, 2.0 * r1));
-	}
+    protected void paintPonteiroCentesimo(Graphics g) {
+        double ang = 0.0;
+        final BasicStroke stroke = new BasicStroke(1.0f);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(stroke);
+        ang = Math.PI / 2.0 - (Math.PI / 2.0 / 25.0 * centesimo);
+        g2.draw(new Line2D.Double(xy(origemCentesimos, 0, 0), xy(
+                origemCentesimos, r2 - 5, ang)));
+    }
 
-	protected void paintHoras(Graphics g) {
-		final double deltaAng = 2.0 * Math.PI / 12.0;
-		final double maxAng = 2.0 * Math.PI;
-		final BasicStroke stroke = new BasicStroke(2.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		for (double ang = 0.0; ang <= maxAng; ang += deltaAng) {
-			g2.draw(new Line2D.Double(xy(origemHoras, r1 - 15, ang), xy(
-					origemHoras, r1, ang)));
-		}
-	}
+    private Point2D xy(Point2D x0y0, double raio, double angulo) {
+        return new Point2D.Double(x0y0.getX() + raio * Math.cos(angulo), x0y0.getY()
+                - raio * Math.sin(angulo));
+    }
 
-	protected void paintMinutos(Graphics g) {
-		final double deltaAng = 2.0 * Math.PI / 60.0;
-		final double maxAng = 2.0 * Math.PI;
-		final BasicStroke stroke = new BasicStroke(2.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		for (double ang = 0.0; ang <= maxAng; ang += deltaAng) {
-			g2.draw(new Line2D.Double(xy(origemHoras, r1 - 5, ang), xy(
-					origemHoras, r1, ang)));
-		}
-	}
+    public Temporizador getMyModelTemporizador() {
+        return mySubjectTemporizador;
+    }
 
-	protected void paintSegundos(Graphics g) {
-		final double deltaAng = 2.0 * Math.PI / 60.0;
-		final double maxAng = 2.0 * Math.PI;
-		final BasicStroke stroke = new BasicStroke(2.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		for (double ang = 0.0; ang <= maxAng; ang += deltaAng) {
-			g2.draw(new Line2D.Double(xy(origemHoras, r1 - 5, ang), xy(
-					origemHoras, r1, ang)));
-		}
-	}
+    public void setMyModelTemporizador(Temporizador myModelTemporizador) {
+        this.mySubjectTemporizador = myModelTemporizador;
+    }
 
-	protected void paintCentesimos(Graphics g) {
-		final double deltaAng = 2.0 * Math.PI / 20.0;
-		final double maxAng = 2.0 * Math.PI;
-		final BasicStroke stroke = new BasicStroke(2.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		for (double ang = 0.0; ang <= maxAng; ang += deltaAng) {
-			g2.draw(new Line2D.Double(xy(origemCentesimos, r2 - 5, ang), xy(
-					origemCentesimos, r2, ang)));
-		}
-	}
+    public void update() {
+        Calendar cal = mySubjectTemporizador.getTempo();
+        setHora(cal.get(Calendar.HOUR));
+        setMinuto(cal.get(Calendar.MINUTE));
+        setSegundo(cal.get(Calendar.SECOND));
+        setCentesimo(cal.get(Calendar.MILLISECOND) / 10);
+        repaint();
+    }
 
-	protected void paintPonteiroHora(Graphics g) {
-		double ang = 0.0;
-		final BasicStroke stroke = new BasicStroke(3.0f);
-		// Point2D x0y0 = new Point2D.Double(250.0 / 2.0, 250.0 / 2.0);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		ang = Math.PI / 2.0 - (Math.PI / 6.0 * hora);
-		g2.draw(new Line2D.Double(xy(origemHoras, 0, 0), xy(origemHoras,
-				r1 - 35, ang)));
-	}
+    /**
+     * @return Returns the centesimo.
+     */
+    public double getCentesimo() {
+        return centesimo;
+    }
 
-	protected void paintPonteiroMinuto(Graphics g) {
-		double ang = 0.0;
-		final BasicStroke stroke = new BasicStroke(3.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		ang = Math.PI / 2.0 - (Math.PI / 2.0 / 15.0 * minuto);
-		g2.draw(new Line2D.Double(xy(origemHoras, 0, 0), xy(origemHoras,
-				r1 - 20, ang)));
-	}
+    /**
+     * @param centesimo
+     *            The centesimo to set.
+     */
+    public void setCentesimo(double centesimo) {
+        this.centesimo = centesimo;
+    }
 
-	protected void paintPonteiroSegundo(Graphics g) {
-		double ang = 0.0;
-		final BasicStroke stroke = new BasicStroke(1.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		ang = Math.PI / 2.0 - (Math.PI / 2.0 / 15.0 * segundo);
-		g2.draw(new Line2D.Double(xy(origemHoras, 0, 0), xy(origemHoras,
-				r1 - 20, ang)));
-	}
+    /**
+     * @return Returns the hora.
+     */
+    public double getHora() {
+        return hora;
+    }
 
-	protected void paintPonteiroCentesimo(Graphics g) {
-		double ang = 0.0;
-		final BasicStroke stroke = new BasicStroke(1.0f);
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setStroke(stroke);
-		ang = Math.PI / 2.0 - (Math.PI / 2.0 / 25.0 * centesimo);
-		g2.draw(new Line2D.Double(xy(origemCentesimos, 0, 0), xy(
-				origemCentesimos, r2 - 5, ang)));
-	}
+    /**
+     * @param hora
+     *            The hora to set.
+     */
+    public void setHora(double hora) {
+        this.hora = hora;
+    }
 
-	private Point2D xy(Point2D x0y0, double raio, double angulo) {
-		return new Point2D.Double(x0y0.getX() + raio * Math.cos(angulo), x0y0
-				.getY()
-				- raio * Math.sin(angulo));
-	}
+    /**
+     * @return Returns the minuto.
+     */
+    public double getMinuto() {
+        return minuto;
+    }
 
-	public Temporizador getMyModelTemporizador() {
-		return mySubjectTemporizador;
-	}
+    /**
+     * @param minuto
+     *            The minuto to set.
+     */
+    public void setMinuto(double minuto) {
+        this.minuto = minuto;
+    }
 
-	public void setMyModelTemporizador(Temporizador myModelTemporizador) {
-		this.mySubjectTemporizador = myModelTemporizador;
-	}
+    /**
+     * @return Returns the segundo.
+     */
+    public double getSegundo() {
+        return segundo;
+    }
 
-	public void update() {
-		Calendar cal = mySubjectTemporizador.getTempo();
-		setHora(cal.get(Calendar.HOUR));
-		setMinuto(cal.get(Calendar.MINUTE));
-		setSegundo(cal.get(Calendar.SECOND));
-		setCentesimo(cal.get(Calendar.MILLISECOND) / 10);
-		repaint();
-	}
+    /**
+     * @param segundo
+     *            The segundo to set.
+     */
+    public void setSegundo(double segundo) {
+        this.segundo = segundo;
+    }
 
-	/**
-	 * @return Returns the centesimo.
-	 */
-	public double getCentesimo() {
-		return centesimo;
-	}
+    /**
+     * @return Returns the origemCentesimos.
+     */
+    public Point2D getOrigemCentesimos() {
+        return origemCentesimos;
+    }
 
-	/**
-	 * @param centesimo
-	 *            The centesimo to set.
-	 */
-	public void setCentesimo(double centesimo) {
-		this.centesimo = centesimo;
-	}
+    /**
+     * @param origemCentesimos
+     *            The origemCentesimos to set.
+     */
+    public void setOrigemCentesimos(Point2D origemCentesimos) {
+        this.origemCentesimos = origemCentesimos;
+    }
 
-	/**
-	 * @return Returns the hora.
-	 */
-	public double getHora() {
-		return hora;
-	}
+    /**
+     * @return Returns the origemHoras.
+     */
+    public Point2D getOrigemHoras() {
+        return origemHoras;
+    }
 
-	/**
-	 * @param hora
-	 *            The hora to set.
-	 */
-	public void setHora(double hora) {
-		this.hora = hora;
-	}
+    /**
+     * @param origemHoras
+     *            The origemHoras to set.
+     */
+    public void setOrigemHoras(Point2D origemHoras) {
+        this.origemHoras = origemHoras;
+    }
 
-	/**
-	 * @return Returns the minuto.
-	 */
-	public double getMinuto() {
-		return minuto;
-	}
+    /**
+     * @return Returns the r1.
+     */
+    public double getR1() {
+        return r1;
+    }
 
-	/**
-	 * @param minuto
-	 *            The minuto to set.
-	 */
-	public void setMinuto(double minuto) {
-		this.minuto = minuto;
-	}
+    /**
+     * @param r1
+     *            The r1 to set.
+     */
+    public void setR1(double r1) {
+        this.r1 = r1;
+    }
 
-	/**
-	 * @return Returns the segundo.
-	 */
-	public double getSegundo() {
-		return segundo;
-	}
+    /**
+     * @return Returns the r2.
+     */
+    public double getR2() {
+        return r2;
+    }
 
-	/**
-	 * @param segundo
-	 *            The segundo to set.
-	 */
-	public void setSegundo(double segundo) {
-		this.segundo = segundo;
-	}
-
-	/**
-	 * @return Returns the origemCentesimos.
-	 */
-	public Point2D getOrigemCentesimos() {
-		return origemCentesimos;
-	}
-
-	/**
-	 * @param origemCentesimos
-	 *            The origemCentesimos to set.
-	 */
-	public void setOrigemCentesimos(Point2D origemCentesimos) {
-		this.origemCentesimos = origemCentesimos;
-	}
-
-	/**
-	 * @return Returns the origemHoras.
-	 */
-	public Point2D getOrigemHoras() {
-		return origemHoras;
-	}
-
-	/**
-	 * @param origemHoras
-	 *            The origemHoras to set.
-	 */
-	public void setOrigemHoras(Point2D origemHoras) {
-		this.origemHoras = origemHoras;
-	}
-
-	/**
-	 * @return Returns the r1.
-	 */
-	public double getR1() {
-		return r1;
-	}
-
-	/**
-	 * @param r1
-	 *            The r1 to set.
-	 */
-	public void setR1(double r1) {
-		this.r1 = r1;
-	}
-
-	/**
-	 * @return Returns the r2.
-	 */
-	public double getR2() {
-		return r2;
-	}
-
-	/**
-	 * @param r2
-	 *            The r2 to set.
-	 */
-	public void setR2(double r2) {
-		this.r2 = r2;
-	}
+    /**
+     * @param r2
+     *            The r2 to set.
+     */
+    public void setR2(double r2) {
+        this.r2 = r2;
+    }
 }
