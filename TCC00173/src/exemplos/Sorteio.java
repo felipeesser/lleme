@@ -1,4 +1,4 @@
-package exercicios;
+package exemplos;
 
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -16,18 +16,25 @@ public class Sorteio {
         String[] alunos = leAlunos();
         int[] sorteados = leSorteios();
 
-        OutputStream output = new FileOutputStream("sortreados.txt", true);
+        OutputStream output = new FileOutputStream(".\\dat\\sorteados.txt", true);
         OutputStreamWriter writer = new OutputStreamWriter(output);
         BufferedWriter bw = new BufferedWriter(writer);
         int sorteio;
         do
-            sorteio = (int) (Math.random() * 24);
+            sorteio = sorteio();
         while (foiSorteado(sorteio, sorteados));
-        bw.write("" + sorteio);
+        bw.write("" + sorteio + "\n");
         System.out.println(alunos[sorteio]);
 
-        output.close();
+        bw.close();
 
+    }
+
+    public static int sorteio() {
+        int numero = (int) (Math.random() * 25);
+        if (numero == 25)
+            numero = 24;
+        return numero;
     }
 
     public static boolean foiSorteado(int n, int[] sorteados) {
