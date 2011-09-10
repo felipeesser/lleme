@@ -8,9 +8,6 @@ import lleme.temporizador.controller.ResetCommand;
 
 public class BotaoReset extends BotaoTemp {
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = -1842445485507380512L;
     private Command tempCommand = null;
 
