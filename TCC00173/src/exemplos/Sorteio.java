@@ -47,7 +47,7 @@ public class Sorteio {
     public static String[] leAlunos() throws FileNotFoundException {
         InputStream input = new FileInputStream(".\\dat\\alunos.txt");
         Scanner in = new Scanner(input);
-        String[] alunos = new String[25];
+        String[] alunos = new String[32];
         int i = 0;
         while (in.hasNext()) {
             alunos[i] = in.nextLine();
