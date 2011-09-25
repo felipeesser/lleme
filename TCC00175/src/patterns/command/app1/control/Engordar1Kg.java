@@ -1,13 +1,12 @@
 package patterns.command.app1.control;
 
-import patterns.command.app1.model.MementoPaciente;
-import patterns.command.app1.model.Paciente;
+import patterns.memento.app1.model.Paciente;
 import patterns.command.framework.Command;
 
-public class Engordar1Kg extends Command{
-    
+public class Engordar1Kg extends Command {
+
     public Paciente paciente;
-    private MementoPaciente m;
+    private Paciente.MementoPaciente mm;
 
     public Engordar1Kg(Paciente paciente) {
         this.paciente = paciente;
@@ -15,13 +14,13 @@ public class Engordar1Kg extends Command{
 
     @Override
     public void execute() {
-        m=paciente.createMemento();
+        mm = paciente.createMemento();
         paciente.peso++;
     }
 
     @Override
     public void desfazer() {
-        paciente.setMemento(m);
+        paciente.setMemento(mm);
     }
-    
+
 }

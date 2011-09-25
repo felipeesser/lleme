@@ -4,6 +4,20 @@ import java.util.Date;
 
 public abstract class Pessoa {
 
+    public class MementoPessoa extends Memento {
+
+        private final String nome;
+        private final float peso;
+        private final float altura;
+        private final Date nascimento;
+
+        protected MementoPessoa(String nome, float peso, float altura, Date nascimento) {
+            this.nome = nome;
+            this.peso = peso;
+            this.altura = altura;
+            this.nascimento = nascimento;
+        }
+    }
     public String nome;
     public float peso;
     public float altura;
@@ -32,5 +46,16 @@ public abstract class Pessoa {
                 return 0;
         } else
             return 0;
+    }
+
+    public MementoPessoa createMemento() {
+        return new MementoPessoa(nome, peso, altura, nascimento);
+    }
+
+    public void setMemento(MementoPessoa mp) {
+        this.nome = mp.nome;
+        this.peso = mp.peso;
+        this.altura = mp.altura;
+        this.nascimento = mp.nascimento;
     }
 }
