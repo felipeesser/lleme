@@ -1,6 +1,7 @@
 package patterns.templateMethod.framework;
 
 public abstract class Algoritmo {
+   
 
     public void executarAlgoritmo() {
         passo1();

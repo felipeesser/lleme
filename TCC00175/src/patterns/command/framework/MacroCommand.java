@@ -1,5 +1,6 @@
 package patterns.command.framework;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -14,6 +15,12 @@ public class MacroCommand extends Command {
     @Override
     public void execute() {
         clones = new Stack<Command>();
+        Iterator<Command> lc = commands.iterator();
+        
+        while(lc.hasNext()){
+            lc.next().execute();
+        }
+        
         for (Command ct : commands) {
             ct.execute();
             try {

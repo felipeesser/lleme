@@ -10,7 +10,9 @@ public class MinhaColecao<E> implements List<E> {
 
     private List<E> list = new ArrayList<E>();
     
-    private class Itr implements Iterator<E>{
+    private class Itr<E> implements Iterator<E>{
+        
+        private List<E> list = null;
 
         public boolean hasNext() {
             throw new UnsupportedOperationException("Not supported yet.");
