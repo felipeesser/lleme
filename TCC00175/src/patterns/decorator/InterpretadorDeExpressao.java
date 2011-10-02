@@ -6,7 +6,7 @@ import patterns.chainOfResponsabilities.FragmentadorDeExpressao;
 
 public abstract class InterpretadorDeExpressao {
 
-    public FragmentadorDeExpressao cadeiaDeFragmentadores = null;
+    protected FragmentadorDeExpressao cadeiaDeFragmentadores = null;
 
     public void interpretar(String expressao) throws UserException {
         String expressaoAnterior;
@@ -14,10 +14,10 @@ public abstract class InterpretadorDeExpressao {
             expressaoAnterior = expressao;
             expressao = fragmentar(expressao);
         } while (expressao != null && !expressao.equals(expressaoAnterior));
-        System.out.println(FragmentadorDeExpressao.pilha.peek().interpretar());
+        System.out.println(FragmentadorDeExpressao.getPilha().peek().interpretar());
     }
 
-    public String fragmentar(String expressao) throws UserException {
+    protected String fragmentar(String expressao) throws UserException {
         return cadeiaDeFragmentadores.extrairSimbolo(expressao);
     }
 }

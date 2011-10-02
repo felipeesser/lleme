@@ -13,10 +13,10 @@ public class FragmentadorSoma extends FragmentadorDeExpressao {
         Expressao op2;
         if (in.hasNext("\\+")) {
             in.next("\\+");
-            if (pilha.size() >= 2) {
-                op2 = pilha.pop();
-                op1 = pilha.pop();
-                pilha.add(new Soma(op1, op2));
+            if (getPilha().size() >= 2) {
+                op2 = getPilha().pop();
+                op1 = getPilha().pop();
+                getPilha().add(new Soma(op1, op2));
                 if (in.hasNextLine()) {
                     String resto = in.nextLine().trim();
                     if (resto.equals(""))

@@ -1,21 +1,29 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
 import org.omg.CORBA.UserException;
-import patterns.interpreter.Coseno;
 import patterns.interpreter.Expressao;
+import patterns.interpreter.Tangente;
 
-public class FragmentadorCoseno extends FragmentadorDeExpressao {
+/**
+ *
+ * @author Luiz Leme
+ */
+public class FragmentadorTangente extends FragmentadorDeExpressao {
 
     @Override
     public String extrairSimbolo(String expressaoStr) throws UserException {
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
-        if (in.hasNext("cos")) {
-            in.next("cos");
+        if (in.hasNext("tan")) {
+            in.next("tan");
             if (getPilha().size() >= 1) {
                 op1 = getPilha().pop();
-                getPilha().add(new Coseno(op1));
+                getPilha().add(new Tangente(op1));
                 if (in.hasNextLine()) {
                     String resto = in.nextLine().trim();
                     if (resto.equals(""))
@@ -25,7 +33,7 @@ public class FragmentadorCoseno extends FragmentadorDeExpressao {
                 } else
                     return null;
             } else
-                throw new UserException("Número inválido de operandos para a operação coseno") {
+                throw new UserException("Número inválido de operandos para a operação tangente") {
                 };
         } else if (proximo != null)
             return proximo.extrairSimbolo(expressaoStr);

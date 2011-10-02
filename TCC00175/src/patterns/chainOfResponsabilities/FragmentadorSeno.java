@@ -13,9 +13,9 @@ public class FragmentadorSeno extends FragmentadorDeExpressao {
         Expressao op1;
         if (in.hasNext("sen")) {
             in.next("sen");
-            if (pilha.size() >= 1) {
-                op1 = pilha.pop();
-                pilha.add(new Seno(op1));
+            if (getPilha().size() >= 1) {
+                op1 = getPilha().pop();
+                getPilha().add(new Seno(op1));
                 if (in.hasNextLine()) {
                     String resto = in.nextLine().trim();
                     if (resto.equals(""))

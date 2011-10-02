@@ -9,7 +9,7 @@ public class FragmentadorLiteral extends FragmentadorDeExpressao {
     public String extrairSimbolo(String expressaoStr) throws UserException {
         Scanner in = new Scanner(expressaoStr.trim());
         if (in.hasNextFloat()) {
-            pilha.add(new Literal(in.nextFloat()));
+            getPilha().add(new Literal(in.nextFloat()));
             if (in.hasNextLine()) {
                 String resto = in.nextLine().trim();
                 if (resto.equals(""))
