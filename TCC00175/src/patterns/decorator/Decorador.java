@@ -18,7 +18,7 @@ public abstract class Decorador extends InterpretadorDeExpressao {
 
     @Override
     public String fragmentar(String expressao) throws UserException {
-        expressao = componente.cadeiaDeFragmentadores.fragmentarExpressao(expressao);
-        return cadeiaDeFragmentadores.fragmentarExpressao(expressao);
+        expressao = componente.cadeiaDeFragmentadores.extrairSimbolo(expressao);
+        return cadeiaDeFragmentadores.extrairSimbolo(expressao);
     }
 }

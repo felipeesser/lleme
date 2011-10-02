@@ -4,9 +4,9 @@ import java.util.Scanner;
 import org.omg.CORBA.UserException;
 import patterns.interpreter.Literal;
 
-public class FragmentadorLiteral extends FragmentadorExpressao {
+public class FragmentadorLiteral extends FragmentadorDeExpressao {
 
-    public String fragmentarExpressao(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws UserException {
         Scanner in = new Scanner(expressaoStr.trim());
         if (in.hasNextFloat()) {
             pilha.add(new Literal(in.nextFloat()));
@@ -19,7 +19,7 @@ public class FragmentadorLiteral extends FragmentadorExpressao {
             } else
                 return null;
         } else if (proximo != null)
-            return proximo.fragmentarExpressao(expressaoStr);
+            return proximo.extrairSimbolo(expressaoStr);
         else
             return expressaoStr;
     }

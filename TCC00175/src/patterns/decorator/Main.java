@@ -8,7 +8,7 @@ public class Main {
         InterpretadorDeExpressao i1 = new InterpretadorBasico();
         InterpretadorDeExpressao i2 = new InterpretadorTrigonometrico(i1);
         
-        i2.interpretar("2 6 * 2 + cos");
+        i2.interpretar("2 6 * 2 + sen -");
     }
     
 }

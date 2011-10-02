@@ -5,15 +5,15 @@ import org.omg.CORBA.UserException;
 import patterns.interpreter.Coseno;
 import patterns.interpreter.Expressao;
 
-public class FragmentadorCoseno extends FragmentadorExpressao {
+public class FragmentadorCoseno extends FragmentadorDeExpressao {
 
     @Override
-    public String fragmentarExpressao(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws UserException {
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
-        if (in.hasNext("\\cos")) {
-            in.next("\\cos");
-            if (pilha.size() >= 2) {
+        if (in.hasNext("cos")) {
+            in.next("cos");
+            if (pilha.size() >= 1) {
                 op1 = pilha.pop();
                 pilha.add(new Coseno(op1));
                 if (in.hasNextLine()) {
@@ -28,7 +28,7 @@ public class FragmentadorCoseno extends FragmentadorExpressao {
                 throw new UserException("Número inválido de operandos para a operação coseno") {
                 };
         } else if (proximo != null)
-            return proximo.fragmentarExpressao(expressaoStr);
+            return proximo.extrairSimbolo(expressaoStr);
         else
             return expressaoStr;
     }

@@ -2,20 +2,22 @@ package patterns.decorator;
 
 import org.omg.CORBA.UserException;
 
-import patterns.chainOfResponsabilities.FragmentadorExpressao;
+import patterns.chainOfResponsabilities.FragmentadorDeExpressao;
 
 public abstract class InterpretadorDeExpressao {
 
-    public FragmentadorExpressao cadeiaDeFragmentadores = null;
+    public FragmentadorDeExpressao cadeiaDeFragmentadores = null;
 
     public void interpretar(String expressao) throws UserException {
-        do
-            expressao = cadeiaDeFragmentadores.fragmentarExpressao(expressao);
-        while (expressao != null);
-        System.out.println(FragmentadorExpressao.pilha.peek().interpretar());
+        String expressaoAnterior;
+        do {
+            expressaoAnterior = expressao;
+            expressao = fragmentar(expressao);
+        } while (expressao != null && !expressao.equals(expressaoAnterior));
+        System.out.println(FragmentadorDeExpressao.pilha.peek().interpretar());
     }
 
     public String fragmentar(String expressao) throws UserException {
-        return cadeiaDeFragmentadores.fragmentarExpressao(expressao);
+        return cadeiaDeFragmentadores.extrairSimbolo(expressao);
     }
 }

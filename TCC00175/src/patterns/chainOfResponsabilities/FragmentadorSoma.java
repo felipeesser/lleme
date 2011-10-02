@@ -5,9 +5,9 @@ import org.omg.CORBA.UserException;
 import patterns.interpreter.Expressao;
 import patterns.interpreter.Soma;
 
-public class FragmentadorSoma extends FragmentadorExpressao {
+public class FragmentadorSoma extends FragmentadorDeExpressao {
 
-    public String fragmentarExpressao(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws UserException {
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         Expressao op2;
@@ -29,7 +29,7 @@ public class FragmentadorSoma extends FragmentadorExpressao {
                 throw new UserException("Número inválido de operandos para a operação de soma") {
                 };
         } else if (proximo != null)
-            return proximo.fragmentarExpressao(expressaoStr);
+            return proximo.extrairSimbolo(expressaoStr);
         else 
             return expressaoStr;
     }
