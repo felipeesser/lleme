@@ -9,13 +9,4 @@ public abstract class Expressao {
 
     public abstract float interpretar();
 
-    public static void main(String[] args) throws UserException {
-
-        String exp = "4 2 3 + *";
-        do
-            exp = Literal.fragmentarExpressao(exp);
-        while (exp != null);
-        System.out.println(Literal.pilha.peek().interpretar());
-
-    }
 }
