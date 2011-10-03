@@ -7,8 +7,8 @@ public class Tangente extends OperacaoUnaria{
     }
 
     @Override
-    public float interpretar() {
-        return (float) Math.tan(operando1.interpretar());
+    public double calcular() {
+        return Math.tan(operando1.calcular());
     }
     
 }

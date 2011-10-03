@@ -7,7 +7,7 @@ public class Seno extends OperacaoUnaria {
     }
 
     @Override
-    public float interpretar() {
-        return (float) Math.sin(operando1.interpretar());
+    public double calcular() {
+        return  Math.sin(operando1.calcular());
     }
 }

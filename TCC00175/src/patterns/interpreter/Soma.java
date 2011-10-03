@@ -7,7 +7,7 @@ public class Soma extends OperacaoBinaria {
     }
 
     @Override
-    public float interpretar() {
-        return operando1.interpretar() + operando2.interpretar();
+    public double calcular() {
+        return operando1.calcular() + operando2.calcular();
     }
 }

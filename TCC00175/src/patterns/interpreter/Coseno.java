@@ -7,7 +7,7 @@ public class Coseno extends OperacaoUnaria {
     }
 
     @Override
-    public float interpretar() {
-        return (float) Math.cos(operando1.interpretar());
+    public double calcular() {
+        return  Math.cos(operando1.calcular());
     }
 }

@@ -2,14 +2,14 @@ package patterns.interpreter;
 
 public class Literal extends Expressao {
 
-    public float numero;
+    public double numero;
 
-    public Literal(float numero) {
+    public Literal(double numero) {
         this.numero = numero;
     }
 
     @Override
-    public float interpretar() {
+    public double calcular() {
         return numero;
     }
 }

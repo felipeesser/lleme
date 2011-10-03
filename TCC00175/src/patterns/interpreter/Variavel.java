@@ -3,7 +3,7 @@ package patterns.interpreter;
 public class Variavel extends Expressao {
 
     @Override
-    public float interpretar() {
+    public double calcular() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
