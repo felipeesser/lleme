@@ -11,6 +11,6 @@ public class Main {
 
         InterpretadorDeExpressao componente = new InterpretadorBasico();
         InterpretadorDeExpressao decorador = new InterpretadorTrigonometrico(componente);
-        decorador.interpretar("2,8E-2 6 * 2 + tan ");
+        decorador.interpretar("2 6 * 2 + tan ");
     }
 }
