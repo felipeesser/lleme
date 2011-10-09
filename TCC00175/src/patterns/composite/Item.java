@@ -4,8 +4,13 @@ import patterns.prototype.Nomeavel;
 
 public abstract class Item implements Nomeavel {
 
-    private String nome = null;
-    private double variacao = 0;
+    private String nome;
+    private double variacao;
+
+    public Item(String nome, double variacao) {
+        this.nome = nome;
+        this.variacao = variacao;
+    }
 
     public String getNome() {
         return nome;
@@ -21,5 +26,9 @@ public abstract class Item implements Nomeavel {
 
     public void setVariacao(double variacao) {
         this.variacao = variacao;
+    }
+
+    public void imprimir() {
+        System.out.println(getNome() + ", variação: " + getVariacao());
     }
 }
