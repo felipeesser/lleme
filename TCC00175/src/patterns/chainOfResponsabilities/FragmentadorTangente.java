@@ -5,7 +5,6 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import org.omg.CORBA.UserException;
 import patterns.interpreter.Expressao;
 import patterns.interpreter.Tangente;
 
@@ -16,7 +15,7 @@ import patterns.interpreter.Tangente;
 public class FragmentadorTangente extends FragmentadorDeExpressao {
 
     @Override
-    public String extrairSimbolo(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws Exception {
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         if (in.hasNext("tan")) {
@@ -33,7 +32,7 @@ public class FragmentadorTangente extends FragmentadorDeExpressao {
                 } else
                     return null;
             } else
-                throw new UserException("Número inválido de operandos para a operação tangente") {
+                throw new Exception("Número inválido de operandos para a operação tangente") {
                 };
         } else if (proximo != null)
             return proximo.extrairSimbolo(expressaoStr);

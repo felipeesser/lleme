@@ -1,14 +1,12 @@
 package patterns.decorator;
 
-import org.omg.CORBA.UserException;
-
 import patterns.chainOfResponsabilities.FragmentadorDeExpressao;
 
 public abstract class InterpretadorDeExpressao {
 
     protected FragmentadorDeExpressao cadeiaDeFragmentadores = null;
 
-    public void interpretar(String expressao) throws UserException {
+    public void interpretar(String expressao) throws Exception {
         String expressaoAnterior;
         do {
             expressaoAnterior = expressao;
@@ -17,7 +15,7 @@ public abstract class InterpretadorDeExpressao {
         System.out.println(FragmentadorDeExpressao.getPilha().peek().calcular());
     }
 
-    protected String fragmentar(String expressao) throws UserException {
+    protected String fragmentar(String expressao) throws Exception {
         return cadeiaDeFragmentadores.extrairSimbolo(expressao);
     }
 }

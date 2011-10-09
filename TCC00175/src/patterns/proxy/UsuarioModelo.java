@@ -2,20 +2,24 @@ package patterns.proxy;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import org.omg.CORBA.UserException;
+import java.util.HashSet;
+import java.util.Set;
 
-public class UsuarioReal implements Usuario {
+public class UsuarioModelo implements Usuario {
 
     private int id;
     private String nome;
     private long cpf;
     private Endereco endereco;
     private Timestamp timestamp;
+    /**
+     * @aggregation composite
+     */
+    private Set<Blog> blogs;
 
     @Override
     public Endereco getEndereco() {
         return endereco;
-
     }
 
     @Override
@@ -61,12 +65,19 @@ public class UsuarioReal implements Usuario {
         this.timestamp = timestamp;
     }
 
-    public void parsistir() throws ClassNotFoundException, SQLException, UserException {
+    public Set<Blog> getBlogs() {
+        return blogs;
+    }
+    
+    public void setBlogs(Set<Blog> blogs){
+        this.blogs=blogs;
+    }
+
+    public void persistir() throws ClassNotFoundException, SQLException, Exception {
         // não faz nada
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public void atualizar() throws ClassNotFoundException, SQLException, Exception {
+        // Não faz nada
     }
 }

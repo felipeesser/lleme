@@ -1,7 +1,6 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Stack;
-import org.omg.CORBA.UserException;
 import patterns.interpreter.Expressao;
 
 public abstract class FragmentadorDeExpressao {
@@ -16,5 +15,5 @@ public abstract class FragmentadorDeExpressao {
     }
     public FragmentadorDeExpressao proximo = null;
 
-    public abstract String extrairSimbolo(String expressaoStr) throws UserException;
+    public abstract String extrairSimbolo(String expressaoStr) throws Exception;
 }

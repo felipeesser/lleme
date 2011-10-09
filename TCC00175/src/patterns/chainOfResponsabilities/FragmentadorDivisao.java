@@ -1,13 +1,12 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import org.omg.CORBA.UserException;
 import patterns.interpreter.Divisao;
 import patterns.interpreter.Expressao;
 
 public class FragmentadorDivisao extends FragmentadorDeExpressao {
 
-    public String extrairSimbolo(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws Exception {
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         Expressao op2;
@@ -26,7 +25,7 @@ public class FragmentadorDivisao extends FragmentadorDeExpressao {
                 } else
                     return null;
             } else
-                throw new UserException("Número inválido de operandos para a operação de divisao") {
+                throw new Exception("Número inválido de operandos para a operação de divisao") {
                 };
         } else if (proximo != null)
             return proximo.extrairSimbolo(expressaoStr);

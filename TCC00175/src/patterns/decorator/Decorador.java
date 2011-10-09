@@ -1,6 +1,5 @@
 package patterns.decorator;
 
-import org.omg.CORBA.UserException;
 
 public abstract class Decorador extends InterpretadorDeExpressao {
 
@@ -17,7 +16,7 @@ public abstract class Decorador extends InterpretadorDeExpressao {
     }
 
     @Override
-    protected String fragmentar(String expressao) throws UserException {
+    protected String fragmentar(String expressao) throws Exception {
         expressao = componente.cadeiaDeFragmentadores.extrairSimbolo(expressao);
         return cadeiaDeFragmentadores.extrairSimbolo(expressao);
     }

@@ -1,12 +1,11 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import org.omg.CORBA.UserException;
 import patterns.interpreter.Literal;
 
 public class FragmentadorLiteral extends FragmentadorDeExpressao {
 
-    public String extrairSimbolo(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws Exception {
         Scanner in = new Scanner(expressaoStr.trim());
         if (in.hasNextFloat()) {
             getPilha().add(new Literal(in.nextFloat()));

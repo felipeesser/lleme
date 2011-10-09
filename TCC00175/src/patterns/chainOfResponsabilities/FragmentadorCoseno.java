@@ -1,14 +1,13 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import org.omg.CORBA.UserException;
 import patterns.interpreter.Coseno;
 import patterns.interpreter.Expressao;
 
 public class FragmentadorCoseno extends FragmentadorDeExpressao {
 
     @Override
-    public String extrairSimbolo(String expressaoStr) throws UserException {
+    public String extrairSimbolo(String expressaoStr) throws Exception {
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         if (in.hasNext("cos")) {
@@ -25,7 +24,7 @@ public class FragmentadorCoseno extends FragmentadorDeExpressao {
                 } else
                     return null;
             } else
-                throw new UserException("Número inválido de operandos para a operação coseno") {
+                throw new Exception("Número inválido de operandos para a operação coseno") {
                 };
         } else if (proximo != null)
             return proximo.extrairSimbolo(expressaoStr);

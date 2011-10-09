@@ -2,20 +2,19 @@ package patterns.proxy;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.Date;
-import org.omg.CORBA.UserException;
+import java.util.Set;
 
-public interface Usuario extends Cloneable {
+public interface Usuario {
 
     public long getCpf();
 
-    public Endereco getEndereco() throws ClassNotFoundException, SQLException, Exception;
+    public Endereco getEndereco();
 
     public int getId();
 
     public String getNome();
 
-    public Date getTimestamp();
+    public Timestamp getTimestamp();
 
     public void setCpf(long cpf);
 
@@ -25,9 +24,13 @@ public interface Usuario extends Cloneable {
 
     public void setNome(String nome);
 
-    public void setTimestamp(Timestamp date);
+    public void setTimestamp(Timestamp timestamp);
 
-    public void parsistir() throws ClassNotFoundException, SQLException, UserException;
+    public Set<Blog> getBlogs() throws ClassNotFoundException, SQLException, Exception;
+    
+    public void setBlogs(Set<Blog> blogs);
 
-    public Object clone() throws CloneNotSupportedException;
+    public void persistir() throws ClassNotFoundException, SQLException, Exception;
+
+    public void atualizar() throws ClassNotFoundException, SQLException, Exception;
 }
