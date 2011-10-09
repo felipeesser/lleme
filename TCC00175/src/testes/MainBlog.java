@@ -1,6 +1,5 @@
 package testes;
 
-import patterns.proxy.UsuarioModelo;
 import java.sql.SQLException;
 
 public class MainBlog {
