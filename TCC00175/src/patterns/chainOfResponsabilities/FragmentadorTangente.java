@@ -1,21 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
 import patterns.interpreter.Expressao;
 import patterns.interpreter.Tangente;
 
-/**
- *
- * @author Luiz Leme
- */
 public class FragmentadorTangente extends FragmentadorDeExpressao {
 
     @Override
     public String extrairSimbolo(String expressaoStr) throws Exception {
+        if (expressaoStr==null)
+            return null;
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         if (in.hasNext("tan")) {

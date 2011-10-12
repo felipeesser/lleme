@@ -1,9 +1,33 @@
 package patterns.interpreter;
 
+import patterns.visitor.Visitor;
+
 public class Variavel extends Expressao {
+
+    public String nome;
+    public double valor;
+
+    public Variavel(String nome) {
+        this.nome = nome;
+    }
 
     @Override
     public double calcular() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return valor;
+    }
+
+    @Override
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitExpressao(this);
     }
 }

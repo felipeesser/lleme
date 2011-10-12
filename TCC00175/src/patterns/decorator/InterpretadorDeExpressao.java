@@ -1,18 +1,19 @@
 package patterns.decorator;
 
 import patterns.chainOfResponsabilities.FragmentadorDeExpressao;
+import patterns.interpreter.Expressao;
 
 public abstract class InterpretadorDeExpressao {
 
     protected FragmentadorDeExpressao cadeiaDeFragmentadores = null;
 
-    public void interpretar(String expressao) throws Exception {
+    public Expressao interpretar(String expressao) throws Exception {
         String expressaoAnterior;
         do {
             expressaoAnterior = expressao;
             expressao = fragmentar(expressao);
         } while (expressao != null && !expressao.equals(expressaoAnterior));
-        System.out.println(FragmentadorDeExpressao.getPilha().peek().calcular());
+        return FragmentadorDeExpressao.getPilha().peek();
     }
 
     protected String fragmentar(String expressao) throws Exception {

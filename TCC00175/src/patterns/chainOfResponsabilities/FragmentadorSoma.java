@@ -7,6 +7,8 @@ import patterns.interpreter.Soma;
 public class FragmentadorSoma extends FragmentadorDeExpressao {
 
     public String extrairSimbolo(String expressaoStr) throws Exception {
+        if (expressaoStr==null)
+            return null;
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         Expressao op2;

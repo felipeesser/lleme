@@ -8,6 +8,8 @@ public class FragmentadorSeno extends FragmentadorDeExpressao {
 
     @Override
     public String extrairSimbolo(String expressaoStr) throws Exception {
+        if (expressaoStr==null)
+            return null;
         Scanner in = new Scanner(expressaoStr.trim());
         Expressao op1;
         if (in.hasNext("sen")) {

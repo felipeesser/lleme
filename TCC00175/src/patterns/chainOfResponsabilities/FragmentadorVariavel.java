@@ -1,16 +1,16 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import patterns.interpreter.Literal;
+import patterns.interpreter.Variavel;
 
-public class FragmentadorLiteral extends FragmentadorDeExpressao {
+public class FragmentadorVariavel extends FragmentadorDeExpressao {
 
     public String extrairSimbolo(String expressaoStr) throws Exception {
-        if (expressaoStr==null)
+        if (expressaoStr == null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
-        if (in.hasNextFloat()) {
-            getPilha().add(new Literal(in.nextFloat()));
+        if (in.hasNext("_[a-b]+")) {
+            getPilha().add(new Variavel(in.next("_[a-b]+")));
             if (in.hasNextLine()) {
                 String resto = in.nextLine().trim();
                 if (resto.equals(""))
@@ -18,7 +18,8 @@ public class FragmentadorLiteral extends FragmentadorDeExpressao {
                 else
                     return resto;
             } else
-                return null;
+                throw new Exception("Número inválido de operandos para a operação de soma") {
+                };
         } else if (proximo != null)
             return proximo.extrairSimbolo(expressaoStr);
         else

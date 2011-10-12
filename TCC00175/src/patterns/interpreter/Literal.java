@@ -1,5 +1,7 @@
 package patterns.interpreter;
 
+import patterns.visitor.Visitor;
+
 public class Literal extends Expressao {
 
     public double numero;
@@ -11,5 +13,20 @@ public class Literal extends Expressao {
     @Override
     public double calcular() {
         return numero;
+    }
+
+    @Override
+    public void setValor(double valor) {
+        // Não faz nada
+    }
+
+    @Override
+    public String getNome() {
+        return numero + "";
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitExpressao(this);
     }
 }

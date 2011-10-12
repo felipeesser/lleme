@@ -1,5 +1,7 @@
 package patterns.interpreter;
 
+import patterns.visitor.Visitor;
+
 public class Subtracao extends OperacaoBinaria {
 
     public Subtracao(Expressao operando1, Expressao operando2) {
@@ -9,5 +11,22 @@ public class Subtracao extends OperacaoBinaria {
     @Override
     public double calcular() {
         return operando1.calcular() - operando2.calcular();
+    }
+
+    @Override
+    public void setValor(double valor) {
+        // Não faz nada
+    }
+
+    @Override
+    public String getNome() {
+        return "sub";
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitExpressao(this);
+        operando1.accept(visitor);
+        operando2.accept(visitor);
     }
 }
