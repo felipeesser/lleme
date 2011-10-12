@@ -22,5 +22,8 @@ public class MainPessoa {
         pessoa.peso = 74;
         System.out.println("idade = " + pessoa.idade(hoje) + " anos");
         System.out.println("imc = " + pessoa.imc());
+        
+        Pessoa pessoa2 = new Pessoa();
+        System.out.println(Pessoa.nacionalidade);
     }
 }
