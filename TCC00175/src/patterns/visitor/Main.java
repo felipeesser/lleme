@@ -1,8 +1,9 @@
-package patterns.decorator;
+package patterns.visitor;
 
+import patterns.decorator.InterpretadorBasico;
+import patterns.decorator.InterpretadorDeExpressao;
+import patterns.decorator.InterpretadorTrigonometrico;
 import patterns.interpreter.Expressao;
-import patterns.visitor.InicializarVariavel;
-import patterns.visitor.ListaVariaveis;
 
 public class Main {
 
