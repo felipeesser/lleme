@@ -9,22 +9,20 @@ public class MediadorCalculo extends Mediador {
     public EditorVariaveis editVar;
 
     @Override
-    public <T> void objetoAlterado(T mediado) {
-        objetoAlterado(mediado);
+    public void objetoAlterado(ClasseMediada mediado) {
+        if (mediado == editExpr)
+            objetoCalculoAlterado((EditorExpressao) mediado);
+        else
+            objetoCalculoAlterado((EditorVariaveis) mediado);
     }
 
-    public void objetoAlterado(EditorExpressao mediado) {
+    public void objetoCalculoAlterado(EditorExpressao mediado) {
         ListaVariaveis v = new ListaVariaveis();
         editExpr.expressao.accept(v);
-        for (String nome : v.nomesVars)
-            if (editVar.getVar(nome) == null)
-                editVar.setVar(nome, 0.0);
-        for (String nome : editVar.listVarsNames())
-            if (!v.nomesVars.contains(nome))
-                editVar.removeVar(nome);
+        editVar.updateVars(v.nomesVars);
     }
 
-    public void objetoAlterado(EditorVariaveis mediado) {
+    public void objetoCalculoAlterado(EditorVariaveis mediado) {
         for (String nome : editVar.listVarsNames())
             editExpr.expressao.accept(new InicializarVariavel(nome, editVar.getVar(nome)));
     }

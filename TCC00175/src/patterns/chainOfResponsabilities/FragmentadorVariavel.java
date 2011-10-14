@@ -9,8 +9,8 @@ public class FragmentadorVariavel extends FragmentadorDeExpressao {
         if (expressaoStr == null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
-        if (in.hasNext("_[a-b]+")) {
-            getPilha().add(new Variavel(in.next("_[a-b]+")));
+        if (in.hasNext("_[a-z]+")) {
+            getPilha().add(new Variavel(in.next("_[a-z]+")));
             if (in.hasNextLine()) {
                 String resto = in.nextLine().trim();
                 if (resto.equals(""))

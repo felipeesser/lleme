@@ -16,7 +16,7 @@ public class EditorExpressao extends ClasseMediada {
         interpretador = new InterpretadorTrigonometrico(new InterpretadorBasico());
     }
 
-    public void setExpressao(String expressaoStr) throws Exception {
+    public void setExpressaoStr(String expressaoStr) throws Exception {
         this.expressaoStr = expressaoStr;
         expressao = interpretador.interpretar(this.expressaoStr);
         alterado();

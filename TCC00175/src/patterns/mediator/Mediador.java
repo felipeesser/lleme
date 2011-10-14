@@ -6,7 +6,7 @@ public abstract class Mediador {
         criarClassesRelacionadas();
     }
 
-    public abstract <T> void objetoAlterado(T mediado);
+    public abstract void objetoAlterado(ClasseMediada mediado);
 
     public abstract void criarClassesRelacionadas();
 }
