@@ -1,43 +1,45 @@
 package colecoes;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.EnumSet;
-import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Set;
 
 public class Main {
 
-
     public static void main(String[] args) {
-      Day day = Day.SEGUNDA;
-      System.out.println(day.compareTo(Day.TERCA));
-      
-      for(Day day2:Day.values()){
-        System.out.println(day2);
-      }
+        Day day = Day.SEGUNDA;
+        System.out.println(day.compareTo(Day.TERCA));
 
-      Set<Day> myEnum = EnumSet.allOf(Day.class);
+        for (Day day2 : Day.values())
+            System.out.println(day2);
 
-      for (Day myday : myEnum)
-          System.out.println(myday.toString());
+        Set<Day> myEnum = EnumSet.allOf(Day.class);
 
-      List<String> ls = new ArrayList<String>();
-      ls.add("string");
-      List<?> lo = ls; // se fosse permitido
-      Object o = lo.get(0);
-      System.out.println(o.toString());
-      //lo.add(new Object());
-      String s = ls.get(0);
+        for (Day myday : myEnum)
+            System.out.println(myday.toString());
 
-      Planet planet = Planet.MARS;
-      System.out.println(planet.surfaceWeight(72));
+        List<String> ls = new ArrayList<String>();
+
+        Iterator<String> iter = ls.iterator();
+        String texto;
+        while (iter.hasNext())
+            texto = iter.next();
 
 
-        
+        ls.add("string");
+        List<?> lo = ls; // se fosse permitido
+        Object o = lo.get(0);
+        System.out.println(o.toString());
+        //lo.add(new Object());
+        String s = ls.get(0);
+
+        Planet planet = Planet.MARS;
+        System.out.println(planet.surfaceWeight(72));
+
+
+
 
     }
 }
