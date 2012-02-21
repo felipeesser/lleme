@@ -10,7 +10,7 @@ public class Angulo {
         int graus, minutos;
         double segundos;
 
-        System.out.println("Entre com um angulo em radianos:  ");
+        System.out.println("Entre com um angulo em radianos: ");
         radianos = in.nextDouble();
         graus_decimais = radianos / (2 * Math.PI) * 360;
         graus = (int) graus_decimais;
