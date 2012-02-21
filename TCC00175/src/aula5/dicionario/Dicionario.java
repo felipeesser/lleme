@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Dicionario {
     /**
-     * @associates <{aula5.dicionario.Entrada}>
+     * @associates <{aula5.dicionario.Entrada}> ss
      */
     String[] palavras;
 
