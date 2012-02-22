@@ -28,5 +28,6 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="tcc00175/aulas/Aulas.jpr"/></hash>
       <hash><url n="URL" path="tcc00175/provas/Provas.jpr"/></hash>
+      <hash><url n="URL" path="tcc00175/reservas/Reservas.jpr"/></hash>
    </list>
 </jws:workspace>
