@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Class xmi:uuid='urn:uuid:fa0ae6ed-dada-493a-a3a4-10abed1f4fd6'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Quarto'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:91d46ee7-a2a3-438e-aa7f-1c0459a8cc56'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='numero'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/int:uml:Type'/>
+   <defaultValue xmi:type='uml:Expression' xmi:uuid='urn:uuid:fa7d9b38-70c4-4ece-9e21-d1aa35dd9d3f'
+     name=''
+     symbol='0'
+     visibility='public'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:d218e2ca-c8e7-4584-8f10-683a8a1a3c44'
+     name=''
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:3ead3ae5-feaf-4abd-a29a-4fbb6cbe19e5'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:uuid='urn:uuid:a56402a9-3c8c-4746-a375-06ab0d5df894'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='estaDisponivel'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:4b9697d5-29f8-4afc-b97d-68cdc84a0973'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/boolean:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

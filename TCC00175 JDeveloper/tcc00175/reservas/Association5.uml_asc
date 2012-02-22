@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Association xmi:uuid='urn:uuid:b58fa3a6-d473-4d8a-b065-0248c0f08439'
+   isAbstract='false'
+   isDerived='false'
+   isLeaf='false'
+   name='Association5'
+   visibility='public'>
+  <memberEnd href='urn:uuid:7b66121b-c6cd-4ed8-89fb-a0af9de37dce'/>
+  <memberEnd href='urn:uuid:e0231852-e9ba-4bd6-8496-0ff0f39b47b4'/>
+  <navigableOwnedEnd href='urn:uuid:e0231852-e9ba-4bd6-8496-0ff0f39b47b4'/>
+  <navigableOwnedEnd href='urn:uuid:7b66121b-c6cd-4ed8-89fb-a0af9de37dce'/>
+  <ownedEnd xmi:uuid='urn:uuid:7b66121b-c6cd-4ed8-89fb-a0af9de37dce'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='quarto'
+    aggregation='none'
+    visibility='public'>
+   <association href='urn:uuid:b58fa3a6-d473-4d8a-b065-0248c0f08439'/>
+   <type href='urn:uuid:fa0ae6ed-dada-493a-a3a4-10abed1f4fd6'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:53be2f6a-bfac-4f8f-a439-fbf3e0d72b97'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:d0e4db65-836c-44d8-ad23-c8e370e0e8f0'
+     value='1'
+     visibility='public'/>
+  </ownedEnd>
+  <ownedEnd xmi:uuid='urn:uuid:e0231852-e9ba-4bd6-8496-0ff0f39b47b4'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='hospedes'
+    aggregation='none'
+    visibility='public'>
+   <association href='urn:uuid:b58fa3a6-d473-4d8a-b065-0248c0f08439'/>
+   <type href='urn:uuid:66eb827f-e0ee-4dc1-9244-45fccfda93d7'/>
+   <defaultValue xmi:type='uml:Expression' xmi:uuid='urn:uuid:e3c0c531-fc0b-47bd-9017-2da84d3487fa'
+     name=''
+     symbol='new java.util.HashSet&lt;Hospedagem>()'
+     visibility='public'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:83e58e31-d897-4d05-9ab9-8671cf66babb'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:59f7bf38-e50b-4a78-92cf-aa917058af3b'
+     value='*'
+     visibility='public'/>
+  </ownedEnd>
+ </uml:Association>
+</xmi:XMI>

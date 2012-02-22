@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Class xmi:uuid='urn:uuid:55f3a3e7-755c-4b31-b72e-f620aacc27f0'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Hospede'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:0745f7b4-1819-49bf-b6e7-791809785a87'>
+   <general href='urn:uuid:8865a1af-288a-4e6f-9988-b07703f04a34'/>
+  </generalization>
+  <ownedAttribute xmi:uuid='urn:uuid:2c5f7f2e-5f97-4127-a2b3-b47d6f3dcdd2'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='endereco'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/String:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:7e58121d-7133-4dec-9439-bcc65ce541d9'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:760be568-7c0f-4ede-b3b1-c628fc8a19c7'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:9f247d23-71c1-4b52-805d-28c00357662a'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='nacionalidade'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/String:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:1e8b4924-fe38-41f9-ab03-e3ec174c2131'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:4b7965fb-31d1-49d8-9e81-c5c6d0f592c7'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:uuid='urn:uuid:48bcf5b7-25a0-43f8-86ce-fe8b6ef52504'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Hospede'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:f3791982-020a-46c3-9100-be623725a41e'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='identidade'
+     direction='in'>
+    <type href='mof:/int:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:5ec42b70-b90f-491e-b208-d1eea952818e'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='nome'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:7d26444b-4315-493d-8625-db5d874e4172'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='tel'
+     direction='in'>
+    <type href='mof:/long:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:ec4f82aa-139c-44f2-b778-2cd8bfd8126a'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='endereco'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:560cff59-8574-4584-8e07-cd1d28237f25'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='nac'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>
