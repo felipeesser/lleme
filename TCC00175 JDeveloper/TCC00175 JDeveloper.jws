@@ -29,4 +29,24 @@
       <hash><url n="URL" path="tcc00175/aulas/Aulas.jpr"/></hash>
       <hash><url n="URL" path="tcc00175/reservas/Reservas.jpr"/></hash>
    </list>
+   <hash n="oracle.jdeveloper.maven.compiler.MavenAppConfiguration">
+      <hash n="oracle.jdeveloper.maven.compiler.MavenAppConfiguration">
+         <url n="userSettingsFile" path="../../../.m2/settings.xml"/>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ApplicationSrcContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.mds.internal.dt.ide.CustOptions">
+      <list n="customizationLibraries">
+         <hash/>
+      </list>
+   </hash>
 </jws:workspace>
