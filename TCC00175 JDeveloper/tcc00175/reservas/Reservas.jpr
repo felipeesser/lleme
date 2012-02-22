@@ -45,7 +45,7 @@
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
          <list n="pattern-filters">
-            <string v="+**"/>
+            <string v="+*"/>
          </list>
          <list n="url-path">
             <url path="."/>
