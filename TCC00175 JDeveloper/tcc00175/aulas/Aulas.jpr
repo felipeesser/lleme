@@ -106,14 +106,6 @@
                   <url path="test/"/>
                </list>
             </hash>
-            <hash>
-               <list n="pattern-filters">
-                  <string v="+**"/>
-               </list>
-               <list n="url-path">
-                  <url path="../provas/"/>
-               </list>
-            </hash>
          </list>
          <list n="url-path"/>
       </hash>
