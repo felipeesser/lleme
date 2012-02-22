@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Class xmi:uuid='urn:uuid:940cb310-7270-406d-936a-461aac29e7a9'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Dicionario'
+   visibility='public'>
+  <ownedOperation xmi:uuid='urn:uuid:df2be57c-554a-4d00-a91d-0b3dd109d984'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='consultar'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:d15de0e3-30c1-4533-8a27-217720617f36'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='vocabulo'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:25871ba5-fcca-46a8-98e2-59166001f8fb'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:uuid='urn:uuid:2015c749-e27e-4ac6-950c-40f6fc553927'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='excluir'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:cf79ce85-2889-40a4-8b86-b0dcef711d6a'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='vocabulo'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:9a5c194f-a3fd-42cc-88ff-8717a604c637'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/boolean:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:uuid='urn:uuid:6ecf8a1b-6391-489e-bf34-1b3bb696aa13'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='incluir'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:7eba7d9c-1733-473a-b705-a3b737c46fb4'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='vocabulo'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:7bdb7280-2298-49e2-bf60-664ecfc5da93'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='significado'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:4a29c399-ddf0-4cd8-940a-7cdfd59b657d'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/boolean:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

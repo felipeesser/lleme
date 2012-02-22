@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Class xmi:uuid='urn:uuid:9e84273e-6247-434a-8239-809ed44783f2'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Nota'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:cd0fbb1e-882b-4234-84af-40f595c4e76f'>
+   <general href='urn:uuid:678b3fe6-1b06-4d96-9fd9-93a4659f32e8'/>
+  </generalization>
+  <ownedOperation xmi:uuid='urn:uuid:27bbc6c5-3232-4934-8c0d-b93eac4508fc'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='comentar'
+    concurrency='sequential'
+    visibility='protected'>
+   <ownedParameter xmi:uuid='urn:uuid:3bdf7304-b1c1-4dc0-9ca4-808f6c737eef'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='comentario'
+     direction='in'>
+    <type href='mof:/Comentario:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:d991ec6e-b15d-4682-a53b-65e8e324215c'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:uuid='urn:uuid:28e74e23-fd98-423b-b64b-4aca5ca17926'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='lerComentarios'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:5bde7e00-9af8-4e3b-b099-4744f99b4c0d'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/Comentarios%5B%5D:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

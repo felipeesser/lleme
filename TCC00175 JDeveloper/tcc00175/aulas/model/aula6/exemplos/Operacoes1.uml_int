@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Interface xmi:uuid='urn:uuid:818db1ee-b7d6-4f01-b504-5e974dcb4290'
+   isAbstract='false'
+   isLeaf='false'
+   name='Operacoes1'
+   visibility='public'>
+  <ownedOperation xmi:uuid='urn:uuid:6e14c5a1-e7d3-4838-88a7-4519347e9ae8'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='oper1 '
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:fa594aae-4dfc-4f7e-8938-94564b445850'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='p1'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:c091a9d0-ed70-41a3-b24d-e536a6891887'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Interface>
+</xmi:XMI>

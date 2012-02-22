@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Class xmi:uuid='urn:uuid:6995b11a-9969-4b33-afd5-594bbc12e39f'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Servidor'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:8641fadc-4073-49e4-9eb3-f5b7043e5677'>
+   <general href='urn:uuid:b3597b1e-a157-424b-91e8-cbeccf33c385'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

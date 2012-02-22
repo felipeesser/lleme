@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.4.0'/>
+ <uml:Class xmi:uuid='urn:uuid:ebbbd4dd-a331-49f0-bee7-9737acbbbeed'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Caminhao'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:045ee186-2668-4dea-9286-89a6f3a25ed3'>
+   <general href='urn:uuid:1299d4ad-69a7-49ed-a437-1bddb5460294'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>
