@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:DI='http://xmlns.omg.org/DI/2.0'>
-  <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.0.0'/>
+  <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
   <DI:Diagram xmi:id='idf568d1ba-4b76-453d-a5cf-423ab9b6bc92' zoom='0.0'>
     <contained xmi:type='DI:GraphNode' xmi:id='id69af726b-cab3-4fed-86c3-2a2e78647e24'>
       <anchorage xmi:id='idae8ae196-60c8-4f42-9796-cf1247a23d67' graphEdge='id3eebad55-94e1-40b2-b94f-6baf90deb32b id68d4c2f4-9c8e-49f1-b758-65e9cf4d998a idfc15fcdd-94c3-46f7-be19-09367806ce8a'/>
@@ -98,7 +98,7 @@
           <size height='0.4605148732662201' width='0.0'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
-        <size height='113.33251953125' width='200.0'/>
+        <size height='113.33251953125' width='275.0'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='idc8ee6cea-d52d-4d94-947f-70626835bcc7'>
         <contained xmi:type='DI:GraphNode' xmi:id='id11ab3be2-fa53-45b3-ba10-5f0a23eec213'>
@@ -120,9 +120,9 @@
           <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
-        <size height='113.33251953125' width='200.0'/>
+        <size height='113.33251953125' width='275.0'/>
       </contained>
-      <position x='270.0' y='75.0'/>
+      <position x='195.0' y='75.0'/>
       <property key='showMethodStatic' value='true'/>
       <property key='operationShowParameters' value='0'/>
       <property key='showOperations' value='true'/>
@@ -146,7 +146,7 @@
       <property key='sortAttributesAlpha' value='true'/>
       <property key='showInnerClasses' value='false'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDC;;patterns.visitor;;###;;InicializarVariavel' presentation='SYMBOLIC'/>
-      <size height='113.33251953125' width='200.0'/>
+      <size height='113.33251953125' width='275.0'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='idfc15fcdd-94c3-46f7-be19-09367806ce8a' anchor='id10f0da0e-762c-4968-bcb9-ecb63384d9c9 idae8ae196-60c8-4f42-9796-cf1247a23d67'>
       <property key='EdgeType' value='1'/>
@@ -155,8 +155,8 @@
       <property key='fontColor' value='#0'/>
       <property key='lineWidth' value='1.0'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDEXT;;patterns.visitor;;InicializarVariavel;;patterns.visitor.Visitor'/>
-      <waypoint x='368.0' y='75.0'/>
-      <waypoint x='368.0' y='12.4521484375'/>
+      <waypoint x='329.7500305175781' y='75.0'/>
+      <waypoint x='329.7500305175781' y='12.4521484375'/>
       <waypoint x='503.0' y='12.4521484375'/>
       <waypoint x='503.0' y='-50.095703125'/>
     </contained>
