@@ -75,7 +75,12 @@
          <string v="XML"/>
       </list>
    </hash>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <value n="webIANAEncoding" v="windows-1252"/>
+   </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
+      <value n="j2eeWebAppName" v="Aulas"/>
+      <value n="j2eeWebContextRoot" v="Aulas"/>
       <hash n="webContentSet">
          <list n="pattern-filters">
             <string v="-WEB-INF/temp/"/>
@@ -109,6 +114,20 @@
          </list>
          <list n="url-path"/>
       </hash>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="JUnit 4 Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="JUnit 4 Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>

@@ -2,6 +2,8 @@ package aulas.extenso;
 
 import junit.framework.TestCase;
 
+import oo.extenso.Extenso;
+
 import org.junit.Test;
 
 
