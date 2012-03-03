@@ -17,9 +17,11 @@ public class EditorExpressao extends ClasseMediada {
     }
 
     public void setExpressaoStr(String expressaoStr) throws Exception {
-        this.expressaoStr = expressaoStr;
-        expressao = interpretador.interpretar(this.expressaoStr);
-        alterado();
+        if (!expressaoStr.trim().equals(this.expressaoStr)) {
+            this.expressaoStr = expressaoStr;
+            expressao = interpretador.interpretar(this.expressaoStr);
+            alterado();
+        }
     }
 
     public String getExpressaoStr() {

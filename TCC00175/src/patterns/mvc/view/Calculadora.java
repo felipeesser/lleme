@@ -5,6 +5,8 @@
 package patterns.mvc.view;
 
 import java.util.Map;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import patterns.mvc.control.Operacoes;
 
@@ -39,7 +41,7 @@ public class Calculadora extends javax.swing.JFrame {
         resultado = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        variaveis = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +91,7 @@ public class Calculadora extends javax.swing.JFrame {
 
         jLabel3.setText("=");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        variaveis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -100,12 +102,32 @@ public class Calculadora extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Double.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jScrollPane1.setViewportView(jTable1);
+        variaveis.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                variaveisComponentAdded(evt);
+            }
+        });
+        variaveis.getModel().addTableModelListener(new TableModelListener() {
+
+            @Override
+            public void tableChanged(TableModelEvent tme) {
+                if (tme.getType() == TableModelEvent.UPDATE)
+                variavelAlterada();
+            }
+        });
+        jScrollPane1.setViewportView(variaveis);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,17 +171,20 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void expressao_txtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_expressao_txtFocusLost
         // TODO add your handling code here:
+    }//GEN-LAST:event_expressao_txtFocusLost
+    private void expressao_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expressao_txtActionPerformed
+        // TODO add your handling code here:
         Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.getText());
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
         model.setRowCount(0);
         for (String var : vars.keySet())
             model.addRow(new Object[]{var, vars.get(var)});
         model.fireTableDataChanged();
-
-    }//GEN-LAST:event_expressao_txtFocusLost
-    private void expressao_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expressao_txtActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_expressao_txtActionPerformed
+
+    private void variavelAlterada() {
+        System.out.println("**************");
+    }
 
     private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
         // TODO add your handling code here:
@@ -180,6 +205,10 @@ public class Calculadora extends javax.swing.JFrame {
     private void expressao_txtInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_expressao_txtInputMethodTextChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_expressao_txtInputMethodTextChanged
+
+    private void variaveisComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_variaveisComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_variaveisComponentAdded
 
     /**
      * @param args the command line arguments
@@ -231,7 +260,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField resultado;
+    private javax.swing.JTable variaveis;
     // End of variables declaration//GEN-END:variables
 }

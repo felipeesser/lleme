@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class EditorVariaveis extends ClasseMediada {
 
-    private Map<String, Double> variaveis = new HashMap<String, Double>();
+    private Map<String, Double> variaveis = new HashMap<>();
 
     public EditorVariaveis(Mediador mediador) {
         super(mediador);
@@ -29,8 +29,8 @@ public class EditorVariaveis extends ClasseMediada {
     public Double getVar(String varName) {
         return variaveis.get(varName);
     }
-    
-    public Map<String,Double> getVars(){
+
+    public Map<String, Double> getVars() {
         return variaveis;
     }
 
