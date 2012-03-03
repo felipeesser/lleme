@@ -29,6 +29,10 @@ public class EditorVariaveis extends ClasseMediada {
     public Double getVar(String varName) {
         return variaveis.get(varName);
     }
+    
+    public Map<String,Double> getVars(){
+        return variaveis;
+    }
 
     public Set<String> listVarsNames() {
         return variaveis.keySet();

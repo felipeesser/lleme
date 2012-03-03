@@ -1,5 +1,6 @@
 package patterns.mvc.control;
 
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import patterns.mediator.EditorExpressao;
@@ -13,19 +14,18 @@ public class Operacoes {
 
     public Operacoes() {
         MediadorCalculo med = new MediadorCalculo();
-        editorExpressao = new EditorExpressao(med);
-        editorVariaveis = new EditorVariaveis(med);
+        editorExpressao = med.getEditorExpressao();
+        editorVariaveis = med.getEditorVariaveis();
     }
 
-    public void alterarExpressao(String expressao) {
+    public Map<String,Double> alterarExpressao(String expressao) {
         try {
             editorExpressao.setExpressaoStr(expressao);
-            for (String var: editorVariaveis.listVarsNames()){
-                
-            }
+            return editorVariaveis.getVars();
         } catch (Exception ex) {
             Logger.getLogger(Operacoes.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;
     }
     
     public void alterarVariavvel(String variavel, Double valor){

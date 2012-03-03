@@ -5,6 +5,7 @@ import patterns.interpreter.Variavel;
 
 public class FragmentadorVariavel extends FragmentadorDeExpressao {
 
+    @Override
     public String extrairSimbolo(String expressaoStr) throws Exception {
         if (expressaoStr == null)
             return null;

@@ -4,8 +4,9 @@
  */
 package patterns.mvc.view;
 
+import java.util.Map;
+import javax.swing.table.DefaultTableModel;
 import patterns.mvc.control.Operacoes;
-
 
 /**
  *
@@ -148,9 +149,14 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void expressao_txtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_expressao_txtFocusLost
         // TODO add your handling code here:
-        operacoes.alterarExpressao(expressao_txt.getText());
-    }//GEN-LAST:event_expressao_txtFocusLost
+        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.getText());
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        for (String var : vars.keySet())
+            model.addRow(new Object[]{var, vars.get(var)});
+        model.fireTableDataChanged();
 
+    }//GEN-LAST:event_expressao_txtFocusLost
     private void expressao_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expressao_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_expressao_txtActionPerformed
@@ -193,6 +199,10 @@ public class Calculadora extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
+
+
+
                 }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
