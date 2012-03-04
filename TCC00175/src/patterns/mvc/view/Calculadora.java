@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import patterns.mvc.control.Operacoes;
 
 /**
@@ -124,7 +125,7 @@ public class Calculadora extends javax.swing.JFrame {
             @Override
             public void tableChanged(TableModelEvent tme) {
                 if (tme.getType() == TableModelEvent.UPDATE)
-                variavelAlterada();
+                variavelAlterada(tme);
             }
         });
         jScrollPane1.setViewportView(variaveis);
@@ -174,16 +175,24 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_expressao_txtFocusLost
     private void expressao_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expressao_txtActionPerformed
         // TODO add your handling code here:
-        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.getText());
+        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.
+                getText());
         DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
         model.setRowCount(0);
         for (String var : vars.keySet())
             model.addRow(new Object[]{var, vars.get(var)});
         model.fireTableDataChanged();
+        resultado.setText(operacoes.getResultado().toString());
     }//GEN-LAST:event_expressao_txtActionPerformed
 
-    private void variavelAlterada() {
-        System.out.println("**************");
+    private void variavelAlterada(TableModelEvent tme) {
+        int linha = tme.getFirstRow();
+        int coluna = tme.getColumn();
+        TableModel model = (TableModel) variaveis.getModel();
+        if (coluna == 1)
+            operacoes.alterarVariavel((String) model.getValueAt(linha,
+                    coluna - 1), (Double) model.getValueAt(linha, coluna));
+        resultado.setText(operacoes.getResultado().toString());
     }
 
     private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
@@ -224,7 +233,8 @@ public class Calculadora extends javax.swing.JFrame {
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            for (javax.swing.UIManager.LookAndFeelInfo info :
+                    javax.swing.UIManager.getInstalledLookAndFeels())
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -234,13 +244,17 @@ public class Calculadora extends javax.swing.JFrame {
 
                 }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

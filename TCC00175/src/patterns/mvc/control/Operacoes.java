@@ -18,17 +18,26 @@ public class Operacoes {
         editorVariaveis = med.getEditorVariaveis();
     }
 
-    public Map<String,Double> alterarExpressao(String expressao) {
+    public Map<String, Double> alterarExpressao(String expressao) {
         try {
             editorExpressao.setExpressaoStr(expressao);
-            return editorVariaveis.getVars();
         } catch (Exception ex) {
-            Logger.getLogger(Operacoes.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Operacoes.class.getName()).log(Level.SEVERE, null,
+                    ex);
         }
-        return null;
+        return editorVariaveis.listVars();
     }
-    
-    public void alterarVariavvel(String variavel, Double valor){
+
+    public Double getResultado() {
+        return editorExpressao.getResultado();
+    }
+
+    public void alterarVariaveis(Map<String, Double> variaveis) {
+        for (String var : variaveis.keySet())
+            alterarVariavel(var, variaveis.get(var));
+    }
+
+    public void alterarVariavel(String variavel, Double valor) {
         editorVariaveis.setVar(variavel, valor);
     }
 }

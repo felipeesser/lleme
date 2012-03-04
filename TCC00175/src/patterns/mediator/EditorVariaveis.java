@@ -21,8 +21,9 @@ public class EditorVariaveis extends ClasseMediada {
         Double old;
         if (varName != null && valor != null) {
             old = variaveis.put(varName, valor);
-            if (old == null || !old.equals(valor))
+            if (old == null || !old.equals(valor)) {
                 alterado();
+            }
         }
     }
 
@@ -30,7 +31,7 @@ public class EditorVariaveis extends ClasseMediada {
         return variaveis.get(varName);
     }
 
-    public Map<String, Double> getVars() {
+    public Map<String, Double> listVars() {
         return variaveis;
     }
 
@@ -42,19 +43,24 @@ public class EditorVariaveis extends ClasseMediada {
         variaveis.remove(nome);
     }
 
-    public void listVars() {
-        for (String nome : variaveis.keySet())
+    public void printVars() {
+        for (String nome : variaveis.keySet()) {
             System.out.println(nome + " = " + variaveis.get(nome));
+        }
     }
 
     void updateVars(Set<String> nomesVars) {
         // Inclui novas variáveis
-        for (String nome : nomesVars)
-            if (getVar(nome) == null)
+        for (String nome : nomesVars) {
+            if (getVar(nome) == null) {
                 setVar(nome, 0.0);
+            }
+        }
         // Exclui variáveis obsoletas
-        for (String nome : listVarsNames())
-            if (!nomesVars.contains(nome))
+        for (String nome : listVarsNames()) {
+            if (!nomesVars.contains(nome)) {
                 removeVar(nome);
+            }
+        }
     }
 }

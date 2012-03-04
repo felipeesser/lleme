@@ -134,7 +134,7 @@
             <EventHandler event="componentAdded" listener="java.awt.event.ContainerListener" parameters="java.awt.event.ContainerEvent" handler="variaveisComponentAdded"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="variaveis.getModel().addTableModelListener(new TableModelListener() {&#xd;&#xa;&#xd;&#xa;    @Override&#xd;&#xa;    public void tableChanged(TableModelEvent tme) {&#xd;&#xa;        if (tme.getType() == TableModelEvent.UPDATE)&#xd;&#xa;            variavelAlterada();&#xd;&#xa;    }&#xd;&#xa;});"/>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="variaveis.getModel().addTableModelListener(new TableModelListener() {&#xd;&#xa;&#xd;&#xa;    @Override&#xd;&#xa;    public void tableChanged(TableModelEvent tme) {&#xd;&#xa;        if (tme.getType() == TableModelEvent.UPDATE)&#xd;&#xa;            variavelAlterada(tme);&#xd;&#xa;    }&#xd;&#xa;});"/>
           </AuxValues>
         </Component>
       </SubComponents>

@@ -28,6 +28,10 @@ public class EditorExpressao extends ClasseMediada {
         return expressaoStr;
     }
 
+    public Double getResultado() {
+        return expressao.calcular();
+    }
+
     @Override
     public void alterado() {
         mediador.objetoAlterado(this);

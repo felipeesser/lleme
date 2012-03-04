@@ -12,18 +12,15 @@ public class MediadorCalculo extends Mediador {
     public void objetoAlterado(ClasseMediada objetoMediado) {
         if (objetoMediado == editExpr)
             objetoCalculoAlterado((EditorExpressao) objetoMediado);
-        // ***** E R R A D O ! ! ! *****
-        //else
-        //    objetoCalculoAlterado((EditorVariaveis) objetoMediado);
-        if (objetoMediado == editVar)
+        else
             objetoCalculoAlterado((EditorVariaveis) objetoMediado);
     }
-    
-    public EditorExpressao getEditorExpressao(){
+
+    public EditorExpressao getEditorExpressao() {
         return editExpr;
     }
-    
-    public EditorVariaveis getEditorVariaveis(){
+
+    public EditorVariaveis getEditorVariaveis() {
         return editVar;
     }
 
@@ -35,7 +32,8 @@ public class MediadorCalculo extends Mediador {
 
     public void objetoCalculoAlterado(EditorVariaveis mediado) {
         for (String nome : editVar.listVarsNames())
-            editExpr.expressao.accept(new InicializarVariavel(nome, editVar.getVar(nome)));
+            editExpr.expressao.accept(new InicializarVariavel(nome, editVar.
+                    getVar(nome)));
     }
 
     @Override
