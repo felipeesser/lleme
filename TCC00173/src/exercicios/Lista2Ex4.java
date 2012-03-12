@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Lista2Ex4 {
     public static void main(String[] args) {
-        System.out.println("digite a");
+        System.out.println("digite a: ");
         Scanner in = new Scanner(System.in);
         float a = in.nextFloat();
         System.out.println("digite b");
