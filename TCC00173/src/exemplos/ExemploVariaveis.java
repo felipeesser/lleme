@@ -4,7 +4,7 @@ public class ExemploVariaveis {
 
     public static void main(String[] args) {
 
-        byte temp = 2;
+        System.out.println("resultado: " + 4d/3d);
         
         
 
