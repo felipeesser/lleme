@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Pessoa {
 
-    public Date nascimento;
+    public Date nasc;
     public float altura;
     public float peso;
     public static String nacionalidade;
@@ -15,11 +15,11 @@ public class Pessoa {
     }
 
     public Pessoa(Date nasc) throws Exception {
-        this.nascimento = nasc;
+        this.nasc = nasc;
     }
 
     public Pessoa(String nome, Date nasc) throws Exception {
-        this.nascimento = nasc;
+        this.nasc = nasc;
         this.nome = nome;
     }
 
@@ -31,8 +31,8 @@ public class Pessoa {
     }
 
     public int idade(Date data) {
-        if (nascimento != null && data != null) {
-            long diff = data.getTime() - nascimento.getTime();
+        if (nasc != null && data != null) {
+            long diff = data.getTime() - nasc.getTime();
             if (diff > 0)
                 return (int) (diff / (365L * 24L * 60L * 60L * 1000L));
             else

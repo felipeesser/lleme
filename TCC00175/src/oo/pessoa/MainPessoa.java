@@ -4,9 +4,8 @@ import java.text.SimpleDateFormat;
 
 import java.util.Date;
 
-
 public class MainPessoa {
-  
+
     public static void main(String[] args) throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -22,8 +21,8 @@ public class MainPessoa {
         pessoa.peso = 74;
         System.out.println("idade = " + pessoa.idade(hoje) + " anos");
         System.out.println("imc = " + pessoa.imc());
-        
-        Pessoa pessoa2 = new Pessoa();
+
+        pessoa = new Pessoa();
         System.out.println(Pessoa.nacionalidade);
     }
 }
