@@ -377,7 +377,7 @@
           <size height='0.7734726071357727' width='0.0'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
-        <size height='120.0' width='200.0'/>
+        <size height='120.0' width='290.0'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='idffa1abae-7c44-4cb4-b7cb-b330cad500ef'>
         <contained xmi:type='DI:GraphNode' xmi:id='id652c905c-1126-4550-891e-b2c4c5a01b16'>
@@ -399,9 +399,9 @@
           <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
-        <size height='120.0' width='200.0'/>
+        <size height='120.0' width='290.0'/>
       </contained>
-      <position x='-135.0' y='-240.0'/>
+      <position x='-180.0' y='-255.0'/>
       <property key='showPackage' value='false'/>
       <property key='showAttributeType' value='true'/>
       <property key='showOperations' value='true'/>
@@ -425,7 +425,7 @@
       <property key='excludeMethodFilter' value=''/>
       <property key='showMethodVisibility' value='true'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDI;;aulas.polimorfismo.listbox;;###;;SelecionavelPorNome' presentation='SYMBOLIC'/>
-      <size height='120.0' width='200.0'/>
+      <size height='120.0' width='290.0'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='id7ce56643-4d0f-47f3-9724-eafbabbf0886' anchor='idc6708052-8ad4-4e6b-a0a9-ae31a017bc0d idbc83e665-8fe3-42c4-8002-c8a2e0403453'>
       <property key='lineColor' value='#646464'/>
@@ -435,7 +435,9 @@
       <property key='lineWidth' value='1.0'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDIMP;;aulas.polimorfismo.listbox;;ColecaoDeProfessores;;aulas.polimorfismo.listbox.SelecionavelPorNome'/>
       <waypoint x='25.0' y='-60.0'/>
-      <waypoint x='25.0' y='-120.0'/>
+      <waypoint x='25.0' y='-90.0'/>
+      <waypoint x='52.0' y='-90.0'/>
+      <waypoint x='52.0' y='-135.0'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='idb80a41fc-92d8-41a9-bd3d-db6bff1e7c67' anchor='id9aebd8c8-a6ac-49ed-8387-8010924f341d idbc83e665-8fe3-42c4-8002-c8a2e0403453'>
       <property key='lineColor' value='#646464'/>
@@ -445,7 +447,9 @@
       <property key='lineWidth' value='1.0'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDIMP;;aulas.polimorfismo.listbox;;ColecaoDeAlunos;;aulas.polimorfismo.listbox.SelecionavelPorNome'/>
       <waypoint x='-102.5' y='-60.0'/>
-      <waypoint x='-102.5' y='-120.0'/>
+      <waypoint x='-102.5' y='-90.0'/>
+      <waypoint x='-132.875' y='-90.0'/>
+      <waypoint x='-132.875' y='-135.0'/>
     </contained>
     <contained xmi:type='DI:GraphNode' xmi:id='idb6470458-0db9-4d8b-8007-2073c5853475'>
       <anchorage xmi:id='idbb54dae1-4d92-42d9-8cec-76a80c81268e' graphEdge='ide02a84a0-1422-4a89-971d-2917033eac2f'/>
@@ -470,7 +474,7 @@
           <size height='0.5323079228401184' width='0.0'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
-        <size height='120.0' width='200.0'/>
+        <size height='120.0' width='285.0'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='id61ba6ad0-641e-4a69-948f-518f256745d9'>
         <contained xmi:type='DI:GraphNode' xmi:id='idf6a3f4c7-ccea-4c50-a42e-68cefdaada03'>
@@ -492,9 +496,9 @@
           <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
-        <size height='120.0' width='200.0'/>
+        <size height='120.0' width='285.0'/>
       </contained>
-      <position x='345.0' y='-240.0'/>
+      <position x='315.0' y='-240.0'/>
       <property key='showPackage' value='false'/>
       <property key='showAttributeType' value='true'/>
       <property key='showOperations' value='true'/>
@@ -518,7 +522,7 @@
       <property key='excludeMethodFilter' value=''/>
       <property key='showMethodVisibility' value='true'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDC;;aulas.polimorfismo.listbox;;###;;ListBox' presentation='SYMBOLIC'/>
-      <size height='120.0' width='200.0'/>
+      <size height='120.0' width='285.0'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='ide02a84a0-1422-4a89-971d-2917033eac2f' anchor='idbb54dae1-4d92-42d9-8cec-76a80c81268e idbc83e665-8fe3-42c4-8002-c8a2e0403453'>
       <property key='lineColor' value='#646464'/>
@@ -527,8 +531,8 @@
       <property key='font' value='SansSerif,plain,11'/>
       <property key='lineWidth' value='1.0'/>
       <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='LWDependency'/>
-      <waypoint x='345.0' y='-190.0'/>
-      <waypoint x='65.0' y='-190.0'/>
+      <waypoint x='315.0' y='-205.0'/>
+      <waypoint x='110.0' y='-205.0'/>
     </contained>
     <contained xmi:type='DI:GraphNode' xmi:id='id0813c50c-32cc-4aa6-bee6-a3f3dcb65272'>
       <anchorage xmi:id='id9112dd9b-9cba-4897-9cb1-2fd8323b0dcc' graphEdge='id484331cd-fe5e-428a-950b-61796f6d6efc idc4cb8dba-51ee-4b78-8c40-79839a07cfb9'/>
