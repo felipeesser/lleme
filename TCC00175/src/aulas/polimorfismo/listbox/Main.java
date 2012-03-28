@@ -1,7 +1,6 @@
 package aulas.polimorfismo.listbox;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class Main {
