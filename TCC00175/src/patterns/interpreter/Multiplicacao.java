@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Multiplicacao extends OperacaoBinaria {
 
-    public Multiplicacao(Expressao operando1, Expressao operando2) {
+    public Multiplicacao(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
         super(operando1, operando2);
     }
 
@@ -28,5 +28,9 @@ public class Multiplicacao extends OperacaoBinaria {
         visitor.visitExpressao(this);
         operando1.accept(visitor);
         operando2.accept(visitor);
+    }
+
+    public Multiplicacao clone() throws CloneNotSupportedException {
+        return (Multiplicacao) super.clone();
     }
 }

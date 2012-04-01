@@ -2,7 +2,7 @@ package patterns.interpreter;
 
 import patterns.visitor.Visitor;
 
-public class Literal extends Expressao {
+public class Literal extends ExpressaoGenerica {
 
     public double numero;
 
@@ -28,5 +28,9 @@ public class Literal extends Expressao {
     @Override
     public void accept(Visitor visitor) {
         visitor.visitExpressao(this);
+    }
+
+    public Literal clone() throws CloneNotSupportedException {
+        return (Literal) super.clone();
     }
 }

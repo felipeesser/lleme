@@ -1,8 +1,8 @@
 package patterns.visitor;
 
-import patterns.interpreter.Expressao;
+import patterns.interpreter.ExpressaoGenerica;
 
 public abstract class Visitor {
 
-    public abstract void visitExpressao(Expressao expr);
+    public abstract void visitExpressao(ExpressaoGenerica expr);
 }

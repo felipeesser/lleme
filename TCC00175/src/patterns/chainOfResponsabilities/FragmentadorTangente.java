@@ -1,7 +1,7 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import patterns.interpreter.Expressao;
+import patterns.interpreter.ExpressaoGenerica;
 import patterns.interpreter.Tangente;
 
 public class FragmentadorTangente extends FragmentadorDeExpressao {
@@ -11,7 +11,7 @@ public class FragmentadorTangente extends FragmentadorDeExpressao {
         if (expressaoStr==null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
-        Expressao op1;
+        ExpressaoGenerica op1;
         if (in.hasNext("tan")) {
             in.next("tan");
             if (getPilha().size() >= 1) {

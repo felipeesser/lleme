@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Divisao extends OperacaoBinaria {
 
-    public Divisao(Expressao operando1, Expressao operando2) {
+    public Divisao(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
         super(operando1, operando2);
     }
 
@@ -28,5 +28,9 @@ public class Divisao extends OperacaoBinaria {
         visitor.visitExpressao(this);
         operando1.accept(visitor);
         operando2.accept(visitor);
+    }
+    
+    public Divisao clone() throws CloneNotSupportedException {
+        return (Divisao) super.clone();
     }
 }

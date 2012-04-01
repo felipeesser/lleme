@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Soma extends OperacaoBinaria {
 
-    public Soma(Expressao operando1, Expressao operando2) {
+    public Soma(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
         super(operando1, operando2);
     }
 
@@ -28,5 +28,9 @@ public class Soma extends OperacaoBinaria {
         visitor.visitExpressao(this);
         operando1.accept(visitor);
         operando2.accept(visitor);
+    }
+
+    public Soma clone() throws CloneNotSupportedException {
+        return (Soma) super.clone();
     }
 }

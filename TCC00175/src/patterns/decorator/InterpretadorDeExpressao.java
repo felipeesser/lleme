@@ -1,13 +1,13 @@
 package patterns.decorator;
 
 import patterns.chainOfResponsabilities.FragmentadorDeExpressao;
-import patterns.interpreter.Expressao;
+import patterns.interpreter.ExpressaoGenerica;
 
 public abstract class InterpretadorDeExpressao {
 
     protected FragmentadorDeExpressao cadeiaDeFragmentadores = null;
 
-    public Expressao interpretar(String expressao) throws Exception {
+    public ExpressaoGenerica interpretar(String expressao) throws Exception {
         String expressaoAnterior;
         do {
             expressaoAnterior = expressao;

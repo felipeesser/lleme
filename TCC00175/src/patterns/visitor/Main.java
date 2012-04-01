@@ -3,7 +3,7 @@ package patterns.visitor;
 import patterns.decorator.InterpretadorBasico;
 import patterns.decorator.InterpretadorDeExpressao;
 import patterns.decorator.InterpretadorTrigonometrico;
-import patterns.interpreter.Expressao;
+import patterns.interpreter.ExpressaoGenerica;
 
 public class Main {
 
@@ -12,7 +12,7 @@ public class Main {
         InterpretadorDeExpressao componente = new InterpretadorBasico();
         InterpretadorDeExpressao decorador = new InterpretadorTrigonometrico(componente);
 
-        Expressao expr = decorador.interpretar("2 _a * _b + _b *");
+        ExpressaoGenerica expr = decorador.interpretar("2 _a * _b + _b *");
         expr.accept(new InicializarVariavel("_a", 5));
         expr.accept(new InicializarVariavel("_b", 3));
         ListaVariaveis v = new ListaVariaveis();

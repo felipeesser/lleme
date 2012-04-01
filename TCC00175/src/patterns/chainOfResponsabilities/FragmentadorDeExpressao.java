@@ -1,16 +1,16 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Stack;
-import patterns.interpreter.Expressao;
+import patterns.interpreter.ExpressaoGenerica;
 
 public abstract class FragmentadorDeExpressao {
 
-    private static Stack<Expressao> pilha = new Stack<Expressao>();
+    private static Stack<ExpressaoGenerica> pilha = new Stack<ExpressaoGenerica>();
 
     /**
      * @return the pilha
      */
-    public static Stack<Expressao> getPilha() {
+    public static Stack<ExpressaoGenerica> getPilha() {
         return pilha;
     }
     public FragmentadorDeExpressao proximo = null;

@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Tangente extends OperacaoUnaria {
 
-    public Tangente(Expressao operando1) {
+    public Tangente(ExpressaoGenerica operando1) {
         super(operando1);
     }
 
@@ -27,5 +27,9 @@ public class Tangente extends OperacaoUnaria {
     public void accept(Visitor visitor) {
         visitor.visitExpressao(this);
         operando1.accept(visitor);
+    }
+
+    public Tangente clone() throws CloneNotSupportedException {
+        return (Tangente) super.clone();
     }
 }

@@ -2,7 +2,7 @@ package patterns.interpreter;
 
 import patterns.visitor.Visitor;
 
-public class Variavel extends Expressao {
+public class Variavel extends ExpressaoGenerica {
 
     public String nome;
     public double valor;
@@ -29,5 +29,9 @@ public class Variavel extends Expressao {
     @Override
     public void accept(Visitor visitor) {
         visitor.visitExpressao(this);
+    }
+    
+    public Variavel clone() throws CloneNotSupportedException{
+        return (Variavel) super.clone();
     }
 }

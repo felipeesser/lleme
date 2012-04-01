@@ -3,15 +3,15 @@ package patterns.mediator;
 import patterns.decorator.InterpretadorBasico;
 import patterns.decorator.InterpretadorDeExpressao;
 import patterns.decorator.InterpretadorTrigonometrico;
-import patterns.interpreter.Expressao;
+import patterns.interpreter.ExpressaoGenerica;
 
-public class EditorExpressao extends ClasseMediada {
+public class Expressao extends ClasseMediada implements Cloneable {
 
     private String expressaoStr;
-    public Expressao expressao;
     private InterpretadorDeExpressao interpretador;
+    public ExpressaoGenerica expressao;
 
-    public EditorExpressao(Mediador mediador) {
+    public Expressao(Mediador mediador) {
         super(mediador);
         interpretador = new InterpretadorTrigonometrico(new InterpretadorBasico());
     }
@@ -35,5 +35,12 @@ public class EditorExpressao extends ClasseMediada {
     @Override
     public void alterado() {
         mediador.objetoAlterado(this);
+    }
+
+    public Expressao clone() throws CloneNotSupportedException {
+        Expressao expr = (Expressao) super.clone();
+        if (expr.expressao != null)
+            expr.expressao = expressao.clone();
+        return expr;
     }
 }

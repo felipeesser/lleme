@@ -1,7 +1,7 @@
 package patterns.command.app1.control;
 
-import patterns.memento.app1.model.Paciente;
 import patterns.command.framework.Command;
+import patterns.memento.app1.model.Paciente;
 
 public class Emagrecer1Kg extends Command {
 

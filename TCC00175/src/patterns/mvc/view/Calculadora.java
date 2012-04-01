@@ -5,6 +5,8 @@
 package patterns.mvc.view;
 
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
@@ -43,39 +45,13 @@ public class Calculadora extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         variaveis = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        expressao_txt.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                expressao_txtCaretUpdate(evt);
-            }
-        });
         expressao_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 expressao_txtActionPerformed(evt);
-            }
-        });
-        expressao_txt.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                expressao_txtFocusLost(evt);
-            }
-        });
-        expressao_txt.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                expressao_txtInputMethodTextChanged(evt);
-            }
-        });
-        expressao_txt.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                expressao_txtPropertyChange(evt);
-            }
-        });
-        expressao_txt.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
-            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
-                expressao_txtVetoableChange(evt);
             }
         });
 
@@ -84,11 +60,6 @@ public class Calculadora extends javax.swing.JFrame {
         jLabel2.setText("Variaveis:");
 
         resultado.setText(null);
-        resultado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resultadoActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("=");
 
@@ -115,11 +86,6 @@ public class Calculadora extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        variaveis.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                variaveisComponentAdded(evt);
-            }
-        });
         variaveis.getModel().addTableModelListener(new TableModelListener() {
 
             @Override
@@ -129,6 +95,13 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(variaveis);
+
+        jButton1.setText("Desfazer");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,7 +121,10 @@ public class Calculadora extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -160,64 +136,61 @@ public class Calculadora extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(25, 25, 25)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void expressao_txtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_expressao_txtFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_expressao_txtFocusLost
     private void expressao_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expressao_txtActionPerformed
-        // TODO add your handling code here:
-        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.
-                getText());
-        DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
-        model.setRowCount(0);
-        for (String var : vars.keySet())
-            model.addRow(new Object[]{var, vars.get(var)});
-        model.fireTableDataChanged();
-        resultado.setText(operacoes.getResultado().toString());
+        expressaoAlterada();
     }//GEN-LAST:event_expressao_txtActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        operacoes.desfazer();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    // Código criado manualmente
+    private void expressaoAlterada() {
+        // Envia mensagem para o controle
+        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.getText());
+        {
+            DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
+            model.setRowCount(0);
+            for (String var : vars.keySet())
+                model.addRow(new Object[]{var, vars.get(var)});
+            model.fireTableDataChanged();
+        }
+
+        // Envia mensagem para o controle
+        resultado.setText(operacoes.getResultado().toString());
+    }
+
+    // Código criado manualmente
     private void variavelAlterada(TableModelEvent tme) {
+        // Envia mensagem para o controle
         int linha = tme.getFirstRow();
         int coluna = tme.getColumn();
         TableModel model = (TableModel) variaveis.getModel();
         if (coluna == 1)
-            operacoes.alterarVariavel((String) model.getValueAt(linha,
-                    coluna - 1), (Double) model.getValueAt(linha, coluna));
+            try {
+                operacoes.alterarVariavel((String) model.getValueAt(linha,
+                        coluna - 1), (Double) model.getValueAt(linha, coluna));
+            } catch (CloneNotSupportedException ex) {
+                Logger.getLogger(Calculadora.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(Calculadora.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        // Envia mensagem para o controle
         resultado.setText(operacoes.getResultado().toString());
     }
-
-    private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resultadoActionPerformed
-
-    private void expressao_txtPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_expressao_txtPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_expressao_txtPropertyChange
-
-    private void expressao_txtVetoableChange(java.beans.PropertyChangeEvent evt) throws java.beans.PropertyVetoException {//GEN-FIRST:event_expressao_txtVetoableChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_expressao_txtVetoableChange
-
-    private void expressao_txtCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_expressao_txtCaretUpdate
-        // TODO add your handling code here:
-    }//GEN-LAST:event_expressao_txtCaretUpdate
-
-    private void expressao_txtInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_expressao_txtInputMethodTextChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_expressao_txtInputMethodTextChanged
-
-    private void variaveisComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_variaveisComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_variaveisComponentAdded
 
     /**
      * @param args the command line arguments
@@ -270,6 +243,7 @@ public class Calculadora extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField expressao_txt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

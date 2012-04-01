@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Seno extends OperacaoUnaria {
 
-    public Seno(Expressao operando1) {
+    public Seno(ExpressaoGenerica operando1) {
         super(operando1);
     }
 
@@ -27,5 +27,9 @@ public class Seno extends OperacaoUnaria {
     public void accept(Visitor visitor) {
         visitor.visitExpressao(this);
         operando1.accept(visitor);
+    }
+    
+    public Seno clone() throws CloneNotSupportedException {
+        return (Seno)super.clone();
     }
 }
