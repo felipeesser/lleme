@@ -3,8 +3,8 @@ package exercicios;
 public class P120072Ex5 {
 
     public static void main(String[] args) {
-        int n = 10;
-        double soma = 0, x = Math.PI / 2;
+        int n = 6;
+        double soma = 0, x = Math.PI;
         for (int i = 0; i <= n; i++)
             soma += termo(i,x);
         System.out.println(soma);
