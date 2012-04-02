@@ -4,6 +4,7 @@
  */
 package patterns.mvc.view;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,13 +12,15 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import patterns.memento.Memento;
+import patterns.memento.Originator;
 import patterns.mvc.control.Operacoes;
 
 /**
  *
  * @author Luiz Leme
  */
-public class Calculadora extends javax.swing.JFrame {
+public class Calculadora extends javax.swing.JFrame implements Originator {
 
     private Operacoes operacoes = new Operacoes();
 
@@ -153,14 +156,14 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_expressao_txtActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        operacoes.desfazer();
-        
+        setMemento(operacoes.desfazer());
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Código criado manualmente
     private void expressaoAlterada() {
         // Envia mensagem para o controle
-        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.getText());
+        Map<String, Double> vars = operacoes.alterarExpressao(expressao_txt.getText(), this);
         {
             DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
             model.setRowCount(0);
@@ -182,7 +185,7 @@ public class Calculadora extends javax.swing.JFrame {
         if (coluna == 1)
             try {
                 operacoes.alterarVariavel((String) model.getValueAt(linha,
-                        coluna - 1), (Double) model.getValueAt(linha, coluna));
+                        coluna - 1), (Double) model.getValueAt(linha, coluna), this);
             } catch (CloneNotSupportedException ex) {
                 Logger.getLogger(Calculadora.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
@@ -190,6 +193,37 @@ public class Calculadora extends javax.swing.JFrame {
             }
         // Envia mensagem para o controle
         resultado.setText(operacoes.getResultado().toString());
+    }
+
+    public class MementoCalculadora implements Memento {
+
+        private String expressao;
+        private Map<String, Double> variaveis = new HashMap<>();
+    }
+
+    @Override
+    public Memento createMemento() {
+        MementoCalculadora m = new MementoCalculadora();
+        {
+            m.expressao = expressao_txt.getText();
+            DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
+            for (int i = 0; i < model.getRowCount(); i++)
+                m.variaveis.put((String) model.getValueAt(i, 0), (Double) model.getValueAt(i, 1));
+        }
+        return m;
+    }
+
+    @Override
+    public void setMemento(Memento m) {
+        MementoCalculadora mc = ((MementoCalculadora) m);
+        {
+            expressao_txt.setText(mc.expressao);
+            DefaultTableModel model = (DefaultTableModel) variaveis.getModel();
+            model.setRowCount(0);
+            for (String var : mc.variaveis.keySet())
+                model.addRow(new Object[]{var, mc.variaveis.get(var)});
+            model.fireTableDataChanged();
+        }
     }
 
     /**

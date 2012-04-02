@@ -2,21 +2,24 @@ package patterns.command.calculadora;
 
 import patterns.mediator.MediadorDeAlteracao;
 import patterns.memento.Memento;
+import patterns.memento.Originator;
 
 public abstract class Command {
 
     protected MediadorDeAlteracao mediador;
     protected Memento memento;
+    protected Memento mementoCalculadora;
 
-    public Command(MediadorDeAlteracao mediador) {
+    public Command(MediadorDeAlteracao mediador, Originator originator) throws CloneNotSupportedException {
         this.mediador = mediador;
-    }
-
-    public void execute() throws CloneNotSupportedException, Exception {
         memento = mediador.createMemento();
+        mementoCalculadora = originator.createMemento();
     }
 
-    public void desfazer() {
+    public abstract void execute() throws CloneNotSupportedException, Exception;
+
+    public Memento desfazer() {
         mediador.setMemento(memento);
+        return mementoCalculadora;
     }
 }

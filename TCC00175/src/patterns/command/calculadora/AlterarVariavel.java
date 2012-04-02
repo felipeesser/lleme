@@ -1,21 +1,20 @@
 package patterns.command.calculadora;
 
 import patterns.mediator.MediadorDeAlteracao;
+import patterns.memento.Originator;
 
 public class AlterarVariavel extends Command {
 
     private String variavel;
     private Double valor;
 
-    public AlterarVariavel(String variavel, Double valor, MediadorDeAlteracao mediador) {
-        super(mediador);
+    public AlterarVariavel(String variavel, Double valor, MediadorDeAlteracao mediador, Originator originator) throws CloneNotSupportedException {
+        super(mediador, originator);
         this.variavel = variavel;
         this.valor = valor;
     }
 
-    @Override
     public void execute() throws CloneNotSupportedException, Exception {
-        super.execute();
         mediador.setVar(variavel, valor);
     }
 }

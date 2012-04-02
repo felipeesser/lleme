@@ -8,6 +8,8 @@ import patterns.command.calculadora.AlterarExpressao;
 import patterns.command.calculadora.AlterarVariavel;
 import patterns.command.calculadora.Command;
 import patterns.mediator.MediadorDeAlteracao;
+import patterns.memento.Memento;
+import patterns.memento.Originator;
 
 public class Operacoes {
 
@@ -20,9 +22,9 @@ public class Operacoes {
         mediador.mapaVariaveis = mediador.getEditorVariaveis();
     }
 
-    public Map<String, Double> alterarExpressao(String expressao) {
+    public Map<String, Double> alterarExpressao(String expressao, Originator originator) {
         try {
-            Command cmd = new AlterarExpressao(expressao, mediador);
+            Command cmd = new AlterarExpressao(expressao, mediador, originator);
             comandos.push(cmd);
             cmd.execute();
             this.mediador.setExpressaoStr(expressao);
@@ -33,8 +35,8 @@ public class Operacoes {
         return mediador.mapaVariaveis.listVars();
     }
 
-    public void alterarVariavel(String variavel, Double valor) throws CloneNotSupportedException, Exception {
-        Command cmd = new AlterarVariavel(variavel, valor, mediador);
+    public void alterarVariavel(String variavel, Double valor, Originator originator) throws CloneNotSupportedException, Exception {
+        Command cmd = new AlterarVariavel(variavel, valor, mediador, originator);
         comandos.push(cmd);
         cmd.execute();
     }
@@ -42,9 +44,9 @@ public class Operacoes {
     public Double getResultado() {
         return mediador.expressao.getResultado();
     }
-    
-    public void desfazer(){
-        comandos.pop().desfazer();
+
+    public Memento desfazer() {
+        return comandos.pop().desfazer();
     }
     //    private void alterarVariaveis(Map<String, Double> variaveis) {
     //        for (String var : variaveis.keySet())
