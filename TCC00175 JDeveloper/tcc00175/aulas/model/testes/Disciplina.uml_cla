@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:1a7affe2-cb24-40f1-8596-322c36d8c868'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Disciplina'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:621f4cb9-bda9-4430-8f94-28f3c003b3f1'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='nome'
+    aggregation='none'
+    visibility='public'>
+   <type href='http://schema.omg.org/spec/UML/2.1.1/uml.xml#String'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:e5c73797-42b0-4aed-9445-301bf60bdac1'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:5c0deab9-0628-425e-b569-04ee4c354e71'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

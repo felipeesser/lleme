@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:6e527d36-9002-4458-9bcb-c1441f2696bd'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='Aluno'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:46caa01e-0599-4035-b69e-8ed4be18f4d0'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='nome'
+    aggregation='none'
+    visibility='public'>
+   <type href='http://schema.omg.org/spec/UML/2.1.1/uml.xml#String'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:bb56070a-55fa-4df0-9fdb-2abf3ac25753'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:61d400a3-fbf5-4aea-ad62-e3337794365a'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:uuid='urn:uuid:ba0e88e7-7291-400b-b1af-82bc491881b2'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getNome'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:46332c91-a580-491b-a3a1-11bf5fc99225'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://schema.omg.org/spec/UML/2.1.1/uml.xml#String'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:uuid='urn:uuid:ec273967-705c-40c6-862a-7eaea495c543'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='setNome'
+    concurrency='sequential'
+    visibility='private'>
+   <ownedParameter xmi:uuid='urn:uuid:25936e0a-376d-4d8c-a33b-70e814c502f2'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='nome'
+     direction='in'>
+    <type href='http://schema.omg.org/spec/UML/2.1.1/uml.xml#String'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:60e77d00-8984-4843-bd6b-c629b4fa54a6'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://schema.omg.org/spec/UML/2.1.1/uml.xml#String'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>
