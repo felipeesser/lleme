@@ -2,7 +2,7 @@ package patterns.interpreter;
 
 import patterns.visitor.Visitor;
 
-public class Literal extends ExpressaoGenerica {
+public class Literal extends RepresentacaoExpressao {
 
     public double numero;
 

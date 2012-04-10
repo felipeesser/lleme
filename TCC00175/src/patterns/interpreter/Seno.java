@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Seno extends OperacaoUnaria {
 
-    public Seno(ExpressaoGenerica operando1) {
+    public Seno(RepresentacaoExpressao operando1) {
         super(operando1);
     }
 

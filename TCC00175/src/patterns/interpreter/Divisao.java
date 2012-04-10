@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Divisao extends OperacaoBinaria {
 
-    public Divisao(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
+    public Divisao(RepresentacaoExpressao operando1, RepresentacaoExpressao operando2) {
         super(operando1, operando2);
     }
 

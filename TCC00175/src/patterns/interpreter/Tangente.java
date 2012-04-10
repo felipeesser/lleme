@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Tangente extends OperacaoUnaria {
 
-    public Tangente(ExpressaoGenerica operando1) {
+    public Tangente(RepresentacaoExpressao operando1) {
         super(operando1);
     }
 

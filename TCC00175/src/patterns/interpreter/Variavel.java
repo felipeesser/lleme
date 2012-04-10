@@ -2,7 +2,7 @@ package patterns.interpreter;
 
 import patterns.visitor.Visitor;
 
-public class Variavel extends ExpressaoGenerica {
+public class Variavel extends RepresentacaoExpressao {
 
     public String nome;
     public double valor;

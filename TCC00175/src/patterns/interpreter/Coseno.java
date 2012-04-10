@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Coseno extends OperacaoUnaria {
 
-    public Coseno(ExpressaoGenerica operando1) {
+    public Coseno(RepresentacaoExpressao operando1) {
         super(operando1);
     }
 

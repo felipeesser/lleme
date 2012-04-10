@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Soma extends OperacaoBinaria {
 
-    public Soma(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
+    public Soma(RepresentacaoExpressao operando1, RepresentacaoExpressao operando2) {
         super(operando1, operando2);
     }
 

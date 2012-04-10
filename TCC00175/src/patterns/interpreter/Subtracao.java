@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Subtracao extends OperacaoBinaria {
 
-    public Subtracao(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
+    public Subtracao(RepresentacaoExpressao operando1, RepresentacaoExpressao operando2) {
         super(operando1, operando2);
     }
 

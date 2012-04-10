@@ -2,7 +2,7 @@ package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
 import patterns.interpreter.Coseno;
-import patterns.interpreter.ExpressaoGenerica;
+import patterns.interpreter.RepresentacaoExpressao;
 
 public class FragmentadorCoseno extends FragmentadorDeExpressao {
 
@@ -11,7 +11,7 @@ public class FragmentadorCoseno extends FragmentadorDeExpressao {
         if (expressaoStr==null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
-        ExpressaoGenerica op1;
+        RepresentacaoExpressao op1;
         if (in.hasNext("cos")) {
             in.next("cos");
             if (getPilha().size() >= 1) {

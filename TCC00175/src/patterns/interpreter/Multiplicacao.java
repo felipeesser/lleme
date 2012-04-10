@@ -4,7 +4,7 @@ import patterns.visitor.Visitor;
 
 public class Multiplicacao extends OperacaoBinaria {
 
-    public Multiplicacao(ExpressaoGenerica operando1, ExpressaoGenerica operando2) {
+    public Multiplicacao(RepresentacaoExpressao operando1, RepresentacaoExpressao operando2) {
         super(operando1, operando2);
     }
 

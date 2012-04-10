@@ -2,7 +2,7 @@ package patterns.interpreter;
 
 import patterns.visitor.Node;
 
-public abstract class ExpressaoGenerica implements Cloneable, Node {
+public abstract class RepresentacaoExpressao implements Cloneable, Node {
 
     public abstract double calcular();
 
@@ -11,7 +11,7 @@ public abstract class ExpressaoGenerica implements Cloneable, Node {
     public abstract String getNome();
 
     @Override
-    public ExpressaoGenerica clone() throws CloneNotSupportedException {
-        return (ExpressaoGenerica) super.clone();
+    public RepresentacaoExpressao clone() throws CloneNotSupportedException {
+        return (RepresentacaoExpressao) super.clone();
     }
 }

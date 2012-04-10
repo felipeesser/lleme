@@ -1,10 +1,10 @@
 package patterns.interpreter;
 
-public abstract class OperacaoUnaria extends ExpressaoGenerica {
+public abstract class OperacaoUnaria extends RepresentacaoExpressao {
 
-    public ExpressaoGenerica operando1;
+    public RepresentacaoExpressao operando1;
 
-    public OperacaoUnaria(ExpressaoGenerica operando1) {
+    public OperacaoUnaria(RepresentacaoExpressao operando1) {
         this.operando1 = operando1;
     }
 

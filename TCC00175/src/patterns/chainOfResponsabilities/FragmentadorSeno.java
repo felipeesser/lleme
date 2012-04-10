@@ -1,7 +1,7 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import patterns.interpreter.ExpressaoGenerica;
+import patterns.interpreter.RepresentacaoExpressao;
 import patterns.interpreter.Seno;
 
 public class FragmentadorSeno extends FragmentadorDeExpressao {
@@ -11,7 +11,7 @@ public class FragmentadorSeno extends FragmentadorDeExpressao {
         if (expressaoStr==null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
-        ExpressaoGenerica op1;
+        RepresentacaoExpressao op1;
         if (in.hasNext("sen")) {
             in.next("sen");
             if (getPilha().size() >= 1) {

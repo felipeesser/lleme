@@ -1,6 +1,6 @@
 package patterns.visitor;
 
-import patterns.interpreter.ExpressaoGenerica;
+import patterns.interpreter.RepresentacaoExpressao;
 
 public class InicializarVariavel extends Visitor {
     
@@ -13,7 +13,7 @@ public class InicializarVariavel extends Visitor {
     }
     
     @Override
-    public void visitExpressao(ExpressaoGenerica expr) {
+    public void visitExpressao(RepresentacaoExpressao expr) {
         if (expr.getNome().equals(nomeVariavel))
             expr.setValor(valor);
     }

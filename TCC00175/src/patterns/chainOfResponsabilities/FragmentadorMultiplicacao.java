@@ -1,7 +1,7 @@
 package patterns.chainOfResponsabilities;
 
 import java.util.Scanner;
-import patterns.interpreter.ExpressaoGenerica;
+import patterns.interpreter.RepresentacaoExpressao;
 import patterns.interpreter.Multiplicacao;
 
 public class FragmentadorMultiplicacao extends FragmentadorDeExpressao {
@@ -10,8 +10,8 @@ public class FragmentadorMultiplicacao extends FragmentadorDeExpressao {
         if (expressaoStr==null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
-        ExpressaoGenerica op1;
-        ExpressaoGenerica op2;
+        RepresentacaoExpressao op1;
+        RepresentacaoExpressao op2;
         if (in.hasNext("\\*")) {
             in.next("\\*");
             if (getPilha().size() >= 2) {

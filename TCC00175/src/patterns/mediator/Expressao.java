@@ -3,13 +3,13 @@ package patterns.mediator;
 import patterns.decorator.InterpretadorBasico;
 import patterns.decorator.InterpretadorDeExpressao;
 import patterns.decorator.InterpretadorTrigonometrico;
-import patterns.interpreter.ExpressaoGenerica;
+import patterns.interpreter.RepresentacaoExpressao;
 
 public class Expressao extends ClasseMediada implements Cloneable {
 
     private String expressaoStr;
     private InterpretadorDeExpressao interpretador;
-    public ExpressaoGenerica expressao;
+    public RepresentacaoExpressao expressao;
 
     public Expressao(Mediador mediador) {
         super(mediador);
