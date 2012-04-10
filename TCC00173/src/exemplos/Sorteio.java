@@ -1,13 +1,6 @@
 package exemplos;
 
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class Sorteio {
@@ -31,9 +24,7 @@ public class Sorteio {
     }
 
     public static int sorteio() {
-        int numero = (int) (Math.random() * 25);
-        if (numero == 25)
-            numero = 24;
+        int numero = (int) (Math.random() * 29);
         return numero;
     }
 
