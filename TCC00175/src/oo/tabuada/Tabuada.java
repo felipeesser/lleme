@@ -1,6 +1,5 @@
 package oo.tabuada;
 
-import java.util.Collection;
 
 public class Tabuada {
 
@@ -9,9 +8,6 @@ public class Tabuada {
     public Tabuada(byte[] fatores) {
         for (int i = 0; i < 9 && i < fatores.length; i++)
             this.fatores[i] = new Fator(fatores[i]);
-    }
-
-    public Tabuada(Collection fatores) {
     }
 
     public void escreverTabuada(int qtdLinhas) {

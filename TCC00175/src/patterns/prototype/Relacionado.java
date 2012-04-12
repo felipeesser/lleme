@@ -2,7 +2,7 @@ package patterns.prototype;
 
 import java.util.Set;
 
-public interface Relacionado<T> {
+public interface Relacionado {
 
-    public Set<T> getColecao();
+    public Set<String> getColecao();
 }

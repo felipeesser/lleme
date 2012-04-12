@@ -14,8 +14,8 @@ public class Cliente {
         cliente.prototipos.add(new Aluno());
 
 
-        Prototipo<String> objeto1 = cliente.prototipos.get(0).clone();
-        Prototipo<String> objeto2 = cliente.prototipos.get(0).clone();
+        Prototipo objeto1 = cliente.prototipos.get(0).clone();
+        Prototipo objeto2 = cliente.prototipos.get(0).clone();
 
         objeto1.setNome("Luiz André");
         objeto1.getColecao().add(objeto1.getNome());

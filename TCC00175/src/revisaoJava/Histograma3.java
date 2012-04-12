@@ -4,11 +4,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 public class Histograma3 {
 
@@ -27,7 +29,7 @@ public class Histograma3 {
         try {
             input = new FileInputStream(arquivo);
             Scanner in = new Scanner(input);
-            List<Float> dados = new ArrayList();
+            List<Float> dados = new ArrayList<Float>();
             while (in.hasNext()) {
                 in.nextInt();
                 dados.add(in.nextFloat());

@@ -6,7 +6,7 @@ public class Nota extends Conteudo {
     /**
      * @associates <{aula6.blog.Comentario}>
      */
-    Collection comentarios;
+    Collection<Comentario> comentarios;
 
     protected void comentar(Comentario comentario) {
     }

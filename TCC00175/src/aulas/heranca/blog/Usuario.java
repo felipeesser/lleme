@@ -16,6 +16,6 @@ public class Usuario {
     /**
      * @associates <{aula6.blog.Blog}>
      */
-    Collection favoritos;
+    Collection<Blog> favoritos;
 
 }
