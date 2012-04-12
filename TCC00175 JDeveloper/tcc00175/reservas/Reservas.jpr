@@ -85,6 +85,13 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <hash n="jdkReference">
+         <url n="id" path="../../../../../AppData/Roaming/JDeveloper/system11.1.2.1.38.60.81/o.jdeveloper/1.7.0_03.jdk"/>
+         <value n="isJDK" v="true"/>
+         <value n="jdkVersion" v="1.7.0_03"/>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
    </hash>
