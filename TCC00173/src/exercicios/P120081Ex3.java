@@ -18,6 +18,7 @@ public class P120081Ex3 {
         while (in.hasNext()) {
             xi = in.nextFloat();
             yi = in.nextFloat();
+            in.nextLine();
             perimetro += distancia(xAnt, yAnt, xi, yi);
             xAnt = xi;
             yAnt = yi;
