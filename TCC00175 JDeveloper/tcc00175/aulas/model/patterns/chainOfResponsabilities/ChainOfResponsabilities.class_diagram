@@ -171,7 +171,7 @@
           <size height='0.7734726071357727' width='0.0'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
-        <size height='69.904296875' width='200.0'/>
+        <size height='69.904296875' width='245.0'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='ida9034864-d51a-44dd-9de7-4c4f337905ec'>
         <contained xmi:type='DI:GraphNode' xmi:id='id3ee69d94-d408-44e9-900b-81a1a076a2d0'>
@@ -193,9 +193,9 @@
           <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
         </contained>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
-        <size height='69.904296875' width='200.0'/>
+        <size height='69.904296875' width='245.0'/>
       </contained>
-      <position x='0.0' y='195.0'/>
+      <position x='-45.0' y='195.0'/>
       <property key='fillColor' value='#c6d6ff'/>
       <property key='showMethodVisibility' value='true'/>
       <property key='showAttributes' value='true'/>
@@ -219,7 +219,7 @@
       <property key='excludeMethodFilter' value=''/>
       <property key='filterAttrViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDC;;patterns.chainOfResponsabilities;;###;;FragmentadorSoma' presentation='SYMBOLIC'/>
-      <size height='69.904296875' width='200.0'/>
+      <size height='69.904296875' width='245.0'/>
     </contained>
     <contained xmi:type='DI:GraphNode' xmi:id='ida5447bbf-840f-4f7d-a3d1-cad9604cf89e'>
       <anchorage xmi:id='idad53fe53-f63b-410b-97f2-b24c89e79485' graphEdge='id85fdd8d3-2405-4918-9c34-f5c24bdb6cb1 idb5d6f20b-324b-4fae-b7da-7f43345f256f idd932a5af-682d-4871-a5e5-1d517f03e1d1'/>
@@ -625,7 +625,7 @@
       <property key='font' value='SansSerif,plain,11'/>
       <property key='lineColor' value='#646464'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDEXT;;patterns.chainOfResponsabilities;;FragmentadorSoma;;patterns.chainOfResponsabilities.FragmentadorDeExpressao'/>
-      <waypoint x='100.0' y='195.0'/>
+      <waypoint x='77.5' y='195.0'/>
       <waypoint x='736.0' y='119.05645751953125'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='id082a9981-985c-4120-a31d-50abe0d77570' anchor='idc9855f65-32db-47f0-9175-5914397534c2 id043f8b63-83db-4b0c-b783-16ee23d65d06'>
@@ -884,7 +884,7 @@
       <property key='lineWidth' value='1.0'/>
       <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='LWDependency'/>
       <waypoint x='480.4999694824219' y='360.0'/>
-      <waypoint x='90.42675018310547' y='264.904296875'/>
+      <waypoint x='65.77276611328125' y='264.904296875'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='idb5d6f20b-324b-4fae-b7da-7f43345f256f' anchor='ideaa2f812-8248-41d4-a835-dbeeea8c96cb idad53fe53-f63b-410b-97f2-b24c89e79485'>
       <property key='lineColor' value='#646464'/>
@@ -1164,8 +1164,8 @@
       <property key='lineWidth' value='1.0'/>
       <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='LWDependency'/>
       <waypoint x='375.0000305175781' y='394.9521484375'/>
-      <waypoint x='109.99999237060547' y='394.9521484375'/>
-      <waypoint x='109.99999237060547' y='264.904296875'/>
+      <waypoint x='89.74998474121094' y='394.9521484375'/>
+      <waypoint x='89.74998474121094' y='264.904296875'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='idcdc02e6d-43c7-41aa-859b-4c9161462e12' anchor='id9dce6221-6de9-4f26-8d00-1eaa78b8fd12 idcc1c10bc-e1ef-4c44-9510-282b81d8f542'>
       <property key='font' value='SansSerif,plain,11'/>
