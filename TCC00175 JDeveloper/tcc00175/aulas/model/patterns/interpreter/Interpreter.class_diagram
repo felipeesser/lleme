@@ -1087,19 +1087,19 @@
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='id2458471c-abb1-46ca-bac8-8a2c0caa691f' anchor='id71ab0bfa-6d3e-423a-af0b-6dcbaa7b427c id81128e8c-6855-41a1-a2d7-188a593507d0'>
       <contained xmi:type='DI:GraphNode' xmi:id='id5283c847-e702-489b-9fa5-5e2650eaf685'>
-        <position x='-26.771217346191406' y='16.5'/>
+        <position x='-42.56726837158203' y='20.240188598632812'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='id827e5407-0f72-46ea-a7ab-e611a6c06d76'>
-        <position x='-16.330238342285156' y='-52.72964096069336'/>
+        <position x='-26.309465408325195' y='-70.63226318359375'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='ide29e33aa-9888-4b47-b38f-441a60dd8a9e'>
-        <position x='-60.0' y='-37.97607421875'/>
+        <position x='-60.0' y='16.5'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
       </contained>
       <contained xmi:type='DI:GraphNode' xmi:id='idd767f2b1-a48e-4594-823a-602b8c350405'>
-        <position x='-23.901611328125' y='-51.4521484375'/>
+        <position x='-23.901611328125' y='29.97607421875'/>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
       </contained>
       <property key='fontColor' value='#0'/>
@@ -1114,7 +1114,7 @@
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDA;;patterns.interpreter;;OperacaoBinaria;;operando2'/>
       <waypoint x='609.1636962890625' y='189.98037719726562'/>
       <waypoint x='602.1018676757812' y='87.35315704345703'/>
-      <waypoint x='1083.576416015625' y='-135.09288024902344'/>
+      <waypoint x='615.0' y='-90.0'/>
       <waypoint x='973.2825927734375' y='-104.99999237060547'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='idec5a6c69-c1e6-4234-8eaa-888ef48a6d20' anchor='ide718a1c7-8fc9-457b-95a8-121a038cb86d id81128e8c-6855-41a1-a2d7-188a593507d0'>
@@ -1135,7 +1135,7 @@
       <property key='EdgeType' value='1'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='JAVA:JIDEXT;;patterns.interpreter;;OperacaoUnaria;;patterns.interpreter.RepresentacaoExpressao'/>
       <waypoint x='1436.833251953125' y='195.0'/>
-      <waypoint x='1436.833251953125' y='-9.799993515014648'/>
+      <waypoint x='1436.833251953125' y='-9.799995422363281'/>
       <waypoint x='1092.0' y='-9.799995422363281'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='id105d1c6b-51e7-4489-af94-cf42b75386a4' anchor='id18ac0896-bd99-44bc-b4b2-04c0cad30f52 id81128e8c-6855-41a1-a2d7-188a593507d0'>
