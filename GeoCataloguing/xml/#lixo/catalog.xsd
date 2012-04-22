@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:gml="http://www.opengis.net/gml"
+  elementFormDefault="qualified">
+  <include schemaLocation="gazetteer-types.xsd" />
+  <element name="resources">
+    <complexType>
+      <sequence minOccurs="0" maxOccurs="unbounded">
+        <element name="resource">
+          <complexType>
+            <sequence>
+              <element name="identifier" type="string" minOccurs="1"
+                maxOccurs="1">
+              </element>
+              <element name="bounding-box" minOccurs="1" maxOccurs="1"
+                type="gml:BoxType">
+              </element>
+              <element name="features" minOccurs="1" maxOccurs="1">
+                <complexType>
+                  <sequence>
+                    <element name="feature" minOccurs="0"
+                      maxOccurs="unbounded">
+                      <complexType>
+                        <sequence>
+                          <element name="identifier" type="string"
+                            minOccurs="1" maxOccurs="1">
+                          </element>
+                          <element name="display-name" type="string"
+                            minOccurs="1" maxOccurs="1">
+                          </element>
+                          <element name="bounding-box"
+                            type="gml:BoxType" minOccurs="1"
+                            maxOccurs="1">
+                          </element>
+                        </sequence>
+                      </complexType>
+                    </element>
+                  </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

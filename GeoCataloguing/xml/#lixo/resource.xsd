@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.inf.puc-rio.br/geocatalog"
+  elementFormDefault="qualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:gml="http://www.opengis.net/gml"
+  xmlns:gct="http://www.inf.puc-rio.br/geocatalog">
+  <include schemaLocation="geometryBasic2d.xsd" />
+  <element name="resource">
+    <complexType>
+      <sequence>
+        <element name="identifier" type="string" minOccurs="1"
+          maxOccurs="1">
+        </element>
+        <element name="bounding-box" type="gml:EnvelopeType"
+          minOccurs="1" maxOccurs="1">
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>
