@@ -6,7 +6,6 @@
             <name>TCC00175</name>
             <source-roots>
                 <root id="src.dir"/>
-                <root id="src.prv.dir" name="Pacotes de código-fonte de Provas"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
