@@ -5,7 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>TCC00173</name>
             <source-roots>
-                <root id="src.Nova%20Pasta.dir" name="Pacotes de código-fonte temporários"/>
+                <root id="src.src_tmp.dir" name="Pacote de código-fonte temporário"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>
