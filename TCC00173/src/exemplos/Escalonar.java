@@ -4,18 +4,17 @@ public class Escalonar {
 
     public static void main(String[] args) {
         float[][] matriz = {{4, 3, 4, 5}, {-2, 1, 2, 6}, {4, 5, 1, 7}};
-        //imprimeMatriz(diagonalizar(matriz));
-        System.out.println("\n\n");
-        imprimeMatriz(pivoteamentoTotal(matriz, 0));
+        imprimeMatriz(escalonar(matriz));
     }
 
-    public static float[][] diagonalizar(float[][] matriz) {
+    public static float[][] escalonar(float[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             pivoteamento(matriz, i);
+            float pivot = matriz[i][i];
             for (int j = i + 1; j < matriz.length; j++) {
-                float divisor = matriz[j][i];
+                float coef = matriz[j][i] / pivot;
                 for (int k = 0; k < matriz.length; k++)
-                    matriz[j][k] = matriz[i][k] - matriz[j][k] / divisor * matriz[i][i];
+                    matriz[j][k] = matriz[j][k] - matriz[i][k] * coef;
             }
         }
         return matriz;
@@ -34,7 +33,7 @@ public class Escalonar {
             }
     }
 
-    public static float[][] pivoteamentoTotal(float[][] matriz, int diagonal) {
+    public static float[][] pivotear(float[][] matriz, int diagonal) {
         int linha = diagonal;
         int coluna = diagonal;
 
