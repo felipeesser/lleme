@@ -108,6 +108,14 @@
                   <string v="+**"/>
                </list>
                <list n="url-path">
+                  <url path="../../../../Netbeans/tcc00175/src_tmp/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
                   <url path="test/"/>
                </list>
             </hash>
@@ -116,23 +124,13 @@
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
-      <list n="exportedReferences">
-         <hash>
-            <value n="id" v="JUnit 4 Runtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-      </list>
+      <list n="exportedReferences"/>
       <hash n="jdkReference">
-         <url n="id" path="../../../../../AppData/Roaming/JDeveloper/system11.1.2.1.38.60.81/o.jdeveloper/1.7.0_03.jdk"/>
+         <url n="id" protocol="file" path="/C:/Users/Luiz Leme/AppData/Roaming/JDeveloper/system11.1.2.2.39.61.83.1/o.jdeveloper/1.7.0_05.jdk"/>
          <value n="isJDK" v="true"/>
-         <value n="jdkVersion" v="1.7.0_03"/>
+         <value n="jdkVersion" v="1.7.0_05"/>
       </hash>
-      <list n="libraryReferences">
-         <hash>
-            <value n="id" v="JUnit 4 Runtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-      </list>
+      <list n="libraryReferences"/>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
