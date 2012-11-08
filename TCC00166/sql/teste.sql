@@ -1,1 +1,0 @@
-select * from NOVO_PLANO;
