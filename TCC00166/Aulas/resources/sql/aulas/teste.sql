@@ -1,1 +1,1 @@
-select * from NOVO_PLANO;
+select T1.* from NOVO_PLANO T1;
