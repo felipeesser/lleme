@@ -122,6 +122,11 @@
             <value n="isJDK" v="false"/>
          </hash>
       </list>
+      <hash n="jdkReference">
+         <url n="id" protocol="file" path="/C:/Users/Luiz Leme/AppData/Roaming/JDeveloper/system11.1.2.2.39.61.83.1/o.jdeveloper/1.7.0_09.jdk"/>
+         <value n="isJDK" v="true"/>
+         <value n="jdkVersion" v="1.7.0_09"/>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="ADF Model Runtime"/>
