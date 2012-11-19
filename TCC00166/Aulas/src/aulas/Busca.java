@@ -18,18 +18,16 @@ import java.util.Scanner;
 
 public class Busca {
 
-    private static String sobra = "";
-
     public static void main(String[] args) throws FileNotFoundException, IOException {
         //criarArquivo(100000000);
         //indexarArquivo();
         double inicio, fim;
         inicio = Calendar.getInstance().getTimeInMillis();
-        System.out.println("Nome do aluno: " + busca(999999));
+        System.out.println("Nome do aluno: " + busca(9999999));
         fim = Calendar.getInstance().getTimeInMillis();
         System.out.println("Duração: " + (fim - inicio) / 1000 + " milisegundos");
         inicio = Calendar.getInstance().getTimeInMillis();
-        System.out.println("Nome do aluno: " + buscaIndexada(999999));
+        System.out.println("Nome do aluno: " + buscaIndexada(9999999));
         fim = Calendar.getInstance().getTimeInMillis();
         System.out.println("Duração: " + (fim - inicio) / 1000 + " milisegundos");
     }
