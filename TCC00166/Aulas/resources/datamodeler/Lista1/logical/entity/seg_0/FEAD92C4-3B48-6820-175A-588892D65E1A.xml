@@ -61,5 +61,16 @@
 <referedAttribute>29484E56-85D7-DC19-E8CD-87BCEB02F0AF</referedAttribute>
 <use>0</use>
 </Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="cpf" id="AD770159-6C40-7CE3-B82C-34099FC4501A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-28 10:53:43 UTC</createdTime>
+<generatorID>9E4CCF95-70F5-7882-597E-2276C75CACD2</generatorID>
+<ownerDesignName>Lista1</ownerDesignName>
+<engineerTo>
+<item key="1F450E0A-8A80-E0B1-2C35-DDBDE3A1C30A" value="true"/>
+</engineerTo>
+<referedAttribute>56529C15-E418-28B1-3087-69D35ED39B8E</referedAttribute>
+<use>0</use>
+</Attribute>
 </attributes>
 </Entity>
