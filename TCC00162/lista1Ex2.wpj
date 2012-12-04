@@ -4,10 +4,10 @@ projectIdent
 VpeMain
 1
 WRect
--59
--106
-10359
-9920
+7
+13
+10225
+9680
 2
 MProject
 3
@@ -20,7 +20,7 @@ MCommand
 5
 WFileName
 13
-Lista1Ex1.tgt
+lista1Ex2.tgt
 6
 WVList
 1
@@ -28,8 +28,8 @@ WVList
 VComponent
 8
 WRect
-0
-0
+584
+573
 5659
 4200
 2
@@ -37,7 +37,7 @@ WRect
 9
 WFileName
 13
-Lista1Ex1.tgt
+lista1Ex2.tgt
 0
 1
 7
