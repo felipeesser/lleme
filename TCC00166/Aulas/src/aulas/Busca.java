@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 public class Busca {
 
-    public st/D:/Users/Luiz Leme/Programs/JDeveloper/TCC00166/Aulas/atic void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         //criarArquivo(100000000);
         //indexarArquivo();
         double inicio, fim;
