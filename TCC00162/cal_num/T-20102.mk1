@@ -1,0 +1,22 @@
+!define BLANK ""
+C:\WATCOM\src\fortran\TCC00162\T-20102.obj : C:\WATCOM\src\fortran\TCC00162\&
+T-20102.for .AUTODEPEND
+ @C:
+ cd C:\WATCOM\src\fortran\TCC00162
+ wfc386 T-20102.for -d2 -q -dep
+
+C:\WATCOM\src\fortran\TCC00162\T-20102.exe : C:\WATCOM\src\fortran\TCC00162\&
+T-20102.obj .AUTODEPEND
+ @C:
+ cd C:\WATCOM\src\fortran\TCC00162
+ @%write T-20102.lk1 FIL T-20102.obj
+ @%append T-20102.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b T-20102.imp 
+ @%append T-20102.lk1 LIBR T-20102.imp
+!endif
+!ifneq BLANK ""
+ @%append T-20102.lk1 
+!endif
+ *wlink name T-20102 d all sys nt op m op maxe=25 op q op symf @T-20102.lk1
+

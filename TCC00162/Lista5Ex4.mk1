@@ -1,0 +1,23 @@
+!define BLANK ""
+C:\WATCOM\src\fortran\TCC00162\Lista5Ex4.obj : C:\WATCOM\src\fortran\TCC0016&
+2\Lista5Ex4.for .AUTODEPEND
+ @C:
+ cd C:\WATCOM\src\fortran\TCC00162
+ wfc386 Lista5Ex4.for -d2 -q -dep
+
+C:\WATCOM\src\fortran\TCC00162\Lista5Ex4.exe : C:\WATCOM\src\fortran\TCC0016&
+2\Lista5Ex4.obj .AUTODEPEND
+ @C:
+ cd C:\WATCOM\src\fortran\TCC00162
+ @%write Lista5Ex4.lk1 FIL Lista5Ex4.obj
+ @%append Lista5Ex4.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b Lista5Ex4.imp 
+ @%append Lista5Ex4.lk1 LIBR Lista5Ex4.imp
+!endif
+!ifneq BLANK ""
+ @%append Lista5Ex4.lk1 
+!endif
+ *wlink name Lista5Ex4 d all sys nt op m op maxe=25 op q op symf @Lista5Ex4.&
+lk1
+
