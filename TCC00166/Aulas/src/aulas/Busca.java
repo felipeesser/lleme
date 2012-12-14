@@ -33,7 +33,7 @@ public class Busca {
     }
 
     public static String busca(long matriculaInformada) throws FileNotFoundException, IOException {
-        String linha, nome = null;
+        String nome = null;
         long matricula;
         boolean achou = false;
         try (InputStream input = new FileInputStream("./dat/alunos.txt");
