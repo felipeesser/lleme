@@ -118,6 +118,7 @@
 <indexState>Primary Constraint</indexState>
 <indexColumnUsage>
 <colUsage columnID="ED8EC599-242C-C017-18FB-4B2EA5C91531"/>
+<colUsage columnID="CCFEB937-1B36-159A-CA21-6A60CA6C50F7"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5DC82AB3-E3E5-2952-4DF0-A75213DDBB83" name="possui">
@@ -131,4 +132,13 @@
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
+<tableCheckConstraints>
+<tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="Orcamento_datas_CK" id="343EBF26-0B71-8B57-81E1-5C6B804E56BD" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 21:58:01 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<rule>aceite &gt;= data</rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
 </Table>

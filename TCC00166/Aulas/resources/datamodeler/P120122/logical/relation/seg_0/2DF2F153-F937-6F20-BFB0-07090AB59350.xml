@@ -7,7 +7,7 @@
 <engineerTo>
 <item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
 </engineerTo>
-<identifying>false</identifying>
+<identifying>true</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

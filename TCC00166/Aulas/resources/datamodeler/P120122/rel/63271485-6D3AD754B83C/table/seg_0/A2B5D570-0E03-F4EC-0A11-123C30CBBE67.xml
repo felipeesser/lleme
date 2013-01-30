@@ -144,4 +144,13 @@
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
+<tableCheckConstraints>
+<tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="Execucao_datas_CK" id="620137BC-E359-9EE9-A833-AD72EA97CF65" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 22:49:16 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<rule>fim&gt;inicio</rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
 </Table>
