@@ -1,18 +1,20 @@
 create or replace
-trigger TRIGGER1 
-before insert or update on CLIENTE 
-REFERENCING OLD AS antigo NEW AS novo 
+TRIGGER VALIDA_ORDEM_SERVICO 
+BEFORE INSERT OR UPDATE ON "ORDEM_SERVICO"
+REFERENCING OLD AS ANTIGO NEW AS NOVO
 for each row
-declare 
-  CONTAGEM NUMBER(8,0);
-begin
-  select COUNT(*) into CONTAGEM from "CAR";
-  if (CONTAGEM > 100) then
+DECLARE 
+  INICIO NUMBER(4,3);
+  FIM NUMBER(4,3);
+BEGIN
+  -- Verifica se o valor da multa é permitido
+  WITH
+    T1 AS (SELECT MAX("DATA") AS "VIGENCIA" FROM MULTA TAB WHERE TAB."DATA"<=:NOVO.ABERTURA)
+  SELECT INICIO_FAIXA,FIM_FAIXA INTO INICIO,FIM FROM "MULTA" WHERE "DATA"=(SELECT "VIGENCIA" FROM T1);
+  if (not(:NOVO.MULTA between INICIO and FIM)) then
     RAISE_APPLICATION_ERROR(-20001,'ERRO');
-  else
-    insert into "CAR"("license","model","year") values (:NOVO."numero"*100,'modelo',2012);
-  end if;
-END
+  END IF;
+END;
 
 
 
