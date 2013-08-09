@@ -4,7 +4,8 @@
         integer dim
         parameter (dim=4)
         real a(dim,dim)
-        data a/3.,0.,2.,1.,-1.,2.,0.,1.,5.,0.,-1.,2.,0.,1.,3.,0./
+        data a/3.,0.,2.,1.,-1.,2.,0.,1.,5.,0.,-1.,2.,
+     +  0.,1.,3.,0./
 C       data a/1.0,1.0,3.0,11.0/
         write (*,*) determinante(a,dim)
         pause
@@ -56,12 +57,4 @@ C       data a/1.0,1.0,3.0,11.0/
           end do
         end if
         determinante = s
-      end       
-      
-      
-     
-      
-      
-      
-      
-      
+      end
