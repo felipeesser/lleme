@@ -1,6 +1,7 @@
 package oo.pessoa;
 
-public class Endereço {
+public class Endereco
+ {
 
     /**
      * @attribute
