@@ -2,7 +2,7 @@ package exemplos;
 
 import java.util.Scanner;
 
-public class Punição {
+public class Punicao {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
