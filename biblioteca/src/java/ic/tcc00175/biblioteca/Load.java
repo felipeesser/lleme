@@ -38,7 +38,7 @@ public class Load{
         usuarios.put(usuario);
         usuario = new AlunoPosGraduacao();
         usuario.setId(2);
-        usuario.setNome("Luiz Fernando Rodrigues");
+        usuario.setNome("Luiz Fernando A. Rodrigues");
         usuarios.put(usuario);
         usuario = new Professor();
         usuario.setId(3);
