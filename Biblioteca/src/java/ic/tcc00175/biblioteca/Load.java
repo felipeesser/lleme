@@ -21,7 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
-public class Load {
+public class Load{
 
     public Load(Sistema sistema) {
         HashMap logins = sistema.getLnkLogin();
@@ -38,7 +38,7 @@ public class Load {
         usuarios.put(usuario);
         usuario = new AlunoPosGraduacao();
         usuario.setId(2);
-        usuario.setNome("Luiz Fernando Rodrigues");
+        usuario.setNome("Luiz Fernando A. Rodrigues");
         usuarios.put(usuario);
         usuario = new Professor();
         usuario.setId(3);
