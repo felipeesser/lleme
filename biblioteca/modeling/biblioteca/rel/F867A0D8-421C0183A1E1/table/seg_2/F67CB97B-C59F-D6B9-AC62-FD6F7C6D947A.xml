@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_2" id="F67CB97B-C59F-D6B9-AC62-FD6F7C6D947A" name="Usuario">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:30:48 UTC</createdTime>
+<generatorID>CFDD72C8-3820-A68B-C1E6-6583EEE02AA5</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="matricula" id="A5D68E6F-B44B-CA4B-6759-7E15688DEEE1">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:30:48 UTC</createdTime>
+<generatorID>18D58371-F0E2-046D-6626-9F6CA96B056C</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<sourceType>Manual</sourceType>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="A8D1972A-AAC0-6D04-E0CD-14175AA3D995">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:30:48 UTC</createdTime>
+<generatorID>5DA6382E-6E91-3379-2616-65D67FF7082C</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FFB83C99-AF80-461E-047C-BF0896419ED8" name="PK_Usuario">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:30:48 UTC</createdTime>
+<generatorID>013DAAB0-1BBD-BA93-BC3F-7A2F7FE5DE60</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5D68E6F-B44B-CA4B-6759-7E15688DEEE1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

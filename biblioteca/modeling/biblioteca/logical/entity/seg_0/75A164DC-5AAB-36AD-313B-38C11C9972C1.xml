@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="75A164DC-5AAB-36AD-313B-38C11C9972C1" name="Livro">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 17:12:15 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Livro</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="A7AC1625-A0E8-C403-1D02-D88C681495FE">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:24:18 UTC</createdTime>
+<generatorID>333AF2B4-0EB8-6AF4-8EC6-DCEDE4AE1AF8</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>E006A196-3E11-F101-896C-270082DDCB78</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute name="editora" id="E08C7089-5EBE-DC7C-B2D2-E6CD859D9F2C">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 17:25:44 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="autor" id="62D238A8-D62B-4486-2B5D-483FAE2ED170">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 17:26:17 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="edicao" id="A4DC8945-DCBE-B0F4-2F09-B3BCEA04F718">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 17:26:40 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="anoPublicacao" id="D71A08B0-1EDA-1D0C-86AF-7EDAE73F259D">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 17:27:14 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="148F7EE4-530B-2E65-A76C-448513091042" name="Livro PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:28:54 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A7AC1625-A0E8-C403-1D02-D88C681495FE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

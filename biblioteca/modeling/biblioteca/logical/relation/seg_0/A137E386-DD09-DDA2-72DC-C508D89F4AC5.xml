@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="USUARIO_OPERACAO" directorySegmentName="seg_0" id="A137E386-DD09-DDA2-72DC-C508D89F4AC5">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 20:36:57 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<sourcePk>013DAAB0-1BBD-BA93-BC3F-7A2F7FE5DE60</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CFDD72C8-3820-A68B-C1E6-6583EEE02AA5</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B8ED854A-ACBC-8B14-733B-B93EFD12B3E6</targetEntity>
+<transferable>true</transferable>
+</Relation>

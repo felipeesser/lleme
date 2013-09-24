@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EXEMPLAR_EMPRESTIMMO" directorySegmentName="seg_0" id="D6A101BB-071D-084B-B62E-D7ED8772F027">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:29:44 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<sourcePk>1E96C724-E3F7-4BC9-117D-CE0BEC40099C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C90840CF-A8E1-BFBB-0449-C34989545744</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>60486887-ADC9-7C77-BFD6-256B24F63A9A</targetEntity>
+<transferable>true</transferable>
+</Relation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_24" directorySegmentName="seg_0" id="D5A8A6D8-7D14-A380-F241-DDA57C10524C">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:26:30 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<targetPk>E5D737A4-B152-3A59-D3D5-BE446A26631A</targetPk>
+<dominantRole>B8ED854A-ACBC-8B14-733B-B93EFD12B3E6</dominantRole>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>60486887-ADC9-7C77-BFD6-256B24F63A9A</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>B8ED854A-ACBC-8B14-733B-B93EFD12B3E6</targetEntity>
+<transferable>true</transferable>
+</Relation>

@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="38EDD970-8A30-52F2-E21B-56FC81C7AA38" name="DEVOLUCAO" seqName="seg_0"/>
+   <object objectType="Entity" objectID="60486887-ADC9-7C77-BFD6-256B24F63A9A" name="Emprestimo" seqName="seg_0"/>
+   <object objectType="Entity" objectID="C90840CF-A8E1-BFBB-0449-C34989545744" name="Exemplar" seqName="seg_0"/>
+   <object objectType="Entity" objectID="75A164DC-5AAB-36AD-313B-38C11C9972C1" name="Livro" seqName="seg_0"/>
+   <object objectType="Entity" objectID="141BD7AD-FA76-7C6C-CB6B-42BC7A5B1C4B" name="Material" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B8ED854A-ACBC-8B14-733B-B93EFD12B3E6" name="Operacao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="EA5F1237-9240-70BA-A571-AC5C862BD2B4" name="Reserva" seqName="seg_0"/>
+   <object objectType="Entity" objectID="6793E74B-086C-B6F5-3C49-28FF77D01F83" name="Revista" seqName="seg_0"/>
+   <object objectType="Entity" objectID="CFDD72C8-3820-A68B-C1E6-6583EEE02AA5" name="Usuario" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D6A101BB-071D-084B-B62E-D7ED8772F027" name="EXEMPLAR_EMPRESTIMMO" seqName="seg_0"/>
+   <object objectType="Relation" objectID="8EAB12D5-8ADF-1A4E-318C-4E30F14410D8" name="EXEMPLAR_MATERIAL" seqName="seg_0"/>
+   <object objectType="Relation" objectID="50F56729-D3C9-E995-2174-B74421EE6A85" name="Relation_12" seqName="seg_0"/>
+   <object objectType="Relation" objectID="168EBE0C-5DCC-FEA0-C719-579702A3A0FD" name="Relation_13" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E09392B7-339F-CA2B-CDB2-C92284B23BB0" name="Relation_20" seqName="seg_0"/>
+   <object objectType="Relation" objectID="CACCADAE-D2F4-A15A-0B45-6ACF601DDD53" name="Relation_23" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D5A8A6D8-7D14-A380-F241-DDA57C10524C" name="Relation_24" seqName="seg_0"/>
+   <object objectType="Relation" objectID="9FC53679-1E0E-D6A8-5373-4EF158817C4B" name="Relation_25" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A137E386-DD09-DDA2-72DC-C508D89F4AC5" name="USUARIO_OPERACAO" seqName="seg_0"/>
+   <object objectType="Relation" objectID="333AF2B4-0EB8-6AF4-8EC6-DCEDE4AE1AF8" name="material_livro" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="60486887-ADC9-7C77-BFD6-256B24F63A9A" name="Emprestimo">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:29:22 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>B8ED854A-ACBC-8B14-733B-B93EFD12B3E6</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Emprestimo</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="11D1B406-2515-8DD7-16E9-5A7DDC3108E0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:29:44 UTC</createdTime>
+<generatorID>D6A101BB-071D-084B-B62E-D7ED8772F027</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>20D210F8-B3FD-F2C2-DC6E-2C438B69B560</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute name="numero" id="40C3518E-5646-C86C-B5A8-DB360A1A1C40">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:59:21 UTC</createdTime>
+<generatorID>D6A101BB-071D-084B-B62E-D7ED8772F027</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>AC574C6C-35A1-3AC6-501A-DC1B8D744F75</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute name="descricao" id="2885E3F6-4312-21E7-DC74-9A072B1012D7">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:18:10 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="numero1" id="548FACD0-DC41-DEA1-DBBA-FD5B2DCC753E">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:26:30 UTC</createdTime>
+<generatorID>D5A8A6D8-7D14-A380-F241-DDA57C10524C</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>53F5BC12-552D-DDB1-62D8-DE99AC442062</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CD0B323F-215F-9D60-6DE2-E2AAE9399462" name="Emprestimo PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:29:12 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>548FACD0-DC41-DEA1-DBBA-FD5B2DCC753E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

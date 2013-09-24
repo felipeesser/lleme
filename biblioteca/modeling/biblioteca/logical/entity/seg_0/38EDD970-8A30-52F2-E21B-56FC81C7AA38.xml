@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="38EDD970-8A30-52F2-E21B-56FC81C7AA38" name="DEVOLUCAO">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 18:05:41 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Devolucao</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="FAC6E1B6-99F3-819D-8637-DD0B5617530C">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:05:05 UTC</createdTime>
+<generatorID>50F56729-D3C9-E995-2174-B74421EE6A85</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>20D210F8-B3FD-F2C2-DC6E-2C438B69B560</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute name="numero" id="F8ABB87C-2A9F-2335-40D8-43A735C8B3E6">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:59:21 UTC</createdTime>
+<generatorID>50F56729-D3C9-E995-2174-B74421EE6A85</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>AC574C6C-35A1-3AC6-501A-DC1B8D744F75</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute name="descricao" id="46779E6B-1C6A-28DC-F635-DC78810E48AA">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:18:35 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="numero1" id="027ACEBB-7B51-D0DD-3E13-C45A90E984E5">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:26:41 UTC</createdTime>
+<generatorID>9FC53679-1E0E-D6A8-5373-4EF158817C4B</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>53F5BC12-552D-DDB1-62D8-DE99AC442062</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="80778C9A-44AC-71DC-4774-774EC9722B44" name="OPERACAO_DEVOLUCAO PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:29:19 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>027ACEBB-7B51-D0DD-3E13-C45A90E984E5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

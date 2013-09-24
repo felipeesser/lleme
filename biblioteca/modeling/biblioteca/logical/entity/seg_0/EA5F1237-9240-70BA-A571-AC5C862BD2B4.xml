@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EA5F1237-9240-70BA-A571-AC5C862BD2B4" name="Reserva">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 17:30:03 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>B8ED854A-ACBC-8B14-733B-B93EFD12B3E6</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Reserva</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="B2EFD455-E95B-848C-6B03-ECF796D2C420">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 21:03:29 UTC</createdTime>
+<generatorID>168EBE0C-5DCC-FEA0-C719-579702A3A0FD</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>E006A196-3E11-F101-896C-270082DDCB78</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute name="descricao" id="7BCF7275-FFB2-E829-9177-A6F3F9AFF37F">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:17:48 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="numero" id="3585CA7D-A15B-8E72-6ED8-57404F52B3E5">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:26:16 UTC</createdTime>
+<generatorID>CACCADAE-D2F4-A15A-0B45-6ACF601DDD53</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<referedAttribute>53F5BC12-552D-DDB1-62D8-DE99AC442062</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8274A3EC-30B9-CFC2-7B91-200208A16A73" name="Reserva PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-09-19 22:29:05 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<engineerTo>
+<item key="F867A0D8-AA8C-CD78-1541-421C0183A1E1" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3585CA7D-A15B-8E72-6ED8-57404F52B3E5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
