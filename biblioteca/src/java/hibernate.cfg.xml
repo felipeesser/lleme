@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:ORCL</property>
     <property name="hibernate.connection.username">lleme</property>
-    <property name="hibernate.connection.password">n3gucha1</property>
+    <property name="hibernate.connection.password">lleme</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="ic/tcc00175/biblioteca/controller/Operacao.hbm.xml"/>
     <mapping resource="ic/tcc00175/biblioteca/controller/Devolucao.hbm.xml"/>
