@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:ORCL</property>
+    <property name="hibernate.connection.username">lleme</property>
+    <property name="hibernate.connection.password">n3gucha1</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Operacao.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Devolucao.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Reserva.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Livro.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Material.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Usuario.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Exemplar.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Emprestimo.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/controller/Revista.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

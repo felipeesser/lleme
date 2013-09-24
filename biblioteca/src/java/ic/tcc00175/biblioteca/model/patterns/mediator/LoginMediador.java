@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.model.patterns.mediator;
 
-import ic.tcc00175.biblioteca.model.Autenticacao;
+import ic.tcc00175.biblioteca.oldmodel.Autenticacao;
 
 import javax.servlet.http.HttpServletRequest;
 

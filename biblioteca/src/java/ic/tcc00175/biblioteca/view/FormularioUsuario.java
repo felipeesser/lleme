@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.Usuario;
+import ic.tcc00175.biblioteca.oldmodel.Usuario;
 
 import java.text.SimpleDateFormat;
 

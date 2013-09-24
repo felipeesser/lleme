@@ -1,7 +1,7 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.AlunoGraduacao;
-import ic.tcc00175.biblioteca.model.Usuario;
+import ic.tcc00175.biblioteca.oldmodel.AlunoGraduacao;
+import ic.tcc00175.biblioteca.oldmodel.Usuario;
 import ic.tcc00175.biblioteca.model.patterns.adapter.BusinessObjectCollection;
 import ic.tcc00175.biblioteca.model.patterns.adapter.OperacaoColecao;
 

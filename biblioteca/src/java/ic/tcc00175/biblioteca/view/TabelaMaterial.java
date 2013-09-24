@@ -1,8 +1,8 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.Biblioteca;
-import ic.tcc00175.biblioteca.model.Material;
-import ic.tcc00175.biblioteca.model.Sistema;
+import ic.tcc00175.biblioteca.oldmodel.Biblioteca;
+import ic.tcc00175.biblioteca.oldmodel.Material;
+import ic.tcc00175.biblioteca.oldmodel.Sistema;
 import ic.tcc00175.biblioteca.model.patterns.adapter.MaterialColecao;
 
 public class TabelaMaterial extends Tabela {

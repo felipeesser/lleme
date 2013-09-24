@@ -1,4 +1,4 @@
-package ic.tcc00175.biblioteca.model;
+package ic.tcc00175.biblioteca.oldmodel;
 
 import ic.tcc00175.biblioteca.model.patterns.adapter.ExemplarColecao;
 

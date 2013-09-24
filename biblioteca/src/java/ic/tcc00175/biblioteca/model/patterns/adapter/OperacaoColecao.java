@@ -1,7 +1,7 @@
 package ic.tcc00175.biblioteca.model.patterns.adapter;
 
-import ic.tcc00175.biblioteca.model.Operacao;
-import ic.tcc00175.biblioteca.model.Usuario;
+import ic.tcc00175.biblioteca.oldmodel.Operacao;
+import ic.tcc00175.biblioteca.oldmodel.Usuario;
 
 public class OperacaoColecao extends BusinessObjectCollection {
 

@@ -1,9 +1,9 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.Biblioteca;
-import ic.tcc00175.biblioteca.model.Exemplar;
-import ic.tcc00175.biblioteca.model.Material;
-import ic.tcc00175.biblioteca.model.Sistema;
+import ic.tcc00175.biblioteca.oldmodel.Biblioteca;
+import ic.tcc00175.biblioteca.oldmodel.Exemplar;
+import ic.tcc00175.biblioteca.oldmodel.Material;
+import ic.tcc00175.biblioteca.oldmodel.Sistema;
 import ic.tcc00175.biblioteca.model.patterns.adapter.ExemplarColecao;
 
 public class TabelaExemplar extends Tabela {

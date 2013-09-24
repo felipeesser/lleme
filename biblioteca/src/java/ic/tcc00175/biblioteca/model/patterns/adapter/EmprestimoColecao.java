@@ -1,8 +1,8 @@
 package ic.tcc00175.biblioteca.model.patterns.adapter;
 
-import ic.tcc00175.biblioteca.model.Devolucao;
-import ic.tcc00175.biblioteca.model.Emprestimo;
-import ic.tcc00175.biblioteca.model.Material;
+import ic.tcc00175.biblioteca.oldmodel.Devolucao;
+import ic.tcc00175.biblioteca.oldmodel.Emprestimo;
+import ic.tcc00175.biblioteca.oldmodel.Material;
 
 import java.util.Calendar;
 import java.util.Collection;

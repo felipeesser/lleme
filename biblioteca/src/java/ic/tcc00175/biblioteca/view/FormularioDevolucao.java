@@ -1,7 +1,7 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.Material;
-import ic.tcc00175.biblioteca.model.Usuario;
+import ic.tcc00175.biblioteca.oldmodel.Material;
+import ic.tcc00175.biblioteca.oldmodel.Usuario;
 
 public class FormularioDevolucao {
 	public String getFormulario(Usuario usuario, Material material) {

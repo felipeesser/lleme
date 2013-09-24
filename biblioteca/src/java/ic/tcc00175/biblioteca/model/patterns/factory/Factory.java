@@ -1,15 +1,15 @@
 package ic.tcc00175.biblioteca.model.patterns.factory;
 
-import ic.tcc00175.biblioteca.model.AlunoGraduacao;
-import ic.tcc00175.biblioteca.model.AlunoPosGraduacao;
-import ic.tcc00175.biblioteca.model.Emprestimo;
-import ic.tcc00175.biblioteca.model.Exemplar;
-import ic.tcc00175.biblioteca.model.Livro;
-import ic.tcc00175.biblioteca.model.Material;
-import ic.tcc00175.biblioteca.model.Professor;
-import ic.tcc00175.biblioteca.model.Reserva;
-import ic.tcc00175.biblioteca.model.Revista;
-import ic.tcc00175.biblioteca.model.Usuario;
+import ic.tcc00175.biblioteca.oldmodel.AlunoGraduacao;
+import ic.tcc00175.biblioteca.oldmodel.AlunoPosGraduacao;
+import ic.tcc00175.biblioteca.oldmodel.Emprestimo;
+import ic.tcc00175.biblioteca.oldmodel.Exemplar;
+import ic.tcc00175.biblioteca.oldmodel.Livro;
+import ic.tcc00175.biblioteca.oldmodel.Material;
+import ic.tcc00175.biblioteca.oldmodel.Professor;
+import ic.tcc00175.biblioteca.oldmodel.Reserva;
+import ic.tcc00175.biblioteca.oldmodel.Revista;
+import ic.tcc00175.biblioteca.oldmodel.Usuario;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

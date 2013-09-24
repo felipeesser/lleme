@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.model.patterns.adapter;
 
-import ic.tcc00175.biblioteca.model.Exemplar;
+import ic.tcc00175.biblioteca.oldmodel.Exemplar;
 
 import java.util.Iterator;
 import java.util.TreeMap;

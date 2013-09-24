@@ -1,9 +1,9 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.Emprestimo;
-import ic.tcc00175.biblioteca.model.Exemplar;
-import ic.tcc00175.biblioteca.model.Material;
-import ic.tcc00175.biblioteca.model.Usuario;
+import ic.tcc00175.biblioteca.oldmodel.Emprestimo;
+import ic.tcc00175.biblioteca.oldmodel.Exemplar;
+import ic.tcc00175.biblioteca.oldmodel.Material;
+import ic.tcc00175.biblioteca.oldmodel.Usuario;
 
 import java.text.SimpleDateFormat;
 
