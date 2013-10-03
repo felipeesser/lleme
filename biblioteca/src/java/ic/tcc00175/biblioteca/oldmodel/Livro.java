@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.oldmodel;
 
-import ic.tcc00175.biblioteca.model.patterns.adapter.ReservaColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.ReservaColecao;
 
 public class Livro extends Material {
 

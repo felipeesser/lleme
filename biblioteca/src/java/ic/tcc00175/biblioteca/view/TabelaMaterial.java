@@ -3,7 +3,7 @@ package ic.tcc00175.biblioteca.view;
 import ic.tcc00175.biblioteca.oldmodel.Biblioteca;
 import ic.tcc00175.biblioteca.oldmodel.Material;
 import ic.tcc00175.biblioteca.oldmodel.Sistema;
-import ic.tcc00175.biblioteca.model.patterns.adapter.MaterialColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.MaterialColecao;
 
 public class TabelaMaterial extends Tabela {
 	private MaterialColecao colecao = null;

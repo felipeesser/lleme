@@ -1,5 +1,5 @@
-package ic.tcc00175.biblioteca.controller;
-// Generated Sep 19, 2013 8:00:03 PM by Hibernate Tools 3.2.1.GA
+package ic.tcc00175.biblioteca.model;
+// Generated Oct 3, 2013 6:26:57 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -16,24 +16,25 @@ public class Operacao  implements java.io.Serializable {
      private Usuario usuario;
      private Date data;
      private Set devolucaos = new HashSet(0);
-     private Set emprestimos = new HashSet(0);
      private Set reservas = new HashSet(0);
+     private Set emprestimos = new HashSet(0);
 
     public Operacao() {
     }
 
 	
-    public Operacao(long numero, Usuario usuario) {
+    public Operacao(long numero, Usuario usuario, Date data) {
         this.numero = numero;
         this.usuario = usuario;
+        this.data = data;
     }
-    public Operacao(long numero, Usuario usuario, Date data, Set devolucaos, Set emprestimos, Set reservas) {
+    public Operacao(long numero, Usuario usuario, Date data, Set devolucaos, Set reservas, Set emprestimos) {
        this.numero = numero;
        this.usuario = usuario;
        this.data = data;
        this.devolucaos = devolucaos;
-       this.emprestimos = emprestimos;
        this.reservas = reservas;
+       this.emprestimos = emprestimos;
     }
    
     public long getNumero() {
@@ -64,19 +65,19 @@ public class Operacao  implements java.io.Serializable {
     public void setDevolucaos(Set devolucaos) {
         this.devolucaos = devolucaos;
     }
-    public Set getEmprestimos() {
-        return this.emprestimos;
-    }
-    
-    public void setEmprestimos(Set emprestimos) {
-        this.emprestimos = emprestimos;
-    }
     public Set getReservas() {
         return this.reservas;
     }
     
     public void setReservas(Set reservas) {
         this.reservas = reservas;
+    }
+    public Set getEmprestimos() {
+        return this.emprestimos;
+    }
+    
+    public void setEmprestimos(Set emprestimos) {
+        this.emprestimos = emprestimos;
     }
 
 

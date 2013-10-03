@@ -1,5 +1,5 @@
-package ic.tcc00175.biblioteca.controller;
-// Generated Sep 19, 2013 8:00:03 PM by Hibernate Tools 3.2.1.GA
+package ic.tcc00175.biblioteca.model;
+// Generated Oct 3, 2013 6:26:57 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,8 +13,9 @@ public class Material  implements java.io.Serializable {
 
      private long codigo;
      private String titulo;
-     private Set exemplars = new HashSet(0);
      private Set revistas = new HashSet(0);
+     private Set exemplars = new HashSet(0);
+     private Set cds = new HashSet(0);
      private Set livros = new HashSet(0);
 
     public Material() {
@@ -25,11 +26,12 @@ public class Material  implements java.io.Serializable {
         this.codigo = codigo;
         this.titulo = titulo;
     }
-    public Material(long codigo, String titulo, Set exemplars, Set revistas, Set livros) {
+    public Material(long codigo, String titulo, Set revistas, Set exemplars, Set cds, Set livros) {
        this.codigo = codigo;
        this.titulo = titulo;
-       this.exemplars = exemplars;
        this.revistas = revistas;
+       this.exemplars = exemplars;
+       this.cds = cds;
        this.livros = livros;
     }
    
@@ -47,6 +49,13 @@ public class Material  implements java.io.Serializable {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+    public Set getRevistas() {
+        return this.revistas;
+    }
+    
+    public void setRevistas(Set revistas) {
+        this.revistas = revistas;
+    }
     public Set getExemplars() {
         return this.exemplars;
     }
@@ -54,12 +63,12 @@ public class Material  implements java.io.Serializable {
     public void setExemplars(Set exemplars) {
         this.exemplars = exemplars;
     }
-    public Set getRevistas() {
-        return this.revistas;
+    public Set getCds() {
+        return this.cds;
     }
     
-    public void setRevistas(Set revistas) {
-        this.revistas = revistas;
+    public void setCds(Set cds) {
+        this.cds = cds;
     }
     public Set getLivros() {
         return this.livros;

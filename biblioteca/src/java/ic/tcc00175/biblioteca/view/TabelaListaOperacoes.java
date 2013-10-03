@@ -2,8 +2,8 @@ package ic.tcc00175.biblioteca.view;
 
 import ic.tcc00175.biblioteca.oldmodel.AlunoGraduacao;
 import ic.tcc00175.biblioteca.oldmodel.Usuario;
-import ic.tcc00175.biblioteca.model.patterns.adapter.BusinessObjectCollection;
-import ic.tcc00175.biblioteca.model.patterns.adapter.OperacaoColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.BusinessObjectCollection;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.OperacaoColecao;
 
 public class TabelaListaOperacoes extends Tabela {
 

@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.oldmodel;
 
-import ic.tcc00175.biblioteca.model.patterns.adapter.ExemplarColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.ExemplarColecao;
 
 import java.io.Serializable;
 

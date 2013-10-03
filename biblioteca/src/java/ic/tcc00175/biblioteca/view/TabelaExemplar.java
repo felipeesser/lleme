@@ -4,7 +4,7 @@ import ic.tcc00175.biblioteca.oldmodel.Biblioteca;
 import ic.tcc00175.biblioteca.oldmodel.Exemplar;
 import ic.tcc00175.biblioteca.oldmodel.Material;
 import ic.tcc00175.biblioteca.oldmodel.Sistema;
-import ic.tcc00175.biblioteca.model.patterns.adapter.ExemplarColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.ExemplarColecao;
 
 public class TabelaExemplar extends Tabela {
 	private ExemplarColecao colecao = null;

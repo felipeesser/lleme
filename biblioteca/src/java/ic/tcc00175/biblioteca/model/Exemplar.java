@@ -1,5 +1,5 @@
-package ic.tcc00175.biblioteca.controller;
-// Generated Sep 19, 2013 8:00:03 PM by Hibernate Tools 3.2.1.GA
+package ic.tcc00175.biblioteca.model;
+// Generated Oct 3, 2013 6:26:57 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,8 +13,8 @@ public class Exemplar  implements java.io.Serializable {
 
      private ExemplarId id;
      private Material material;
+     private String desc;
      private Set emprestimos = new HashSet(0);
-     private Set devolucaos = new HashSet(0);
 
     public Exemplar() {
     }
@@ -24,11 +24,11 @@ public class Exemplar  implements java.io.Serializable {
         this.id = id;
         this.material = material;
     }
-    public Exemplar(ExemplarId id, Material material, Set emprestimos, Set devolucaos) {
+    public Exemplar(ExemplarId id, Material material, String desc, Set emprestimos) {
        this.id = id;
        this.material = material;
+       this.desc = desc;
        this.emprestimos = emprestimos;
-       this.devolucaos = devolucaos;
     }
    
     public ExemplarId getId() {
@@ -45,19 +45,19 @@ public class Exemplar  implements java.io.Serializable {
     public void setMaterial(Material material) {
         this.material = material;
     }
+    public String getDesc() {
+        return this.desc;
+    }
+    
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
     public Set getEmprestimos() {
         return this.emprestimos;
     }
     
     public void setEmprestimos(Set emprestimos) {
         this.emprestimos = emprestimos;
-    }
-    public Set getDevolucaos() {
-        return this.devolucaos;
-    }
-    
-    public void setDevolucaos(Set devolucaos) {
-        this.devolucaos = devolucaos;
     }
 
 

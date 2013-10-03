@@ -1,5 +1,5 @@
-package ic.tcc00175.biblioteca.controller;
-// Generated Sep 19, 2013 8:00:03 PM by Hibernate Tools 3.2.1.GA
+package ic.tcc00175.biblioteca.model;
+// Generated Oct 3, 2013 6:26:57 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -10,14 +10,14 @@ public class ExemplarId  implements java.io.Serializable {
 
 
      private long codigo;
-     private long numero;
+     private long num;
 
     public ExemplarId() {
     }
 
-    public ExemplarId(long codigo, long numero) {
+    public ExemplarId(long codigo, long num) {
        this.codigo = codigo;
-       this.numero = numero;
+       this.num = num;
     }
    
     public long getCodigo() {
@@ -27,12 +27,12 @@ public class ExemplarId  implements java.io.Serializable {
     public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
-    public long getNumero() {
-        return this.numero;
+    public long getNum() {
+        return this.num;
     }
     
-    public void setNumero(long numero) {
-        this.numero = numero;
+    public void setNum(long num) {
+        this.num = num;
     }
 
 
@@ -43,14 +43,14 @@ public class ExemplarId  implements java.io.Serializable {
 		 ExemplarId castOther = ( ExemplarId ) other; 
          
 		 return (this.getCodigo()==castOther.getCodigo())
- && (this.getNumero()==castOther.getNumero());
+ && (this.getNum()==castOther.getNum());
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + (int) this.getCodigo();
-         result = 37 * result + (int) this.getNumero();
+         result = 37 * result + (int) this.getNum();
          return result;
    }   
 

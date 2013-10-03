@@ -2,7 +2,7 @@
 package ic.tcc00175.biblioteca.oldmodel;
 
 import ic.tcc00175.biblioteca.Load;
-import ic.tcc00175.biblioteca.model.patterns.adapter.UsuarioColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.UsuarioColecao;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

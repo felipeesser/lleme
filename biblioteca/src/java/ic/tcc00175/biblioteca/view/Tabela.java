@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.view;
 
-import ic.tcc00175.biblioteca.model.patterns.adapter.BusinessObjectCollection;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.BusinessObjectCollection;
 
 public abstract class Tabela {
 

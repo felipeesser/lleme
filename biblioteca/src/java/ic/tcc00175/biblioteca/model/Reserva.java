@@ -1,5 +1,5 @@
-package ic.tcc00175.biblioteca.controller;
-// Generated Sep 19, 2013 8:00:03 PM by Hibernate Tools 3.2.1.GA
+package ic.tcc00175.biblioteca.model;
+// Generated Oct 3, 2013 6:26:57 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -12,7 +12,7 @@ public class Reserva  implements java.io.Serializable {
      private long operacaoNumero;
      private Operacao operacao;
      private Livro livro;
-     private String descricao;
+     private String obs;
 
     public Reserva() {
     }
@@ -23,11 +23,11 @@ public class Reserva  implements java.io.Serializable {
         this.operacao = operacao;
         this.livro = livro;
     }
-    public Reserva(long operacaoNumero, Operacao operacao, Livro livro, String descricao) {
+    public Reserva(long operacaoNumero, Operacao operacao, Livro livro, String obs) {
        this.operacaoNumero = operacaoNumero;
        this.operacao = operacao;
        this.livro = livro;
-       this.descricao = descricao;
+       this.obs = obs;
     }
    
     public long getOperacaoNumero() {
@@ -51,12 +51,12 @@ public class Reserva  implements java.io.Serializable {
     public void setLivro(Livro livro) {
         this.livro = livro;
     }
-    public String getDescricao() {
-        return this.descricao;
+    public String getObs() {
+        return this.obs;
     }
     
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setObs(String obs) {
+        this.obs = obs;
     }
 
 

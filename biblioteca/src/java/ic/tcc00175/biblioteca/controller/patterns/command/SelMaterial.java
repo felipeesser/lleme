@@ -1,6 +1,6 @@
 package ic.tcc00175.biblioteca.controller.patterns.command;
 
-import ic.tcc00175.biblioteca.model.patterns.facade.Cadastro;
+import ic.tcc00175.biblioteca.oldmodel.patterns.facade.Cadastro;
 
 import java.io.IOException;
 

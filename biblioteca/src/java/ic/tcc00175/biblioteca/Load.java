@@ -13,9 +13,9 @@ import ic.tcc00175.biblioteca.oldmodel.Reserva;
 import ic.tcc00175.biblioteca.oldmodel.Revista;
 import ic.tcc00175.biblioteca.oldmodel.Sistema;
 import ic.tcc00175.biblioteca.oldmodel.Usuario;
-import ic.tcc00175.biblioteca.model.patterns.adapter.ExemplarColecao;
-import ic.tcc00175.biblioteca.model.patterns.adapter.MaterialColecao;
-import ic.tcc00175.biblioteca.model.patterns.adapter.UsuarioColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.ExemplarColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.MaterialColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.UsuarioColecao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

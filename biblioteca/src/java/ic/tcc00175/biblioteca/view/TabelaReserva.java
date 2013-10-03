@@ -1,8 +1,8 @@
 package ic.tcc00175.biblioteca.view;
 
 import ic.tcc00175.biblioteca.oldmodel.Usuario;
-import ic.tcc00175.biblioteca.model.patterns.adapter.BusinessObjectCollection;
-import ic.tcc00175.biblioteca.model.patterns.adapter.ReservaColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.BusinessObjectCollection;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.ReservaColecao;
 
 public class TabelaReserva extends Tabela {
 

@@ -8,14 +8,17 @@
     <property name="hibernate.connection.username">lleme</property>
     <property name="hibernate.connection.password">lleme</property>
     <property name="hibernate.current_session_context_class">thread</property>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Operacao.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Devolucao.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Reserva.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Livro.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Material.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Usuario.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Exemplar.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Emprestimo.hbm.xml"/>
-    <mapping resource="ic/tcc00175/biblioteca/controller/Revista.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Tipo.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Exemplar.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Usuario.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Devolucao.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Operacao.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Login.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Revista.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Material.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Reserva.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Emprestimo.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Livro.hbm.xml"/>
+    <mapping resource="ic/tcc00175/biblioteca/model/Cd.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

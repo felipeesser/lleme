@@ -1,8 +1,7 @@
-package ic.tcc00175.biblioteca.controller;
-// Generated Sep 19, 2013 8:00:03 PM by Hibernate Tools 3.2.1.GA
+package ic.tcc00175.biblioteca.model;
+// Generated Oct 3, 2013 6:26:57 PM by Hibernate Tools 3.2.1.GA
 
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,9 +14,9 @@ public class Livro  implements java.io.Serializable {
      private long materialCodigo;
      private Material material;
      private String editora;
-     private String autor;
-     private BigDecimal edicao;
-     private BigDecimal anopublicacao;
+     private String autores;
+     private Long edicao;
+     private Long anopublicacao;
      private Set reservas = new HashSet(0);
 
     public Livro() {
@@ -28,11 +27,11 @@ public class Livro  implements java.io.Serializable {
         this.materialCodigo = materialCodigo;
         this.material = material;
     }
-    public Livro(long materialCodigo, Material material, String editora, String autor, BigDecimal edicao, BigDecimal anopublicacao, Set reservas) {
+    public Livro(long materialCodigo, Material material, String editora, String autores, Long edicao, Long anopublicacao, Set reservas) {
        this.materialCodigo = materialCodigo;
        this.material = material;
        this.editora = editora;
-       this.autor = autor;
+       this.autores = autores;
        this.edicao = edicao;
        this.anopublicacao = anopublicacao;
        this.reservas = reservas;
@@ -59,25 +58,25 @@ public class Livro  implements java.io.Serializable {
     public void setEditora(String editora) {
         this.editora = editora;
     }
-    public String getAutor() {
-        return this.autor;
+    public String getAutores() {
+        return this.autores;
     }
     
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setAutores(String autores) {
+        this.autores = autores;
     }
-    public BigDecimal getEdicao() {
+    public Long getEdicao() {
         return this.edicao;
     }
     
-    public void setEdicao(BigDecimal edicao) {
+    public void setEdicao(Long edicao) {
         this.edicao = edicao;
     }
-    public BigDecimal getAnopublicacao() {
+    public Long getAnopublicacao() {
         return this.anopublicacao;
     }
     
-    public void setAnopublicacao(BigDecimal anopublicacao) {
+    public void setAnopublicacao(Long anopublicacao) {
         this.anopublicacao = anopublicacao;
     }
     public Set getReservas() {

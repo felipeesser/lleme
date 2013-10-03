@@ -2,7 +2,7 @@
 
 package ic.tcc00175.biblioteca.oldmodel;
 
-import ic.tcc00175.biblioteca.model.patterns.adapter.MaterialColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.MaterialColecao;
 
 /**
  * @persistent

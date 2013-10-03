@@ -2,7 +2,7 @@ package ic.tcc00175.biblioteca.view;
 
 import ic.tcc00175.biblioteca.oldmodel.Sistema;
 import ic.tcc00175.biblioteca.oldmodel.Usuario;
-import ic.tcc00175.biblioteca.model.patterns.adapter.UsuarioColecao;
+import ic.tcc00175.biblioteca.oldmodel.patterns.adapter.UsuarioColecao;
 
 public class TabelaUsuario extends Tabela {
 
