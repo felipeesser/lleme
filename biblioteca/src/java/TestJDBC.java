@@ -15,10 +15,10 @@ public class TestJDBC {
         try {
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection(
+            Connection conn = DriverManager.getConnection(
                     "jdbc:oracle:thin:@localhost:1521:orcl", "lleme",
                     "lleme");
-            Statement stmt = connection.createStatement();
+            Statement stmt = conn.createStatement();
             String query = "select id,nome from Usuario";
             try (ResultSet rs = stmt.executeQuery(query)) {
                 while (rs.next()) {
@@ -27,9 +27,15 @@ public class TestJDBC {
                 }
             }
             
-            query = "update Usuario set nome='Luiz Andre' where id=123";
-            stmt = connection.createStatement();
+            query = "update Usuario set nome='Luiz' where id=123";
+            stmt = conn.createStatement();
+            conn.setAutoCommit(false);
             stmt.execute(query);
+            //stmt.getResultSet();
+            //stmt.getMoreResults();
+            //stmt.getUpdateCount();
+            conn.commit();
+            //conn.rollback();
 
         } catch (ClassNotFoundException | SQLException e) {
             Logger.getLogger(TestJDBC.class.getName()).log(Level.SEVERE, null, e);
