@@ -51,9 +51,9 @@ public class TabelaUsuario extends Tabela {
                 getPos() + linha).getAdmissao())))
                 + "</TD>";
 
-        if (colecao.get(getPos() + linha) == null)
+        if (colecao.get(getPos() + linha) == null) {
             retorno += "<TD>&nbsp;    </TD>";
-        else {
+        } else {
             String nome = colecao.get(getPos() + linha).getClass().getName();
             retorno += "<TD>" + nome.substring(nome.lastIndexOf(".") + 1)
                     + "</TD>";

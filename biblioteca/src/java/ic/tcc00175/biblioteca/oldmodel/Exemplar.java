@@ -14,8 +14,9 @@ public class Exemplar extends BusinessObject {
             Key key = (Key) o;
             Integer keyCodigo = new Integer(key.numK);
             Integer thisCodigo = new Integer(this.numK);
-            if (this.material.compareTo(key.material) == 0)
+            if (this.material.compareTo(key.material) == 0) {
                 return thisCodigo.compareTo(keyCodigo);
+            }
             return this.material.compareTo(key.material);
         }
     }

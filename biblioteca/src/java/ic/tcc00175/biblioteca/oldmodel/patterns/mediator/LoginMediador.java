@@ -11,12 +11,13 @@ public class LoginMediador {
     public void doLogin(HttpServletRequest request) {
         String mensagem = null;
         this.lnkAutenticacao = new Autenticacao(request.getParameter("login_username"), request.getParameter("secretkey"));
-        if (this.lnkAutenticacao.isValid())
+        if (this.lnkAutenticacao.isValid()) {
             mensagem = "Login OK.\nAcesso ao sistema Liberado.";
-        else if (this.lnkAutenticacao.isLoginExpirado())
+        } else if (this.lnkAutenticacao.isLoginExpirado()) {
             mensagem = "Login expirado.\nAcesso ao sistema bloqueado.";
-        else
+        } else {
             mensagem = "Login inválido.\nAcesso ao sistema bloqueado.";
+        }
         request.getSession().setAttribute("autenticacao", this.lnkAutenticacao);
         request.getSession().setAttribute("mensagem", mensagem);
     }

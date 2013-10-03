@@ -14,8 +14,9 @@ public class UsuarioColecao extends BusinessObjectCollection {
     }
 
     public Usuario get(int index) {
-        if (index <= this.treeMap.size() - 1)
+        if (index <= this.treeMap.size() - 1) {
             return (Usuario) this.treeMap.values().toArray()[index];
+        }
         return null;
     }
 

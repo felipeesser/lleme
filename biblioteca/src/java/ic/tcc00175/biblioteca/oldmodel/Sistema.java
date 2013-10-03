@@ -41,7 +41,7 @@ public class Sistema extends ic.tcc00175.biblioteca.oldmodel.BusinessObject {
     }
 
     public static Sistema getInstance() {
-        if (instance == null)
+        if (instance == null) {
             try {
                 FileInputStream in;
                 in = new FileInputStream(Sistema.arq);
@@ -56,6 +56,7 @@ public class Sistema extends ic.tcc00175.biblioteca.oldmodel.BusinessObject {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+        }
         Professor.qtdEmprestimo = 5;
         Professor.tempoEmprestimo = 3;
         AlunoPosGraduacao.qtdEmprestimo = 4;

@@ -45,8 +45,9 @@ public class Login extends BusinessObject {
 
     public boolean isExpirado() {
         if (expiracao != null) {
-            if (expiracao.compareTo(Calendar.getInstance().getTime()) >= 0)
+            if (expiracao.compareTo(Calendar.getInstance().getTime()) >= 0) {
                 return false;
+            }
             return true;
         }
         return false;

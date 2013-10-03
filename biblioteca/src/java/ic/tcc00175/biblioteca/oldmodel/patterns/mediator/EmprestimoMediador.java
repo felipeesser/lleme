@@ -32,69 +32,81 @@ public class EmprestimoMediador {
         // Recupera usuario
         this.lnkUsuario = this.lnkUsuarioMediator.getUsuario(request,
                 lnkErrosCollection);
-        if (lnkUsuario == null)
+        if (lnkUsuario == null) {
             this.lnkErrosCollection.add("Erro: usuario não cadastrado.");
-        else
+        } else {
             this.lnkEmprestimo.setLnkrevUsuario(lnkUsuario);
+        }
 
         // Recupera exemplar
         this.lnkExemplar = this.lnkExemplarMediator.getExemplar(request,
                 lnkErrosCollection);
-        if (lnkExemplar == null)
+        if (lnkExemplar == null) {
             lnkErrosCollection.add("Erro: exemplar não cadastrado.");
-        else if (this.lnkExemplar.getLnkEmprestimo() != null)
+        } else if (this.lnkExemplar.getLnkEmprestimo() != null) {
             lnkErrosCollection.add("Erro: exemplar já emprestado.");
-        else
+        } else {
             this.lnkEmprestimo.setLnkrevExemplar(lnkExemplar);
+        }
 
         // Recupera material
         this.lnkMaterial = this.lnkMaterialMediator.getMaterial(request,
                 lnkErrosCollection);
-        if (lnkMaterial == null)
+        if (lnkMaterial == null) {
             lnkErrosCollection.add("Erro: material não cadastrado.");
+        }
 
         // Verifica se há outro emprestimo para o mesmo material
-        if (lnkMaterial != null)
-            if (lnkUsuario.getLnkEmprestimo().containsEmprestado(lnkMaterial))
+        if (lnkMaterial != null) {
+            if (lnkUsuario.getLnkEmprestimo().containsEmprestado(lnkMaterial)) {
                 lnkErrosCollection.add("Erro: outro exemplar do mesmo material já está emprestado para o usuario.");
+            }
+        }
 
         // Verifica se há emprestimo atrasado
-        if (lnkUsuario.getLnkEmprestimo().containsAtraso())
+        if (lnkUsuario.getLnkEmprestimo().containsAtraso()) {
             lnkErrosCollection.add("Erro: há um emprestimo atrasado para o usuario.");
+        }
 
         // Verifica se o limite de emprestimos foi atingido
-        if (lnkUsuario.atingiuLimiteEmprestimo())
+        if (lnkUsuario.atingiuLimiteEmprestimo()) {
             lnkErrosCollection.add("Erro: usuario atingiu o número máximo de emprestimos permitido.");
+        }
 
         // ------------------------------------------------------------------
         // Verifica prioridade das reservas
-        if (lnkMaterial != null)
+        if (lnkMaterial != null) {
             try {
                 if (Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial)) {
                     Livro livro = (Livro) lnkMaterial;
                     if (livro.getLnkExemplar().sizeDisponiveis() <= livro.getLnkReserva().size()
                             && !lnkUsuario.getLnkReserva().containsMaterial(
-                            lnkMaterial))
+                            lnkMaterial)) {
                         lnkErrosCollection.add("Erro: número exemplares disponíveis menor do que o número de reservas.");
+                    }
                 }
 
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+        }
         // ----------------------------------------------------------------
 
         // Verifica chave duplicada
-        if (lnkErrosCollection.isEmpty())
-            if (this.lnkUsuario.getLnkEmprestimo().get(lnkEmprestimo.getKey()) != null)
+        if (lnkErrosCollection.isEmpty()) {
+            if (this.lnkUsuario.getLnkEmprestimo().get(lnkEmprestimo.getKey()) != null) {
                 this.lnkErrosCollection.add("Erro: chave já cadastrada.");
+            }
+        }
 
         // Inclusão da emprestimo
         if (lnkErrosCollection.isEmpty()) {
             this.lnkUsuario.getLnkReserva().remove(this.lnkMaterial);
             try {
-                if (Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial))
+                if (Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial)) {
                     ((Livro) this.lnkMaterial).getLnkReserva().remove(
                             this.lnkUsuario);
+                }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -105,8 +117,9 @@ public class EmprestimoMediador {
         } else {
             Iterator iter = this.lnkErrosCollection.iterator();
             mensagem = "Inclusão mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("exemplar", this.lnkExemplar);
@@ -130,23 +143,27 @@ public class EmprestimoMediador {
         // Recupera Usuario
         this.lnkUsuario = this.lnkUsuarioMediator.getUsuario(request,
                 lnkErrosCollection);
-        if (lnkUsuario == null)
+        if (lnkUsuario == null) {
             lnkErrosCollection.add("Erro: usuario não cadastrado.");
-        else
+        } else {
             this.lnkEmprestimo.setLnkrevUsuario(lnkUsuario);
+        }
 
         // Recupera exemplar
         this.lnkExemplar = this.lnkExemplarMediator.getExemplar(request,
                 lnkErrosCollection);
-        if (lnkExemplar == null)
+        if (lnkExemplar == null) {
             lnkErrosCollection.add("Erro: exemplar não cadastrado.");
-        else
+        } else {
             this.lnkEmprestimo.setLnkrevExemplar(lnkExemplar);
+        }
 
         // Verifica chave não cadastrada
-        if (lnkErrosCollection.isEmpty())
-            if (this.lnkUsuario.getLnkEmprestimo().get(lnkEmprestimo.getKey()) == null)
+        if (lnkErrosCollection.isEmpty()) {
+            if (this.lnkUsuario.getLnkEmprestimo().get(lnkEmprestimo.getKey()) == null) {
                 this.lnkErrosCollection.add("Erro: emprestimo inexistente.");
+            }
+        }
 
         if (lnkErrosCollection.isEmpty()) {
             this.lnkUsuario.getLnkEmprestimo().remove(
@@ -157,8 +174,9 @@ public class EmprestimoMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Remoção mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("exemplar", this.lnkExemplar);
@@ -198,18 +216,21 @@ public class EmprestimoMediador {
         // Recupera usuario
         this.lnkUsuario = this.lnkUsuarioMediator.getUsuario(request,
                 lnkErrosCollection);
-        if (lnkUsuario == null)
+        if (lnkUsuario == null) {
             this.lnkErrosCollection.add("Erro: usuario não cadastrado.");
+        }
 
         // Recupera Material
         this.lnkMaterial = this.lnkMaterialMediator.getMaterial(request,
                 lnkErrosCollection);
-        if (lnkMaterial == null)
+        if (lnkMaterial == null) {
             lnkErrosCollection.add("Erro: material não cadastrado.");
+        }
 
         // Verifica se material está emprestado
-        if (!this.lnkUsuario.getLnkEmprestimo().isEmprestado(lnkMaterial))
+        if (!this.lnkUsuario.getLnkEmprestimo().isEmprestado(lnkMaterial)) {
             this.lnkErrosCollection.add("Erro: material não está emprestado.");
+        }
 
         // Devolução
         if (lnkErrosCollection.isEmpty()) {
@@ -219,8 +240,9 @@ public class EmprestimoMediador {
         } else {
             Iterator iter = this.lnkErrosCollection.iterator();
             mensagem = "Devolução mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("material", this.lnkMaterial);

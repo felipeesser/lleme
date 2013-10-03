@@ -14,8 +14,9 @@ public class MaterialColecao extends BusinessObjectCollection {
     }
 
     public Material get(int index) {
-        if (index <= this.treeMap.size() - 1)
+        if (index <= this.treeMap.size() - 1) {
             return (Material) this.treeMap.values().toArray()[index];
+        }
         return null;
     }
 

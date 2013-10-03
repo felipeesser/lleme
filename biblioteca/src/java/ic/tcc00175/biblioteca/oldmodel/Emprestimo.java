@@ -16,8 +16,9 @@ public class Emprestimo extends Operacao {
         @SuppressWarnings("unchecked")
         public int compareTo(Object o) {
             Key key = (Key) o;
-            if (this.data.compareTo(key.data) == 0)
+            if (this.data.compareTo(key.data) == 0) {
                 return this.exemplar.compareTo(key.exemplar);
+            }
             return this.data.compareTo(key.data);
         }
     }
@@ -50,14 +51,16 @@ public class Emprestimo extends Operacao {
     }
 
     public boolean isPendente() {
-        if (this.lnkDevolucao == null)
+        if (this.lnkDevolucao == null) {
             return true;
+        }
         return false;
     }
 
     public Devolucao getLnkDevolucao() {
-        if (lnkDevolucao != null)
+        if (lnkDevolucao != null) {
             return lnkDevolucao;
+        }
         GregorianCalendar gregCal = new GregorianCalendar();
         gregCal.setTime(getData());
         gregCal.add(Calendar.DATE, getLnkrevUsuario().getTempoEmprestimo());
@@ -88,8 +91,9 @@ public class Emprestimo extends Operacao {
     }
 
     public Material getLnkMaterial() {
-        if (getLnkrevExemplar() == null)
+        if (getLnkrevExemplar() == null) {
             return null;
+        }
         return getLnkrevExemplar().getLnkrevMaterial();
     }
 }

@@ -17,8 +17,9 @@ public class Reserva extends Operacao {
         public int compareTo(Object o) {
             Key key = (Key) o;
             if (this.data.compareTo(key.data) == 0) {
-                if (this.usuario.compareTo(key.usuario) == 0)
+                if (this.usuario.compareTo(key.usuario) == 0) {
                     return this.livro.compareTo(key.livro);
+                }
                 return this.usuario.compareTo(key.usuario);
             }
             return this.data.compareTo(key.data);

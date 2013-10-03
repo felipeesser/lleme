@@ -23,12 +23,13 @@ public class Factory {
     public static Usuario createUsuario(HttpServletRequest request,
             HashSet mensagens) {
         Usuario lnkUsuario = null;
-        if (request.getParameter("classe").equals("AlunoGraduacao"))
+        if (request.getParameter("classe").equals("AlunoGraduacao")) {
             lnkUsuario = new AlunoGraduacao();
-        else if (request.getParameter("classe").equals("AlunoPosGraduacao"))
+        } else if (request.getParameter("classe").equals("AlunoPosGraduacao")) {
             lnkUsuario = new AlunoPosGraduacao();
-        else if (request.getParameter("classe").equals("Professor"))
+        } else if (request.getParameter("classe").equals("Professor")) {
             lnkUsuario = new Professor();
+        }
         try {
             lnkUsuario.setId((new Long(request.getParameter("id"))).longValue());
         } catch (NumberFormatException numExcp) {
@@ -71,15 +72,16 @@ public class Factory {
         } catch (ParseException dtExcp) {
             mensagens.add("Erro: formato inválido para a data de admissão.");
         }
-        if (request.getParameter("cancelamento").equals(""))
+        if (request.getParameter("cancelamento").equals("")) {
             lnkUsuario.setCancelamento(null);
-        else
+        } else {
             try {
                 lnkUsuario.setCancelamento(new Date(data.parse(
                         request.getParameter("cancelamento")).getTime()));
             } catch (ParseException dtExcp) {
                 mensagens.add("Erro: formato inválido para a data de cancelamento.");
             }
+        }
         return lnkUsuario;
     }
 

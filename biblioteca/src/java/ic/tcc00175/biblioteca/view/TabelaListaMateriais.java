@@ -49,9 +49,9 @@ public class TabelaListaMateriais extends Tabela {
         this.lnkMaterial = this.colecao.get(getPos() + linha);
 
         // Coluna 1
-        if (this.colecao.get(getPos() + linha) == null)
+        if (this.colecao.get(getPos() + linha) == null) {
             retorno += "<TD>&nbsp;    </TD>";
-        else {
+        } else {
             material = this.colecao.get(getPos() + linha).getClass().getName();
             material = material.substring(material.lastIndexOf(".") + 1);
             retorno += "<TD>" + material + "</TD>";
@@ -98,9 +98,10 @@ public class TabelaListaMateriais extends Tabela {
                                     + Integer.toString(reservas)
                                     + " reserva(s)em nome de: ";
                             retorno += livro.getLnkReserva().get(0).getLnkrevUsuario().getNome();
-                            for (int i = 1; i < livro.getLnkReserva().size(); i++)
+                            for (int i = 1; i < livro.getLnkReserva().size(); i++) {
                                 retorno += ", "
                                         + livro.getLnkReserva().get(i).getLnkrevUsuario().getNome();
+                            }
                             retorno += "</td></tr>";
                         }
                     }
@@ -111,9 +112,9 @@ public class TabelaListaMateriais extends Tabela {
                     retorno += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Exemplar #"
                             + lnkMaterial.getLnkExemplar().get(i).getNum()
                             + " est&aacute;";
-                    if (lnkMaterial.getLnkExemplar().get(i).getLnkEmprestimo() == null)
+                    if (lnkMaterial.getLnkExemplar().get(i).getLnkEmprestimo() == null) {
                         retorno += " dispon&iacute;vel.";
-                    else {
+                    } else {
                         java.text.SimpleDateFormat data = new java.text.SimpleDateFormat(
                                 "dd/MM/yyyy");
                         String data1 = data.format(lnkMaterial.getLnkExemplar().get(i).getLnkEmprestimo().getData());

@@ -18,8 +18,9 @@ public class ReservaColecao extends BusinessObjectCollection {
     }
 
     public Reserva get(int index) {
-        if (index <= this.treeMap.size() - 1)
+        if (index <= this.treeMap.size() - 1) {
             return (Reserva) this.treeMap.values().toArray()[index];
+        }
         return null;
     }
 
@@ -38,16 +39,20 @@ public class ReservaColecao extends BusinessObjectCollection {
 
     public void remove(Usuario usuario) {
         Object[] reservas = treeMap.values().toArray();
-        for (int i = 0; i < reservas.length; i++)
-            if (((Reserva) reservas[i]).getLnkrevUsuario().equals(usuario))
+        for (int i = 0; i < reservas.length; i++) {
+            if (((Reserva) reservas[i]).getLnkrevUsuario().equals(usuario)) {
                 treeMap.remove(((Reserva) reservas[i]).getKey());
+            }
+        }
     }
 
     public void remove(Material material) {
         Object[] reservas = treeMap.values().toArray();
-        for (int i = 0; i < reservas.length; i++)
-            if (((Reserva) reservas[i]).getLnkrevLivro().equals(material))
+        for (int i = 0; i < reservas.length; i++) {
+            if (((Reserva) reservas[i]).getLnkrevLivro().equals(material)) {
                 treeMap.remove(((Reserva) reservas[i]).getKey());
+            }
+        }
     }
 
     public int size() {
@@ -58,10 +63,12 @@ public class ReservaColecao extends BusinessObjectCollection {
     public boolean containsMaterial(Material material) {
         Iterator iter = this.treeMap.values().iterator();
         boolean achou = false;
-        while (iter.hasNext() && !achou)
+        while (iter.hasNext() && !achou) {
             if (((Reserva) iter.next()).getLnkrevLivro().getKey().compareTo(
-                    material.getKey()) == 0)
+                    material.getKey()) == 0) {
                 achou = true;
+            }
+        }
         return achou;
     }
 

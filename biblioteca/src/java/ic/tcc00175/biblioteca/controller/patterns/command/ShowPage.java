@@ -19,10 +19,10 @@ public class ShowPage extends ServletCommand {
         // autenticacao = new Autenticacao("admin", "admin");
         // ************************************************
         //
-        if (autenticacao == null || !autenticacao.isValid())
+        if (autenticacao == null || !autenticacao.isValid()) {
             request.getRequestDispatcher("../jsp/login.jsp").forward(request,
                     response);
-        else {
+        } else {
             request.getSession().setAttribute("mensagem", null);
             request.getRequestDispatcher(request.getParameter("page")).forward(
                     request, response);

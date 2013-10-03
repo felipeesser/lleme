@@ -33,8 +33,9 @@ public class MaterialMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Recuperação mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("material", lnkMaterial);
         request.getSession().setAttribute("mensagem", mensagem);

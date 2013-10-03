@@ -32,10 +32,11 @@ public class ExemplarMediador {
                 this.lnkErrosCollection);
         this.lnkMaterial = this.lnkMaterialMediator.getMaterial(request,
                 lnkErrosCollection);
-        if (lnkMaterial == null)
+        if (lnkMaterial == null) {
             lnkErrosCollection.add("Erro: material não cadastrado.");
-        else
+        } else {
             this.lnkExemplar.setLnkrevMaterial(lnkMaterial);
+        }
 
         this.lnkExemplar = this.lnkMaterialCollection.get(lnkMaterial.getKey()).getLnkExemplar().get(lnkExemplar.getKey());
         if (lnkErrosCollection.isEmpty()) {
@@ -46,8 +47,9 @@ public class ExemplarMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Recuperação mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("exemplar", lnkExemplar);
         request.getSession().setAttribute("mensagem", mensagem);

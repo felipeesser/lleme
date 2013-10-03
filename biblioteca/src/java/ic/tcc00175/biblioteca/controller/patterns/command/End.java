@@ -13,8 +13,9 @@ public class End extends ServletCommand {
     public void execute(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Tabela tabela = (Tabela) request.getSession().getAttribute("tabela");
-        if (tabela != null)
+        if (tabela != null) {
             tabela.end();
+        }
         request.getRequestDispatcher(request.getParameter("page")).forward(
                 request, response);
     }

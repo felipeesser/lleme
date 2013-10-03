@@ -30,36 +30,41 @@ public class ReservaMediador {
         // Recupera Usuario
         this.lnkUsuario = this.lnkUsuarioMediator.getUsuario(request,
                 lnkErrosCollection);
-        if (lnkUsuario == null)
+        if (lnkUsuario == null) {
             lnkErrosCollection.add("Erro: usuario não cadastrado.");
-        else if (lnkUsuario.atingiuLimiteReserva())
+        } else if (lnkUsuario.atingiuLimiteReserva()) {
             lnkErrosCollection.add("Erro: o limite de reservas são três livros.");
-        else
+        } else {
             this.lnkReserva.setLnkrevUsuario(lnkUsuario);
+        }
 
         // Recupera Material
         this.lnkMaterial = this.lnkMaterialMediator.getMaterial(request,
                 lnkErrosCollection);
-        if (lnkMaterial == null)
+        if (lnkMaterial == null) {
             lnkErrosCollection.add("Erro: material não cadastrado.");
-        else
+        } else {
             try {
-                if (!Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial))
+                if (!Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial)) {
                     lnkErrosCollection.add("Erro: só é permitido reservar livros.");
-                else if (lnkUsuario != null
+                } else if (lnkUsuario != null
                         && lnkUsuario.getLnkReserva().containsMaterial(
-                        lnkMaterial))
+                        lnkMaterial)) {
                     lnkErrosCollection.add("Erro: não é permitido reservar o mesmo livro mais de uma vez.");
-                else
+                } else {
                     this.lnkReserva.setLnkrevLivro((Livro) lnkMaterial);
+                }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+        }
 
         // Verifica chave duplicada
-        if (lnkErrosCollection.isEmpty())
-            if (((Livro) lnkMaterial).getLnkReserva().get(lnkReserva.getKey()) != null)
+        if (lnkErrosCollection.isEmpty()) {
+            if (((Livro) lnkMaterial).getLnkReserva().get(lnkReserva.getKey()) != null) {
                 this.lnkErrosCollection.add("Erro: chave já cadastrada.");
+            }
+        }
 
         // Inclusão da reserva
         if (lnkErrosCollection.isEmpty()) {
@@ -70,8 +75,9 @@ public class ReservaMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Inclusão mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("material", this.lnkMaterial);
@@ -94,30 +100,35 @@ public class ReservaMediador {
         // Recupera Usuario
         this.lnkUsuario = this.lnkUsuarioMediator.getUsuario(request,
                 lnkErrosCollection);
-        if (lnkUsuario == null)
+        if (lnkUsuario == null) {
             lnkErrosCollection.add("Erro: usuario não cadastrado.");
-        else
+        } else {
             this.lnkReserva.setLnkrevUsuario(lnkUsuario);
+        }
 
         // Recupera Material
         this.lnkMaterial = this.lnkMaterialMediator.getMaterial(request,
                 lnkErrosCollection);
-        if (lnkMaterial == null)
+        if (lnkMaterial == null) {
             lnkErrosCollection.add("Erro: material não cadastrado.");
-        else
+        } else {
             try {
-                if (!Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial))
+                if (!Class.forName("ic.tcc00175.biblioteca.model.Livro").isInstance(lnkMaterial)) {
                     lnkErrosCollection.add("Erro: só é permitido reservar livros.");
-                else
+                } else {
                     this.lnkReserva.setLnkrevLivro((Livro) lnkMaterial);
+                }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+        }
 
         // Verifica chave não existente
-        if (lnkErrosCollection.isEmpty())
-            if (((Livro) lnkMaterial).getLnkReserva().get(lnkReserva.getKey()) == null)
+        if (lnkErrosCollection.isEmpty()) {
+            if (((Livro) lnkMaterial).getLnkReserva().get(lnkReserva.getKey()) == null) {
                 this.lnkErrosCollection.add("Erro: chave não está cadastrada.");
+            }
+        }
 
         if (lnkErrosCollection.isEmpty()) {
             this.lnkUsuario.getLnkReserva().remove(lnkReserva.getKey());
@@ -128,8 +139,9 @@ public class ReservaMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Remoção mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("material", this.lnkMaterial);

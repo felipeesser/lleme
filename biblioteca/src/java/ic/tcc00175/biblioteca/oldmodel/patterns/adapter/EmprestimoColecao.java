@@ -19,8 +19,9 @@ public class EmprestimoColecao extends BusinessObjectCollection {
     }
 
     public Emprestimo get(int index) {
-        if (index <= this.treeMap.size() - 1)
+        if (index <= this.treeMap.size() - 1) {
             return (Emprestimo) this.treeMap.values().toArray()[index];
+        }
         return null;
     }
 
@@ -47,8 +48,9 @@ public class EmprestimoColecao extends BusinessObjectCollection {
         int qtd = 0;
         while (iter.hasNext()) {
             emprestimo = (Emprestimo) iter.next();
-            if (emprestimo.isPendente())
+            if (emprestimo.isPendente()) {
                 qtd++;
+            }
         }
         return qtd;
     }
@@ -77,8 +79,9 @@ public class EmprestimoColecao extends BusinessObjectCollection {
             empr = (Emprestimo) iter.next();
             matEmpr = empr.getLnkrevExemplar().getLnkrevMaterial();
             if (matEmpr.getKey().compareTo(material.getKey()) == 0
-                    && empr.isPendente())
+                    && empr.isPendente()) {
                 achou = true;
+            }
         }
         return achou;
     }
@@ -94,8 +97,9 @@ public class EmprestimoColecao extends BusinessObjectCollection {
         while (iter.hasNext() && !achou) {
             emprestimo = (Emprestimo) iter.next();
             if (emprestimo.getLnkMaterial().equals(material)
-                    && emprestimo.isPendente())
+                    && emprestimo.isPendente()) {
                 achou = true;
+            }
         }
         return achou;
     }
@@ -108,8 +112,9 @@ public class EmprestimoColecao extends BusinessObjectCollection {
             emprestimo = (Emprestimo) iter.next();
             if (Calendar.getInstance().getTime().after(
                     emprestimo.getLnkDevolucao().getData())
-                    && emprestimo.isPendente())
+                    && emprestimo.isPendente()) {
                 achou = true;
+            }
         }
         return achou;
     }

@@ -159,14 +159,16 @@ public abstract class Usuario extends BusinessObject {
     }
 
     public boolean atingiuLimiteReserva() {
-        if (getLnkReserva().size() < Reserva.limite)
+        if (getLnkReserva().size() < Reserva.limite) {
             return false;
+        }
         return true;
     }
 
     public boolean atingiuLimiteEmprestimo() {
-        if (getLnkEmprestimo().sizePendentes() < getQtdEmprestimo())
+        if (getLnkEmprestimo().sizePendentes() < getQtdEmprestimo()) {
             return false;
+        }
         return true;
     }
     private long id = 0;
@@ -174,7 +176,7 @@ public abstract class Usuario extends BusinessObject {
     private class Key implements Comparable, Serializable {
 
         /**
-         * 
+         *
          */
         private static final long serialVersionUID = -7265100949117553088L;
         private long idK = 0;

@@ -15,8 +15,9 @@ abstract public class Operacao extends BusinessObject {
     }
 
     public void setData(Date data) {
-        if (data != null)
+        if (data != null) {
             this.data = data;
+        }
     }
 
     public boolean isPendente() {

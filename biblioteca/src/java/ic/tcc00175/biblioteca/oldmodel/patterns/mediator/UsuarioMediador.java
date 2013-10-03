@@ -22,8 +22,9 @@ public class UsuarioMediador {
         this.lnkUsuarioCollection = this.lnkSistema.getLnkUsuario();
         this.lnkUsuario = Factory.createUsuario(request,
                 this.lnkErrosCollection);
-        if (lnkUsuarioCollection.get(lnkUsuario.getKey()) != null)
+        if (lnkUsuarioCollection.get(lnkUsuario.getKey()) != null) {
             this.lnkErrosCollection.add("Erro: chave já cadastrada.");
+        }
 
         // Inclusão do usuario
         if (lnkErrosCollection.isEmpty()) {
@@ -33,8 +34,9 @@ public class UsuarioMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Inclusão mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("mensagem", mensagem);
@@ -47,18 +49,21 @@ public class UsuarioMediador {
         this.lnkUsuarioCollection = this.lnkSistema.getLnkUsuario();
         this.lnkUsuario = lnkUsuarioCollection.get(Factory.createKeyUsuario(
                 request, this.lnkErrosCollection));
-        if (lnkUsuario == null)
+        if (lnkUsuario == null) {
             this.lnkErrosCollection.add("Erro: id não cadastrado.");
+        }
 
         if (lnkErrosCollection.isEmpty()) {
-            for (int i = 0; i < this.lnkUsuario.getLnkReserva().size(); i++)
+            for (int i = 0; i < this.lnkUsuario.getLnkReserva().size(); i++) {
                 this.lnkUsuario.getLnkReserva().get(i).getLnkrevLivro().getLnkReserva().remove(this.lnkUsuario);
+            }
             for (int i = 0; i < this.lnkUsuario.getLnkEmprestimo().size(); i++) {
                 lnkEmprestimo = this.lnkUsuario.getLnkEmprestimo().get(i);
                 lnkExemplar = this.lnkUsuario.getLnkEmprestimo().get(i).getLnkrevExemplar();
                 if (lnkExemplar.getLnkEmprestimo().getKey().compareTo(
-                        lnkEmprestimo.getKey()) == 0)
+                        lnkEmprestimo.getKey()) == 0) {
                     lnkExemplar.setLnkEmprestimo(null);
+                }
             }
             this.lnkUsuario = lnkUsuarioCollection.remove(this.lnkUsuario.getKey());
             lnkSistema.save();
@@ -66,8 +71,9 @@ public class UsuarioMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Remoção mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("mensagem", mensagem);
@@ -98,8 +104,9 @@ public class UsuarioMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Atualização mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", this.lnkUsuario);
         request.getSession().setAttribute("mensagem", mensagem);
@@ -126,8 +133,9 @@ public class UsuarioMediador {
         } else {
             Iterator iter = lnkErrosCollection.iterator();
             mensagem = "Recuperação mal sucedida!";
-            while (iter.hasNext())
+            while (iter.hasNext()) {
                 mensagem = mensagem.concat("\n" + (String) iter.next());
+            }
         }
         request.getSession().setAttribute("usuario", lnkUsuario);
         request.getSession().setAttribute("mensagem", mensagem);

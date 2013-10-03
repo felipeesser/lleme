@@ -15,8 +15,9 @@ public class ExemplarColecao extends BusinessObjectCollection {
     }
 
     public Exemplar get(int index) {
-        if (index <= this.treeMap.size() - 1)
+        if (index <= this.treeMap.size() - 1) {
             return (Exemplar) this.treeMap.values().toArray()[index];
+        }
         return null;
     }
 
@@ -43,8 +44,9 @@ public class ExemplarColecao extends BusinessObjectCollection {
         int qtd = 0;
         while (iter.hasNext()) {
             exemplar = (Exemplar) iter.next();
-            if (exemplar.getLnkEmprestimo() == null)
+            if (exemplar.getLnkEmprestimo() == null) {
                 qtd++;
+            }
         }
         return qtd;
     }

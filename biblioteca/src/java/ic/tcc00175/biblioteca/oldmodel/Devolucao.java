@@ -16,8 +16,9 @@ public class Devolucao extends BusinessObject {
     }
 
     public void setData(Date data) {
-        if (data != null)
+        if (data != null) {
             this.data = data;
+        }
     }
     private Date data = null;
 }

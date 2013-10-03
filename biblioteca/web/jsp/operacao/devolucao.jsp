@@ -1,23 +1,27 @@
 <jsp:useBean id="mensagem" class="java.lang.String" scope="session" />
 <%// Recupera Usuario
-    ic.tcc00175.biblioteca.model.Usuario usuario = (ic.tcc00175.biblioteca.model.Usuario) request.getSession().getAttribute("usuario");
-    if (usuario == null)
-        usuario = new ic.tcc00175.biblioteca.model.AlunoGraduacao();
+    ic.tcc00175.biblioteca.oldmodel.Usuario usuario = (ic.tcc00175.biblioteca.oldmodel.Usuario) request.getSession().getAttribute("usuario");
+    if (usuario == null) {
+        usuario = new ic.tcc00175.biblioteca.oldmodel.AlunoGraduacao();
+    }
 
     // Recupera material
-    ic.tcc00175.biblioteca.model.Material material = (ic.tcc00175.biblioteca.model.Material) request.getSession().getAttribute("material");
-    if (material == null)
-        material = new ic.tcc00175.biblioteca.model.Livro();
+    ic.tcc00175.biblioteca.oldmodel.Material material = (ic.tcc00175.biblioteca.oldmodel.Material) request.getSession().getAttribute("material");
+    if (material == null) {
+        material = new ic.tcc00175.biblioteca.oldmodel.Livro();
+    }
 
     //Recupera exemplar
-    ic.tcc00175.biblioteca.model.Exemplar exemplar = (ic.tcc00175.biblioteca.model.Exemplar) request.getSession().getAttribute("exemplar");
-    if (exemplar == null)
-        exemplar = new ic.tcc00175.biblioteca.model.Exemplar();
+    ic.tcc00175.biblioteca.oldmodel.Exemplar exemplar = (ic.tcc00175.biblioteca.oldmodel.Exemplar) request.getSession().getAttribute("exemplar");
+    if (exemplar == null) {
+        exemplar = new ic.tcc00175.biblioteca.oldmodel.Exemplar();
+    }
 
     // Recupera emprestimo
-    ic.tcc00175.biblioteca.model.Emprestimo emprestimo = (ic.tcc00175.biblioteca.model.Emprestimo) request.getSession().getAttribute("emprestimo");
-    if (emprestimo == null)
-        emprestimo = new ic.tcc00175.biblioteca.model.Emprestimo();
+    ic.tcc00175.biblioteca.oldmodel.Emprestimo emprestimo = (ic.tcc00175.biblioteca.oldmodel.Emprestimo) request.getSession().getAttribute("emprestimo");
+    if (emprestimo == null) {
+        emprestimo = new ic.tcc00175.biblioteca.oldmodel.Emprestimo();
+    }
 
     // Cria tabela de lista de conteudo
     ic.tcc00175.biblioteca.view.Tabela tabela = (ic.tcc00175.biblioteca.view.Tabela) request.getSession().getAttribute("tabela");
@@ -27,8 +31,9 @@
         tabela = new ic.tcc00175.biblioteca.view.TabelaEmprestimo(12,
                 usuario);
         request.getSession().setAttribute("tabela", tabela);
-    } else
+    } else {
         tabela.setColecao(usuario.getLnkEmprestimo());
+    }
     //Cria formulario de cadastro
     ic.tcc00175.biblioteca.view.FormularioDevolucao formulario = new ic.tcc00175.biblioteca.view.FormularioDevolucao();
 
@@ -55,16 +60,16 @@
                         </TD>
                         <TD>
                             <DIV ALIGN="center"><script language="JavaScript">
-                                function selectUsuario(){
-                                    document.cadastro.command.value="SelUsuario";
+                                function selectUsuario() {
+                                    document.cadastro.command.value = "SelUsuario";
                                     document.cadastro.submit();
                                 }
-                                function selectMaterial(){
-                                    document.cadastro.command.value="SelMaterial";
+                                function selectMaterial() {
+                                    document.cadastro.command.value = "SelMaterial";
                                     document.cadastro.submit();
                                 }
-                                function incluir(){
-                                    document.cadastro.command.value="AddDevolucao";
+                                function incluir() {
+                                    document.cadastro.command.value = "AddDevolucao";
                                     document.cadastro.submit();
                                 }
                                 </script> <INPUT TYPE="hidden"

@@ -43,9 +43,9 @@ public class TabelaListaOperacoes extends Tabela {
             return retorno;
         }
         String operacao = null;
-        if (this.colecao.get(getPos() + linha) == null)
+        if (this.colecao.get(getPos() + linha) == null) {
             retorno += "<TD>&nbsp;    </TD>";
-        else {
+        } else {
             operacao = this.colecao.get(getPos() + linha).getClass().getName();
             operacao = operacao.substring(operacao.lastIndexOf(".") + 1);
             retorno += "<TD>" + operacao + "</TD>";
@@ -65,9 +65,9 @@ public class TabelaListaOperacoes extends Tabela {
                 : data.format(this.colecao.get(getPos() + linha).getLnkDevolucao().getData())))
                 + "</TD>";
 
-        if (this.colecao.get(getPos() + linha) == null)
+        if (this.colecao.get(getPos() + linha) == null) {
             retorno += "<TD>&nbsp;    </TD>";
-        else {
+        } else {
             String nome = this.colecao.get(getPos() + linha).getLnkMaterial().getClass().getName();
             retorno += "<TD>" + nome.substring(nome.lastIndexOf(".") + 1)
                     + "</TD>";
