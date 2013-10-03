@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="72D4C5E0-0E83-AF83-DC7F-8CBB4BF3B77A" mainViewID="27881275-C958-4D45-824A-7B207DB88513">
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="416D3235-F553-C304-2B91-3743F41FB638" mainViewID="ED4DC816-8C74-2C78-CA3E-173F159BA9FB">
 <createdBy>Luiz Leme</createdBy>
-<createdTime>2013-09-19 16:18:35 UTC</createdTime>
+<createdTime>2013-10-03 19:03:46 UTC</createdTime>
 <ownerDesignName>biblioteca</ownerDesignName>
 <shouldBeOpen>false</shouldBeOpen>
 </LogicalDesign>
