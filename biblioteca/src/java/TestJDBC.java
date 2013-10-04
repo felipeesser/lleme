@@ -18,17 +18,10 @@ public class TestJDBC {
             Connection conn = DriverManager.getConnection(
                     "jdbc:oracle:thin:@localhost:1521:orcl", "lleme",
                     "lleme");
+
+
+            String query = "insert into Usuario (id,tipo_codigo,nome) values (1,'Luiz')";
             Statement stmt = conn.createStatement();
-            String query = "select id,nome from Usuario";
-            try (ResultSet rs = stmt.executeQuery(query)) {
-                while (rs.next()) {
-                    System.out.println(rs.getLong("id"));
-                    System.out.println(rs.getString("nome"));
-                }
-            }
-            
-            query = "update Usuario set nome='Luiz' where id=123";
-            stmt = conn.createStatement();
             conn.setAutoCommit(false);
             stmt.execute(query);
             //stmt.getResultSet();
@@ -36,6 +29,16 @@ public class TestJDBC {
             //stmt.getUpdateCount();
             conn.commit();
             //conn.rollback();
+
+
+            stmt = conn.createStatement();
+            query = "select id,nome from Usuario";
+            try (ResultSet rs = stmt.executeQuery(query)) {
+                while (rs.next()) {
+                    System.out.println(rs.getLong("id"));
+                    System.out.println(rs.getString("nome"));
+                }
+            }
 
         } catch (ClassNotFoundException | SQLException e) {
             Logger.getLogger(TestJDBC.class.getName()).log(Level.SEVERE, null, e);
