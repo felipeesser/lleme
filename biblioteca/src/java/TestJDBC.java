@@ -20,7 +20,7 @@ public class TestJDBC {
                     "lleme");
 
 
-            String query = "insert into Usuario (id,tipo_codigo,nome) values (1,'Luiz')";
+            String query = "insert into Usuario (id,tipo_codigo,nome) values (1,1,'Luiz')";
             Statement stmt = conn.createStatement();
             conn.setAutoCommit(false);
             stmt.execute(query);
