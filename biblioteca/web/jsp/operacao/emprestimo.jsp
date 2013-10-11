@@ -95,11 +95,16 @@
                                     document.cadastro.submit();
                                 }
                                 </script> <INPUT TYPE="hidden"
-                                                 NAME="command" VALUE="AddEmprestimo" SIZE="1" MAXLENGTH="30"><INPUT
-                                                 TYPE="submit" VALUE="Add"> <INPUT TYPE="button" VALUE="Get"
-                                                 disabled="disabled" onclick="recuperar();"> <INPUT TYPE="button"
-                                                 disabled="disabled" VALUE="Upd" onclick="atualizar();"> <INPUT
-                                                 TYPE="button" VALUE="Del" onclick="excluir();"> <INPUT TYPE="button"
+                                                 NAME="command" VALUE="AddEmprestimo" SIZE="1" MAXLENGTH="30">
+                                <INPUT
+                                                 TYPE="submit" VALUE="Add">
+                                <INPUT TYPE="button" VALUE="Get"
+                                                 disabled="disabled" onclick="recuperar();"> 
+                                <INPUT TYPE="button"
+                                                 disabled="disabled" VALUE="Upd" onclick="atualizar();"> 
+                                <INPUT
+                                                 TYPE="button" VALUE="Del" onclick="excluir();"> 
+                                <INPUT TYPE="button"
                                                  VALUE="New" onclick="limpar();"></DIV>
                         </TD>
                     </TR>
