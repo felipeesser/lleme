@@ -1,43 +1,97 @@
 create or replace 
 trigger REGRA_QTD_EMPRESTIMO
-before insert or update on EMPRESTIMO 
+after insert or update on EMPRESTIMO 
 referencing old as ANTIGO new as NOVO 
 for each row
 declare 
-  V_CONTAGEM number(8,0);
+  V_ESTOURO number(1,0);
   V_USUARIO USUARIO."ID"%type;
-  v_qtd Tipo.qtd_emprestimo%type;
+  V_QTD TIPO.QTD_EMPRESTIMO%type;
+  V_INICIO OPERACAO."DATA"%type;
+  V_FIM OPERACAO."DATA"%type;
 begin
+  V_ESTOURO:=0;
   V_USUARIO:=null;
   V_QTD:=null;
-  
+  V_INICIO:=null;
+  V_FIM:=null;
+      
   begin
-    select U."ID", t.QTD_EMPRESTIMO 
-    into v_usuario,v_qtd
-    from OPERACAO O
-    inner join USUARIO U on U."ID"=O.USUARIO_ID
-    inner join Tipo t on t.codigo= u.tipo_codigo
-    where O.NUMERO=:NOVO.OPERACAO_NUMERO;
+    select U."ID", T.QTD_EMPRESTIMO, OE."DATA"
+    into V_USUARIO,V_QTD, V_INICIO
+    from OPERACAO OE
+    inner join USUARIO U on U."ID"=OE.USUARIO_ID
+    inner join TIPO T on T.CODIGO= U.TIPO_CODIGO
+    where OE.NUMERO=:NOVO.OPERACAO_NUMERO;
   EXCEPTION
     when OTHERS then
+      V_ESTOURO:=1;
       V_USUARIO:=null;
       V_QTD:=null;
+      V_INICIO:=null;
+  end;
+  
+  begin
+    select OD."DATA"
+    into V_FIM
+    from DEVOLUCAO D
+    inner join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
+    where D.EMPRESTIMO_NUMERO=:ANTIGO.OPERACAO_NUMERO;
+  EXCEPTION
+    when others then
+      V_FIM:=null;
   end;
   
 
   begin
-    select COUNT(*) 
-    into v_CONTAGEM 
-    from OPERACAO O 
-    inner join Emprestimo E on E.OPERACAO_NUMERO=O.NUMERO
-    left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
-    where O.USUARIO_ID=V_USUARIO and D.OPERACAO_NUMERO is null;
+    select 1 
+    into V_ESTOURO
+    from DUAL
+    where exists(
+      with PERIODO as
+        (select
+          case
+            when OE."DATA"<=V_INICIO
+            then V_INICIO
+            else OE."DATA"
+          end INICIO,
+          case
+            when V_FIM is null then OD."DATA"
+            when OD."DATA">=V_FIM then V_FIM
+            else OD."DATA"
+          end FIM
+        from EMPRESTIMO E 
+        inner join OPERACAO OE on OE.NUMERO=E.OPERACAO_NUMERO
+        left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
+        left join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
+        where OE.USUARIO_ID=V_USUARIO
+        and ((:ANTIGO.OPERACAO_NUMERO is not null and OE.NUMERO != :ANTIGO.OPERACAO_NUMERO) 
+            or (:ANTIGO.OPERACAO_NUMERO is null and OE.NUMERO = OE.NUMERO))
+        and ((OE."DATA">=V_INICIO and OE."DATA"<=V_FIM)
+            or (OE."DATA">=V_INICIO and V_FIM is null))
+        and ((OD."DATA">=V_INICIO and OD."DATA"<=V_FIM)
+            or (OD."DATA" is null)
+            or (V_FIM is null))),
+        
+        "DATA" as
+        (select PERIODO.INICIO "DATA" from PERIODO
+        union select PERIODO.FIM from PERIODO),
+        CONTAGEM as
+        (select "DATA",COUNT(*) CONTAGEM
+        from "DATA"
+        inner join PERIODO on INICIO<="DATA"
+        and (FIM >="DATA" or FIM   is null) 
+        group by "DATA"
+        having COUNT(*)>v_QTD
+        )
+      select * from CONTAGEM
+    );
   EXCEPTION
     when OTHERS then
-      V_CONTAGEM := 0;
+      V_ESTOURO := 0;
   end;
   
-  if (V_USUARIO is not null and V_CONTAGEM >= V_QTD) then
+  if (V_ESTOURO > 0) then
     RAISE_APPLICATION_ERROR(-20001,'ERRO: QTD NAO PERMITIDA');
   end if;
 END;
@@ -69,15 +123,7 @@ begin
     into V_EMPRESTADO
     from dual
     where exists(
-      select * 
-      from EMPRESTIMO E
-      inner join OPERACAO OE on OE.NUMERO=E.OPERACAO_NUMERO
-      left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
-      left join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
-      where E.MATERIAL_CODIGO=:NOVO.MATERIAL_CODIGO
-      and E.EXEMPLAR_NUM=:NOVO.EXEMPLAR_NUM
-      and OE."DATA"<=V_DATA
-      and (OD."DATA" is null or OD."DATA" >= V_DATA)
+     c
       );
   EXCEPTION
     when OTHERS then
@@ -173,41 +219,30 @@ insert into Livro(material_codigo) values (5);
 insert into EXEMPLAR(MATERIAL_CODIGO,NUMERO) values (5,1);
 commit;
 
-delete from EMPRESTIMO where OPERACAO_NUMERO=100;
-delete from OPERACAO where NUMERO=100;
-commit;
+--delete from EMPRESTIMO where OPERACAO_NUMERO=100;
+--delete from OPERACAO where NUMERO=100;
+--commit;
 insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (100,TO_DATE('14/10/2013','dd/mm/yyyy'),200);
 insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (100,5,1);
 insert into OPERACAO(NUMERO,"DATA",usuario_id) values (110,TO_DATE('16/10/2013','dd/mm/yyyy'),200);
 insert into DEVOLUCAO(OPERACAO_NUMERO,EMPRESTIMO_NUMERO) values (110,100);
 commit;
 
-insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) 
-values (1,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
-insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) 
-values (1,1,1);
-commit;
-
-delete from EMPRESTIMO where OPERACAO_NUMERO=2;
-delete from OPERACAO where NUMERO=2;
+insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (1,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
+insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (1,1,1);
 commit;
 insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (2,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
 insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (2,2,1);
 commit;
-
-delete from EMPRESTIMO where OPERACAO_NUMERO=3;
-delete from OPERACAO where NUMERO=3;
-commit;
 insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (3,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
 insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (3,5,1);
 commit;
-
 insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (3,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
 insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (3,3,1);
 commit;
 
-insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) 
-values (4,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
-insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) 
-values (4,3,1);
+---------------------
+delete from OPERACAO where NUMERO=4;
+insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (4,TO_DATE('13/10/2013','dd/mm/yyyy'),100);
+insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (4,3,1);
 commit;
