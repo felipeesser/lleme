@@ -11,6 +11,7 @@ declare
   V_FIM OPERACAO."DATA"%type;
   MAX_DATA OPERACAO."DATA"%type;
 begin
+  DBMS_OUTPUT.enable;
   max_data:=TO_DATE('31-12-9999','dd-mm-yyyy');
   V_ESTOURO:=0;
   V_USUARIO:=null;
@@ -19,8 +20,6 @@ begin
   V_FIM:=null;
       
   begin
-    DBMS_OUTPUT.enable;
-    
     select U."ID", T.QTD_EMPRESTIMO, OE."DATA"
     into V_USUARIO,V_QTD, V_INICIO
     from OPERACAO OE
@@ -55,56 +54,57 @@ begin
     into V_ESTOURO
     from DUAL
     where exists(
-      with PERIODO as
-        (select
-          case
-            when OE."DATA"<=V_INICIO
-            then V_INICIO
-            else OE."DATA"
-          end INICIO,
-          NVL(case
-            when V_FIM is null then OD."DATA"
-            when OD."DATA">=V_FIM then V_FIM
-            else OD."DATA"
-          end,MAX_DATA) FIM
-        from EMPRESTIMO E 
-        inner join OPERACAO OE on OE.NUMERO=E.OPERACAO_NUMERO
-        left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
-        left join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
-        where OE.USUARIO_ID=V_USUARIO
-        and ((:ANTIGO.OPERACAO_NUMERO is not null and OE.NUMERO != :ANTIGO.OPERACAO_NUMERO) 
-            or (:ANTIGO.OPERACAO_NUMERO is null and OE.NUMERO = OE.NUMERO))
-        and ((OE."DATA">=V_INICIO and OE."DATA"<=V_FIM)
-            or (OE."DATA">=V_INICIO and V_FIM is null))
-        and ((OD."DATA">=V_INICIO and OD."DATA"<=V_FIM)
-            or (OD."DATA" is null)
-            or (V_FIM is null))),
+      with 
+        PERIODO as (
+          select
+            OE."DATA" INICIO,
+            NVL(OD."DATA",MAX_DATA) FIM
+          from EMPRESTIMO E 
+          inner join OPERACAO OE on OE.NUMERO=E.OPERACAO_NUMERO
+          left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
+          left join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
+          where OE.USUARIO_ID=V_USUARIO
+          and ((:ANTIGO.OPERACAO_NUMERO is not null and OE.NUMERO != :ANTIGO.OPERACAO_NUMERO) 
+              or (:ANTIGO.OPERACAO_NUMERO is null and OE.NUMERO = OE.NUMERO))),
         
-        "DATA" as
-        (select V_INICIO "DATA" from DUAL
-        union select V_FIM from DUAL
-        union select PERIODO.INICIO from PERIODO
-        union select PERIODO.FIM from PERIODO),
-        CONTAGEM as
-        (select "DATA",COUNT(*) CONTAGEM
-        from "DATA"
-        inner join PERIODO on INICIO<="DATA"
-        and (FIM >="DATA" or FIM   is null) 
-        group by "DATA"
-        having COUNT(*)>(v_QTD-1)
-        )
+        PERIODO2 as (
+          select
+            case
+              when T1.INICIO<=V_INICIO then V_INICIO
+              else T1.INICIO
+            end INICIO,
+            case
+              when T1.FIM>=V_FIM then V_FIM
+              else T1.FIM
+            end FIM
+          from PERIODO T1
+          where V_INICIO between T1.INICIO and T1.FIM
+            or V_FIM BETWEEN T1.INICIO and T1.FIM),
+        
+        "DATA" as (
+          select V_INICIO "DATA" from DUAL
+          union select V_FIM from DUAL
+          union select PERIODO2.INICIO from PERIODO2
+          union select PERIODO2.FIM from PERIODO2),
+        
+        CONTAGEM as (
+          select "DATA",COUNT(*) CONTAGEM
+          from "DATA"
+          inner join PERIODO2 on INICIO<="DATA"
+          and (FIM >="DATA" or FIM is null) 
+          group by "DATA"
+          having COUNT(*)>(V_QTD-1))
       select * from CONTAGEM
     );
   EXCEPTION
     when OTHERS then
-      V_ESTOURO := 1;
+      V_ESTOURO := 0;
   end;
   
   if (V_ESTOURO > 0) then
     RAISE_APPLICATION_ERROR(-20001,'ERRO: QTD NAO PERMITIDA');
   end if;
-end;
-
+END;
 
 
 create or replace 

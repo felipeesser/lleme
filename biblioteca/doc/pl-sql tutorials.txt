@@ -1,0 +1,7 @@
+http://infolab.stanford.edu/~ullman/fcdb/oracle/or-plsql.html
+
+http://plsql-tutorial.com/
+
+http://codigofonte.uol.com.br/artigos/procedures-e-funcoes-em-plsql
+
+http://www.tutorialspoint.com/plsql/
