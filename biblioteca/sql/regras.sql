@@ -9,7 +9,9 @@ declare
   V_QTD TIPO.QTD_EMPRESTIMO%type;
   V_INICIO OPERACAO."DATA"%type;
   V_FIM OPERACAO."DATA"%type;
+  MAX_DATA OPERACAO."DATA"%type;
 begin
+  max_data:=TO_DATE('31-12-9999','dd-mm-yyyy');
   V_ESTOURO:=0;
   V_USUARIO:=null;
   V_QTD:=null;
@@ -17,12 +19,16 @@ begin
   V_FIM:=null;
       
   begin
+    DBMS_OUTPUT.enable;
+    
     select U."ID", T.QTD_EMPRESTIMO, OE."DATA"
     into V_USUARIO,V_QTD, V_INICIO
     from OPERACAO OE
     inner join USUARIO U on U."ID"=OE.USUARIO_ID
     inner join TIPO T on T.CODIGO= U.TIPO_CODIGO
     where OE.NUMERO=:NOVO.OPERACAO_NUMERO;
+    
+    DBMS_OUTPUT.PUT_LINE(:NOVO.OPERACAO_NUMERO||','||V_USUARIO||', '||V_INICIO||', '||V_FIM);
   EXCEPTION
     when OTHERS then
       V_ESTOURO:=1;
@@ -31,6 +37,7 @@ begin
       V_INICIO:=null;
   end;
   
+  
   begin
     select OD."DATA"
     into V_FIM
@@ -38,8 +45,8 @@ begin
     inner join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
     where D.EMPRESTIMO_NUMERO=:ANTIGO.OPERACAO_NUMERO;
   EXCEPTION
-    when others then
-      V_FIM:=null;
+    when OTHERS then
+      V_FIM:=MAX_DATA;
   end;
   
 
@@ -55,11 +62,11 @@ begin
             then V_INICIO
             else OE."DATA"
           end INICIO,
-          case
+          NVL(case
             when V_FIM is null then OD."DATA"
             when OD."DATA">=V_FIM then V_FIM
             else OD."DATA"
-          end FIM
+          end,MAX_DATA) FIM
         from EMPRESTIMO E 
         inner join OPERACAO OE on OE.NUMERO=E.OPERACAO_NUMERO
         left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
@@ -74,7 +81,9 @@ begin
             or (V_FIM is null))),
         
         "DATA" as
-        (select PERIODO.INICIO "DATA" from PERIODO
+        (select V_INICIO "DATA" from DUAL
+        union select V_FIM from DUAL
+        union select PERIODO.INICIO from PERIODO
         union select PERIODO.FIM from PERIODO),
         CONTAGEM as
         (select "DATA",COUNT(*) CONTAGEM
@@ -82,19 +91,21 @@ begin
         inner join PERIODO on INICIO<="DATA"
         and (FIM >="DATA" or FIM   is null) 
         group by "DATA"
-        having COUNT(*)>v_QTD
+        having COUNT(*)>(v_QTD-1)
         )
       select * from CONTAGEM
     );
   EXCEPTION
     when OTHERS then
-      V_ESTOURO := 0;
+      V_ESTOURO := 1;
   end;
   
   if (V_ESTOURO > 0) then
     RAISE_APPLICATION_ERROR(-20001,'ERRO: QTD NAO PERMITIDA');
   end if;
-END;
+end;
+
+
 
 create or replace 
 trigger REGRA_DISPONIBILIDADE_EXEMPLAR
@@ -123,7 +134,15 @@ begin
     into V_EMPRESTADO
     from dual
     where exists(
-     c
+      select * 
+      from EMPRESTIMO E
+      inner join OPERACAO OE on OE.NUMERO=E.OPERACAO_NUMERO
+      left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
+      left join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
+      where E.MATERIAL_CODIGO=:NOVO.MATERIAL_CODIGO
+      and E.EXEMPLAR_NUM=:NOVO.EXEMPLAR_NUM
+      and OE."DATA"<=V_DATA
+      and (OD."DATA" is null or OD."DATA" >= V_DATA)
       );
   EXCEPTION
     when OTHERS then
@@ -239,10 +258,13 @@ insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (3,5
 commit;
 insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (3,TO_DATE('15/10/2013','dd/mm/yyyy'),100);
 insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (3,3,1);
+insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (4,TO_DATE('17/10/2013','dd/mm/yyyy'),100);
+insert into DEVOLUCAO(OPERACAO_NUMERO,EMPRESTIMO_NUMERO) values(4,3)
 commit;
 
 ---------------------
-delete from OPERACAO where NUMERO=4;
-insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (4,TO_DATE('13/10/2013','dd/mm/yyyy'),100);
-insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (4,3,1);
+delete from OPERACAO where NUMERO=5;
+commit;
+insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (5,TO_DATE('18/10/2013','dd/mm/yyyy'),100);
+insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (5,3,1);
 commit;
