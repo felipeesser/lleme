@@ -265,6 +265,8 @@ commit;
 ---------------------
 delete from OPERACAO where NUMERO=5;
 commit;
+set SERVEROUTPUT on;
+execute add_emprestimo(5,100,TO_DATE('14/10/2013','dd/mm/yyyy'),3,1);
 insert into OPERACAO(NUMERO,"DATA",USUARIO_ID) values (5,TO_DATE('18/10/2013','dd/mm/yyyy'),100);
 insert into EMPRESTIMO(OPERACAO_NUMERO,MATERIAL_CODIGO,EXEMPLAR_NUM) values (5,3,1);
 commit;
