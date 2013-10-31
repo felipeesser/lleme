@@ -5,3 +5,6 @@ http://plsql-tutorial.com/
 http://codigofonte.uol.com.br/artigos/procedures-e-funcoes-em-plsql
 
 http://www.tutorialspoint.com/plsql/
+
+http://asktom.oracle.com/pls/asktom/ASKTOM.download_file?p_file=6551171813078805685
+

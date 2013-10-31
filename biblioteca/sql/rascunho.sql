@@ -8,3 +8,9 @@ case
   else TO_DATE('13-10-2013','dd-mm-yyyy')
 end
 from dual;
+
+set AUTOPRINT on; 
+VARIABLE OUTPUT REFCURSOR;
+begin
+  LISTA_USUARIO(:OUTPUT);
+END;
