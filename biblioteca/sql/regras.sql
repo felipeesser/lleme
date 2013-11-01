@@ -106,7 +106,6 @@ begin
   end if;
 END;
 
-
 create or replace 
 trigger REGRA_DISPONIBILIDADE_EXEMPLAR
 before insert or update on EMPRESTIMO 
