@@ -20,7 +20,6 @@ public class Teste2JDBC {
                     "jdbc:oracle:thin:@localhost:1521:orcl", "lleme",
                     "lleme");
 
-            Statement stmt = conn.createStatement();
             String query = "BEGIN LISTA_USUARIO(?); END;";
             CallableStatement cstmt = conn.prepareCall(query);
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
