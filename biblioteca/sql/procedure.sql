@@ -106,3 +106,24 @@ procedure LISTA_USUARIO (P_RESULT in OUT SYS_REFCURSOR) as
 begin
   open P_RESULT for 'SELECT * FROM USUARIO';
 end LISTA_USUARIO;
+
+
+with
+  t1 as (select OE."DATA" INICIO, nvl(OD."DATA",to_date('31/12/9999','dd/mm/yyyy')) FIM
+        from OPERACAO OE
+        inner join EMPRESTIMO E on OE.NUMERO=E.OPERACAO_NUMERO
+        left join DEVOLUCAO D on D.EMPRESTIMO_NUMERO=E.OPERACAO_NUMERO
+        left join OPERACAO OD on OD.NUMERO=D.OPERACAO_NUMERO
+        where OE.USUARIO_ID=100),
+  T2 as (select INICIO, fim from T1
+        where not (FIM<TO_DATE('18/10/2013','dd/mm/yyyy')) 
+        and not (INICIO>TO_DATE('19/10/2013','dd/mm/yyyy'))),
+  T3 as (select INICIO from T2   
+        union select TO_DATE('18/10/2013','dd/mm/yyyy') from DUAL
+        union select TO_DATE('19/10/2013','dd/mm/yyyy') from DUAL),
+  T4 as (select t3.inicio dt,count(*) qtd
+        from T3 inner join T2 on T3.INICIO>=T2.INICIO 
+        and T3.INICIO<=T2.FIM
+        group by T3.INICIO
+        having count(*)>=2)
+select * from T4;
