@@ -9,7 +9,7 @@ public class P120111Ex1 {
     public static int mmc(int n1, int n2) {
         int fator = 2;
         int mmc = 1;
-        while (n1 > 1 || n2 > 1) {
+        while (n1 > 1 || n2 > 1 ) {
             while (n1 % fator == 0 || n2 % fator == 0) {
                 //if (n1 % fator == 0 || n2 % fator == 0)
                     mmc = mmc * fator;
