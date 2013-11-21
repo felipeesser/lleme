@@ -3,8 +3,8 @@ package exercicios;
 public class Lista9Ex4 {
 
   public static void main(String[] args) {
-    for (int n=0;n<10;n++)
-    System.out.println(padovana(n));
+    for (int n = 0; n < 10; n++)
+      System.out.println(padovana(n));
   }
 
   public static int padovana(int n) {

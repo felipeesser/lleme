@@ -11,7 +11,4 @@ public class Notas {
     this.p2 = p2;
     this.p3 = p3;
   }
-
-  
-
 }

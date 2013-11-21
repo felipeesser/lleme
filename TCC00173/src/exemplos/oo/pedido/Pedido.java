@@ -20,11 +20,10 @@ public class Pedido {
     System.out.println("não ha mais espaco");
   }
 
-  public float valor(){
-    float valor=0;
-    for (int i=0;i<itens.length||itens[i]==null;i++){
-      valor+=itens[i].valor();
-    }
+  public float valor() {
+    float valor = 0;
+    for (int i = 0; i < itens.length || itens[i] == null; i++)
+      valor += itens[i].valor();
     return valor;
   }
 }

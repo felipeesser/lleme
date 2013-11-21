@@ -11,18 +11,18 @@ public class ListaRevisaoP1 {
 
     int segundos1, segundos2, tempo;
 
-    segundos1 = Integer.parseInt(partes1[0]) * 3600 +
-            Integer.parseInt(partes1[1]) * 60 +
-            Integer.parseInt(partes1[2]);
-    segundos2 = Integer.parseInt(partes2[0]) * 3600 +
-            Integer.parseInt(partes2[1]) * 60 +
-            Integer.parseInt(partes2[2]);
+    segundos1 = Integer.parseInt(partes1[0]) * 3600
+            + Integer.parseInt(partes1[1]) * 60
+            + Integer.parseInt(partes1[2]);
+    segundos2 = Integer.parseInt(partes2[0]) * 3600
+            + Integer.parseInt(partes2[1]) * 60
+            + Integer.parseInt(partes2[2]);
 
-    tempo = segundos2-segundos1;
+    tempo = segundos2 - segundos1;
 
-    int horas = tempo/3600;
-    int minutos = (tempo%3600)/60;
-    int segundos = (tempo%3600)%60;
-    System.out.println(horas+":"+minutos+":"+segundos);
+    int horas = tempo / 3600;
+    int minutos = (tempo % 3600) / 60;
+    int segundos = (tempo % 3600) % 60;
+    System.out.println(horas + ":" + minutos + ":" + segundos);
   }
 }

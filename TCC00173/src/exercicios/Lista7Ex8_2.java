@@ -18,14 +18,14 @@ public class Lista7Ex8_2 {
     } while (numero != -1);
 
     for (int i = 0; i < contador; i++)
-      if (naoFoiImpressoAntes(numeros,i))
+      if (naoFoiImpressoAntes(numeros, i))
         System.out.println(numeros[i]);
 
   }
 
-  private static boolean naoFoiImpressoAntes( int[] numeros, int posicaoAtual) {
-    for (int i=0;i<posicaoAtual;i++)
-      if (numeros[i]==numeros[posicaoAtual])
+  private static boolean naoFoiImpressoAntes(int[] numeros, int posicaoAtual) {
+    for (int i = 0; i < posicaoAtual; i++)
+      if (numeros[i] == numeros[posicaoAtual])
         return false;
     return true;
   }

@@ -8,10 +8,9 @@ public class P220121Ex1 {
   }
 
   private static int converte(int n, int i) {
-    if (n < 2) {
+    if (n < 2)
       return n;
-    } else {
+    else
       return (n % 2) * ((int) Math.pow(10, i)) + converte(n / 2, i++);
-    }
   }
 }

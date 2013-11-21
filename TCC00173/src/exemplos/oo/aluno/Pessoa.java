@@ -9,5 +9,4 @@ package exemplos.oo.aluno;
  * @author Luiz Leme
  */
 public class Pessoa {
-    
 }

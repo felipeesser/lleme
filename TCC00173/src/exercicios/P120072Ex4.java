@@ -10,17 +10,16 @@ package exercicios;
 
 public class P120072Ex4 {
 
-    public static void main(String[] args) {
-        int n1=1,n2=11;
-        System.out.println(somaPares(n1, n2));
-    }
+  public static void main(String[] args) {
+    int n1 = 1, n2 = 11;
+    System.out.println(somaPares(n1, n2));
+  }
 
-    public static int somaPares(int n1, int n2) {
-        int soma=0;
-        for (int i=n1;i<=n2;i++){
-            if (i%2==0)
-                soma=soma+i;
-        }
-        return soma;
-    }
+  public static int somaPares(int n1, int n2) {
+    int soma = 0;
+    for (int i = n1; i <= n2; i++)
+      if (i % 2 == 0)
+        soma = soma + i;
+    return soma;
+  }
 }

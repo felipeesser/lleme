@@ -22,8 +22,8 @@ public class Lista1Ex4 {
       a = b;
       b = d;
     }
-    
-      System.out.println(a);
-      System.out.println(c);
+
+    System.out.println(a);
+    System.out.println(c);
   }
 }

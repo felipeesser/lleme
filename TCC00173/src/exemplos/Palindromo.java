@@ -12,12 +12,12 @@ public class Palindromo {
 
   public static void main(String[] args) {
     System.out.println(ePalindrome("abba"));
-    String s1 = "a"+"b"+"c";
-    String s2 = "abcd".substring(0,3);
+    String s1 = "a" + "b" + "c";
+    String s2 = "abcd".substring(0, 3);
 
-    if (s1==s2){
-      System.out.println("true");}
-    else{
+    if (s1 == s2)
+      System.out.println("true");
+    else {
       System.out.println("false");
       System.out.println(s1);
       System.out.println(s2);

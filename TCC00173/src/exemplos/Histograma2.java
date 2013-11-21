@@ -23,8 +23,8 @@ public class Histograma2 {
         hist[pos]++;
         qtdTotal++;
       }
-     for (int i = 0; i < data.length; i++)
-       hist[i]=hist[i]/qtdTotal;
+    for (int i = 0; i < data.length; i++)
+      hist[i] = hist[i] / qtdTotal;
 
     return hist;
   }

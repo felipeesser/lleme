@@ -16,17 +16,16 @@ public class VS20111Ex2 {
   }
 
   public static boolean ePalindromo(String texto) {
-    if (texto.length() <= 1) {
+    if (texto.length() <= 1)
       return true;
-    } else {
+    else {
       char c1 = texto.charAt(0);
       char c2 = texto.charAt(texto.length() - 1);
       String meio = texto.substring(1, texto.length() - 1);
-      if (c1 == c2 && ePalindromo(meio)) {
+      if (c1 == c2 && ePalindromo(meio))
         return true;
-      } else {
+      else
         return false;
-      }
     }
   }
 }

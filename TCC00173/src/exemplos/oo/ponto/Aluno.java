@@ -11,8 +11,8 @@ public class Aluno {
     this.nome = nome;
   }
 
-  public void addNotas(float p1, float p2, float p3){
-    notas = new Notas (p1,p2,p3);
+  public void addNotas(float p1, float p2, float p3) {
+    notas = new Notas(p1, p2, p3);
   }
 
   public float maiorNota() {

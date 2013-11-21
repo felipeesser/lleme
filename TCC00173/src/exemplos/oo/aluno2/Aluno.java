@@ -1,7 +1,4 @@
-
-
 package exemplos.oo.aluno2;
-
 
 public class Aluno {
 
@@ -9,8 +6,4 @@ public class Aluno {
   public double p1;
   public double p2;
   public long matricula;
-
-
-
-
 }

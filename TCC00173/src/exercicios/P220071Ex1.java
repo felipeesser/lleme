@@ -8,10 +8,10 @@ package exercicios;
 
 public class P220071Ex1 {
 
-    public static void main(String[] args){
-        float n=17, semanas, dias;
-        semanas = (int)n/7;
-        dias = n%7;
-        System.out.println(semanas+"semanas e "+ dias+" dias");
-    }
+  public static void main(String[] args) {
+    float n = 17, semanas, dias;
+    semanas = (int) n / 7;
+    dias = n % 7;
+    System.out.println(semanas + "semanas e " + dias + " dias");
+  }
 }

@@ -5,7 +5,7 @@ public class Lista9Ex7 {
   public static void main(String[] args) {
     int numero = 2306718;
     System.out.println(somaDigitos(numero));
-    System.out.println(2+3+0+6+7+1+8);
+    System.out.println(2 + 3 + 0 + 6 + 7 + 1 + 8);
   }
 
   public static int somaDigitos(int numero) {

@@ -12,32 +12,32 @@ import java.util.Scanner;
 
 public class LerNotas {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        OutputStream output = new FileOutputStream("saida.txt", false);
-        OutputStreamWriter writer = new OutputStreamWriter(output);
-        BufferedWriter bw = new BufferedWriter(writer);
-        
-        OutputStream output2 = new FileOutputStream("entrada2.txt", false);
-        OutputStreamWriter writer2 = new OutputStreamWriter(output);
-        BufferedWriter bw2 = new BufferedWriter(writer);
+  public static void main(String[] args) throws FileNotFoundException, IOException {
+    OutputStream output = new FileOutputStream("saida.txt", false);
+    OutputStreamWriter writer = new OutputStreamWriter(output);
+    BufferedWriter bw = new BufferedWriter(writer);
 
-        InputStream input = new FileInputStream("entrada.txt");
-        Scanner in = new Scanner(input);
+    OutputStream output2 = new FileOutputStream("entrada2.txt", false);
+    OutputStreamWriter writer2 = new OutputStreamWriter(output);
+    BufferedWriter bw2 = new BufferedWriter(writer);
 
-        float soma = 0;
-        int contador = 0;
-        float nota;
+    InputStream input = new FileInputStream("entrada.txt");
+    Scanner in = new Scanner(input);
 
-        while (in.hasNext()) {
-            contador++;
-            nota = in.nextFloat();
-            soma = soma + nota;
-            bw2.write(""+nota);
-        }
-        bw.write("media=" + soma / contador);
+    float soma = 0;
+    int contador = 0;
+    float nota;
 
-        bw.close();
-        input.close();
-
+    while (in.hasNext()) {
+      contador++;
+      nota = in.nextFloat();
+      soma = soma + nota;
+      bw2.write("" + nota);
     }
+    bw.write("media=" + soma / contador);
+
+    bw.close();
+    input.close();
+
+  }
 }

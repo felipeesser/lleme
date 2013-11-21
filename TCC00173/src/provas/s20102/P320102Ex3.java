@@ -12,13 +12,14 @@ public class P320102Ex3 {
       return vetor[posicao] + somaVetor(vetor, posicao + 1);
     return 0;
   }
+
   public static int somaVetor2(int vetor[], int posicao) {
     int soma;
-    if (posicao>=vetor.length)
+    if (posicao >= vetor.length)
       return 0;
-    else{
-      soma =vetor[posicao];
-      soma+=somaVetor(vetor, posicao+1);
+    else {
+      soma = vetor[posicao];
+      soma += somaVetor(vetor, posicao + 1);
     }
     return soma;
   }

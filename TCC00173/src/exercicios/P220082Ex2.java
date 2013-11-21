@@ -22,28 +22,27 @@ import java.util.Scanner;
 
 public class P220082Ex2 {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Numero de candidatos:");
-        int numero_candidatos = in.nextInt();
-        float percentual;
-        float soma = 0;
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    System.out.println("Numero de candidatos:");
+    int numero_candidatos = in.nextInt();
+    float percentual;
+    float soma = 0;
 
-        for (int i = 0; i < numero_candidatos; i++) {
-            System.out.println("Percentual:");
-            percentual = in.nextFloat();
-            if (percentual > 100 || percentual < 0) {
-                System.out.println("Error");
-                i = i - 1;
-            } else
-                if ((soma + percentual) <= 100) {
-                    soma = percentual + soma;
-                    System.out.println("Candidato " + (i + 1) + " = " + percentual + " " + (percentual - 3) + " " + (percentual + 3));
-                } else {
-                    System.out.println("Error");
-                    i = i - 1;
-                }
+    for (int i = 0; i < numero_candidatos; i++) {
+      System.out.println("Percentual:");
+      percentual = in.nextFloat();
+      if (percentual > 100 || percentual < 0) {
+        System.out.println("Error");
+        i = i - 1;
+      } else if ((soma + percentual) <= 100) {
+        soma = percentual + soma;
+        System.out.println("Candidato " + (i + 1) + " = " + percentual + " " + (percentual - 3) + " " + (percentual + 3));
+      } else {
+        System.out.println("Error");
+        i = i - 1;
+      }
 
-        }
     }
+  }
 }

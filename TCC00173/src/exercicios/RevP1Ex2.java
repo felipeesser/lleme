@@ -19,16 +19,16 @@ package exercicios;
 
 public class RevP1Ex2 {
 
-    public static void main(String[] args) {
-        int n = 5;
-        System.out.println(hn(n));
-    }
+  public static void main(String[] args) {
+    int n = 5;
+    System.out.println(hn(n));
+  }
 
-    public static float hn(int n) {
-        float soma = 0;
-        int i = 1;
-        for (i = 1; i <= n; i++)
-            soma = soma + (1.0f / i);
-        return soma;
-    }
+  public static float hn(int n) {
+    float soma = 0;
+    int i = 1;
+    for (i = 1; i <= n; i++)
+      soma = soma + (1.0f / i);
+    return soma;
+  }
 }

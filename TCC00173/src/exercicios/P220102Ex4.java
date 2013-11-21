@@ -6,10 +6,9 @@ public class P220102Ex4 {
   }
 
   public static int soma(int n) {
-    if (n > 0) {
+    if (n > 0)
       return n + soma(n - 1);
-    } else {
+    else
       return 0;
-    }
   }
 }

@@ -14,11 +14,9 @@ public class Compra {
 
   public float valor() {
     float valor = 0;
-    for (Item item : itens) {
-      if (item != null) {
+    for (Item item : itens)
+      if (item != null)
         valor += item.qtd * item.valor;
-      }
-    }
     return valor;
   }
 }

@@ -38,10 +38,9 @@ public class P220102Ex3 {
     String estacaoA, estacaoB;
     if (in.hasNext()) {
       estacaoA = in.next();
-      while (in.hasNext()){
+      while (in.hasNext()) {
         estacaoB = in.next();
-        tempoTrajeto = tempoTrajeto + tempos[buscaEstacao(estacoes, estacaoA)]
-                [buscaEstacao(estacoes, estacaoB)];
+        tempoTrajeto = tempoTrajeto + tempos[buscaEstacao(estacoes, estacaoA)][buscaEstacao(estacoes, estacaoB)];
         estacaoA = estacaoB;
       }
     }

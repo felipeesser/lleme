@@ -3,7 +3,7 @@ package exercicios;
 public class Lista9Ex8 {
 
   public static void main(String[] args) {
-    int numero =756;
+    int numero = 756;
     System.out.println(Math.log(numero) / Math.log(2));
     System.out.println(pisoLog2(numero));
     System.out.println(Math.floor(Math.log(numero) / Math.log(2)));

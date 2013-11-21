@@ -22,9 +22,9 @@ public class Disciplina {
     while (in.hasNext()) {
       matricula = in.next();
       avaliacao = getAvaliacao(matricula);
-      if (avaliacao == null){
+      if (avaliacao == null) {
         avaliacao = new Avaliacao(matricula);
-        avaliacoes[qtdAvaliacoes++]=avaliacao;
+        avaliacoes[qtdAvaliacoes++] = avaliacao;
       }
       avaliacao.trabalho = in.nextFloat();
     }
@@ -39,9 +39,9 @@ public class Disciplina {
     while (in.hasNext()) {
       matricula = in.next();
       avaliacao = getAvaliacao(matricula);
-      if (avaliacao == null){
+      if (avaliacao == null) {
         avaliacao = new Avaliacao(matricula);
-        avaliacoes[qtdAvaliacoes++]=avaliacao;
+        avaliacoes[qtdAvaliacoes++] = avaliacao;
       }
       avaliacao.p3 = in.nextFloat();
     }

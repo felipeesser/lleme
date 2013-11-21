@@ -44,10 +44,10 @@ public class Main {
       }
     }
 
-    float [] hist = new float[3];
-    for (int j=0;j<pedidos.length||pedidos[i]==null;i++){
+    float[] hist = new float[3];
+    for (int j = 0; j < pedidos.length || pedidos[i] == null; i++) {
       float valor = pedidos[i].valor();
-      hist[faixa(valor,pedidos)]++;
+      hist[faixa(valor, pedidos)]++;
     }
 
 

@@ -17,41 +17,37 @@ import java.util.Scanner;
 
 public class P2P20092Ex2 {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n, e = 0;
-        System.out.println("Digite um Numero");
-        n = in.nextInt();
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n, e = 0;
+    System.out.println("Digite um Numero");
+    n = in.nextInt();
 
-        for (int i = 2; i <= n; i++) {
-            if (ePrimo(i)) {
-                e = expoente(n, i);
-                if (e != 0) {
-                    System.out.print(i + "^" + e + "*");
-                    n = n / (int) Math.pow(i, e);
-                }
-            }
+    for (int i = 2; i <= n; i++)
+      if (ePrimo(i)) {
+        e = expoente(n, i);
+        if (e != 0) {
+          System.out.print(i + "^" + e + "*");
+          n = n / (int) Math.pow(i, e);
         }
-    }
+      }
+  }
 
-    public static int expoente(int n, int fator) {
-        int e = 0;
-        while ((n % fator) == 0) {
-            e++;
-            n = n / fator;
-        }
-        return e;
+  public static int expoente(int n, int fator) {
+    int e = 0;
+    while ((n % fator) == 0) {
+      e++;
+      n = n / fator;
     }
+    return e;
+  }
 
-    public static boolean ePrimo(int n) {
-        if ((n % 2 == 0 && n > 2) || n == 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if ((n % i) == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
+  public static boolean ePrimo(int n) {
+    if ((n % 2 == 0 && n > 2) || n == 1)
+      return false;
+    for (int i = 2; i <= Math.sqrt(n); i++)
+      if ((n % i) == 0)
+        return false;
+    return true;
+  }
 }

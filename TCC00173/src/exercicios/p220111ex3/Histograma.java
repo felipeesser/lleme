@@ -9,5 +9,4 @@ package exercicios.p220111ex3;
  * @author Luiz Leme
  */
 public class Histograma {
-    
 }

@@ -12,11 +12,9 @@ public class P220111Ex2v2 {
     Compra[] compras = new Compra[50];
     carregarCompras(compras);
 
-    for (Compra compra : compras) {
-      if (compra != null) {
+    for (Compra compra : compras)
+      if (compra != null)
         System.out.println(compra.codigo + ": " + compra.valor());
-      }
-    }
 
   }
 

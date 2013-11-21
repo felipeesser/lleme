@@ -12,15 +12,14 @@ public class P120102Ex1 {
     if (qtdDesejada <= maxA) {
       System.out.println("extrair " + qtdDesejada + " de A");
       System.out.println("extrair 0 de B");
-    } else
-      if (qtdDesejada - maxA <= maxB) {
-        System.out.println("extrair " + maxA + " de A");
-        System.out.println("extrair " + (qtdDesejada - maxA) + " de B");
-      } else {
-        System.out.println("extrair " + maxA + " de A");
-        System.out.println("extrair " + maxB + " de B");
-        System.out.println("falta " + (qtdDesejada - maxA - maxB));
-      }
+    } else if (qtdDesejada - maxA <= maxB) {
+      System.out.println("extrair " + maxA + " de A");
+      System.out.println("extrair " + (qtdDesejada - maxA) + " de B");
+    } else {
+      System.out.println("extrair " + maxA + " de A");
+      System.out.println("extrair " + maxB + " de B");
+      System.out.println("falta " + (qtdDesejada - maxA - maxB));
+    }
 
   }
 }
