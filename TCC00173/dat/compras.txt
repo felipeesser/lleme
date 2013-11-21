@@ -1,5 +1,5 @@
-1 2 110,0 10
-1 1 50,7 1176
+1 2 110,0
+1 1 50,7
 2 4 23,7
 2 5 10,2
 3 1 12,9
@@ -12,14 +12,3 @@
 10 1 45,8
 10 2 23,5
 11 1 123,3
-
-
-compra={id=1;item={qtd=2;valor=110}}
-compra={id=1;item={qtd=1;valor=50,7}}
-
-compra={id=1;item={qtd=2;valor=110};item={qtd=1;valor=50,7}}
-
-compra={id=2;
-item={qtd=4;valor=23,7};
-item={qtd=5;valor=10,2}}
-
