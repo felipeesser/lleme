@@ -13,6 +13,7 @@ public class Programa1 {
     turma2.Horario = "manha";
 
     AlunoGraduacao aluno = new AlunoGraduacao();
+    
     aluno.matricula = 123;
     aluno.nome = "luiz";
     aluno.notaEnem = 9f;

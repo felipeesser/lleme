@@ -1,6 +1,6 @@
 package oo;
 
-public abstract class Aluno {
+public abstract class Aluno extends Pessoa implements NewInterface {
 
   public static String universidade = null;
   public int matricula = 0;
@@ -16,4 +16,10 @@ public abstract class Aluno {
       if (t != null)
         System.out.println(t.disciplina);
   }
+
+  public float calculaIMC(float peso, float altura) {
+    return peso / (altura * altura);
+  }
+  
+  public abstract float calcularNota(float peso);
 }
