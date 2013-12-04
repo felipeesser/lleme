@@ -4,14 +4,14 @@ public class P220112Ex2 {
 
   public static void main(String[] args) {
     float[][] matriz = {{1, 1, 0, 3}, {0, 2, 0, -2}, {0, 0, 5, 2}};
-    System.out.println(solucao(matriz, 0));
+    System.out.println(x(0, matriz));
   }
 
-  public static float solucao(float[][] matriz, int variavel) {
-    float resultado = matriz[variavel][matriz[0].length - 1];
-    for (int j = variavel + 1; j < matriz.length; j++)
-      resultado -= matriz[variavel][j] * solucao(matriz, j);
-    resultado /= matriz[variavel][variavel];
+  public static float x(int v, float[][] coef) {
+    float resultado = coef[v][coef[0].length - 1];
+    for (int j = v + 1; j < coef.length; j++)
+      resultado -= coef[v][j] * x(j, coef);
+    resultado /= coef[v][v];
     return resultado;
   }
 }
