@@ -40,7 +40,7 @@ public class P220102Ex3 {
       estacaoA = in.next();
       while (in.hasNext()) {
         estacaoB = in.next();
-        tempoTrajeto = tempoTrajeto + tempos[buscaEstacao(estacoes, estacaoA)][buscaEstacao(estacoes, estacaoB)];
+        tempoTrajeto += tempos[buscaEstacao(estacoes, estacaoA)][buscaEstacao(estacoes, estacaoB)];
         estacaoA = estacaoB;
       }
     }
