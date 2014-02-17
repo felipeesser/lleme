@@ -1,4 +1,4 @@
-package exercicios.datastructures.linkedStack.linkedstack;
+package exercicios.datastructures.linkedStack;
 
 // Stack interface
 //

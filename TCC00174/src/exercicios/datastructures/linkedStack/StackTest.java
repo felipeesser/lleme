@@ -1,6 +1,6 @@
-package exercicios.datastructures.linkedStack.linkedstack;
+package exercicios.datastructures.linkedStack;
 
-import exercicios.datastructures.linkedStack.linkedstack.LinkedStack;
+import exercicios.datastructures.linkedStack.LinkedStack;
 
 public class StackTest {
 

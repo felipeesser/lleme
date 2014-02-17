@@ -1,4 +1,4 @@
-package exercicios.datastructures.linkedQueue.likedqueue;
+package exercicios.datastructures.linkedQueue;
 
 import exercicios.datastructures.linkedQueue.linkedlist.LinkedList;
 import exercicios.datastructures.linkedQueue.linkedlist.LinkedListException;

@@ -1,5 +1,5 @@
 
-package exercicios.datastructures.InfixToPostfix.infixtopostfix;
+package exercicios.datastructures.InfixToPostfix;
 
 import exercicios.datastructures.InfixToPostfix.arraystack.ArrayStack;
 import java.util.Scanner;

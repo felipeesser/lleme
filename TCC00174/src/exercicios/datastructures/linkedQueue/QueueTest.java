@@ -1,5 +1,5 @@
 
-package exercicios.datastructures.linkedQueue.likedqueue;
+package exercicios.datastructures.linkedQueue;
 
 public class QueueTest 
 {

@@ -1,5 +1,5 @@
 
-package exercicios.datastructures.linkedStack.linkedstack;
+package exercicios.datastructures.linkedStack;
 
 import exercicios.datastructures.linkedStack.linkedlist.LinkedList;
 import exercicios.datastructures.linkedStack.linkedlist.LinkedListException;

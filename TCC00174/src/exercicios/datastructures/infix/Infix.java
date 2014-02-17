@@ -1,4 +1,4 @@
-package exercicios.datastructures.infix.infix;
+package exercicios.datastructures.infix;
 
 import exercicios.datastructures.infix.arraystack.ArrayStack;
 import java.util.Scanner;
