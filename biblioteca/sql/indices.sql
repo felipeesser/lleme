@@ -77,13 +77,7 @@ cluster "AULA_INDICES"."ALUNO_Mat_CT" (MATRICULA)
 select * from AULA_INDICES.ALUNO AL where AL.MATRICULA=6;
 
 alter table "AULA_INDICES"."ALUNO"
-add constraint "ALUNO_PK" primary key 
---("MATRICULA");
-using index 
-(
-create index "AULA_INDICES"."ALUNO_Mat_IX" 
-on "AULA_INDICES"."ALUNO" ("MATRICULA") using hash;
-);
+add constraint "ALUNO_PK" primary key;
 
 select AL.NOME from AULA_INDICES.ALUNO AL where AL.MATRICULA>1000;
 
