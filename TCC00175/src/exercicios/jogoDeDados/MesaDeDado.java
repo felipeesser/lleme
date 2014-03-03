@@ -29,9 +29,15 @@ public class MesaDeDado {
             return Resultado.PERDEU;
         else {
             Integer pontosObtidos = somarPontos(dados);
+            Resultado resultado = regra.decidirResultado(obterPontoInicial(partida), pontosObtidos);
+            
             guardarPontoInicial(partida, pontosObtidos);
             guardarUltimoPonto(partida, pontosObtidos);
-            Resultado resultado = regra.decidirResultado(obterPontoInicial(partida), pontosObtidos);
+            
+            if (resultado == Resultado.GANHOU)
+                ganhadores.add(partida);
+            else if (resultado == Resultado.PERDEU)
+                perdedores.add(partida);
             return resultado;
         }
     }
@@ -71,10 +77,13 @@ public class MesaDeDado {
         return dados;
     }
 
-    private int somarPontos(Dado[] dados) {
+    private Integer somarPontos(Dado[] dados) {
         int pontosObtidos = 0;
         for (Dado dado : dados)
             pontosObtidos += dado.obterValor();
-        return pontosObtidos;
+        if (pontosObtidos > 0)
+            return pontosObtidos;
+        else
+            return null;
     }
 }

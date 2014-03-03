@@ -3,5 +3,5 @@ package exercicios.jogoDeDados;
 
 public abstract class Regra {
 
-    public abstract Resultado decidirResultado(int pontoInicial, int pontosObtidos);
+    public abstract Resultado decidirResultado(Integer pontoInicial, Integer pontosObtidos);
 }

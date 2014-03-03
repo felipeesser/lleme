@@ -3,7 +3,7 @@ package exercicios.jogoDeDados;
 
 public class Dado {
 
-    private int valor = 0;
+    private int valor = 1;
 
     public int obterValor() {
         return valor;

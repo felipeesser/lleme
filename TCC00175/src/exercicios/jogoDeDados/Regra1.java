@@ -4,14 +4,17 @@ package exercicios.jogoDeDados;
 public class Regra1 extends Regra {
 
     @Override
-    public Resultado decidirResultado(int pontoInicial, int pontosObtidos) {
-        if (pontoInicial < 2 || pontoInicial > 12)
-            return decidirPrimeiraJogada(pontoInicial, pontosObtidos);
+    public Resultado decidirResultado(Integer pontoInicial, Integer pontosObtidos) {
+        if (pontosObtidos != null && pontosObtidos >= 2 && pontosObtidos <= 12)
+            if (pontoInicial == null)
+                return decidirPrimeiraJogada(pontoInicial, pontosObtidos);
+            else
+                return decidirJogadaNormal(pontoInicial, pontosObtidos);
         else
-            return decidirJogadaNormal(pontoInicial, pontosObtidos);
+            return Resultado.INDEFINIDO;
     }
 
-    private Resultado decidirPrimeiraJogada(int pontoInicial, int pontosObtidos) {
+    private Resultado decidirPrimeiraJogada(Integer pontoInicial, Integer pontosObtidos) {
         if (pontosObtidos == 7 || pontosObtidos == 11) {
             return Resultado.GANHOU;
         } else if (pontosObtidos == 2 || pontosObtidos == 3 || pontosObtidos == 12) {
