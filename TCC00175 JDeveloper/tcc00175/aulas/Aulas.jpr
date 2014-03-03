@@ -149,13 +149,23 @@
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
-      <list n="exportedReferences"/>
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="JUnit 4 Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
       <hash n="jdkReference">
          <url n="id" protocol="file" path="/C:/Users/Luiz Leme/AppData/Roaming/JDeveloper/system12.1.2.0.40.66.68/o.jdeveloper/1.7.0_51.jdk"/>
          <value n="isJDK" v="true"/>
          <value n="jdkVersion" v="1.7.0_51"/>
       </hash>
-      <list n="libraryReferences"/>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="JUnit 4 Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
