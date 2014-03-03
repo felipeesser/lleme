@@ -151,9 +151,9 @@
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences"/>
       <hash n="jdkReference">
-         <url n="id" protocol="file" path="/C:/Users/Luiz Leme/AppData/Roaming/JDeveloper/system11.1.2.2.39.61.83.1/o.jdeveloper/1.7.0_05.jdk"/>
+         <url n="id" protocol="file" path="/C:/Users/Luiz Leme/AppData/Roaming/JDeveloper/system12.1.2.0.40.66.68/o.jdeveloper/1.7.0_51.jdk"/>
          <value n="isJDK" v="true"/>
-         <value n="jdkVersion" v="1.7.0_05"/>
+         <value n="jdkVersion" v="1.7.0_51"/>
       </hash>
       <list n="libraryReferences"/>
    </hash>
