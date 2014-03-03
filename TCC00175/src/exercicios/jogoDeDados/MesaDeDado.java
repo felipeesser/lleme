@@ -8,14 +8,14 @@ import java.util.Map;
 
 public class MesaDeDado {
 
-    private Regra regra = null;
+    private Regra regraDoJogo = null;
     private Map<Partida, Integer> primeiroPonto = null;
     private Map<Partida, Integer> ultimoPonto = null;
     private List<Partida> ganhadores = null;
     private List<Partida> perdedores = null;
 
     public MesaDeDado(Regra regra) {
-        this.regra = regra;
+        this.regraDoJogo = regra;
         this.ganhadores = new ArrayList<>();
         this.perdedores = new ArrayList<>();
         this.primeiroPonto = new HashMap<>();
@@ -29,7 +29,7 @@ public class MesaDeDado {
             return Resultado.PERDEU;
         else {
             Integer pontosObtidos = somarPontos(dados);
-            Resultado resultado = regra.decidirResultado(obterPontoInicial(partida), pontosObtidos);
+            Resultado resultado = regraDoJogo.decidirResultado(obterPontoInicial(partida), pontosObtidos);
             
             guardarPontoInicial(partida, pontosObtidos);
             guardarUltimoPonto(partida, pontosObtidos);

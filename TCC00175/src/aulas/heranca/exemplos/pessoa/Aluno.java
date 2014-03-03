@@ -1,4 +1,6 @@
 package aulas.heranca.exemplos.pessoa;
 
-public class Aluno extends Pessoa {
+import aulas.heranca.exemplos.automovel.Comparavel;
+
+public class Aluno extends Pessoa implements Comparavel {
 }
