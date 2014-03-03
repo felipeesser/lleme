@@ -1,3 +1,12 @@
+select  *
+from C T1
+inner join (select * from R1 where R1.W between 'a' and 'z') T2 on T1.V=T2.V
+
+select * 
+from "LLEME"."PARTICIPATED" T1
+inner join "LLEME"."PERSON" T2 on T2."driver-id" = T1."driver-id"
+WHERE T2."name">'DD'
+
 create or replace
 TRIGGER VALIDA_ORDEM_SERVICO 
 BEFORE INSERT OR UPDATE ON "ORDEM_SERVICO"
