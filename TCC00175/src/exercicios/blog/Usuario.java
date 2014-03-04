@@ -1,21 +1,37 @@
 package exercicios.blog;
 
-import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Usuario {
-    /**
-     * @attribute
-     */
-    private String nome;
 
-    /**
-     * @attribute
-     */
-    private String email;
+    private String nome = null;
+    private String email = null;
+    private Set<Blog> favoritos = new HashSet<Blog>();
 
-    /**
-     * @associates <{aula6.blog.Blog}>
-     */
-    Collection<Blog> favoritos;
+    private Usuario() {
+
+    }
+
+    public Usuario(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
+    }
+
+    public String obterNome() {
+        return nome;
+    }
+
+    public void atribuirNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String obterEmail() {
+        return email;
+    }
+
+    public void atribuirEmail(String email) {
+        this.email = email;
+    }
 
 }

@@ -1,13 +1,17 @@
 package exercicios.blog;
 
-import java.util.Collection;
+import java.util.Set;
 
 public class Nota extends Conteudo {
-    /**
-     * @associates <{aula6.blog.Comentario}>
-     */
-    Collection<Comentario> comentarios;
 
-    protected void comentar(Comentario comentario) {
+    private Set<Comentario> comentarios;
+
+    public Nota(String mensagem, Usuario autor) {
+        super(mensagem, autor);
     }
+
+    public Comentario[] obterComentarios() {
+        return comentarios.toArray(new Comentario[0]);
+    }
+
 }
