@@ -8,5 +8,5 @@ public class Centralizado extends Formatador {
     public List<String> formatar(List<String> linhas) {
         return linhas;
     }
-    
+
 }

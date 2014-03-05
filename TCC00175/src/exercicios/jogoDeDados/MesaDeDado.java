@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class MesaDeDado {
 
     private Regra regraDoJogo = null;
@@ -30,10 +29,10 @@ public class MesaDeDado {
         else {
             Integer pontosObtidos = somarPontos(dados);
             Resultado resultado = regraDoJogo.decidirResultado(obterPontoInicial(partida), pontosObtidos);
-            
+
             guardarPontoInicial(partida, pontosObtidos);
             guardarUltimoPonto(partida, pontosObtidos);
-            
+
             if (resultado == Resultado.GANHOU)
                 ganhadores.add(partida);
             else if (resultado == Resultado.PERDEU)
@@ -51,7 +50,6 @@ public class MesaDeDado {
         this.ultimoPonto.put(partida, new Integer(pontosObtidos));
     }
 
-
     public Integer obterPontoInicial(Partida partida) {
         return primeiroPonto.get(partida);
     }
@@ -65,9 +63,8 @@ public class MesaDeDado {
             return Resultado.GANHOU;
         else if (perdedores.contains(partida))
             return Resultado.PERDEU;
-        else {
+        else
             return Resultado.INDEFINIDO;
-        }
     }
 
     public Dado[] obterDados() {

@@ -30,8 +30,8 @@ public class Variavel extends RepresentacaoExpressao {
     public void accept(Visitor visitor) {
         visitor.visitExpressao(this);
     }
-    
-    public Variavel clone() throws CloneNotSupportedException{
+
+    public Variavel clone() throws CloneNotSupportedException {
         return (Variavel) super.clone();
     }
 }

@@ -1,6 +1,5 @@
 package patterns.decorator;
 
-
 public abstract class Decorador extends InterpretadorDeExpressao {
 
     /**

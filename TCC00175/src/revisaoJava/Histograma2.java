@@ -19,15 +19,13 @@ public class Histograma2 {
         while (in.hasNext()) {
             nota = in.nextFloat();
             pos = (int) (nota / (10.0 / faixas));
-            if (pos >= faixas) {
+            if (pos >= faixas)
                 pos = faixas - 1;
-            }
             histograma[pos]++;
             ++qtd;
         }
-        for (int i=0;i<faixas;i++){
-            histograma[i]/=qtd;
-        }
+        for (int i = 0; i < faixas; i++)
+            histograma[i] /= qtd;
 
         input.close();
     }

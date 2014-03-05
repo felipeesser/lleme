@@ -15,17 +15,17 @@ public class MediadorDeAlteracao extends Mediador {
         private MapaVariaveis mapaVariaveis;
 
     }
-    
-    public Memento createMemento() throws CloneNotSupportedException{
+
+    public Memento createMemento() throws CloneNotSupportedException {
         MementoMediador m = new MementoMediador();
-        m.expressao=expressao.clone();
-        m.mapaVariaveis=mapaVariaveis.clone();
+        m.expressao = expressao.clone();
+        m.mapaVariaveis = mapaVariaveis.clone();
         return m;
     }
-    
-    public void setMemento(Memento m) throws ClassCastException{
-        expressao=((MementoMediador)m).expressao;
-        mapaVariaveis=((MementoMediador)m).mapaVariaveis;
+
+    public void setMemento(Memento m) throws ClassCastException {
+        expressao = ((MementoMediador) m).expressao;
+        mapaVariaveis = ((MementoMediador) m).mapaVariaveis;
     }
 
     @Override

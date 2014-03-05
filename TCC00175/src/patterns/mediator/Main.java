@@ -1,9 +1,9 @@
 package patterns.mediator;
 
 public class Main {
-    
+
     public static void main(String[] args) throws Exception {
-        
+
         MediadorDeAlteracao expr = new MediadorDeAlteracao();
         expr.expressao.setExpressaoStr("2 _a * _b + _b *");
         expr.mapaVariaveis.printVars();
@@ -14,6 +14,6 @@ public class Main {
         expr.mapaVariaveis.setVar("_c", 6.0);
         expr.mapaVariaveis.printVars();
         System.out.println(expr.expressao.expressao.calcular());
-        
+
     }
 }

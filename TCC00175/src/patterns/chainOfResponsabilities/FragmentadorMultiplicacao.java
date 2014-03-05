@@ -7,7 +7,7 @@ import patterns.interpreter.Multiplicacao;
 public class FragmentadorMultiplicacao extends FragmentadorDeExpressao {
 
     public String extrairSimbolo(String expressaoStr) throws Exception {
-        if (expressaoStr==null)
+        if (expressaoStr == null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
         RepresentacaoExpressao op1;

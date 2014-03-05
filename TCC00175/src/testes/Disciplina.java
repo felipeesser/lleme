@@ -3,6 +3,7 @@ package testes;
 import java.util.Collection;
 
 public class Disciplina {
+
     /**
      * @attribute
      */

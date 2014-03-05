@@ -10,8 +10,8 @@ public class UFF {
 
     private UFF() {
     }
-    
-    public Set<Aluno> getAlunos(){
+
+    public Set<Aluno> getAlunos() {
         return alunos;
     }
 

@@ -9,9 +9,9 @@ import java.util.ListIterator;
 public class MinhaColecao<E> implements List<E> {
 
     private List<E> list = new ArrayList<E>();
-    
-    private class Itr<E> implements Iterator<E>{
-        
+
+    private class Itr<E> implements Iterator<E> {
+
         private List<E> list = null;
 
         public boolean hasNext() {
@@ -25,7 +25,7 @@ public class MinhaColecao<E> implements List<E> {
         public void remove() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
-        
+
     }
 
     public int size() {

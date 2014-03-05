@@ -1,6 +1,5 @@
 package exercicios.jogoDeDados;
 
-
 public class Dado {
 
     private int valor = 1;

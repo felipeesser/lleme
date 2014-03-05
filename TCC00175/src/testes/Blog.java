@@ -9,5 +9,5 @@ package testes;
  * @author Luiz Leme
  */
 public interface Blog {
-    
+
 }

@@ -22,36 +22,47 @@ public class EditorDeBlog {
         return blog;
     }
 
-    public void publicarNota(Blog blog, Usuario autor, String mensagem) throws Exception {
+    public void publicarNota(String tituloBlog, String emailAutor, String mensagem) throws Exception {
         Nota nota = null;
+        Blog blog = bd.obterBlog(tituloBlog);
+        Usuario autor = bd.obterUsuario(emailAutor);
         if (blog.obterDono() == autor) {
             nota = new Nota(autor, mensagem);
-            blog.publicarNota(nota);
-        } else {
+            blog.incluirNota(nota);
+        } else
             throw new Exception("Usuario não autorizado");
-        }
     }
 
-    public void publicarComentario(Nota nota, Usuario autor, String mensagem) {
+    public void excluirNota(String tituloBlog, Date dataDeCriacaoNota) {
+        Blog blog = bd.obterBlog(tituloBlog);
+        Nota nota = blog.obterNota(dataDeCriacaoNota);
+        Usuario autorNota = nota.obterAutor();
+
+        blog.excluirNota(nota);
+        for (Comentario comentario : nota.listarComentarios())
+            if (autorNota != comentario.obterAutor())
+                enviarEmail(comentario.obterAutor(), tituloBlog, dataDeCriacaoNota, comentario.obterDataDeCriacao());
+    }
+
+    public void publicarComentario(String tituloBlog, Date dataDeCriacaoNota, String emailAutor, String mensagem) {
+        Blog blog = bd.obterBlog(tituloBlog);
+        Nota nota = blog.obterNota(dataDeCriacaoNota);
+        Usuario autor = bd.obterUsuario(emailAutor);
         Comentario comentario = new Comentario(autor, mensagem);
-        nota.publicarComentario(comentario);
+        nota.incluirComentario(comentario);
     }
 
-    public void excluirComentario(Nota nota, Comentario comentario) {
-        Usuario usuario = comentario.obterAutor();
-        Date data = comentario.obterDataDeCriacao();
-        String mensagem = comentario.obterMensagem();
-        boolean foiRemovido = nota.excluirComentario(comentario);
-        if (foiRemovido) {
-            enviarEmail(usuario, data, mensagem);
-        }
+    public void excluirComentario(String tituloBlog, Date dataDeCriacaoNota, Date dataDeCriacaoComentario) {
+        Blog blog = bd.obterBlog(tituloBlog);
+        Nota nota = blog.obterNota(dataDeCriacaoNota);
+        Comentario comentario = nota.obterComentario(dataDeCriacaoComentario);
+        Usuario autor = comentario.obterAutor();
+
+        comentario = nota.excluirComentario(comentario);
+        enviarEmail(autor, tituloBlog, dataDeCriacaoNota, dataDeCriacaoComentario);
     }
 
-    public void excluirNota(Blog blog, Nota nota) {
-        Usuario usuario = nota.obterAutor();
-    }
-
-    private void enviarEmail(Usuario usuario, Date data, String mensagem) {
+    private void enviarEmail(Usuario usuario, String tituloBlog, Date dataDeCriacaoNota, Date dataDeCriacaoComentario) {
         System.out.println("Email enviado para " + usuario.obterEmail());
     }
 }

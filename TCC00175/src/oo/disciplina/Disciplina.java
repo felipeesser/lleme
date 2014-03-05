@@ -14,9 +14,9 @@ public class Disciplina {
     public Avaliacao[] getColecao() {
         return colecao;
     }
-    
-    public float media (int index){
-        return (colecao[index].getNotaP3()+colecao[index].getNotaTrab())/2;
+
+    public float media(int index) {
+        return (colecao[index].getNotaP3() + colecao[index].getNotaTrab()) / 2;
     }
 
     public Disciplina(String notasT, String notasP3) throws FileNotFoundException, IOException {
@@ -47,7 +47,6 @@ public class Disciplina {
             else
                 colecao[posLivre++] = new Avaliacao();
         }
-
 
     }
 }

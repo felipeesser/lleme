@@ -28,8 +28,8 @@ public class Seno extends OperacaoUnaria {
         visitor.visitExpressao(this);
         operando1.accept(visitor);
     }
-    
+
     public Seno clone() throws CloneNotSupportedException {
-        return (Seno)super.clone();
+        return (Seno) super.clone();
     }
 }

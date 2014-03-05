@@ -7,7 +7,7 @@ public class Professor implements Nomeavel {
 
     public Professor(String primeiroNome, String segundoNome) {
         this.primeiroNome = primeiroNome;
-        this.segundoNome=segundoNome;
+        this.segundoNome = segundoNome;
     }
 
     @Override

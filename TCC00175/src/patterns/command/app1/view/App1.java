@@ -35,9 +35,6 @@ public class App1 extends AppFwk {
         System.out.println(paciente1.nome + " " + paciente1.peso);
         app.desfazer();
         System.out.println(paciente1.nome + " " + paciente1.peso);
-        
-        
-
 
         nascimentoStr = "17/10/1991";
         nascimento = sdf.parse(nascimentoStr);

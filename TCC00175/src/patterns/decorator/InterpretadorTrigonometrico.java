@@ -15,7 +15,7 @@ public class InterpretadorTrigonometrico extends Decorador {
         cadeiaDeFragmentadores = f1;
         f2 = new FragmentadorCoseno();
         f1.proximo = f2;
-        f1=f2;
+        f1 = f2;
         f2 = new FragmentadorTangente();
         f1.proximo = f2;
     }

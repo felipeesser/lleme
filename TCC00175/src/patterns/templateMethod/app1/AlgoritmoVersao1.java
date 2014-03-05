@@ -3,7 +3,7 @@ package patterns.templateMethod.app1;
 import patterns.templateMethod.framework.Algoritmo;
 
 public class AlgoritmoVersao1 extends Algoritmo {
-    
+
     public static void main(String[] args) {
         new AlgoritmoVersao1().executarAlgoritmo();
     }

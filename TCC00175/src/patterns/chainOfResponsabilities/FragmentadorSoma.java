@@ -7,7 +7,7 @@ import patterns.interpreter.Soma;
 public class FragmentadorSoma extends FragmentadorDeExpressao {
 
     public String extrairSimbolo(String expressaoStr) throws Exception {
-        if (expressaoStr==null)
+        if (expressaoStr == null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
         RepresentacaoExpressao op1;
@@ -31,7 +31,7 @@ public class FragmentadorSoma extends FragmentadorDeExpressao {
                 };
         } else if (proximo != null)
             return proximo.extrairSimbolo(expressaoStr);
-        else 
+        else
             return expressaoStr;
     }
 }

@@ -1,6 +1,5 @@
 package exercicios.jogoDeDados;
 
-
 public class Partida {
 
     private MesaDeDado mesaDeDado = null;
@@ -27,9 +26,8 @@ public class Partida {
 
     public Resultado jogar() {
         Dado[] dados = mesaDeDado.obterDados();
-        for (Dado dado : dados) {
+        for (Dado dado : dados)
             dado.sortear();
-        }
         return mesaDeDado.decidirResultado(dados, this);
     }
 }

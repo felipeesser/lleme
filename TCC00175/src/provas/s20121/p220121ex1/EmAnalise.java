@@ -3,7 +3,7 @@ package provas.s20121.p220121ex1;
 public class EmAnalise extends Estado {
 
     public EmAnalise(Caso caso) {
-        super(caso,"Em análise");
+        super(caso, "Em análise");
     }
 
     @Override
@@ -13,7 +13,7 @@ public class EmAnalise extends Estado {
 
     @Override
     public void resolver() {
-        caso.estado= new Resolvido(caso);
+        caso.estado = new Resolvido(caso);
     }
 
     @Override

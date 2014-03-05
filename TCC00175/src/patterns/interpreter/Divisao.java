@@ -29,7 +29,7 @@ public class Divisao extends OperacaoBinaria {
         operando1.accept(visitor);
         operando2.accept(visitor);
     }
-    
+
     public Divisao clone() throws CloneNotSupportedException {
         return (Divisao) super.clone();
     }

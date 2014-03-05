@@ -31,8 +31,9 @@ public class Conteudo implements Comparable<Conteudo> {
     public int compareTo(Conteudo o) {
         return dataDeCriacao.compareTo(o.dataDeCriacao);
     }
+
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         return dataDeCriacao.equals(o);
     }
 

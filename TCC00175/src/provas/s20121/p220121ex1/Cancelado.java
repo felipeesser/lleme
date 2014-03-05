@@ -3,7 +3,7 @@ package provas.s20121.p220121ex1;
 public class Cancelado extends Estado {
 
     public Cancelado(Caso caso) {
-        super(caso,"Cancelado");
+        super(caso, "Cancelado");
     }
 
     @Override

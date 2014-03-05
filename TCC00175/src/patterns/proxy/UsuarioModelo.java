@@ -68,9 +68,9 @@ public class UsuarioModelo implements Usuario {
     public Set<Blog> getBlogs() {
         return blogs;
     }
-    
-    public void setBlogs(Set<Blog> blogs){
-        this.blogs=blogs;
+
+    public void setBlogs(Set<Blog> blogs) {
+        this.blogs = blogs;
     }
 
     public void persistir() throws ClassNotFoundException, SQLException, Exception {

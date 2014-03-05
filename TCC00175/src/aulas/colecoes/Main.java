@@ -27,7 +27,6 @@ public class Main {
         while (iter.hasNext())
             texto = iter.next();
 
-
         ls.add("string");
         List<?> lo = ls; // se fosse permitido
         Object o = lo.get(0);
@@ -37,9 +36,6 @@ public class Main {
 
         Planet planet = Planet.MARS;
         System.out.println(planet.surfaceWeight(72));
-
-
-
 
     }
 }

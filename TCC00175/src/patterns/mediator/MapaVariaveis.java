@@ -5,18 +5,18 @@ import java.util.Map;
 import java.util.Set;
 
 public class MapaVariaveis extends ClasseMediada implements Cloneable {
-    
+
     private Map<String, Double> variaveis = new HashMap<>();
-    
+
     public MapaVariaveis(Mediador mediador) {
         super(mediador);
     }
-    
+
     @Override
     public void alterado() {
         mediador.objetoAlterado(this);
     }
-    
+
     public void setVar(String varName, Double valor) {
         Double old;
         if (varName != null && valor != null) {
@@ -25,28 +25,28 @@ public class MapaVariaveis extends ClasseMediada implements Cloneable {
                 alterado();
         }
     }
-    
+
     public Double getVar(String varName) {
         return variaveis.get(varName);
     }
-    
+
     public Map<String, Double> listVars() {
         return variaveis;
     }
-    
+
     public Set<String> listVarsNames() {
         return variaveis.keySet();
     }
-    
+
     public void removeVar(String nome) {
         variaveis.remove(nome);
     }
-    
+
     public void printVars() {
         for (String nome : variaveis.keySet())
             System.out.println(nome + " = " + variaveis.get(nome));
     }
-    
+
     void updateVars(Set<String> nomesVars) {
         // Inclui novas variáveis
         for (String nome : nomesVars)
@@ -57,7 +57,7 @@ public class MapaVariaveis extends ClasseMediada implements Cloneable {
             if (!nomesVars.contains(nome))
                 removeVar(nome);
     }
-    
+
     public MapaVariaveis clone() throws CloneNotSupportedException {
         MapaVariaveis map = (MapaVariaveis) super.clone();
         map.variaveis = new HashMap<>();

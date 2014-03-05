@@ -9,10 +9,15 @@ public abstract class Estado {
         this.caso = caso;
         this.nome = nome;
     }
+
     public abstract void distribuir(int usuario);
+
     public abstract void resolver();
+
     public abstract void cancelar();
+
     public abstract void reabrir();
+
     public String getNome() {
         return nome;
     }

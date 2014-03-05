@@ -5,9 +5,9 @@ import patterns.abstractFactory.FabricaObjetosModelo;
 import patterns.abstractFactory.FabricaObjetosModeloAccess;
 
 public class Main {
-    
+
     public static void main(String[] args) throws SQLException, Exception {
-        
+
         FabricaObjetosModelo fabrica = new FabricaObjetosModeloAccess();
         Usuario usuario = fabrica.createUsuario(1);
         System.out.println(usuario.getNome());
@@ -17,5 +17,5 @@ public class Main {
         usuario.persistir();
         UsuarioProxyAccessBD.close();
     }
-    
+
 }

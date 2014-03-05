@@ -1,6 +1,7 @@
 package oo.palindromo;
 
 public class Texto {
+
     /**
      * @attribute
      */
@@ -18,8 +19,8 @@ public class Texto {
      */
     public boolean isPalindromo() {
         for (int i = 0; i <= caracteres.length() / 2; i++)
-            if (caracteres.charAt(i) !=
-                caracteres.charAt(caracteres.length() - i - 1))
+            if (caracteres.charAt(i)
+                    != caracteres.charAt(caracteres.length() - i - 1))
                 return false;
         return true;
     }

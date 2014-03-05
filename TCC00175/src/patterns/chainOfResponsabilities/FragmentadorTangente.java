@@ -8,7 +8,7 @@ public class FragmentadorTangente extends FragmentadorDeExpressao {
 
     @Override
     public String extrairSimbolo(String expressaoStr) throws Exception {
-        if (expressaoStr==null)
+        if (expressaoStr == null)
             return null;
         Scanner in = new Scanner(expressaoStr.trim());
         RepresentacaoExpressao op1;

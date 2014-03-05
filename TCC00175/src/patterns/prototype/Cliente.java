@@ -13,7 +13,6 @@ public class Cliente {
         Cliente cliente = new Cliente();
         cliente.prototipos.add(new Aluno());
 
-
         Prototipo objeto1 = cliente.prototipos.get(0).clone();
         Prototipo objeto2 = cliente.prototipos.get(0).clone();
 

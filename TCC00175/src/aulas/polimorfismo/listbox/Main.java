@@ -10,6 +10,6 @@ public class Main {
         col.put(1, "um");
         for (Integer key : col.keySet())
             System.out.println(col.get(key));
-        
+
     }
 }

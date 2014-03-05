@@ -173,8 +173,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param centesimo
-     *            The centesimo to set.
+     * @param centesimo The centesimo to set.
      */
     public void setCentesimo(double centesimo) {
         this.centesimo = centesimo;
@@ -188,8 +187,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param hora
-     *            The hora to set.
+     * @param hora The hora to set.
      */
     public void setHora(double hora) {
         this.hora = hora;
@@ -203,8 +201,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param minuto
-     *            The minuto to set.
+     * @param minuto The minuto to set.
      */
     public void setMinuto(double minuto) {
         this.minuto = minuto;
@@ -218,8 +215,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param segundo
-     *            The segundo to set.
+     * @param segundo The segundo to set.
      */
     public void setSegundo(double segundo) {
         this.segundo = segundo;
@@ -233,8 +229,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param origemCentesimos
-     *            The origemCentesimos to set.
+     * @param origemCentesimos The origemCentesimos to set.
      */
     public void setOrigemCentesimos(Point2D origemCentesimos) {
         this.origemCentesimos = origemCentesimos;
@@ -248,8 +243,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param origemHoras
-     *            The origemHoras to set.
+     * @param origemHoras The origemHoras to set.
      */
     public void setOrigemHoras(Point2D origemHoras) {
         this.origemHoras = origemHoras;
@@ -263,8 +257,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param r1
-     *            The r1 to set.
+     * @param r1 The r1 to set.
      */
     public void setR1(double r1) {
         this.r1 = r1;
@@ -278,8 +271,7 @@ public abstract class Mostrador extends JPanel implements Observer, Element {
     }
 
     /**
-     * @param r2
-     *            The r2 to set.
+     * @param r2 The r2 to set.
      */
     public void setR2(double r2) {
         this.r2 = r2;

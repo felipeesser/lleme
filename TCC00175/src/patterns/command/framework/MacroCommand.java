@@ -16,11 +16,10 @@ public class MacroCommand extends Command {
     public void execute() {
         clones = new Stack<Command>();
         Iterator<Command> lc = commands.iterator();
-        
-        while(lc.hasNext()){
+
+        while (lc.hasNext())
             lc.next().execute();
-        }
-        
+
         for (Command ct : commands) {
             ct.execute();
             try {

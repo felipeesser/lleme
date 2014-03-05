@@ -11,7 +11,6 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class Histograma3 {
 
     public static void main(String[] args) {
@@ -19,9 +18,8 @@ public class Histograma3 {
         String arquivo = "entrada.txt";
         List<Float> notas = carregarDados(arquivo);
         float[] hist = calcularHistograma(notas, 0.0f, 10.0f, 3);
-        
-        // apresentar histograma
 
+        // apresentar histograma
     }
 
     private static List<Float> carregarDados(String arquivo) {
@@ -49,16 +47,15 @@ public class Histograma3 {
     private static float[] calcularHistograma(List<Float> notas, float inicio,
             float fim, int faixas) {
         float[] histograma = new float[faixas];
-        int faixa,contador=0;
+        int faixa, contador = 0;
         for (float nota : notas)
-            if (nota >= inicio && nota <= fim){
+            if (nota >= inicio && nota <= fim) {
                 faixa = identificarFaixa(nota, inicio, fim, faixas);
                 contador++;
                 histograma[faixa]++;
             }
-        for (int i=0;i<histograma.length;i++){
-            histograma[i]/=contador;
-        }
+        for (int i = 0; i < histograma.length; i++)
+            histograma[i] /= contador;
         return histograma;
     }
 

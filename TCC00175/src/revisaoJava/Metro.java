@@ -68,16 +68,13 @@ public class Metro {
     public static int buscaEstacao(String estacao, String[] estacoes) {
         boolean achou = false;
         int i = 0;
-        while (!achou && i < estacoes.length && estacoes[i] != null) {
-            if (estacoes[i].equals(estacao)) {
+        while (!achou && i < estacoes.length && estacoes[i] != null)
+            if (estacoes[i].equals(estacao))
                 achou = true;
-            } else {
+            else
                 i++;
-            }
-        }
-        if (!achou) {
+        if (!achou)
             i = -1;
-        }
 
         return i;
     }

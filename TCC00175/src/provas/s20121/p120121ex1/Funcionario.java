@@ -15,6 +15,6 @@ public abstract class Funcionario {
         this.admissao = admissao;
         this.cargaHoraria = cargaHoraria;
     }
-    
+
     public abstract void accept(Visitante visitante);
 }

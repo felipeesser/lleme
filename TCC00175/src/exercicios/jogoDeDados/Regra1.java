@@ -1,6 +1,5 @@
 package exercicios.jogoDeDados;
 
-
 public class Regra1 extends Regra {
 
     @Override
@@ -15,22 +14,20 @@ public class Regra1 extends Regra {
     }
 
     private Resultado decidirPrimeiraJogada(Integer pontoInicial, Integer pontosObtidos) {
-        if (pontosObtidos == 7 || pontosObtidos == 11) {
+        if (pontosObtidos == 7 || pontosObtidos == 11)
             return Resultado.GANHOU;
-        } else if (pontosObtidos == 2 || pontosObtidos == 3 || pontosObtidos == 12) {
+        else if (pontosObtidos == 2 || pontosObtidos == 3 || pontosObtidos == 12)
             return Resultado.PERDEU;
-        } else {
+        else
             return Resultado.INDEFINIDO;
-        }
     }
 
     private Resultado decidirJogadaNormal(int pontoInicial, int pontosObtidos) {
-        if (pontosObtidos == 7) {
+        if (pontosObtidos == 7)
             return Resultado.PERDEU;
-        } else if (pontosObtidos == pontoInicial) {
+        else if (pontosObtidos == pontoInicial)
             return Resultado.GANHOU;
-        } else {
+        else
             return Resultado.INDEFINIDO;
-        }
     }
 }

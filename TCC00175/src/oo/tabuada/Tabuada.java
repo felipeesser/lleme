@@ -1,6 +1,5 @@
 package oo.tabuada;
 
-
 public class Tabuada {
 
     private Fator[] fatores = new Fator[9];
@@ -16,13 +15,12 @@ public class Tabuada {
     }
 
     private void escreverLinha(int linha) {
-        for (Fator fator : fatores) {
+        for (Fator fator : fatores)
             if (fator != null) {
                 fator.excrever(linha);
                 System.out.print("  \t");
             } else
                 break;
-        }
         System.out.println("");
     }
 }

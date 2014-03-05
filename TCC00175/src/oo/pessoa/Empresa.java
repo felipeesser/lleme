@@ -1,6 +1,7 @@
 package oo.pessoa;
 
 public class Empresa {
+
     /**
      * @attribute
      */

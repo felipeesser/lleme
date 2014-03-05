@@ -1,19 +1,22 @@
 package oo.disciplina;
 
 public class Avaliacao {
+
     private float notaTrab, notaP3;
     private int matricula;
-    
-    public Avaliacao(float nt, float np3, int m){
-        this.notaTrab  = nt;
-        this.notaP3    = np3;
+
+    public Avaliacao(float nt, float np3, int m) {
+        this.notaTrab = nt;
+        this.notaP3 = np3;
         this.matricula = m;
     }
-    public Avaliacao(int m, float nt){
-        this.notaTrab  = nt;
+
+    public Avaliacao(int m, float nt) {
+        this.notaTrab = nt;
         this.matricula = m;
     }
-    public Avaliacao(){
+
+    public Avaliacao() {
 
     }
 
@@ -32,7 +35,7 @@ public class Avaliacao {
     public int getMatricula() {
         return matricula;
     }
-    
+
     public float getNotaP3() {
         return notaP3;
     }

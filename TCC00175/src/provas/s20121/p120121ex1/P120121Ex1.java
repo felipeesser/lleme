@@ -30,6 +30,5 @@ public class P120121Ex1 {
         for (Funcionario func : depto.quadro)
             System.out.println(func.salario + " " + func.ferias.toLocaleString());
 
-
     }
 }

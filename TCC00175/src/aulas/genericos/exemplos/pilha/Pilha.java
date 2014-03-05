@@ -16,7 +16,7 @@ public class Pilha<T> {
     }
 
     public T top() {
-        return (T)elementos[topo];
+        return (T) elementos[topo];
     }
 
     public boolean isEmpty() {

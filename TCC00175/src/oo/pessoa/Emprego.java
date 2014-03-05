@@ -3,6 +3,7 @@ package oo.pessoa;
 import java.util.Date;
 
 public class Emprego {
+
     /**
      * @attribute
      */

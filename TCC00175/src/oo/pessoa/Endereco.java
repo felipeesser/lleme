@@ -1,7 +1,6 @@
 package oo.pessoa;
 
-public class Endereco
- {
+public class Endereco {
 
     /**
      * @attribute

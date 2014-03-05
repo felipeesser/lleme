@@ -24,7 +24,7 @@ public class VisitorPaint implements Visitor {
                 dateFormatter.format(mostrador.getMyModelTemporizador().getTempo().getTime())
                 + "."
                 + mostrador.getMyModelTemporizador().getTempo().get(
-                Calendar.MILLISECOND) / 10, 10, 10);
+                        Calendar.MILLISECOND) / 10, 10, 10);
 
     }
 

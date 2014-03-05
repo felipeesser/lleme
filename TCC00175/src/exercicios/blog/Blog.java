@@ -2,15 +2,15 @@ package exercicios.blog;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Blog {
 
     private Date dataDeCriacao = null;
     private String titulo = null;
     private Usuario dono = null;
-    private Set<Nota> notas = new TreeSet<>();
+    private Map<Date, Nota> notas = new HashMap<>();
 
     private Blog() {
 
@@ -47,14 +47,22 @@ public class Blog {
     }
 
     public Nota[] obterNotas() {
-        return notas.toArray(new Nota[0]);
+        return notas.entrySet().toArray(new Nota[0]);
     }
 
-    public void removerNota(Nota nota) {
-        notas.remove(nota);
+    public Nota excluirNota(Nota nota) {
+        return notas.remove(nota.obterDataDeCriacao());
     }
 
-    public void publicarNota(Nota nota) {
-        notas.add(nota);
+    public void incluirNota(Nota nota) {
+        notas.put(nota.obterDataDeCriacao(), nota);
+    }
+
+    public Nota obterNota(Date dataDeCriacaoNota) {
+        return notas.get(dataDeCriacaoNota);
+    }
+
+    public Nota[] listarNotas() {
+        return notas.entrySet().toArray(new Nota[0]);
     }
 }

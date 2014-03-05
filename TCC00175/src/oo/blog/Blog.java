@@ -13,6 +13,6 @@ public class Blog implements InterfaceBlog {
 
     public void addConteudo(Conteudo c) {
         conteudos.add(c);
-       
+
     }
 }

@@ -1,7 +1,5 @@
 package revisaoJava;
 
-
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -34,7 +32,6 @@ public class Histograma {
             hist[i] /= qtdNotas;
             System.out.println("hist[" + i + "]=" + hist[i]);
         }
-
 
     }
 

@@ -27,7 +27,7 @@ public interface Usuario {
     public void setTimestamp(Timestamp timestamp);
 
     public Set<Blog> getBlogs() throws ClassNotFoundException, SQLException, Exception;
-    
+
     public void setBlogs(Set<Blog> blogs);
 
     public void persistir() throws ClassNotFoundException, SQLException, Exception;

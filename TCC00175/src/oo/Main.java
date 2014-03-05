@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 public class Main {
 
     public static void main(String[] args) {
-        Objeto objeto=null;
+        Objeto objeto = null;
         try {
             FileOutputStream out;
             out = new FileOutputStream("Teste.dat", false);
@@ -27,7 +27,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        objeto=null;
+        objeto = null;
         try {
             FileInputStream in;
             in = new FileInputStream("Teste.dat");

@@ -9,10 +9,11 @@ public class Aluno {
     public long matricula;
     public String nome;
 
-    private Aluno(){
-        
+    private Aluno() {
+
     }
-    private  Aluno(long matricula, String nome) {
+
+    private Aluno(long matricula, String nome) {
         this.matricula = matricula;
         this.nome = nome;
     }

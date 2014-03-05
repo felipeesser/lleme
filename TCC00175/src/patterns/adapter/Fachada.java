@@ -4,10 +4,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
-public class Fachada  implements InterfaceChaveValor {
+public class Fachada implements InterfaceChaveValor {
 
-    Operacoes op ;
-    
+    Operacoes op;
+
     public String reservar(Map<String, String> parametros) throws ParseException {
 
         String tipoQuarto = parametros.get("tipoQuarto");

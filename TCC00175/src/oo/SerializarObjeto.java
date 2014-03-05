@@ -28,11 +28,11 @@ public class SerializarObjeto {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
-        objeto=null;
+        objeto = null;
         try {
             FileInputStream in;
             in = new FileInputStream("Teste.dat");
