@@ -1,10 +1,11 @@
 package exercicios.letreiro;
 
-public class Display {
+public class Mostrador {
 
+    private char[] led = new char[12];
     private char caractere;
 
-    public Display(char caractere) {
+    public Mostrador(char caractere) {
         this.caractere = caractere;
     }
 
