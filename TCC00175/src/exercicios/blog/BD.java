@@ -25,7 +25,7 @@ public class BD {
         blogs.put(blog.obterTitulo(), blog);
 
         for (String titulo : blogs.keySet().toArray(new String[0]))
-            if (!blogs.get(titulo).equals(titulo))
+            if (!blogs.get(titulo).obterTitulo().equals(titulo))
                 blogs.remove(titulo);
 
     }
@@ -36,7 +36,7 @@ public class BD {
         usuarios.put(usuario.obterEmail(), usuario);
 
         for (String email : usuarios.keySet().toArray(new String[0]))
-            if (!usuarios.get(email).equals(email))
+            if (!usuarios.get(email).obterEmail().equals(email))
                 usuarios.remove(email);
     }
 

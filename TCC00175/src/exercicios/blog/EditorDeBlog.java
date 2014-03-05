@@ -65,4 +65,17 @@ public class EditorDeBlog {
     private void enviarEmail(Usuario usuario, String tituloBlog, Date dataDeCriacaoNota, Date dataDeCriacaoComentario) {
         System.out.println("Email enviado para " + usuario.obterEmail());
     }
+
+    public String[][] obterNotas(String tituloBlog) {
+        Blog blog = bd.obterBlog(tituloBlog);
+        Nota[] notas = blog.listarNotas();
+
+        String[][] lista = new String[notas.length][3];
+        for (int i = 0; i < notas.length; i++) {
+            lista[i][0] = notas[i].obterDataDeCriacao().toString();
+            lista[i][1] = notas[i].obterMensagem();
+            lista[i][2] = notas[i].obterAutor().obterEmail();
+        }
+        return lista;
+    }
 }
