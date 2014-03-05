@@ -1,6 +1,7 @@
 package exercicios.blog;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,9 @@ public class Blog {
     private Date dataDeCriacao = null;
     private String titulo = null;
     private Usuario dono = null;
+    /**
+     * @associates <{exercicios.blog.Nota}>
+     */
     private Map<Date, Nota> notas = new HashMap<>();
 
     private Blog() {

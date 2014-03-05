@@ -6,6 +6,9 @@ import java.util.Map;
 
 public class Nota extends Conteudo {
 
+    /**
+     * @associates <{exercicios.blog.Comentario}>
+     */
     private final Map<Date, Comentario> comentarios = new HashMap<>();
 
     public Nota(Usuario autor, String mensagem) {

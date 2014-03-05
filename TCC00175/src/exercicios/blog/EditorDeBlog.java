@@ -31,7 +31,7 @@ public class EditorDeBlog {
             nota = new Nota(autor, mensagem);
             blog.incluirNota(nota);
         } else
-            throw new Exception("Usuario não autorizado");
+            throw new Exception("Usuario n?o autorizado");
     }
 
     public void excluirNota(String tituloBlog, Date dataDeCriacaoNota) {
@@ -101,7 +101,7 @@ public class EditorDeBlog {
         return lista;
     }
 
-    String[][] obterConteudos(String tituloBlog) {
+    public String[][] obterConteudos(String tituloBlog) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
