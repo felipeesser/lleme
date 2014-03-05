@@ -1,15 +1,13 @@
 package exercicios.blog;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class BD {
 
     private static BD instance = null;
-    private Map<String, Blog> blogs = new HashMap<>();
-    private Map<String, Usuario> usuarios = new HashMap<>();
+    private final Map<String, Blog> blogs = new HashMap<>();
+    private final Map<String, Usuario> usuarios = new HashMap<>();
 
     private BD() {
 
@@ -41,7 +39,7 @@ public class BD {
             throw new Exception("Usuario ja cadastrado com mesmo email");
         }
         usuarios.put(usuario.obterEmail(), usuario);
-        
+
         for (String email : usuarios.keySet().toArray(new String[0])) {
             if (!usuarios.get(email).equals(email)) {
                 usuarios.remove(email);
