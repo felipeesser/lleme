@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         EditorDeBlog editor = new EditorDeBlog();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
 
         try {
 
@@ -22,17 +23,27 @@ public class Main {
 
             String titulo1 = " TPA";
             editor.criarBlog(email1, titulo1);
+
+            String[] blogs = editor.listarBlogs();
+            // Buscar na lista de Blogs o blog de interese
+            String[][] usuarios = editor.listarUsuarios();
+            // Buscar na lista de usuarios
+
+            String tituloBlog = titulo1;
             String nota1 = "Primeira nota";
-            editor.publicarNota(titulo1, email1, nota1);
+            editor.publicarNota(tituloBlog, email1, nota1);
+
+            String[][] notas = editor.listarNotas(titulo1);
             String comentario = "Comentario da nota";
-            String[][] notas = editor.obterNotas(titulo1);
 
             for (int i = 0; i < notas.length; i++)
                 if (notas[i][1].equals(nota1)) {
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                    String ds = notas[i][0];
                     Date data = sdf.parse(notas[i][0]);
                     editor.publicarComentario(titulo1, data, email2, comentario);
                 }
+
+            String[][] conteudo = editor.obterConteudos(tituloBlog);
 
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

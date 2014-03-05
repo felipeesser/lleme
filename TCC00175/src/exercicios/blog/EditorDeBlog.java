@@ -1,5 +1,6 @@
 package exercicios.blog;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class EditorDeBlog {
@@ -66,16 +67,41 @@ public class EditorDeBlog {
         System.out.println("Email enviado para " + usuario.obterEmail());
     }
 
-    public String[][] obterNotas(String tituloBlog) {
+    public String[][] listarNotas(String tituloBlog) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
         Blog blog = bd.obterBlog(tituloBlog);
         Nota[] notas = blog.listarNotas();
 
         String[][] lista = new String[notas.length][3];
         for (int i = 0; i < notas.length; i++) {
-            lista[i][0] = notas[i].obterDataDeCriacao().toString();
+            lista[i][0] = sdf.format(notas[i].obterDataDeCriacao());
             lista[i][1] = notas[i].obterMensagem();
             lista[i][2] = notas[i].obterAutor().obterEmail();
         }
         return lista;
+    }
+
+    public String[] listarBlogs() {
+        Blog[] blogs = bd.listarBlogs();
+
+        String[] lista = new String[blogs.length];
+        for (int i = 0; i < lista.length; i++)
+            lista[i] = blogs[i].obterTitulo();
+        return lista;
+    }
+
+    public String[][] listarUsuarios() {
+        Usuario[] usuarios = bd.listarUsuarios();
+
+        String[][] lista = new String[usuarios.length][2];
+        for (int i = 0; i < lista.length; i++) {
+            lista[i][0] = usuarios[i].obterEmail();
+            lista[i][1] = usuarios[i].obterNome();
+        }
+        return lista;
+    }
+
+    String[][] obterConteudos(String tituloBlog) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

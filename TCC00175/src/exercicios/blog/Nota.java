@@ -29,7 +29,11 @@ public class Nota extends Conteudo {
     }
 
     public Comentario[] listarComentarios() {
-        return comentarios.entrySet().toArray(new Comentario[0]);
+        int i = 0;
+        Comentario[] lista = new Comentario[comentarios.size()];
+        for (Map.Entry<Date, Comentario> entry : comentarios.entrySet())
+            lista[i++] = entry.getValue();
+        return lista;
     }
 
 }

@@ -1,5 +1,6 @@
 package exercicios.blog;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,6 +47,22 @@ public class BD {
 
     public Blog obterBlog(String titulo) {
         return blogs.get(titulo);
+    }
+
+    public Blog[] listarBlogs() {
+        int i = 0;
+        Blog[] lista = new Blog[blogs.size()];
+        for (Map.Entry<String, Blog> entry : blogs.entrySet())
+            lista[i++] = entry.getValue();
+        return lista;
+    }
+
+    public Usuario[] listarUsuarios() {
+        int i = 0;
+        Usuario[] lista = new Usuario[usuarios.size()];
+        for (Map.Entry<String, Usuario> entry : usuarios.entrySet())
+            lista[i++] = entry.getValue();
+        return lista;
     }
 
 }

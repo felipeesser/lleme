@@ -63,6 +63,10 @@ public class Blog {
     }
 
     public Nota[] listarNotas() {
-        return notas.entrySet().toArray(new Nota[0]);
+        int i = 0;
+        Nota[] lista = new Nota[notas.size()];
+        for (Map.Entry<Date, Nota> entry : notas.entrySet())
+            lista[i++] = entry.getValue();
+        return lista;
     }
 }
