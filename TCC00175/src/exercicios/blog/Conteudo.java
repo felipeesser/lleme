@@ -3,13 +3,13 @@ package exercicios.blog;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Conteudo {
+public class Conteudo implements Comparable<Conteudo> {
 
     private Date dataDeCriacao;
     private String mensagem;
     private Usuario autor;
 
-    public Conteudo(String mensagem, Usuario autor) {
+    public Conteudo(Usuario autor, String mensagem) {
         this.mensagem = mensagem;
         this.autor = autor;
         this.dataDeCriacao = Calendar.getInstance().getTime();
@@ -19,24 +19,21 @@ public class Conteudo {
         return dataDeCriacao;
     }
 
-    public void atribuirDataDeCriacao(Date dataCriacao) {
-        this.dataDeCriacao = dataCriacao;
-    }
-
     public String obterMensagem() {
         return mensagem;
-    }
-
-    public void atribuirMensagem(String mensagem) {
-        this.mensagem = mensagem;
     }
 
     public Usuario obterAutor() {
         return autor;
     }
 
-    public void atribuirAutor(Usuario autor) {
-        this.autor = autor;
+    @Override
+    public int compareTo(Conteudo o) {
+        return dataDeCriacao.compareTo(o.dataDeCriacao);
+    }
+    @Override
+    public boolean equals(Object o){
+        return dataDeCriacao.equals(o);
     }
 
 }

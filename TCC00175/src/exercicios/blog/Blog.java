@@ -51,10 +51,10 @@ public class Blog {
     }
 
     public void removerNota(Nota nota) {
-
+        notas.remove(nota);
     }
 
-    public void criarNota(Nota nota) {
-
+    public void publicarNota(Nota nota) {
+        notas.add(nota);
     }
 }
