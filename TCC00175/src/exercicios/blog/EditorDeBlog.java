@@ -10,9 +10,15 @@ public class EditorDeBlog {
         super();
     }
 
-    public Blog criarBlog(Usuario usuario, String titulo) {
+    public void cadastrarUsuario(String email, String nome) throws Exception {
+        Usuario usuario = new Usuario(email, nome);
+        bd.saveUsuario(usuario);
+    }
+
+    public Blog criarBlog(String email, String titulo) throws Exception {
+        Usuario usuario = bd.obterUsuario(email);
         Blog blog = new Blog(usuario, titulo);
-        bd.save(blog);
+        bd.saveBlog(blog);
         return blog;
     }
 
