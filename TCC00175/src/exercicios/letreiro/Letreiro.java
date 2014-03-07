@@ -42,6 +42,8 @@ public class Letreiro {
     }
 
     private char[][] incluirMostrador(char[][] leds, char[][] mostrador) {
+        int linhas = Math.max(leds.length, mostrador.length);
+        
         char[][] newLeds = new char[0][0];
         if (leds == null)
             leds = mostrador;
