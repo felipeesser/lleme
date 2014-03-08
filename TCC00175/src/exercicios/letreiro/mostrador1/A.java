@@ -17,13 +17,13 @@ public class A extends Caractere {
     }
 
     @Override
-    public void acenderLedsMostrador1(Mostrador1 mostrador1) {
+    public void acenderLedsMostrador1(Mostrador1 mostrador) {
         boolean[][] estados
                 = {{true, true, true, true, true},
                 {true, false, false, false, true},
                 {true, true, true, true, true},
                 {true, false, false, false, true},
                 {true, false, false, false, true}};
-        mostrador1.acenderLeds(estados);
+        mostrador.acenderLeds(estados);
     }
 }

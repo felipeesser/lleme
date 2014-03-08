@@ -8,8 +8,6 @@ package exercicios.letreiro.view;
 import exercicios.letreiro.Letreiro;
 import exercicios.letreiro.mostrador1.FabricaMostrador1;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -48,6 +46,7 @@ public class Painel extends javax.swing.JDialog {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jTextArea2.setColumns(90);
+        jTextArea2.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
         jTextArea2.setRows(5);
         jTextArea2.setAutoscrolls(false);
         jScrollPane2.setViewportView(jTextArea2);
@@ -102,7 +101,7 @@ public class Painel extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
-                Letreiro letreiro = new Letreiro((byte) 15, new FabricaMostrador1(), dialog);
+                Letreiro letreiro = new Letreiro((byte) 18, new FabricaMostrador1(), dialog);
                 letreiro.atribuirMensagem("Luiz Andre");
                 letreiro.ligar();
                 dialog.setVisible(true);
@@ -121,11 +120,13 @@ public class Painel extends javax.swing.JDialog {
     public void atualizarLetreiro(Letreiro letreiro) {
         String texto = "";
         List<char[][]> leds = letreiro.obterLeds();
-        for (int i = 0; i < 4; i++) {
-            for (char[][] caractere : leds)
+        for (int i = 0; i < 5; i++) {
+            for (char[][] caractere : leds) {
                 for (int j = 0; j < caractere[0].length; j++)
                     texto += caractere[i][j];
-            texto += "n";
+                texto += " ";
+            }
+            texto += "\n";
         }
         jTextArea2.setText(texto);
     }

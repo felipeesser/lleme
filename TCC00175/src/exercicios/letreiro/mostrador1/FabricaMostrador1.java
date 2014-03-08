@@ -40,7 +40,7 @@ public class FabricaMostrador1 extends Fabrica {
                 return R.obterInstancia();
             case 'Z':
             case 'z':
-                return R.obterInstancia();
+                return Z.obterInstancia();
             default:
                 return Space.obterInstancia();
         }

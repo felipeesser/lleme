@@ -21,7 +21,7 @@ public class DateTest {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
         String dateLocalizedFormatPattern = simpleDateFormat.toLocalizedPattern();
         System.out.println(dateLocalizedFormatPattern);
-        
+
         System.out.println(simpleDateFormat.format(data));
     }
 }

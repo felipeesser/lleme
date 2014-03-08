@@ -26,18 +26,18 @@ public class Letreiro {
 
     public void ligar() {
 
-        (new Runnable() {
+        new Thread((new Runnable() {
             public void run() {
                 while (true)
                     try {
                         avisarObservador();
-                        Thread.sleep(800);
+                        Thread.sleep(200);
                         posInicialMsg++;
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Letreiro.class.getName()).log(Level.SEVERE, null, ex);
                     }
             }
-        }).run();
+        })).start();
     }
 
     public void atribuirMensagem(String mensagem) {
