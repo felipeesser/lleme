@@ -17,7 +17,7 @@ public class I extends Caractere {
     }
 
     @Override
-    public void acenderLedsMostrador1(Mostrador1 mostrador) {
+    public void acenderLedsMostrador1(Mostrador mostrador) {
         boolean[][] estados
                 = {{false, false, true, false, false},
                 {false, false, true, false, false},

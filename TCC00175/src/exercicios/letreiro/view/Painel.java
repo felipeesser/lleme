@@ -6,7 +6,7 @@
 package exercicios.letreiro.view;
 
 import exercicios.letreiro.Letreiro;
-import exercicios.letreiro.mostrador1.FabricaMostrador1;
+import exercicios.letreiro.mostrador1.Fabrica;
 import java.util.List;
 
 /**
@@ -106,7 +106,7 @@ public class Painel extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
-                Letreiro letreiro = new Letreiro((byte) 20, new FabricaMostrador1(), dialog);
+                Letreiro letreiro = new Letreiro((byte) 20, new Fabrica(), dialog);
                 letreiro.atribuirMensagem("Luiz Andre");
                 letreiro.ligar();
                 dialog.setVisible(true);

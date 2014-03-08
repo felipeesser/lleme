@@ -1,8 +1,8 @@
 package exercicios.letreiro;
 
-import exercicios.letreiro.mostrador1.Mostrador1;
+import exercicios.letreiro.mostrador1.Mostrador;
 
 public abstract class Caractere {
 
-    public abstract void acenderLedsMostrador1(Mostrador1 mostrador);
+    public abstract void acenderLedsMostrador1(Mostrador mostrador);
 }

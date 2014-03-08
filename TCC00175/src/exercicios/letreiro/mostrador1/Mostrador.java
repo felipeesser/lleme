@@ -1,9 +1,8 @@
 package exercicios.letreiro.mostrador1;
 
-import exercicios.letreiro.Mostrador;
 import exercicios.letreiro.Caractere;
 
-public class Mostrador1 extends Mostrador {
+public class Mostrador extends exercicios.letreiro.Mostrador {
 
     private static final byte linhas = 5;
     private static final byte colunas = 5;

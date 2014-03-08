@@ -1,14 +1,12 @@
 package exercicios.letreiro.mostrador1;
 
 import exercicios.letreiro.Caractere;
-import exercicios.letreiro.Fabrica;
-import exercicios.letreiro.Mostrador;
 
-public class FabricaMostrador1 extends Fabrica {
+public class Fabrica extends exercicios.letreiro.Fabrica {
 
     @Override
     public Mostrador criarMostrador() {
-        return new Mostrador1();
+        return new Mostrador();
     }
 
     @Override
