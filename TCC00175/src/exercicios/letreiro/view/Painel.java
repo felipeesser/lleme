@@ -44,22 +44,27 @@ public class Painel extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jTextArea2.setColumns(90);
-        jTextArea2.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        jTextArea2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         jTextArea2.setRows(5);
         jTextArea2.setAutoscrolls(false);
+        jTextArea2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane2.setViewportView(jTextArea2);
+        jTextArea2.getAccessibleContext().setAccessibleParent(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 854, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -101,7 +106,7 @@ public class Painel extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
-                Letreiro letreiro = new Letreiro((byte) 18, new FabricaMostrador1(), dialog);
+                Letreiro letreiro = new Letreiro((byte) 20, new FabricaMostrador1(), dialog);
                 letreiro.atribuirMensagem("Luiz Andre");
                 letreiro.ligar();
                 dialog.setVisible(true);
