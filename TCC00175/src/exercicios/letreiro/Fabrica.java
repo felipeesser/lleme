@@ -4,6 +4,6 @@ public abstract class Fabrica {
 
     public abstract Mostrador criarMostrador();
 
-    public abstract Visitante obterCaractere(char caractere);
+    public abstract Caractere obterCaractere(char caractere);
 
 }

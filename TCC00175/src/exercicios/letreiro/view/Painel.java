@@ -5,31 +5,26 @@
  */
 package exercicios.letreiro.view;
 
+import exercicios.letreiro.Letreiro;
+import exercicios.letreiro.mostrador1.FabricaMostrador1;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author lapaesleme
  */
 public class Painel extends javax.swing.JDialog {
 
-    
     /**
-     * Creates new form Letreiro
+     * Creates new form Painel
      */
     public Painel(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        String txt = "0123456";
-        for (int i = 0; i < 15; i++)
-            txt += "0123456";
-        String txt2 = txt + "\n";
-        txt2 += txt + "\n";
-        txt2 += txt + "\n";
-        txt2 += txt + "\n";
-        txt2 += txt;
-        jTextArea2.setText(txt2);
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,6 +102,9 @@ public class Painel extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
+                Letreiro letreiro = new Letreiro((byte) 15, new FabricaMostrador1(), dialog);
+                letreiro.atribuirMensagem("Luiz Andre");
+                letreiro.ligar();
                 dialog.setVisible(true);
             }
         });
@@ -119,4 +117,16 @@ public class Painel extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
+
+    public void atualizarLetreiro(Letreiro letreiro) {
+        String texto = "";
+        List<char[][]> leds = letreiro.obterLeds();
+        for (int i = 0; i < 4; i++) {
+            for (char[][] caractere : leds)
+                for (int j = 0; j < caractere[0].length; j++)
+                    texto += caractere[i][j];
+            texto += "n";
+        }
+        jTextArea2.setText(texto);
+    }
 }

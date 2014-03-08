@@ -1,8 +1,8 @@
 package exercicios.letreiro.mostrador1;
 
-import exercicios.letreiro.Visitante;
+import exercicios.letreiro.Caractere;
 
-public class A extends Visitante {
+public class A extends Caractere {
 
     private static A instancia = null;
 
@@ -17,13 +17,13 @@ public class A extends Visitante {
     }
 
     @Override
-    public void visitarMostrador1(Mostrador1 mostrador1) {
+    public void acenderLedsMostrador1(Mostrador1 mostrador1) {
         boolean[][] estados
                 = {{true, true, true, true, true},
                 {true, false, false, false, true},
                 {true, true, true, true, true},
                 {true, false, false, false, true},
                 {true, false, false, false, true}};
-        mostrador1.ligarLeds(estados);
+        mostrador1.acenderLeds(estados);
     }
 }

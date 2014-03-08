@@ -1,25 +1,26 @@
 package exercicios.letreiro.mostrador1;
 
 import exercicios.letreiro.Mostrador;
-import exercicios.letreiro.Visitante;
+import exercicios.letreiro.Caractere;
 
 public class Mostrador1 extends Mostrador {
 
     private static final byte linhas = 5;
     private static final byte colunas = 5;
     public boolean[][] estados = new boolean[linhas][colunas];
-    private char[][] leds
+    private final char[][] leds
             = {{' ', '_', '_', '_', ' '},
             {'|', '\\', '|', '/', '|'},
             {'|', '-', '+', '-', '|'},
             {'|', '/', '|', '\\', '|'},
             {' ', '-', '-', '-', ' '}};
 
-    public void aceitarVisitante(Visitante visitante) {
-        visitante.visitarMostrador1(this);
+    @Override
+    public void acenderLeds(Caractere caractere) {
+        caractere.acenderLedsMostrador1(this);
     }
 
-    public void ligarLeds(boolean[][] estados) {
+    public void acenderLeds(boolean[][] estados) {
         if (estados != null) {
             int k = estados.length;
             int l = estados[0].length;
@@ -31,6 +32,7 @@ public class Mostrador1 extends Mostrador {
         }
     }
 
+    @Override
     public char[][] obterLeds() {
         char[][] leds = new char[linhas][colunas];
         for (int i = 0; i < leds.length; i++)

@@ -1,19 +1,43 @@
 package exercicios.letreiro;
 
+import exercicios.letreiro.view.Painel;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Letreiro {
 
     private char[] mensagem = null;
+    private Painel painel = null;
     private Mostrador[] mostradores = null;
     private Fabrica fabrica = null;
     private int tamanho = 0;
     private int posInicialMsg = 0;
 
-    public Letreiro(byte tamanho, Fabrica fabrica) {
-        this.tamanho = tamanho;
-        this.fabrica = fabrica;
+    public Letreiro(byte tamanho, Fabrica fabrica, Painel painel) {
+        this.painel = painel;
         this.mostradores = new Mostrador[tamanho];
+        this.fabrica = fabrica;
+        this.tamanho = tamanho;
         for (int i = 0; i < mostradores.length; i++)
             mostradores[i] = fabrica.criarMostrador();
+    }
+
+    public void ligar() {
+
+        (new Runnable() {
+            public void run() {
+                while (true)
+                    try {
+                        avisarObservador();
+                        Thread.sleep(800);
+                        posInicialMsg++;
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Letreiro.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            }
+        }).run();
     }
 
     public void atribuirMensagem(String mensagem) {
@@ -27,29 +51,25 @@ public class Letreiro {
             this.mensagem[i] = msgChars[i];
     }
 
-    public char[][] obterLeds() {
-        Visitante visitante;
-        char[][] leds = null;
-        int posMsg = 0;
+    public List<char[][]> obterLeds() {
+        List<char[][]> lista = new ArrayList<>();
+        Mostrador mostrador;
+        char charMsg;
+        int posMsg;
+
         for (int i = 0; i < mostradores.length; i++) {
             posMsg = (posInicialMsg + i) % tamanho;
-            visitante = fabrica.obterCaractere(mensagem[posMsg]);
-            mostradores[i].aceitarVisitante(visitante);
-            leds = incluirMostrador(leds, mostradores[i].obterLeds());
+            mostrador = mostradores[i];
+            charMsg = mensagem[posMsg];
+
+            mostrador.acenderLeds(fabrica.obterCaractere(charMsg));
+            lista.add(mostrador.obterLeds());
         }
-        posInicialMsg++;
-        return leds;
+        return lista;
     }
 
-    private char[][] incluirMostrador(char[][] leds, char[][] mostrador) {
-        int linhas = Math.max(leds.length, mostrador.length);
-        
-        char[][] newLeds = new char[0][0];
-        if (leds == null)
-            leds = mostrador;
-        else {
-
-        }
-        return newLeds;
+    private void avisarObservador() {
+        painel.atualizarLetreiro(this);
     }
+
 }
