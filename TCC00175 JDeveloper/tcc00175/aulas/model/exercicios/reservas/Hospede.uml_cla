@@ -12,6 +12,10 @@
     isSubstitutable='true'>
    <general href='urn:uuid:b7253078-5f36-4658-92b8-e27473c345a8'/>
   </generalization>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:df04df2a-bc91-44fa-9a0f-da3fc1405db0'
+    isSubstitutable='true'>
+   <general href='urn:uuid:b7253078-5f36-4658-92b8-e27473c345a8'/>
+  </generalization>
   <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:22fc2e3c-f0df-4b55-9732-d83b1ffd876d'
     isDerived='false'
     isDerivedUnion='false'
@@ -50,26 +54,6 @@
      visibility='public'/>
    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:11176282-ce26-4ed5-8b85-d9cefec70a33'
      value='1'
-     visibility='public'/>
-  </ownedAttribute>
-  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:89d0d8b8-58c1-4c29-bab7-a47b6b9d90cc'
-    isDerived='false'
-    isDerivedUnion='false'
-    isID='false'
-    isLeaf='false'
-    isOrdered='false'
-    isReadOnly='false'
-    isStatic='false'
-    isUnique='true'
-    name='hospedagens'
-    aggregation='none'
-    visibility='public'>
-   <type href='mof:/reservas:uml:NamedElement/Hospedagem:uml:Type'/>
-   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:91954bfc-9290-4a50-8193-1e0d7967dae6'
-     value='0'
-     visibility='public'/>
-   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:eb7f038a-7937-48eb-a798-ac28dbfc13d8'
-     value='*'
      visibility='public'/>
   </ownedAttribute>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:0377da83-ad06-4e7c-88a0-eb07ff725b29'
