@@ -1048,7 +1048,7 @@
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
         <size xmi:type='DI:Dimension' height='100.0' width='53.33333206176758'/>
       </contained>
-      <position xmi:type='DI:Point' x='-195.0' y='345.0'/>
+      <position xmi:type='DI:Point' x='-180.0' y='375.0'/>
       <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
       <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
       <property xmi:type='DI:Property' key='OddRowColor' value='#ffffff'/>
@@ -3452,8 +3452,8 @@
       <property xmi:type='DI:Property' key='showStereotype' value='false'/>
       <property xmi:type='DI:Property' key='showRedefinition' value='false'/>
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='uml:Association:urn:uuid:e8507205-61cb-4a0b-bef2-4e7c22294944'/>
-      <waypoint xmi:type='DI:Point' x='-34.00001525878906' y='345.0'/>
-      <waypoint xmi:type='DI:Point' x='-34.00001525878906' y='254.0'/>
+      <waypoint xmi:type='DI:Point' x='-19.000015258789062' y='375.0'/>
+      <waypoint xmi:type='DI:Point' x='-19.000015258789062' y='254.0'/>
       <waypoint xmi:type='DI:Point' x='195.0' y='254.0'/>
     </contained>
     <contained xmi:type='DI:GraphEdge' xmi:id='ida628283c-bc49-4844-ac41-8470fde7a2e4' anchor='id0faed892-d717-4c9a-9330-90db833a7b67 id40dd2086-c2f7-427b-a64b-1d08d8955ed7'>
