@@ -16,7 +16,7 @@ public class Mostrador extends exercicios.letreiro.Mostrador {
 
     @Override
     public void acenderLeds(Caractere caractere) {
-        caractere.acenderLedsMostrador1(this);
+        caractere.acenderMostrador(this);
     }
 
     public void acenderLeds(boolean[][] estados) {
