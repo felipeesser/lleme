@@ -1,6 +1,5 @@
 package exercicios.letreiro;
 
-import exercicios.letreiro.view.Painel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -9,13 +8,13 @@ import java.util.logging.Logger;
 public class Letreiro {
 
     private char[] mensagem = null;
-    private Painel painel = null;
+    private Observador painel = null;
     private Mostrador[] mostradores = null;
     private Fabrica fabrica = null;
     private int tamanho = 0;
     private int posInicialMsg = 0;
 
-    public Letreiro(byte tamanho, Fabrica fabrica, Painel painel) {
+    public Letreiro(byte tamanho, Fabrica fabrica, Observador painel) {
         this.painel = painel;
         this.mostradores = new Mostrador[tamanho];
         this.fabrica = fabrica;

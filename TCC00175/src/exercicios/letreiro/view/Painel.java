@@ -6,6 +6,7 @@
 package exercicios.letreiro.view;
 
 import exercicios.letreiro.Letreiro;
+import exercicios.letreiro.Observador;
 import exercicios.letreiro.mostrador1.Fabrica;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  *
  * @author lapaesleme
  */
-public class Painel extends javax.swing.JDialog {
+public class Painel extends javax.swing.JDialog implements Observador {
 
     /**
      * Creates new form Painel
@@ -122,6 +123,7 @@ public class Painel extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 
+    @Override
     public void atualizarLetreiro(Letreiro letreiro) {
         String texto = "";
         List<char[][]> leds = letreiro.obterLeds();
