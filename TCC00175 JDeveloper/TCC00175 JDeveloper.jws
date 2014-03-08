@@ -36,7 +36,6 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="tcc00175/aulas/Aulas.jpr"/></hash>
-      <hash><url n="URL" path="tcc00175/reservas/Reservas.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.maven.compiler.MavenAppConfiguration">
       <hash n="oracle.jdeveloper.maven.compiler.MavenAppConfiguration">
