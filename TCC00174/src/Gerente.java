@@ -10,7 +10,5 @@
 public class Gerente {
   
   public String nome;
-  
-  public Departamento chefeDe;
-  
+  public Departamento[] chefeDe = new Departamento[10];
 }
