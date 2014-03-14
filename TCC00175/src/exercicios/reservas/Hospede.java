@@ -14,7 +14,7 @@ public class Hospede extends Cliente {
     public String endereco;
 
     /**
-     * @associates <{reservas.Hospedagem}>
+     * @associates <{exercicios.reservas.Hospedagem}>
      */
     public Collection hospedagens;
 

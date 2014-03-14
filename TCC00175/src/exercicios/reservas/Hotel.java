@@ -13,12 +13,12 @@ public class Hotel {
     public String nome;
 
     /**
-     * @associates <{reservas.Quarto}>
+     * @associates <{exercicios.reservas.Quarto}>
      */
     public Collection quartos = new HashSet<Quarto>();
 
     /**
-     * @associates <{reservas.Reserva}>
+     * @associates <{exercicios.reservas.Reserva}>
      */
     public Collection reservas = new TreeSet<Reserva>();
 
