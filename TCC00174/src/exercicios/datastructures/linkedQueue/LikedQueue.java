@@ -3,40 +3,40 @@ package exercicios.datastructures.linkedQueue;
 import exercicios.datastructures.linkedQueue.linkedlist.LinkedList;
 import exercicios.datastructures.linkedQueue.linkedlist.LinkedListException;
 
-public class LikedQueue implements Queue 
-{
-   private LinkedList queueList;
+public class LikedQueue implements Queue {
 
-    public LikedQueue() {
-        queueList = new LinkedList();
-    }
+  private LinkedList queueList;
 
-    @Override
-    public void enqueue(Object object) {
-        queueList.insertAtBack(object);
-    }
+  public LikedQueue() {
+    queueList = new LinkedList();
+  }
 
-    @Override
-    public Object dequeue() throws LinkedListException {
-        return queueList.removeFromFront();
-    }
+  @Override
+  public void enqueue(Object object) {
+    queueList.insertAtBack(object);
+  }
 
-    @Override
-    public boolean isEmpty() {
-        return queueList.isEmpty();
-    }
+  @Override
+  public Object dequeue() throws LinkedListException {
+    return queueList.removeFromFront();
+  }
 
-    public void print() {
-        queueList.print();
-    }
+  @Override
+  public boolean isEmpty() {
+    return queueList.isEmpty();
+  }
 
-    @Override
-    public Object getFront() {
-        return queueList.getFront();
-    }
+  public void print() {
+    queueList.print();
+  }
 
-    @Override
-    public void makeEmpty() {
-        queueList.makeEmpty();
-    }
+  @Override
+  public Object getFront() {
+    return queueList.getFront();
+  }
+
+  @Override
+  public void makeEmpty() {
+    queueList.makeEmpty();
+  }
 }

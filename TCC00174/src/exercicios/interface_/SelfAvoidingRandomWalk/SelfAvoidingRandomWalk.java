@@ -1,19 +1,19 @@
 package exercicios.interface_.SelfAvoidingRandomWalk;
 
-
 public class SelfAvoidingRandomWalk {
-    MainFrame mainFrame ;
-    Simulator simulator;
 
-    public SelfAvoidingRandomWalk(){
-        mainFrame = new MainFrame();
-        simulator = new Simulator( mainFrame );
-    }
+  MainFrame mainFrame;
+  Simulator simulator;
 
-    public static void main(String[] args){
+  public SelfAvoidingRandomWalk() {
+    mainFrame = new MainFrame();
+    simulator = new Simulator(mainFrame);
+  }
 
-        SelfAvoidingRandomWalk selfAvoidingRandomWalk = 
-                new SelfAvoidingRandomWalk();
-        selfAvoidingRandomWalk.simulator.run();
-    }
+  public static void main(String[] args) {
+
+    SelfAvoidingRandomWalk selfAvoidingRandomWalk =
+            new SelfAvoidingRandomWalk();
+    selfAvoidingRandomWalk.simulator.run();
+  }
 }

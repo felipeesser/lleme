@@ -20,11 +20,10 @@ public class CMYK extends Cor {
   }
 
   public RGB toRGB() {
-    if (c == 0 && m == 0 && y == 0 && k == 1){
-      return new RGB(0,0,0);
-    }
-    
-      return null;
+    if (c == 0 && m == 0 && y == 0 && k == 1)
+      return new RGB(0, 0, 0);
+
+    return null;
   }
 
   /**

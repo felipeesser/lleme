@@ -1,90 +1,87 @@
 /**
- * Programacao de computadores II
- * TCC-00174
- * Aula 1 - Introducao ao Java, Exercícios.
- * Transformada de Haar
- * 
+ * Programacao de computadores II TCC-00174 Aula 1 - Introducao ao Java,
+ * Exercícios. Transformada de Haar
+ *
  * @author Prof. Anselmo Montenegro & Prof. Marcos Lage
  */
-
 package exercicios.introducao;
 
 public class HaarTransform {
 
-    /**
-     * Decomposicao do sinal.
-     *
-     * @param  c Sinal.
-     * @param  g Tamanho do sinal.           
-     */
-    private static void decompose(double[] c, int g){
-        double[] w = new double[g];
+  /**
+   * Decomposicao do sinal.
+   *
+   * @param c Sinal.
+   * @param g Tamanho do sinal.
+   */
+  private static void decompose(double[] c, int g) {
+    double[] w = new double[g];
 
-        for (int i=0;i<g/2;i++){
-            w[i]     = (c[2*i]+c[2*i+1])/2;
-            w[g/2+i] = (c[2*i]-c[2*i+1])/2;
-        }
-
-        System.arraycopy(w, 0, c, 0, g);
+    for (int i = 0; i < g / 2; i++) {
+      w[i] = (c[2 * i] + c[2 * i + 1]) / 2;
+      w[g / 2 + i] = (c[2 * i] - c[2 * i + 1]) / 2;
     }
 
-    /**
-     * Calculo da transformacao.
-     *
-     * @param  v Sinal.
-     * @return Sinal transformado.           
-     */
-    public static double[] transform(double[] v){
+    System.arraycopy(w, 0, c, 0, g);
+  }
 
-        double[] c = new double[v.length];
-        System.arraycopy(v, 0, c, 0, c.length);
+  /**
+   * Calculo da transformacao.
+   *
+   * @param v Sinal.
+   * @return Sinal transformado.
+   */
+  public static double[] transform(double[] v) {
 
-        int g = c.length;
+    double[] c = new double[v.length];
+    System.arraycopy(v, 0, c, 0, c.length);
 
-        while (g>=2){
-            decompose(c,g);
-            g/=2;
-        }
+    int g = c.length;
 
-        return c;
+    while (g >= 2) {
+      decompose(c, g);
+      g /= 2;
     }
 
-    /**
-     * Reconstrucao do sinal.
-     *
-     * @param  c Sinal.
-     * @param  g Tamanho do sinal.           
-     */
-    private static void reconstruct(double[] c, int g){
-        double[] w = new double[g];
+    return c;
+  }
 
-        for (int i=0;i<g/2;i++){
-            w[2*i]   = (c[i]+c[g/2+i]);
-            w[2*i+1] = (c[i]-c[g/2+i]);
-        }
+  /**
+   * Reconstrucao do sinal.
+   *
+   * @param c Sinal.
+   * @param g Tamanho do sinal.
+   */
+  private static void reconstruct(double[] c, int g) {
+    double[] w = new double[g];
 
-        System.arraycopy(w, 0, c, 0, g);
+    for (int i = 0; i < g / 2; i++) {
+      w[2 * i] = (c[i] + c[g / 2 + i]);
+      w[2 * i + 1] = (c[i] - c[g / 2 + i]);
     }
 
-    /**
-     * Calculo da transformacao inversa.
-     *
-     * @param  v Sinal.
-     * @return Sinal transformado.           
-     */
-    public static double[] invTransform(double[] v){
+    System.arraycopy(w, 0, c, 0, g);
+  }
 
-        double[] c = new double[v.length];
-        System.arraycopy(v, 0, c, 0, c.length);
+  /**
+   * Calculo da transformacao inversa.
+   *
+   * @param v Sinal.
+   * @return Sinal transformado.
+   */
+  public static double[] invTransform(double[] v) {
 
-        int g = 2;
+    double[] c = new double[v.length];
+    System.arraycopy(v, 0, c, 0, c.length);
 
-        while (g<=c.length){
-            reconstruct(c,g);
-            g*=2;
-        }
+    int g = 2;
 
-        return c;
-
+    while (g <= c.length) {
+      reconstruct(c, g);
+      g *= 2;
     }
+
+    return c;
+
+  }
 }

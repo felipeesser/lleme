@@ -1,17 +1,19 @@
 package exercicios.datastructures.InfixToPostfix.arraystack;
 
 /**
- * Exception class for access in empty containers
- * such as stacks, queues, and priority queues.
+ * Exception class for access in empty containers such as stacks, queues, and
+ * priority queues.
+ *
  * @author Mark Allen Weiss
  */
 public class ArrayStackException extends RuntimeException {
 
-    /**
-     * Construct this exception object.
-     * @param message the error message.
-     */
-    public ArrayStackException(String message) {
-        super(message);
-    }
+  /**
+   * Construct this exception object.
+   *
+   * @param message the error message.
+   */
+  public ArrayStackException(String message) {
+    super(message);
+  }
 }

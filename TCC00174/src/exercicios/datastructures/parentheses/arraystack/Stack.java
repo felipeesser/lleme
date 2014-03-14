@@ -11,37 +11,39 @@ package exercicios.datastructures.parentheses.arraystack;
 // void makeEmpty( )      --> Remove all items
 // ******************ERRORS********************************
 // top, pop, or topAndPop on empty stack
-
 public interface Stack {
 
-    /**
-     * Insert a new item into the stack.
-     * @param x the item to insert.
-     */
-    void push(Object x);
+  /**
+   * Insert a new item into the stack.
+   *
+   * @param x the item to insert.
+   */
+  void push(Object x);
 
-    /**
-     * Remove the most recently inserted item from the stack.
-     * @exception UnderflowException if the stack is empty.
-     */
-    Object pop();
+  /**
+   * Remove the most recently inserted item from the stack.
+   *
+   * @exception UnderflowException if the stack is empty.
+   */
+  Object pop();
 
-    /**
-     * Get the most recently inserted item in the stack.
-     * Does not alter the stack.
-     * @return the most recently inserted item in the stack.
-     * @exception UnderflowException if the stack is empty.
-     */
-    Object top();
+  /**
+   * Get the most recently inserted item in the stack. Does not alter the stack.
+   *
+   * @return the most recently inserted item in the stack.
+   * @exception UnderflowException if the stack is empty.
+   */
+  Object top();
 
-    /**
-     * Test if the stack is logically empty.
-     * @return true if empty, false otherwise.
-     */
-    boolean isEmpty();
+  /**
+   * Test if the stack is logically empty.
+   *
+   * @return true if empty, false otherwise.
+   */
+  boolean isEmpty();
 
-    /**
-     * Make the stack logically empty.
-     */
-    void makeEmpty();
+  /**
+   * Make the stack logically empty.
+   */
+  void makeEmpty();
 }

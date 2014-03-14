@@ -8,7 +8,7 @@
  * @author Luiz Leme
  */
 public class Gerente {
-  
+
   public String nome;
   public Departamento[] chefeDe = new Departamento[10];
 }

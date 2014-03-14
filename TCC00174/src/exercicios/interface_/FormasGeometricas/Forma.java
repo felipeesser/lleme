@@ -1,111 +1,107 @@
 package exercicios.interface_.FormasGeometricas;
 
-
 /**
- * Programacao de computadores II
- * TCC-00174
- * Aula 2 - Orientacao a objetos, Exercícios.
- * Classe Forma
- * 
+ * Programacao de computadores II TCC-00174 Aula 2 - Orientacao a objetos,
+ * Exercícios. Classe Forma
+ *
  * @author Prof. Anselmo Montenegro & Prof. Marcos Lage
  */
-
 import java.awt.Graphics2D;
 
-public abstract class Forma implements IComparavel,IDesenhavel{
-    private double posx; //> Posicao x da forma
-    private double posy; //> Posicao y da forma
-    private double area; //> Area da forma
-    
-    protected  Cor  cor; //> Cor da forma
+public abstract class Forma implements IComparavel, IDesenhavel {
 
-    /**
-     * Acesso a coordenada x da forma.
-     *
-     * @return o valor da coordenada.
-     */  
-    public double getPosx(){
-        return posx;
-    }
+  private double posx; //> Posicao x da forma
+  private double posy; //> Posicao y da forma
+  private double area; //> Area da forma
+  protected Cor cor; //> Cor da forma
 
-    /**
-     * Acesso a coordenada y da forma.
-     *
-     * @return o valor da coordenada.
-     */  
-    public double getPosy(){
-        return posy;
-    }
+  /**
+   * Acesso a coordenada x da forma.
+   *
+   * @return o valor da coordenada.
+   */
+  public double getPosx() {
+    return posx;
+  }
 
-    /**
-     * Atribui a coordenada x da forma.
-     *
-     * @param posx o valor da coordenada.
-     */  
-    public void setPosx(double posx){
-        this.posx = posx;
-    }
+  /**
+   * Acesso a coordenada y da forma.
+   *
+   * @return o valor da coordenada.
+   */
+  public double getPosy() {
+    return posy;
+  }
 
-    /**
-     * Atribui a coordenada y da forma.
-     *
-     * @param posy o valor da coordenada.
-     */  
-    public void setPosy(double posy){
-        this.posy = posy;
-    }
+  /**
+   * Atribui a coordenada x da forma.
+   *
+   * @param posx o valor da coordenada.
+   */
+  public void setPosx(double posx) {
+    this.posx = posx;
+  }
 
-    /**
-     * Acesso a area da forma.
-     *
-     * @return o valor da area.
-     */  
-   public double getArea(){
-        return area;
-    }
+  /**
+   * Atribui a coordenada y da forma.
+   *
+   * @param posy o valor da coordenada.
+   */
+  public void setPosy(double posy) {
+    this.posy = posy;
+  }
 
-    /**
-     * Atribui a area da forma.
-     *
-     * @param area o valor da area.
-     */  
-    public void setArea(double area){
-        this.area = area;
-    }
+  /**
+   * Acesso a area da forma.
+   *
+   * @return o valor da area.
+   */
+  public double getArea() {
+    return area;
+  }
 
-    /**
-     * Imprime os atributos da forma.
-     */  
-    public void print(){
-        System.out.println("Posicao em x:"+posx);
-        System.out.println("Posicao em y:"+posy);
-    }
+  /**
+   * Atribui a area da forma.
+   *
+   * @param area o valor da area.
+   */
+  public void setArea(double area) {
+    this.area = area;
+  }
 
-    /**
-     * Compara duas formas de acordo com a area.
-     * 
-     * @param o Objeto a ser comparado
-     */  
-    public int compararCom(IComparavel o){
+  /**
+   * Imprime os atributos da forma.
+   */
+  public void print() {
+    System.out.println("Posicao em x:" + posx);
+    System.out.println("Posicao em y:" + posy);
+  }
 
-        Forma f = (Forma)o;
-        if (getArea()<f.getArea())
-            return -1;
-        else if (getArea()>f.getArea())
-            return 1;
+  /**
+   * Compara duas formas de acordo com a area.
+   *
+   * @param o Objeto a ser comparado
+   */
+  public int compararCom(IComparavel o) {
 
-        return 0;
-    }
-    
-    /**
-     * Metodo abstrato para o calculo da area
-     */
-    public abstract double calcularArea();
+    Forma f = (Forma) o;
+    if (getArea() < f.getArea())
+      return -1;
+    else if (getArea() > f.getArea())
+      return 1;
 
-    /**
-     * Metodo abstrato para o desenho da forma
-     * 
-     * @param comp2D Contexto de desenho
-     */
-    public abstract void desenhar(Graphics2D comp2D);
+    return 0;
+  }
+
+  /**
+   * Metodo abstrato para o calculo da area
+   */
+  public abstract double calcularArea();
+
+  /**
+   * Metodo abstrato para o desenho da forma
+   *
+   * @param comp2D Contexto de desenho
+   */
+  public abstract void desenhar(Graphics2D comp2D);
 }

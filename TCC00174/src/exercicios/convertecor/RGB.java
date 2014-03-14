@@ -17,10 +17,12 @@ public class RGB extends Cor {
     this.g = g;
     this.b = b;
   }
-  public RGB(){}
-  
-  public CMYK toCMYK(){
-  return null;
+
+  public RGB() {
+  }
+
+  public CMYK toCMYK() {
+    return null;
   }
 
   /**
@@ -67,7 +69,7 @@ public class RGB extends Cor {
 
   @Override
   public Cor converte(Cor c) {
-  
+
     return null;
   }
 }

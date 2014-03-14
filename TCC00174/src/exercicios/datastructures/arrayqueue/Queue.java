@@ -1,4 +1,3 @@
-
 package exercicios.datastructures.arrayqueue;
 
 // Queue interface
@@ -11,39 +10,41 @@ package exercicios.datastructures.arrayqueue;
 // void makeEmpty( )      --> Remove all items
 // ******************ERRORS********************************
 // getFront or dequeue on empty queue
+public interface Queue {
 
-public interface Queue
-{
-    /**
-     * Insert a new item into the queue.
-     * @param x the item to insert.
-     */
-    void  enqueue( Object x );
-    
-    /**
-     * Get the least recently inserted item in the queue.
-     * Does not alter the queue.
-     * @return the least recently inserted item in the queue.
-     * @exception UnderflowException if the queue is empty.
-     */
-    Object getFront( );
+  /**
+   * Insert a new item into the queue.
+   *
+   * @param x the item to insert.
+   */
+  void enqueue(Object x);
 
-    /**
-     * Return and remove the least recently inserted item
-     * from the queue.
-     * @return the least recently inserted item in the queue.
-     * @exception UnderflowException if the queue is empty.
-     */
-    Object dequeue( );
+  /**
+   * Get the least recently inserted item in the queue. Does not alter the
+   * queue.
+   *
+   * @return the least recently inserted item in the queue.
+   * @exception UnderflowException if the queue is empty.
+   */
+  Object getFront();
 
-    /**
-     * Test if the queue is logically empty.
-     * @return true if empty, false otherwise.
-     */
-    boolean isEmpty( );
+  /**
+   * Return and remove the least recently inserted item from the queue.
+   *
+   * @return the least recently inserted item in the queue.
+   * @exception UnderflowException if the queue is empty.
+   */
+  Object dequeue();
 
-    /**
-     * Make the queue logically empty.
-     */
-    void makeEmpty( );
+  /**
+   * Test if the queue is logically empty.
+   *
+   * @return true if empty, false otherwise.
+   */
+  boolean isEmpty();
+
+  /**
+   * Make the queue logically empty.
+   */
+  void makeEmpty();
 }

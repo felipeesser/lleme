@@ -4,12 +4,9 @@ import javax.swing.JFrame;
 
 import exercicios.interface_.pacman.Board;
 
+public class PacMan extends JFrame {
 
-public class PacMan extends JFrame
-{
-
-  public PacMan()
-  {
+  public PacMan() {
     add(new Board());
     setTitle("Pacman");
     setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -19,6 +16,6 @@ public class PacMan extends JFrame
   }
 
   public static void main(String[] args) {
-      new PacMan();
+    new PacMan();
   }
 }

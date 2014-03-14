@@ -1,25 +1,24 @@
-
 package exercicios.datastructures.listasGenericas;
 
 public class Pilha<Tipo> {
-    private String nome;
-    private Lista<Tipo> l;
 
-    Pilha(String nome){
-        this.nome = nome;
-        l = new Lista<Tipo>("Lista interna usada na pilha");
-    }
+  private String nome;
+  private Lista<Tipo> l;
 
-    public boolean vazia(){
-        return l.vazia();
-    }
+  Pilha(String nome) {
+    this.nome = nome;
+    l = new Lista<Tipo>("Lista interna usada na pilha");
+  }
 
-    public void push(Tipo elem){
-        l.inserirInicio(elem);
-    }
+  public boolean vazia() {
+    return l.vazia();
+  }
 
-    public Tipo pop(){
-        return l.removerInicio();
-    }
+  public void push(Tipo elem) {
+    l.inserirInicio(elem);
+  }
 
+  public Tipo pop() {
+    return l.removerInicio();
+  }
 }

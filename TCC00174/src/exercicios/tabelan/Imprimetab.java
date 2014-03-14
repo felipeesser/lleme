@@ -10,27 +10,23 @@ import java.util.Scanner;
  *
  * @author Luiz Leme
  */
-
 public class Imprimetab {
-   
-  Imprimetab(){
+
+  Imprimetab() {
   }
-  
   static Scanner teclado = new Scanner(System.in);
-  
-  public static void main(){
+
+  public static void main() {
     int i, j;
     int n = teclado.nextInt();
     char[][] nen = new char[n][n];
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++)
       for (j = 0; j < n; j++)
-        if((i==0 || j==0)&& j!=i)
+        if ((i == 0 || j == 0) && j != i)
           nen[i][j] = '*';
-        else if(i%j==0 || j%i==0)
+        else if (i % j == 0 || j % i == 0)
           nen[i][j] = '*';
         else
           nen[i][j] = ' ';
-    }
   }
-          
 }

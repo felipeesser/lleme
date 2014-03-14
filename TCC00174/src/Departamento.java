@@ -8,9 +8,7 @@
  * @author Luiz Leme
  */
 public class Departamento {
-  
+
   public String nome;
-  
   public Gerente chefe;
-  
 }
