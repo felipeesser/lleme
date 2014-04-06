@@ -15,7 +15,7 @@ public class MatrizNula extends MatrizEsparsa {
 
     @Override
     public double obter(int lin, int col) {
-        if (lin < numeroDeLinhas() && col < numeroDeColunas())
+        if (lin >= 0 && col >= 0 && lin < numeroDeLinhas() && col < numeroDeColunas())
             return 0;
         else
             throw new ArrayIndexOutOfBoundsException();
@@ -23,7 +23,7 @@ public class MatrizNula extends MatrizEsparsa {
 
     @Override
     public void atribuir(int lin, int col, double valor) {
-        if (lin < numeroDeLinhas() && col < numeroDeColunas()) {
+        if (lin >= 0 && col >= 0 && lin < numeroDeLinhas() && col < numeroDeColunas()) {
             // nao faz nada
         } else
             throw new ArrayIndexOutOfBoundsException();
