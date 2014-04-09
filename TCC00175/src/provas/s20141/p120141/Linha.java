@@ -6,28 +6,28 @@ import java.util.Map;
 
 public class Linha<E> implements Serializable {
 
-    private Map<Integer, E> linha = new HashMap();
+  private Map<Integer, E> linha = new HashMap();
 
-    public void set(int j, E valor) {
-        if (j < 0)
-            throw new ArrayIndexOutOfBoundsException();
-        if (valor == null)
-            this.linha.remove(j);
-        else
-            this.linha.put(j, valor);
-    }
+  public void set(int j, E valor) {
+    if (j < 0)
+      throw new ArrayIndexOutOfBoundsException();
+    if (valor == null)
+      this.linha.remove(j);
+    else
+      this.linha.put(j, valor);
+  }
 
-    public E get(int j) {
-        if (j < 0)
-            throw new ArrayIndexOutOfBoundsException();
-        return this.linha.get(j);
-    }
+  public E get(int j) {
+    if (j < 0)
+      throw new ArrayIndexOutOfBoundsException();
+    return this.linha.get(j);
+  }
 
-    public int colunas() {
-        int colunas = -1;
-        for (Integer j : linha.keySet())
-            if (j > colunas)
-                colunas = j;
-        return colunas + 1;
-    }
+  public int colunas() {
+    int colunas = -1;
+    for (Integer j : linha.keySet())
+      if (j > colunas)
+        colunas = j;
+    return colunas + 1;
+  }
 }

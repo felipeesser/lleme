@@ -4,11 +4,11 @@ import exercicios.temporizador.model.Temporizador;
 
 public class ResetCommand extends CommandImpl {
 
-    public void execute() {
-        getReceiver().serviceReset();
-    }
+  public void execute() {
+    getReceiver().serviceReset();
+  }
 
-    public ResetCommand(Temporizador t) {
-        super(t);
-    }
+  public ResetCommand(Temporizador t) {
+    super(t);
+  }
 }

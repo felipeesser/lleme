@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Vendedor extends Funcionario {
 
-    public Vendedor(String nome, Date admissao, float cargaHoraria) {
-        super(nome, admissao, cargaHoraria);
-    }
+  public Vendedor(String nome, Date admissao, float cargaHoraria) {
+    super(nome, admissao, cargaHoraria);
+  }
 
-    @Override
-    public void accept(Visitante visitante) {
-        visitante.visitVendedor(this);
-    }
+  @Override
+  public void accept(Visitante visitante) {
+    visitante.visitVendedor(this);
+  }
 }

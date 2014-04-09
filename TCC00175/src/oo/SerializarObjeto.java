@@ -9,43 +9,42 @@ import java.io.ObjectOutputStream;
 
 public class SerializarObjeto {
 
-    public static void main(String[] args) {
-        Objeto objeto;
-        try {
-            FileOutputStream out;
-            out = new FileOutputStream("Teste.dat", false);
-            ObjectOutputStream s = new ObjectOutputStream(out);
+  public static void main(String[] args) {
+    Objeto objeto;
+    try {
+      FileOutputStream out;
+      out = new FileOutputStream("Teste.dat", false);
+      ObjectOutputStream s = new ObjectOutputStream(out);
 
-            objeto = new Objeto();
-            objeto.x = 23;
-            objeto.y = 17;
+      objeto = new Objeto();
+      objeto.x = 23;
+      objeto.y = 17;
 
-            s.writeObject(objeto);
-            s.flush();
-            s.close();
+      s.writeObject(objeto);
+      s.flush();
+      s.close();
 
-            throw new Exception();
+      throw new Exception();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-
-        }
-
-        objeto = null;
-        try {
-            FileInputStream in;
-            in = new FileInputStream("Teste.dat");
-            ObjectInputStream s = new ObjectInputStream(in);
-            objeto = (Objeto) s.readObject();
-        } catch (FileNotFoundException e) {
-            objeto = new Objeto();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        System.out.println(objeto.x);
-        System.out.println(objeto.y);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
     }
+
+    objeto = null;
+    try {
+      FileInputStream in;
+      in = new FileInputStream("Teste.dat");
+      ObjectInputStream s = new ObjectInputStream(in);
+      objeto = (Objeto) s.readObject();
+    } catch (FileNotFoundException e) {
+      objeto = new Objeto();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+    System.out.println(objeto.x);
+    System.out.println(objeto.y);
+  }
 }

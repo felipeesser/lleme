@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Departamento {
 
-    public String nome;
-    public List<Funcionario> quadro = new ArrayList<>();
+  public String nome;
+  public List<Funcionario> quadro = new ArrayList<>();
 
-    public Departamento(String nome) {
-        this.nome = nome;
-    }
+  public Departamento(String nome) {
+    this.nome = nome;
+  }
 
-    public void accpet(Visitante visitante) {
-        for (Funcionario func : quadro)
-            func.accept(visitante);
-    }
+  public void accpet(Visitante visitante) {
+    for (Funcionario func : quadro)
+      func.accept(visitante);
+  }
 }

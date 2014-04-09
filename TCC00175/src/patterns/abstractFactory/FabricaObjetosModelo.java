@@ -6,9 +6,9 @@ import patterns.proxy.Usuario;
 
 public abstract class FabricaObjetosModelo {
 
-    public abstract Usuario createUsuario(int id) throws ClassNotFoundException,
-            SQLException, Exception;
+  public abstract Usuario createUsuario(int id) throws ClassNotFoundException,
+          SQLException, Exception;
 
-    public abstract Blog createBlog(int id) throws ClassNotFoundException,
-            SQLException, Exception;
+  public abstract Blog createBlog(int id) throws ClassNotFoundException,
+          SQLException, Exception;
 }

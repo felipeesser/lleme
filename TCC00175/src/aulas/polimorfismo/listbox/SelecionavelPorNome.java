@@ -4,6 +4,5 @@ import java.util.Iterator;
 
 public interface SelecionavelPorNome {
 
-    public Iterator<Nomeavel> getIteratorPorNome(String nome);
-
+  public Iterator<Nomeavel> getIteratorPorNome(String nome);
 }

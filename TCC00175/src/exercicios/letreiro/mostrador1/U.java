@@ -4,27 +4,24 @@ import exercicios.letreiro.Caractere;
 
 public class U extends Caractere {
 
-    private static U instancia = null;
+  private static U instancia = null;
 
-    private U() {
+  private U() {
+  }
 
-    }
+  public static U obterInstancia() {
+    if (instancia == null)
+      instancia = new U();
+    return instancia;
+  }
 
-    public static U obterInstancia() {
-        if (instancia == null)
-            instancia = new U();
-        return instancia;
-    }
-
-    @Override
-    public void acenderMostrador(Mostrador mostrador) {
-        boolean[][] estados
-                = {{true, false, false, false, true},
-                {true, false, false, false, true},
-                {true, false, false, false, true},
-                {true, false, false, false, true},
-                {false, true, true, true, false}};
-        mostrador.acenderLeds(estados);
-    }
-
+  @Override
+  public void acenderMostrador(Mostrador mostrador) {
+    boolean[][] estados = {{true, false, false, false, true},
+      {true, false, false, false, true},
+      {true, false, false, false, true},
+      {true, false, false, false, true},
+      {false, true, true, true, false}};
+    mostrador.acenderLeds(estados);
+  }
 }

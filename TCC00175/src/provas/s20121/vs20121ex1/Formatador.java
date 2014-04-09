@@ -4,5 +4,5 @@ import java.util.List;
 
 public abstract class Formatador {
 
-    public abstract List<String> formatar(List<String> linhas);
+  public abstract List<String> formatar(List<String> linhas);
 }
