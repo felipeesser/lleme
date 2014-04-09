@@ -8,20 +8,18 @@ public class MatrizDiagonal extends Matriz {
 
     @Override
     public double obter(int lin, int col) {
-        if (lin < numeroDeLinhas() && col < numeroDeColunas()) {
+        if (lin >= 0 && col >= 0 && lin < numeroDeLinhas() && col < numeroDeColunas())
             return super.obter(1, col);
-        } else {
+        else
             throw new ArrayIndexOutOfBoundsException();
-        }
     }
 
     @Override
     public void atribuir(int lin, int col, double valor) {
-        if (lin < numeroDeLinhas() && col < numeroDeColunas()) {
+        if (lin >= 0 && col >= 0 && lin < numeroDeLinhas() && col < numeroDeColunas())
             atribuir(1, col, valor);
-        } else {
+        else
             throw new ArrayIndexOutOfBoundsException();
-        }
     }
 
     @Override

@@ -13,7 +13,7 @@ public class MatrizIdentidade extends MatrizDiagonal {
 
     @Override
     public double obter(int lin, int col) {
-        if (lin < numeroDeLinhas() && col < numeroDeColunas())
+        if (lin >= 0 && col >= 0 && lin < numeroDeLinhas() && col < numeroDeColunas())
             if (lin == col)
                 return 1;
             else
@@ -24,9 +24,8 @@ public class MatrizIdentidade extends MatrizDiagonal {
 
     @Override
     public void atribuir(int lin, int col, double valor) {
-        if (lin < numeroDeLinhas() && col < numeroDeColunas()) {
+        if (lin >= 0 && col >= 0 && lin < numeroDeLinhas() && col < numeroDeColunas()) {
             // nao faz nada
-
         } else
             throw new ArrayIndexOutOfBoundsException();
     }
