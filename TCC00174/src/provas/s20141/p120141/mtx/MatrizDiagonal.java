@@ -1,10 +1,10 @@
 package provas.s20141.p120141.mtx;
 
-public class MatrizDiagonal extends Matriz {
+public class MatrizDiagonal extends MatrizEsparsa {
 
-    public MatrizDiagonal(int linhas) {
-        super(1, linhas);
-    }
+  public MatrizDiagonal(int linhas) {
+    super(1, linhas);
+  }
 
     @Override
     public double obter(int lin, int col) {
@@ -22,14 +22,10 @@ public class MatrizDiagonal extends Matriz {
             throw new ArrayIndexOutOfBoundsException();
     }
 
-    @Override
-    public int numeroDeLinhas() {
-        return super.numeroDeColunas();
-    }
+  @Override
+  public int numeroDeLinhas() {
+    return super.numeroDeColunas();
+  }
 
-    @Override
-    public int numeroDeColunas() {
-        return super.numeroDeColunas();
-    }
 
 }
