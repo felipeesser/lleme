@@ -9,13 +9,14 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Matriz<E> implements Serializable {
 
-  private HashMap<Integer, Linha<E>> matriz = new HashMap();
+  private Map<Integer, Linha<E>> matriz = new HashMap();
 
   public E get(int i, int j) {
     if (i < 0 || j < 0)

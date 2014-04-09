@@ -20,7 +20,6 @@ public class Linha<E> implements Serializable {
     public E get(int j) {
         if (j < 0)
             throw new ArrayIndexOutOfBoundsException();
-        j = Math.abs(j);
         return this.linha.get(j);
     }
 

@@ -14,7 +14,9 @@ public class Main {
         System.out.println(m.get(500, 70));
 
         m.salvar("m.dat");
-        Matriz<Aluno> m2 = Matriz.carregar("m.dat", m);
+        
+        Matriz<Aluno> modelo = new Matriz<>();
+        Matriz<Aluno> m2 = Matriz.carregar("m.dat", modelo);
         System.out.println(m2.get(3, 4).matricula);
 
         //MatrizEscalar m = new MatrizEscalar<MyDouble>();
