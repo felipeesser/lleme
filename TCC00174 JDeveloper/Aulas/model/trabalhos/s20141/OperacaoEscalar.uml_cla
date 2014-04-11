@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:4fe205bc-3e16-4c82-a7f0-ec36b0437198'
+   isAbstract='true'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='OperacaoEscalar'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:630f3b6d-d639-4487-ac26-d209e0f333f7'
+    isSubstitutable='true'>
+   <general href='urn:uuid:f57a03d6-4010-40d9-8ef4-b85734aaa352'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>
