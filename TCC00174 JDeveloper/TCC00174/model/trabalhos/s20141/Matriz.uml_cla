@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:daf9c157-f980-4c6c-afcc-ca715be7d5af'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Matriz'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:e86d376a-8e77-4a7f-b03d-35065fc063a8'
+    isSubstitutable='true'>
+   <general href='urn:uuid:f57a03d6-4010-40d9-8ef4-b85734aaa352'/>
+  </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:913ba697-c3b4-4eae-af10-18eb12ecc8e1'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='m'
+    aggregation='none'
+    visibility='package'>
+   <type href='mof:/double:uml:Type'/>
+   <defaultValue xmi:type='uml:LiteralString' xmi:uuid='urn:uuid:be43b4cc-e64b-4f41-9521-a5a3f7ce9fb7'
+     value='null'
+     visibility='public'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:30d52707-0adc-4be5-b12f-c06dcc50b4eb'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:d06769d0-0226-47e2-bd84-504cfe7d72d1'
+     value='*'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:62253044-411e-4f7e-af58-027aeb32c628'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='valor'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:6045f4d3-db28-42ae-8a5f-fdfcd9b597b5'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/double:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:63b34140-b0aa-4ad4-b299-2618c8dea8a6'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:c19fea2c-268c-4200-85f1-d70c31d06a60'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:ea962453-b6f5-4de1-baba-fc61207ab7fc'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Matriz'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:be5b33a0-752a-4cdd-a4ec-78d17459cbdf'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='m'
+     direction='in'>
+    <type href='mof:/double:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:a2d779bb-3a2d-480a-8943-8189903e4c77'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:d3911abd-2315-4794-902e-61d6f0ec2e89'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

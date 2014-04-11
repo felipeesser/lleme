@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:852ed02a-9508-4740-96b0-b0d1250c9dfe'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Multiplicacao'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:92f58b6f-b5e9-4654-a207-abb21ad9d270'
+    isSubstitutable='true'>
+   <general href='urn:uuid:4ecd0845-e44a-4c5f-ac9e-db47859e2b70'/>
+  </generalization>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:100f1766-82f2-426e-ab76-ca2c71467311'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='valor'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:30d1d173-74f5-4512-93fc-22c432236dad'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/double:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:96ff4590-af8f-49cd-b3a8-0bd63713665a'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:2226eabd-ad7d-459a-9a9c-46ecb4d205f1'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>
