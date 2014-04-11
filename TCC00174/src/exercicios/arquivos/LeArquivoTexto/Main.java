@@ -13,6 +13,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
 
@@ -23,6 +28,15 @@ public class Main {
    * @param args Argumentos de linha de comando.
    */
   public static void main(String[] args) {
+    try {
+      InputStream in = new FileInputStream("fgsdfg");
+      Scanner sc = new Scanner(in);
+     
+      
+    } catch (FileNotFoundException ex) {
+      Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
 
     // Array de alunos
     Aluno[] alunos = new Aluno[10];

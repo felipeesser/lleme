@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 public class Arquivo {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
+
+    Throwable d = null;
+
     try {
       FileInputStream file = new FileInputStream("numbers.dat");
       Scanner in = new Scanner(file);
@@ -31,6 +34,13 @@ public class Arquivo {
       file.close();
     } catch (IOException e) {
     }
+    
+    metodo(4);
 
+  }
+
+  public static void metodo(int n) throws IOException {
+    if (n > 1)
+      throw new IOException();
   }
 }
