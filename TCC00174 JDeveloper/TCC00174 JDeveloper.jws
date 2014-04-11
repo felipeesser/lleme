@@ -23,4 +23,14 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="Aulas/Aulas.jpr"/></hash>
    </list>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ApplicationSrcContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="../src/"/>
+         </list>
+      </hash>
+   </hash>
 </jws:workspace>

@@ -3,6 +3,9 @@
    <hash n="adrs-workspace-properties">
       <value n="adrs-instance-binding" v="DefaultServer"/>
    </hash>
+   <hash n="adrs-workspace-weblogic-properties">
+      <value n="hot-class-reload" v="ide-default"/>
+   </hash>
    <value n="appTemplateId" v="#genericApplicationTemplate"/>
    <hash n="appWebServicePolicy">
       <value n="location"/>
