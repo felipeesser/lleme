@@ -4,110 +4,110 @@ import java.util.Calendar;
 
 public abstract class Temporizador extends SubjectImpl implements Runnable {
 
-  private Calendar agora = null;
-  private Calendar inicio = null;
-  private Calendar tempo = null;
-  private Thread clockThread = null;
-  private Calendar tempoParcial = null;
-  private String nomeThread;
-  private int intervaloThread;
+    private Calendar agora = null;
+    private Calendar inicio = null;
+    private Calendar tempo = null;
+    private Thread clockThread = null;
+    private Calendar tempoParcial = null;
+    private String nomeThread;
+    private int intervaloThread;
 
-  public Temporizador() {
-    setInicio(Calendar.getInstance());
-    setAgora(Calendar.getInstance());
-    setTempo(Calendar.getInstance());
-    setTempoParcial(Calendar.getInstance());
-  }
+    public Temporizador() {
+        setInicio(Calendar.getInstance());
+        setAgora(Calendar.getInstance());
+        setTempo(Calendar.getInstance());
+        setTempoParcial(Calendar.getInstance());
+    }
 
-  public void run() {
-    Thread myThread = Thread.currentThread();
-    while (getClockThread() == myThread) {
-      updateTempo();
-      notifyObservers();
-      try {
-        Thread.sleep(intervaloThread);
-      } catch (InterruptedException e) {
+    public void run() {
+        Thread myThread = Thread.currentThread();
+        while (getClockThread() == myThread) {
+            updateTempo();
+            notifyObservers();
+            try {
+                Thread.sleep(intervaloThread);
+            } catch (InterruptedException e) {
+                // TODO
+            }
+        }
+    }
+
+    public void serviceStart() {
+        setInicio(Calendar.getInstance());
+        if (clockThread == null) {
+            setClockThread(new Thread(this, nomeThread));
+            getClockThread().start();
+            notifyObservers();
+        }
+    }
+
+    public void serviceStop() {
+        getTempoParcial().setTimeInMillis(getTempo().getTimeInMillis());
+        setInicio(Calendar.getInstance());
+        setClockThread(null);
+        notifyObservers();
+        System.gc();
+    }
+
+    public void serviceReset() {
         // TODO
-      }
     }
-  }
 
-  public void serviceStart() {
-    setInicio(Calendar.getInstance());
-    if (clockThread == null) {
-      setClockThread(new Thread(this, nomeThread));
-      getClockThread().start();
-      notifyObservers();
+    protected Calendar getAgora() {
+        return this.agora;
     }
-  }
 
-  public void serviceStop() {
-    getTempoParcial().setTimeInMillis(getTempo().getTimeInMillis());
-    setInicio(Calendar.getInstance());
-    setClockThread(null);
-    notifyObservers();
-    System.gc();
-  }
+    protected Calendar getInicio() {
+        return this.inicio;
+    }
 
-  public void serviceReset() {
-    // TODO
-  }
+    public Calendar getTempo() {
+        return this.tempo;
+    }
 
-  protected Calendar getAgora() {
-    return this.agora;
-  }
+    protected Calendar getTempoParcial() {
+        return this.tempoParcial;
+    }
 
-  protected Calendar getInicio() {
-    return this.inicio;
-  }
+    abstract void updateTempo();
 
-  public Calendar getTempo() {
-    return this.tempo;
-  }
+    public Thread getClockThread() {
+        return this.clockThread;
+    }
 
-  protected Calendar getTempoParcial() {
-    return this.tempoParcial;
-  }
+    protected void setClockThread(Thread clockThread) {
+        this.clockThread = clockThread;
+    }
 
-  abstract void updateTempo();
+    protected int getIntervaloThread() {
+        return intervaloThread;
+    }
 
-  public Thread getClockThread() {
-    return this.clockThread;
-  }
+    protected void setIntervaloThread(int intervaloThread) {
+        this.intervaloThread = intervaloThread;
+    }
 
-  protected void setClockThread(Thread clockThread) {
-    this.clockThread = clockThread;
-  }
+    protected String getNomeThread() {
+        return this.nomeThread;
+    }
 
-  protected int getIntervaloThread() {
-    return intervaloThread;
-  }
+    protected void setNomeThread(String nomeThread) {
+        this.nomeThread = nomeThread;
+    }
 
-  protected void setIntervaloThread(int intervaloThread) {
-    this.intervaloThread = intervaloThread;
-  }
+    protected void setAgora(Calendar agora) {
+        this.agora = agora;
+    }
 
-  protected String getNomeThread() {
-    return this.nomeThread;
-  }
+    protected void setInicio(Calendar inicio) {
+        this.inicio = inicio;
+    }
 
-  protected void setNomeThread(String nomeThread) {
-    this.nomeThread = nomeThread;
-  }
+    protected void setTempo(Calendar tempo) {
+        this.tempo = tempo;
+    }
 
-  protected void setAgora(Calendar agora) {
-    this.agora = agora;
-  }
-
-  protected void setInicio(Calendar inicio) {
-    this.inicio = inicio;
-  }
-
-  protected void setTempo(Calendar tempo) {
-    this.tempo = tempo;
-  }
-
-  protected void setTempoParcial(Calendar tempoParcial) {
-    this.tempoParcial = tempoParcial;
-  }
+    protected void setTempoParcial(Calendar tempoParcial) {
+        this.tempoParcial = tempoParcial;
+    }
 }

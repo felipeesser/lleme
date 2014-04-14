@@ -2,8 +2,8 @@ package oo.pessoa;
 
 public class Empresa {
 
-  /**
-   * @attribute
-   */
-  public String nome;
+    /**
+     * @attribute
+     */
+    public String nome;
 }

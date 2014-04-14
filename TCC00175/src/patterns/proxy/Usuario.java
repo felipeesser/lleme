@@ -6,31 +6,31 @@ import java.util.Set;
 
 public interface Usuario {
 
-  public long getCpf();
+    public long getCpf();
 
-  public Endereco getEndereco();
+    public Endereco getEndereco();
 
-  public int getId();
+    public int getId();
 
-  public String getNome();
+    public String getNome();
 
-  public Timestamp getTimestamp();
+    public Timestamp getTimestamp();
 
-  public void setCpf(long cpf);
+    public void setCpf(long cpf);
 
-  public void setEndereco(Endereco endereco);
+    public void setEndereco(Endereco endereco);
 
-  public void setId(int id);
+    public void setId(int id);
 
-  public void setNome(String nome);
+    public void setNome(String nome);
 
-  public void setTimestamp(Timestamp timestamp);
+    public void setTimestamp(Timestamp timestamp);
 
-  public Set<Blog> getBlogs() throws ClassNotFoundException, SQLException, Exception;
+    public Set<Blog> getBlogs() throws ClassNotFoundException, SQLException, Exception;
 
-  public void setBlogs(Set<Blog> blogs);
+    public void setBlogs(Set<Blog> blogs);
 
-  public void persistir() throws ClassNotFoundException, SQLException, Exception;
+    public void persistir() throws ClassNotFoundException, SQLException, Exception;
 
-  public void atualizar() throws ClassNotFoundException, SQLException, Exception;
+    public void atualizar() throws ClassNotFoundException, SQLException, Exception;
 }

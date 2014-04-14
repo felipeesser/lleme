@@ -4,8 +4,8 @@ import java.util.List;
 
 public class AEsquerda extends Formatador {
 
-  @Override
-  public List<String> formatar(List<String> linhas) {
-    return linhas;
-  }
+    @Override
+    public List<String> formatar(List<String> linhas) {
+        return linhas;
+    }
 }

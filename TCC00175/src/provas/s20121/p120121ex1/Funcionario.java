@@ -4,17 +4,17 @@ import java.util.Date;
 
 public abstract class Funcionario {
 
-  public String nome;
-  public Date admissao;
-  public float cargaHoraria;
-  public Date ferias;
-  public float salario;
+    public String nome;
+    public Date admissao;
+    public float cargaHoraria;
+    public Date ferias;
+    public float salario;
 
-  public Funcionario(String nome, Date admissao, float cargaHoraria) {
-    this.nome = nome;
-    this.admissao = admissao;
-    this.cargaHoraria = cargaHoraria;
-  }
+    public Funcionario(String nome, Date admissao, float cargaHoraria) {
+        this.nome = nome;
+        this.admissao = admissao;
+        this.cargaHoraria = cargaHoraria;
+    }
 
-  public abstract void accept(Visitante visitante);
+    public abstract void accept(Visitante visitante);
 }

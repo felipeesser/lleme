@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class Operacao {
 
-  /**
-   * @attribute
-   */
-  public Periodo periodo;
+    /**
+     * @attribute
+     */
+    public Periodo periodo;
 
-  public Map getOcupacao(Date data) {
-    return null;
-  }
+    public Map getOcupacao(Date data) {
+        return null;
+    }
 }

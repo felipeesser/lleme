@@ -5,10 +5,10 @@ import java.util.List;
 
 public class ElementoXML extends No {
 
-  public List<No> filhos = new ArrayList<>();
-  public String nome;
+    public List<No> filhos = new ArrayList<>();
+    public String nome;
 
-  public ElementoXML(String nome) {
-    this.nome = nome;
-  }
+    public ElementoXML(String nome) {
+        this.nome = nome;
+    }
 }

@@ -10,15 +10,15 @@ import patterns.proxy.UsuarioProxyAccessBD;
 
 public class FabricaObjetosModeloAccess extends FabricaObjetosModelo {
 
-  @Override
-  public Usuario createUsuario(int id) throws ClassNotFoundException,
-          SQLException, CloneNotSupportedException, Exception {
-    return new UsuarioProxyAccessBD(id, new UsuarioModelo());
-  }
+    @Override
+    public Usuario createUsuario(int id) throws ClassNotFoundException,
+            SQLException, CloneNotSupportedException, Exception {
+        return new UsuarioProxyAccessBD(id, new UsuarioModelo());
+    }
 
-  @Override
-  public Blog createBlog(int id) throws ClassNotFoundException,
-          SQLException, CloneNotSupportedException, Exception {
-    return new BlogProxyAccessBD(id, new BlogModelo());
-  }
+    @Override
+    public Blog createBlog(int id) throws ClassNotFoundException,
+            SQLException, CloneNotSupportedException, Exception {
+        return new BlogProxyAccessBD(id, new BlogModelo());
+    }
 }
