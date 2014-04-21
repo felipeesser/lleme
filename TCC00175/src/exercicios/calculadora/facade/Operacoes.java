@@ -4,10 +4,12 @@ import exercicios.calculadora.command.AlterarExpressao;
 import exercicios.calculadora.command.AlterarVariavel;
 import exercicios.calculadora.command.Command;
 import exercicios.calculadora.mediator.MediadorDeAlteracao;
+
 import java.util.Map;
 import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import patterns.memento.Memento;
 import patterns.memento.Originator;
 
