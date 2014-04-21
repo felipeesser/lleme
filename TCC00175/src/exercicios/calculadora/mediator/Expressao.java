@@ -1,19 +1,20 @@
 package exercicios.calculadora.mediator;
 
+import exercicios.calculadora.decorator.InterpretadorAritmetico;
+import exercicios.calculadora.decorator.InterpretadorBasico;
 import exercicios.calculadora.decorator.InterpretadorDeExpressao;
 import exercicios.calculadora.decorator.InterpretadorTrigonometrico;
-import exercicios.calculadora.decorator.InterpretadorBasico;
 import exercicios.calculadora.interpreter.RepresentacaoExpressao;
 
 public class Expressao extends ClasseMediada implements Cloneable {
 
     private String expressaoStr;
-    private InterpretadorDeExpressao interpretador;
     public RepresentacaoExpressao expressao;
+    private InterpretadorDeExpressao interpretador;
 
     public Expressao(Mediador mediador) {
         super(mediador);
-        interpretador = new InterpretadorTrigonometrico(new InterpretadorBasico());
+        interpretador = new InterpretadorTrigonometrico(new InterpretadorAritmetico(new  InterpretadorBasico()));
     }
 
     public void setExpressaoStr(String expressaoStr) throws Exception {

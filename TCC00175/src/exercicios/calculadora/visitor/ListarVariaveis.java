@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 import exercicios.calculadora.interpreter.Variavel;
 
-public class ListaVariaveis extends Visitor {
+public class ListarVariaveis extends Visitor {
 
     public Set<String> nomesVars = new HashSet<>();
 
