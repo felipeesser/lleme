@@ -1,5 +1,6 @@
 package exercicios.calculadora.decorator;
 
+
 public abstract class Decorador extends InterpretadorDeExpressao {
 
     /**
@@ -16,6 +17,14 @@ public abstract class Decorador extends InterpretadorDeExpressao {
 
     @Override
     public String fragmentar(String expressao) throws Exception {
-        return component.fragmentar(expressao);
+        return getComponent().fragmentar(expressao);
+    }
+
+    public InterpretadorDeExpressao getComponent() {
+        return component;
+    }
+
+    public void setComponent(InterpretadorDeExpressao component) {
+        this.component = component;
     }
 }

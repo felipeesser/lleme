@@ -22,7 +22,7 @@ public class InterpretadorTrigonometrico extends Decorador {
 
     @Override
     public String fragmentar(String expressao) throws Exception {
-        expressao = super.fragmentar(expressao);
+        expressao = getComponent().fragmentar(expressao);
         return cadeiaDeFragmentadores.extrairSimbolo(expressao);
     }
 }
