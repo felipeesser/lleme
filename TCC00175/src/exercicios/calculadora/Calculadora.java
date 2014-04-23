@@ -13,8 +13,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import patterns.memento.Memento;
-import patterns.memento.Originator;
+import exercicios.calculadora.memento.Memento;
+import exercicios.calculadora.memento.Originator;
 
 /**
  *
@@ -156,7 +156,7 @@ public class Calculadora extends javax.swing.JFrame implements Originator {
     }//GEN-LAST:event_expressao_txtActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        setMemento(operacoes.desfazer());
+        operacoes.desfazer();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -4,9 +4,10 @@ import exercicios.calculadora.visitor.InicializarVariavel;
 import exercicios.calculadora.visitor.ListarVariaveis;
 import exercicios.calculadora.visitor.Visitor;
 
-import patterns.memento.Memento;
+import exercicios.calculadora.memento.Memento;
+import exercicios.calculadora.memento.Originator;
 
-public class MediadorDeAlteracao extends Mediador {
+public class MediadorDeAlteracao extends Mediador implements Originator{
 
     public Expressao expressao;
     public MapaVariaveis mapaVariaveis;

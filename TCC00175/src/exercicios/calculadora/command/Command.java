@@ -1,25 +1,28 @@
 package exercicios.calculadora.command;
 
 import exercicios.calculadora.mediator.MediadorDeAlteracao;
-import patterns.memento.Memento;
-import patterns.memento.Originator;
+import exercicios.calculadora.memento.Memento;
+import exercicios.calculadora.memento.Originator;
 
 public abstract class Command {
 
     protected MediadorDeAlteracao mediador;
-    protected Memento memento;
-    protected Memento mementoCalculadora;
+    protected Originator originator;
+    protected Memento mementoMediador;
+    protected Memento mementoOriginator;
 
     public Command(MediadorDeAlteracao mediador, Originator originator) throws CloneNotSupportedException {
         this.mediador = mediador;
-        memento = mediador.createMemento();
-        mementoCalculadora = originator.createMemento();
+        this.originator = originator;
     }
 
-    public abstract void execute() throws CloneNotSupportedException, Exception;
+    public void execute() throws CloneNotSupportedException, Exception {
+        mementoMediador = mediador.createMemento();
+        mementoOriginator = originator.createMemento();
+    }
 
-    public Memento desfazer() {
-        mediador.setMemento(memento);
-        return mementoCalculadora;
+    public void desfazer() {
+        mediador.setMemento(mementoMediador);
+        originator.setMemento(mementoOriginator);
     }
 }

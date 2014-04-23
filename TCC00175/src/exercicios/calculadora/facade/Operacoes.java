@@ -10,8 +10,8 @@ import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import patterns.memento.Memento;
-import patterns.memento.Originator;
+import exercicios.calculadora.memento.Memento;
+import exercicios.calculadora.memento.Originator;
 
 public class Operacoes {
 
@@ -47,8 +47,8 @@ public class Operacoes {
         return mediador.expressao.getResultado();
     }
 
-    public Memento desfazer() {
-        return comandos.pop().desfazer();
+    public void desfazer() {
+        comandos.pop().desfazer();
     }
   //    private void alterarVariaveis(Map<String, Double> variaveis) {
     //        for (String var : variaveis.keySet())

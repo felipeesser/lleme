@@ -1,8 +1,7 @@
 package exercicios.calculadora.command;
 
-import exercicios.calculadora.command.Command;
 import exercicios.calculadora.mediator.MediadorDeAlteracao;
-import patterns.memento.Originator;
+import exercicios.calculadora.memento.Originator;
 
 public class AlterarExpressao extends Command {
 
@@ -14,6 +13,7 @@ public class AlterarExpressao extends Command {
     }
 
     public void execute() throws CloneNotSupportedException, Exception {
+        super.execute();
         mediador.setExpressaoStr(expressao);
     }
 }

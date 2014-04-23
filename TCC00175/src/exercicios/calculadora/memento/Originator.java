@@ -1,4 +1,4 @@
-package patterns.memento;
+package exercicios.calculadora.memento;
 
 public interface Originator {
 
