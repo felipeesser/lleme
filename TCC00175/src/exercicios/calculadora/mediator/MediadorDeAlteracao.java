@@ -2,12 +2,11 @@ package exercicios.calculadora.mediator;
 
 import exercicios.calculadora.visitor.InicializarVariavel;
 import exercicios.calculadora.visitor.ListarVariaveis;
-import exercicios.calculadora.visitor.Visitor;
 
 import exercicios.calculadora.memento.Memento;
 import exercicios.calculadora.memento.Originator;
 
-public class MediadorDeAlteracao extends Mediador implements Originator{
+public class MediadorDeAlteracao extends Mediador implements Originator {
 
     public Expressao expressao;
     public MapaVariaveis mapaVariaveis;
@@ -59,6 +58,7 @@ public class MediadorDeAlteracao extends Mediador implements Originator{
         mapaVariaveis.setVar(varName, valor);
     }
 
+    @Override
     public Memento createMemento() throws CloneNotSupportedException {
         MementoMediador m = new MementoMediador();
         m.expressao = expressao.clone();
@@ -66,6 +66,7 @@ public class MediadorDeAlteracao extends Mediador implements Originator{
         return m;
     }
 
+    @Override
     public void setMemento(Memento m) throws ClassCastException {
         expressao = ((MementoMediador) m).expressao;
         mapaVariaveis = ((MementoMediador) m).mapaVariaveis;
