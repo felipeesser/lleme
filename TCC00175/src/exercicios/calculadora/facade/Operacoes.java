@@ -27,9 +27,9 @@ public class Operacoes {
     public Map<String, Double> alterarExpressao(String expressao, Originator originator) {
         try {
             Command cmd = new AlterarExpressao(expressao, mediador, originator);
-            comandos.push(cmd);
             cmd.execute();
-            this.mediador.setExpressaoStr(expressao);
+            comandos.push(cmd);
+            //this.mediador.setExpressaoStr(expressao);
         } catch (Exception ex) {
             Logger.getLogger(Operacoes.class.getName()).log(Level.SEVERE, null,
                     ex);

@@ -15,6 +15,7 @@ public class AlterarVariavel extends Command {
         this.valor = valor;
     }
 
+    @Override
     public void execute() throws CloneNotSupportedException, Exception {
         super.execute();
         mediador.setVar(variavel, valor);

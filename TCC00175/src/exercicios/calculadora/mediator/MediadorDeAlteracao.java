@@ -20,18 +20,18 @@ public class MediadorDeAlteracao extends Mediador implements Originator {
     @Override
     public void objetoAlterado(ClasseMediada objetoMediado) {
         if (objetoMediado == expressao)
-            objetoExpressaoAlterado(expressao);
+            objetoExpressaoAlterado();
         else
-            objetoMapaAlterado(mapaVariaveis);
+            objetoMapaAlterado();
     }
 
-    public void objetoExpressaoAlterado(Expressao mediado) {
+    public void objetoExpressaoAlterado() {
         ListarVariaveis v = new ListarVariaveis();
         expressao.expressao.accept(v);
         mapaVariaveis.updateVars(v.nomesVars);
     }
 
-    public void objetoMapaAlterado(MapaVariaveis mediado) {
+    public void objetoMapaAlterado() {
         for (String nome : mapaVariaveis.listVarsNames())
             expressao.expressao.accept(new InicializarVariavel(nome, mapaVariaveis.getVar(nome)));
     }
