@@ -11,7 +11,7 @@ public class MediadorDeAlteracao extends Mediador implements Originator {
     public Expressao expressao;
     public MapaVariaveis mapaVariaveis;
 
-    public class MementoMediador implements Memento {
+    private class MementoMediador implements Memento {
 
         private Expressao expressao;
         private MapaVariaveis mapaVariaveis;
