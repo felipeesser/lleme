@@ -12,7 +12,7 @@ public class P220111Ex2 {
     if (A.length == 1)
       determinante = A[0][0];
     else
-      for (int j = 0; j < A.length; j++)
+      for (int j = 0; j < A[0].length; j++)
         determinante += A[0][j] * Math.pow(-1, j) * determinante(cofator(A, 0, j));
     return determinante;
   }
