@@ -6,7 +6,7 @@ public class Vetor {
     private Venda[] vendas = new Venda[tamanhoPadrao];
 
     protected void atualizar(int i, Venda venda) {
-        if (i >= 0)
+        if (i >= 0){
             if (i >= vendas.length) {
                 if (vendas != null) {
                     vendas = expandir(vendas, i);
@@ -14,6 +14,8 @@ public class Vetor {
                 }
             } else
                 vendas[i] = venda;
+        }else
+          throw new ArrayIndexOutOfBoundsException();
     }
 
     protected Venda obter(int i) {
@@ -28,7 +30,7 @@ public class Vetor {
     private Venda[] expandir(Venda[] vendas, int pos) {
         int qtd = (pos / tamanhoPadrao) + 1;
         Venda[] vendasNovo = new Venda[qtd * tamanhoPadrao];
-        for (int i = 0; i < vendasNovo.length; i++)
+        for (int i = 0; i < vendas.length; i++)
             vendasNovo[i] = vendas[i];
         return vendasNovo;
     }
