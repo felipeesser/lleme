@@ -1,6 +1,6 @@
 package exemplos.listas.backtracking;
 
-public class BacktrackingSubconjuntos {
+public class Subconjuntos {
 
   public static void main(String[] args) {
     boolean[] a = {true, true, true};

@@ -1,15 +1,15 @@
 package exemplos.listas.backtracking;
 
-import static exemplos.listas.backtracking.BacktrackingSubconjuntos.backtrack;
+import static exemplos.listas.backtracking.Subconjuntos.backtrack;
 
-public class BacktrackingPermutacoes {
+public class Permutacoes {
 
   private static boolean finished = false; /* Todas soluções encontradas? */
 
 
   public static void main(String[] args) {
-    int[] a = {0, 0, 0};
-    int[] s = {13, 26, 38};
+    int[] a = {0, 0, 0, 0, 0};
+    int[] s = {13, 26, 38, 56, 2};
     backtrack(a, -1, s);
   }
 
@@ -23,6 +23,7 @@ public class BacktrackingPermutacoes {
       for (int i = 0; i < c.length; i++) {
         a[k] = c[i];
         backtrack(a, k, set);
+        a[k] = 0;
 
         if (finished)
           return;
