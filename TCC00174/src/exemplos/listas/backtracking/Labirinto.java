@@ -16,7 +16,7 @@ public class Labirinto {
     {0, 1, 0, 1, 1},
     {0, 1, 0, 0, 0}};
 
-    private static Posicao objetivo = new Posicao(2, 4);
+    private static Posicao objetivo = new Posicao(4, 4);
 
     public static void main(String[] args) {
         Stack<Movimentacao> sol = new Stack<>();
