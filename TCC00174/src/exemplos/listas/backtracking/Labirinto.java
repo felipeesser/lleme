@@ -27,7 +27,7 @@ public class Labirinto {
 
     public static void backtrack(Stack<Movimentacao> solution, Posicao pos) {
         if (isSolution(solution))
-            processSolution(solution);
+            processSolution(solution);      
         else {
 
             List<Movimentacao> candidates = constructCandidates(solution, pos);
