@@ -1,6 +1,5 @@
 package exercicios.calculadora.decorator;
 
-
 public abstract class Decorador extends InterpretadorDeExpressao {
 
     /**

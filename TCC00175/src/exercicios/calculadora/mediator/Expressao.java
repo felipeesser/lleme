@@ -14,7 +14,7 @@ public class Expressao extends ClasseMediada implements Cloneable {
 
     public Expressao(Mediador mediador) {
         super(mediador);
-        interpretador = new InterpretadorTrigonometrico(new InterpretadorAritmetico(new  InterpretadorBasico()));
+        interpretador = new InterpretadorTrigonometrico(new InterpretadorAritmetico(new InterpretadorBasico()));
     }
 
     public void setExpressaoStr(String expressaoStr) throws Exception {
