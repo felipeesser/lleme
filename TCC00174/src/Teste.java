@@ -11,25 +11,11 @@ import java.util.logging.Logger;
 public class Teste {
 
   public static void main(String[] args) throws FileNotFoundException {
-    String exp = "( C + 4 ) * 3";
-    Reader reader = new StringReader(exp);
-    StreamTokenizer tk = new StreamTokenizer(reader);
-    try {
-      while (tk.ttype != StreamTokenizer.TT_EOF) {
-        tk.nextToken();
-        if (tk.ttype == StreamTokenizer.TT_NUMBER)
-          System.out.println("" + tk.nval);
-        else
-          System.out.println("" + tk.sval);
-      }
-
-    } catch (IOException ex) {
-      Logger.getLogger(Teste.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    String exp = "( CA + 4.5 ) * 3";
 
     String[] arr = exp.split(" ");
-    for (String str : arr)
-      System.out.println(str);
-    
+    for (int i = 0; i < arr.length; i++)
+      System.out.println(arr[i]);
+
   }
 }
