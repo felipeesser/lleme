@@ -17,24 +17,27 @@ public class Sudoku {
     {0, 0, 0, 0, 8, 0, 0, 7, 9}};
 
   public static void main(String[] args) {
-    Stack<Posicao> zeros = new Stack();
     Stack<Preenchimento> sol = new Stack();
+    Stack<Posicao> zeros = listarZeros(tabuleiro);
+
     backtrack(sol, zeros);
   }
 
   public static void backtrack(Stack<Preenchimento> solution, Stack<Posicao> zeros) {
     if (isSolution(solution))
       processSolution(solution);
-    else {
-      Posicao pos = zeros.pop();
-      List<Preenchimento> candidates = constructCandidates(solution, pos);
-      for (Preenchimento p : candidates) {
-        solution.push(p);
-        backtrack(solution, zeros);
-        solution.pop();
+    else
+      try {
+        Posicao pos = zeros.pop();
+        List<Preenchimento> candidates = constructCandidates(solution, pos);
+        for (Preenchimento p : candidates) {
+          solution.push(p);
+          backtrack(solution, zeros);
+          solution.pop();
+        }
+        zeros.push(pos);
+      } catch (Exception e) {
       }
-      zeros.push(pos);
-    }
   }
 
   public static boolean isSolution(Stack<Preenchimento> sol) {
@@ -48,16 +51,23 @@ public class Sudoku {
     int[][] novoTabuleiro = aplicar(sol, tabuleiro);
     for (int i = 0; i < tabuleiro.length; i++) {
       for (int j = 0; j < tabuleiro.length; j++)
-        System.out.print(novoTabuleiro[i][j]);
+        System.out.print(novoTabuleiro[i][j] + " ");
       System.out.println("");
     }
   }
 
   public static List<Preenchimento> constructCandidates(Stack<Preenchimento> sol, Posicao pos) {
-    int[][] novoTabuleiro = aplicar(sol, tabuleiro);
-    List<Preenchimento> cand = new ArrayList();
-    for (int i = 1; i < 10; i++)
-      cand.add(new Preenchimento(pos, i));
+    Stack<Preenchimento> cand = new Stack();
+    Stack<Preenchimento> temp;
+    for (int i = 1; i < 10; i++) {
+      cand.push(new Preenchimento(pos, i));
+      temp = new Stack<>();
+      temp.addAll(sol);
+      temp.add(cand.peek());
+      int[][] novoTabuleiro = aplicar(temp, tabuleiro);
+      if (!eValido2(pos.linha, pos.coluna, novoTabuleiro))
+        cand.pop();
+    }
     return cand;
   }
 
@@ -86,11 +96,21 @@ public class Sudoku {
     return true;
   }
 
+  private static boolean eValido2(int i, int j, int[][] novoTabuleiro) {
+    if (possuiRepetidosLinha(i, novoTabuleiro))
+      return false;
+    if (possuiRepetidosColuna(j, novoTabuleiro))
+      return false;
+    if (possuiRepetidosSubmatriz((i / 3) * 3, (j / 3) * 3, 3, novoTabuleiro))
+      return false;
+    return true;
+  }
+
   private static boolean possuiRepetidosLinha(int i, int[][] novoTabuleiro) {
     int[] cont = new int[10];
     for (int j = 0; j < novoTabuleiro[0].length; j++)
       cont[novoTabuleiro[i][j]]++;
-    for (int j = 0; j < 10; j++)
+    for (int j = 1; j < 10; j++)
       if (cont[j] > 1)
         return true;
     return false;
@@ -100,7 +120,7 @@ public class Sudoku {
     int[] cont = new int[10];
     for (int i = 0; i < novoTabuleiro[0].length; i++)
       cont[novoTabuleiro[i][j]]++;
-    for (int i = 0; i < 10; i++)
+    for (int i = 1; i < 10; i++)
       if (cont[i] > 1)
         return true;
     return false;
@@ -118,9 +138,18 @@ public class Sudoku {
     for (int i = k; i - k < t; i++)
       for (int j = l; j - l < t; j++)
         cont[novoTabuleiro[i][j]]++;
-    for (int j = 0; j < 10; j++)
+    for (int j = 1; j < 10; j++)
       if (cont[j] > 1)
         return true;
     return false;
+  }
+
+  private static Stack<Posicao> listarZeros(int[][] tabuleiro) {
+    Stack<Posicao> zeros = new Stack<>();
+    for (int i = tabuleiro.length - 1; i >= 0; i--)
+      for (int j = tabuleiro[0].length - 1; j >= 0; j--)
+        if (tabuleiro[i][j] == 0)
+          zeros.push(new Posicao(i, j));
+    return zeros;
   }
 }
