@@ -1,6 +1,5 @@
 package exemplos.listas.backtracking;
 
-import java.util.List;
 import java.util.Stack;
 
 public class OitoRainhas {
