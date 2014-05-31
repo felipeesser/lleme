@@ -23,8 +23,10 @@ public abstract class Estado {
 
     public static void ajustarTransicoes(String[][] transicoes) {
         int numEventos = obterNumEventos();
-        if (transicoes != null && transicoes.length == transicoes[0].length
-                && transicoes.length == numEventos && transicoes[0].length == numEventos)
+        if (transicoes != null 
+                && transicoes.length == transicoes[0].length
+                && transicoes.length == numEventos 
+                && transicoes[0].length == numEventos)
             Estado.transicoes = transicoes;
         else
             throw new IndexOutOfBoundsException();

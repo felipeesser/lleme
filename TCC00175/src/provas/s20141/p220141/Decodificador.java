@@ -12,8 +12,8 @@ public class Decodificador {
         estado = Estado0.obterInstancia();
 
         String[][] transicoes = {
-            {"livro", "", "Mensagem"},
-            {"", "programa", "original"},
+            {   "livro",         "", "Mensagem"},
+            {        "", "programa", "original"},
             {"Mensagem", "original", ""}};
         Estado.ajustarTransicoes(transicoes);
     }
