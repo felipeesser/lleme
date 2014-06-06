@@ -24,8 +24,9 @@ public class RestaUm {
         {9, 1, 1, 1, 9}};
 
     public static void main(String[] args) {
-        Stack<Movimento> movmentos = new Stack();
-        backtracking(movmentos, tabuleiro);
+
+        backtracking(new Stack(), tabuleiro);
+
     }
 
     private static void backtracking(Stack<Movimento> movimentos, int[][] tab) {
