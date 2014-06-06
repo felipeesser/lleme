@@ -30,8 +30,8 @@ public class RestaUm {
     }
 
     private static void backtracking(Stack<Movimento> movimentos, int[][] tab) {
-        if (eSol(movimentos)) {
-            imprimirTab(tabuleiro);
+        if (eSol(tab)) {
+            imprimirTab(tab);
             processarSol(movimentos);
         } else {
             List<Movimento> cand = gerarCand(tab);
@@ -46,14 +46,12 @@ public class RestaUm {
         }
     }
 
-    private static boolean eSol(Stack<Movimento> movimentos) {
-        int[][] tab = tabuleiro;
+    private static boolean eSol(int[][] tab) {
         int cont = 0;
-        if (!movimentos.isEmpty())
-            for (int[] tab1 : tab)
-                for (int j = 0; j < tab.length; j++)
-                    if (tab1[j] == 1)
-                        cont++;
+        for (int[] tab1 : tab)
+            for (int j = 0; j < tab.length; j++)
+                if (tab1[j] == 1)
+                    cont++;
         return cont == 1;
     }
 
