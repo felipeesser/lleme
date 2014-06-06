@@ -61,7 +61,7 @@ public class RestaUm {
     }
 
     private static List<Movimento> gerarCand(int[][] tab) {
-        int k, l, m, n;
+        int k, l;
         List<Movimento> cand = new ArrayList();
 
         for (int i = 0; i < tab.length; i++)
@@ -69,32 +69,24 @@ public class RestaUm {
                 if (tab[i][j] == 0) {
                     k = i - 2;
                     l = j;
-                    m = i - 1;
-                    n = j;
                     Movimento mv = new Movimento(new Pos(k, l), new Pos(i, j));
                     if (eValidoMov(mv, tab))
                         cand.add(mv);
 
                     k = i;
                     l = j - 2;
-                    m = i;
-                    n = j - 1;
                     mv = new Movimento(new Pos(k, l), new Pos(i, j));
                     if (eValidoMov(mv, tab))
                         cand.add(mv);
 
                     k = i + 2;
                     l = j;
-                    m = i + 1;
-                    n = j;
                     mv = new Movimento(new Pos(k, l), new Pos(i, j));
                     if (eValidoMov(mv, tab))
                         cand.add(mv);
 
                     k = i;
                     l = j + 2;
-                    m = i;
-                    n = j + 1;
                     mv = new Movimento(new Pos(k, l), new Pos(i, j));
                     if (eValidoMov(mv, tab))
                         cand.add(mv);
