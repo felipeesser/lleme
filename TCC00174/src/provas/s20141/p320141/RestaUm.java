@@ -25,20 +25,20 @@ public class RestaUm {
 
     public static void main(String[] args) {
         Stack<Movimento> movmentos = new Stack();
-        backtracking(movmentos);
+        backtracking(movmentos, tabuleiro);
     }
 
-    private static void backtracking(Stack<Movimento> movimentos) {
+    private static void backtracking(Stack<Movimento> movimentos, int[][] tab) {
         if (eSol(movimentos)) {
             imprimirTab(tabuleiro);
             processarSol(movimentos);
         } else {
-            List<Movimento> cand = gerarCand(movimentos);
+            List<Movimento> cand = gerarCand(movimentos, tab);
             Collections.shuffle(cand);
             for (Movimento m : cand) {
                 movimentos.push(m);
                 aplicar(m, tabuleiro);
-                backtracking(movimentos);
+                backtracking(movimentos, tab);
                 desaplicar(m, tabuleiro);
                 movimentos.pop();
             }
@@ -46,19 +46,14 @@ public class RestaUm {
     }
 
     private static boolean eSol(Stack<Movimento> movimentos) {
-        try {
-            int[][] tab = tabuleiro;
-
-            int cont = 0;
+        int[][] tab = tabuleiro;
+        int cont = 0;
+        if (!movimentos.isEmpty())
             for (int[] tab1 : tab)
                 for (int j = 0; j < tab.length; j++)
                     if (tab1[j] == 1)
                         cont++;
-            return cont <= 1;
-
-        } catch (Throwable e) {
-            return false;
-        }
+        return cont == 1;
     }
 
     private static void processarSol(Stack<Movimento> movimentos) {
@@ -66,9 +61,8 @@ public class RestaUm {
             System.out.println("(" + m.a.i + "," + m.a.j + ")-->(" + m.b.i + "," + m.b.j + ")\n");
     }
 
-    private static List<Movimento> gerarCand(Stack<Movimento> movimentos) {
+    private static List<Movimento> gerarCand(Stack<Movimento> movimentos, int[][] tab) {
         int k, l, m, n;
-        int[][] tab = tabuleiro;
         List<Movimento> cand = new ArrayList<>();
 
         for (int i = 0; i < tab.length; i++)
@@ -111,7 +105,7 @@ public class RestaUm {
     }
 
     private static void aplicar(Movimento mv, int[][] tabuleiro) {
-        if (eValidoMov(mv, tabuleiro)) {
+        if (mv != null && tab != null && eValidoMov(mv, tabuleiro)) {
             tabuleiro[mv.a.i][mv.a.j] = 0;
             tabuleiro[mv.m.i][mv.m.j] = 0;
             tabuleiro[mv.b.i][mv.b.j] = 1;
@@ -122,54 +116,57 @@ public class RestaUm {
         }
     }
 
-    private static void desaplicar(Movimento mv, int[][] tabuleiro) {
-        if (eValidoRev(mv, tabuleiro)) {
-            tabuleiro[mv.a.i][mv.a.j] = 1;
-            tabuleiro[mv.m.i][mv.m.j] = 1;
-            tabuleiro[mv.b.i][mv.b.j] = 0;
+    private static void desaplicar(Movimento mv, int[][] tab) {
+        if (mv != null && tab != null && eValidoRev(mv, tab)) {
+            tab[mv.a.i][mv.a.j] = 1;
+            tab[mv.m.i][mv.m.j] = 1;
+            tab[mv.b.i][mv.b.j] = 0;
         } else {
             System.out.println("(" + mv.a.i + "," + mv.a.j + ")-->(" + mv.b.i + "," + mv.b.j + ")");
-            imprimirTab(tabuleiro);
+            imprimirTab(tab);
             throw new IllegalArgumentException();
         }
     }
 
     private static boolean eValidoMov(Movimento mv, int[][] tab) {
-        if (mv.a.i >= 0 && mv.a.i < tab.length
-          && mv.a.j >= 0 && mv.a.j < tab[0].length
-          && mv.b.i >= 0 && mv.b.i < tab.length
-          && mv.b.j >= 0 && mv.b.j < tab[0].length
-          && Math.abs(mv.a.i - mv.b.i) <= 2
-          && Math.abs(mv.a.j - mv.b.j) <= 2
-          && (Math.abs(mv.a.i - mv.b.i) == 2 || Math.abs(mv.a.j - mv.b.j) == 2)
-          && tab[mv.a.i][mv.a.j] == 1
-          && tab[mv.m.i][mv.m.j] == 1
-          && tab[mv.b.i][mv.b.j] == 0)
-            return true;
+        if (mv != null && tab != null)
+            if (mv.a.i >= 0 && mv.a.i < tab.length
+              && mv.a.j >= 0 && mv.a.j < tab[0].length
+              && mv.b.i >= 0 && mv.b.i < tab.length
+              && mv.b.j >= 0 && mv.b.j < tab[0].length
+              && Math.abs(mv.a.i - mv.b.i) <= 2
+              && Math.abs(mv.a.j - mv.b.j) <= 2
+              && (Math.abs(mv.a.i - mv.b.i) == 2 || Math.abs(mv.a.j - mv.b.j) == 2)
+              && tab[mv.a.i][mv.a.j] == 1
+              && tab[mv.m.i][mv.m.j] == 1
+              && tab[mv.b.i][mv.b.j] == 0)
+                return true;
         return false;
     }
 
     private static boolean eValidoRev(Movimento mv, int[][] tab) {
-        if (mv.a.i >= 0 && mv.a.i < tab.length
-          && mv.a.j >= 0 && mv.a.j < tab[0].length
-          && mv.b.i >= 0 && mv.b.i < tab.length
-          && mv.b.j >= 0 && mv.b.j < tab[0].length
-          && Math.abs(mv.a.i - mv.b.i) <= 2
-          && Math.abs(mv.a.j - mv.b.j) <= 2
-          && (Math.abs(mv.a.i - mv.b.i) == 2 || Math.abs(mv.a.j - mv.b.j) == 2)
-          && tab[mv.a.i][mv.a.j] == 0
-          && tab[mv.m.i][mv.m.j] == 0
-          && tab[mv.b.i][mv.b.j] == 1)
-            return true;
+        if (mv != null && tab != null)
+            if (mv.a.i >= 0 && mv.a.i < tab.length
+              && mv.a.j >= 0 && mv.a.j < tab[0].length
+              && mv.b.i >= 0 && mv.b.i < tab.length
+              && mv.b.j >= 0 && mv.b.j < tab[0].length
+              && Math.abs(mv.a.i - mv.b.i) <= 2
+              && Math.abs(mv.a.j - mv.b.j) <= 2
+              && (Math.abs(mv.a.i - mv.b.i) == 2 || Math.abs(mv.a.j - mv.b.j) == 2)
+              && tab[mv.a.i][mv.a.j] == 0
+              && tab[mv.m.i][mv.m.j] == 0
+              && tab[mv.b.i][mv.b.j] == 1)
+                return true;
         return false;
     }
 
     private static void imprimirTab(int[][] tab) {
-        for (int[] tab1 : tab) {
-            for (int j = 0; j < tab.length; j++)
-                System.out.print(tab1[j] + " ");
-            System.out.println("");
-        }
+        if (tab != null)
+            for (int[] tab1 : tab) {
+                for (int j = 0; j < tab.length; j++)
+                    System.out.print(tab1[j] + " ");
+                System.out.println("");
+            }
         System.out.println("");
     }
 
