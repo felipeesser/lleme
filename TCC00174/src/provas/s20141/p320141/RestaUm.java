@@ -38,9 +38,9 @@ public class RestaUm {
             Collections.shuffle(cand);
             for (Movimento m : cand) {
                 movimentos.push(m);
-                aplicar(m, tabuleiro);
+                aplicarMov(m, tabuleiro);
                 backtracking(movimentos, tab);
-                desaplicar(m, tabuleiro);
+                desaplicarMov(m, tabuleiro);
                 movimentos.pop();
             }
         }
@@ -95,7 +95,7 @@ public class RestaUm {
         return cand;
     }
 
-    private static void aplicar(Movimento mv, int[][] tab) {
+    private static void aplicarMov(Movimento mv, int[][] tab) {
         if (mv != null && tab != null && eValidoMov(mv, tab)) {
             tab[mv.a.i][mv.a.j] = 0;
             tab[mv.m.i][mv.m.j] = 0;
@@ -107,7 +107,7 @@ public class RestaUm {
         }
     }
 
-    private static void desaplicar(Movimento mv, int[][] tab) {
+    private static void desaplicarMov(Movimento mv, int[][] tab) {
         if (mv != null && tab != null && eValidoRev(mv, tab)) {
             tab[mv.a.i][mv.a.j] = 1;
             tab[mv.m.i][mv.m.j] = 1;
