@@ -62,7 +62,7 @@ public class RestaUm {
 
     private static List<Movimento> gerarCand(int[][] tab) {
         int k, l, m, n;
-        List<Movimento> cand = new ArrayList<>();
+        List<Movimento> cand = new ArrayList();
 
         for (int i = 0; i < tab.length; i++)
             for (int j = 0; j < tab[0].length; j++)
