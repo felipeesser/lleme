@@ -92,12 +92,12 @@ public class GameBoard {
      */
     private boolean isValidMove(int x, int y, int newX, int newY) {
         return 0 <= x && x < board.length
-          && 0 <= y && y < board[x].length
-          && 0 <= newX && newX < board.length
-          && 0 <= newY && newY < board[newX].length
-          && board[newX][newY] == EMPTY
-          && board[(x + newX) / 2][(y + newY) / 2] == OCCUPIED
-          && board[x][y] == OCCUPIED;
+            && 0 <= y && y < board[x].length
+            && 0 <= newX && newX < board.length
+            && 0 <= newY && newY < board[newX].length
+            && board[newX][newY] == EMPTY
+            && board[(x + newX) / 2][(y + newY) / 2] == OCCUPIED
+            && board[x][y] == OCCUPIED;
 
     }
 
