@@ -3,8 +3,8 @@ package provas.s20141.p320141;
 import java.util.Arrays;
 
 /**
- * The game board for English peg solitare with 32 fields. Each field is
- * identified by its cartesian coordinates (0 to 6 in both dimensions).
+ * The game board for English peg solitare with 32 fields. Each field is identified by its cartesian
+ * coordinates (0 to 6 in both dimensions).
  * </p>
  * <table border=1>
  * <tr><td>
@@ -37,8 +37,8 @@ public class GameBoard {
     private static final int BOTTOM = 3;
 
     /**
-     * Contains all directions a peg can be moved according to the rules of the
-     * game. In practice one should use an enumeration type.
+     * Contains all directions a peg can be moved according to the rules of the game. In practice
+     * one should use an enumeration type.
      */
     private static int[] richtungen = {RIGHT, TOP, LEFT, BOTTOM};
 
@@ -87,8 +87,8 @@ public class GameBoard {
     }
 
     /**
-     * Checks whether there is a peg at (x,y), an empty field at (newX, newY),
-     * and a peg between both fields.
+     * Checks whether there is a peg at (x,y), an empty field at (newX, newY), and a peg between
+     * both fields.
      */
     private boolean isValidMove(int x, int y, int newX, int newY) {
         return 0 <= x && x < board.length
@@ -102,10 +102,9 @@ public class GameBoard {
     }
 
     /**
-     * Jumps the peg from (x,y) over the neighbouring peg in the given
-     * <code>direction</code> and removes the peg we have jumped over. Returns
-     * true if the move was according to the game rules; and false otherwise.
-     * The game board only changes state, if the move was valid.
+     * Jumps the peg from (x,y) over the neighbouring peg in the given <code>direction</code> and
+     * removes the peg we have jumped over. Returns true if the move was according to the game
+     * rules; and false otherwise. The game board only changes state, if the move was valid.
      *
      */
     public boolean jump(int x, int y, int direction) {
@@ -124,8 +123,7 @@ public class GameBoard {
     }
 
     /**
-     * A peg "jumps back" and the previously removed peg is returned at its
-     * proper position.
+     * A peg "jumps back" and the previously removed peg is returned at its proper position.
      */
     public void jumpBack(int x, int y, int direction) {
         int newX = getNewX(x, direction);

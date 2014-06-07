@@ -1,10 +1,9 @@
 package provas.s20141.p320141;
 
 /**
- * Solves English peg solitare with 32 field and 31 pegs with the help of a
- * recursive backtring algorithm. I have not checked every move of the solution:
- * only the first few and last few moves. I hope all other are valid moves as
- * well.
+ * Solves English peg solitare with 32 field and 31 pegs with the help of a recursive backtring
+ * algorithm. I have not checked every move of the solution: only the first few and last few moves.
+ * I hope all other are valid moves as well.
  *
  * @author Christian Pape
  *
@@ -27,8 +26,7 @@ public class Solitaer {
     private int[] directions = board.getDirections();
 
     /**
-     * creates a new solitare instance with empty solution and initial start
-     * position of all pegs
+     * creates a new solitare instance with empty solution and initial start position of all pegs
      */
     public Solitaer() {
         for (int i = 0; i < solution.length; i++)
@@ -36,8 +34,8 @@ public class Solitaer {
     }
 
     /**
-     * Starts the backtracking algorithm and prints out the solution as the
-     * sequence of all resulting intermediate board situation
+     * Starts the backtracking algorithm and prints out the solution as the sequence of all
+     * resulting intermediate board situation
      */
     public static void main(String[] args) {
         Solitaer solitaer = new Solitaer();
