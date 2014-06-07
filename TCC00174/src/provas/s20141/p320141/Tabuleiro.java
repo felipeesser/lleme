@@ -139,6 +139,9 @@ public class Tabuleiro {
         int cont1 = contaZeroEmTorno(mv.a, mv.m);
         int cont2 = contaZeroEmTorno(mv.m, mv.a);
 
+        cont1 = 0;
+        cont2 = 0;
+
         return score - cont1 - cont2;
     }
 
