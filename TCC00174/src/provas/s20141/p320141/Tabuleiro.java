@@ -31,7 +31,7 @@ public class Tabuleiro {
             && tab
             != null
             && eValidoMov(mv,
-                tab)) {
+            tab)) {
             tab[mv.a.i][mv.a.j] = 0;
             tab[mv.m.i][mv.m.j] = 0;
             tab[mv.b.i][mv.b.j] = 1;
@@ -63,7 +63,7 @@ public class Tabuleiro {
             Movimento mv = new Movimento(new Pos(pu.i,
                 pu.j),
                 new Pos(k,
-                    l));
+                l));
             if (eValidoMov(mv,
                 tab))
                 cand.add(mv);
@@ -73,7 +73,7 @@ public class Tabuleiro {
             mv = new Movimento(new Pos(pu.i,
                 pu.j),
                 new Pos(k,
-                    l));
+                l));
             if (eValidoMov(mv,
                 tab))
                 cand.add(mv);
@@ -83,7 +83,7 @@ public class Tabuleiro {
             mv = new Movimento(new Pos(pu.i,
                 pu.j),
                 new Pos(k,
-                    l));
+                l));
             if (eValidoMov(mv,
                 tab))
                 cand.add(mv);
@@ -93,7 +93,7 @@ public class Tabuleiro {
             mv = new Movimento(new Pos(pu.i,
                 pu.j),
                 new Pos(k,
-                    l));
+                l));
             if (eValidoMov(mv,
                 tab))
                 cand.add(mv);
@@ -123,16 +123,16 @@ public class Tabuleiro {
                 && mv.b.j
                 < tab[0].length
                 && Math.abs(mv.a.i
-                    - mv.b.i)
+                - mv.b.i)
                 <= 2
                 && Math.abs(mv.a.j
-                    - mv.b.j)
+                - mv.b.j)
                 <= 2
                 && (Math.abs(mv.a.i
-                    - mv.b.i)
+                - mv.b.i)
                 == 2
                 || Math.abs(mv.a.j
-                    - mv.b.j)
+                - mv.b.j)
                 == 2)
                 && tab[mv.a.i][mv.a.j]
                 == 0
@@ -150,7 +150,7 @@ public class Tabuleiro {
             && tab
             != null
             && eValidoRev(mv,
-                tab)) {
+            tab)) {
             tab[mv.a.i][mv.a.j] = 1;
             tab[mv.m.i][mv.m.j] = 1;
             tab[mv.b.i][mv.b.j] = 0;
@@ -193,16 +193,16 @@ public class Tabuleiro {
                 && mv.b.j
                 < tab[0].length
                 && Math.abs(mv.a.i
-                    - mv.b.i)
+                - mv.b.i)
                 <= 2
                 && Math.abs(mv.a.j
-                    - mv.b.j)
+                - mv.b.j)
                 <= 2
                 && (Math.abs(mv.a.i
-                    - mv.b.i)
+                - mv.b.i)
                 == 2
                 || Math.abs(mv.a.j
-                    - mv.b.j)
+                - mv.b.j)
                 == 2)
                 && tab[mv.a.i][mv.a.j]
                 == 1
@@ -239,5 +239,4 @@ public class Tabuleiro {
     public Set<Pos> obterUns() {
         return uns;
     }
-
 }
