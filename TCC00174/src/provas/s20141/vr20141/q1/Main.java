@@ -3,7 +3,7 @@ package provas.s20141.vr20141.q1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Colorir {
+public class Main {
 
     public static void main(String[] args) {
 
