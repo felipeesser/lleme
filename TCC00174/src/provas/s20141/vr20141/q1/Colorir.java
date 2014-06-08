@@ -1,4 +1,4 @@
-package provas.s20141.vr20141;
+package provas.s20141.vr20141.q1;
 
 import java.util.ArrayList;
 import java.util.List;

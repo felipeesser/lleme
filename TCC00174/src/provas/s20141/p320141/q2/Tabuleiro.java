@@ -1,4 +1,4 @@
-package provas.s20141.p320141;
+package provas.s20141.p320141.q2;
 
 import java.util.ArrayList;
 import java.util.HashSet;

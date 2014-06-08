@@ -1,4 +1,4 @@
-package provas.s20141.p320141;
+package provas.s20141.p320141.q2;
 
 /**
  * Solves English peg solitare with 32 field and 31 pegs with the help of a recursive backtring
