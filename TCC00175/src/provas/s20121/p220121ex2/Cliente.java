@@ -3,7 +3,7 @@ package provas.s20121.p220121ex2;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Main {
+public class Cliente {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
