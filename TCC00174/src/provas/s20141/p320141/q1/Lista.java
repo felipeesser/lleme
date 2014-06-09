@@ -24,22 +24,29 @@ public class Lista<T> {
                 receber(l);
             else {
                 No<T> lCorrente = l.primeiro;
+                No<T> lProximo = null;
                 No<T> thisCorrente = this.primeiro;
                 No<T> thisProximo = null;
                 No<T> novoNo = null;
                 while (lCorrente != null) {
 
                     thisProximo = thisCorrente.proximo;
-                    novoNo = new No(thisCorrente, thisProximo, lCorrente.objeto);
+                    lProximo = lCorrente.proximo;
+
+                    novoNo = lCorrente;
+                    novoNo.anterior = thisCorrente;
+                    novoNo.proximo = thisProximo;
+
                     thisCorrente.proximo = novoNo;
                     if (thisProximo != null)
                         thisProximo.anterior = novoNo;
+
                     // andar
                     if (novoNo.proximo != null)
                         thisCorrente = novoNo.proximo;
                     else
                         thisCorrente = novoNo;
-                    lCorrente = lCorrente.proximo;
+                    lCorrente = lProximo;
 
                 }
             }
@@ -47,11 +54,8 @@ public class Lista<T> {
 
     public void receber(Lista<T> l) {
         if (l != null) {
-            No<T> lCorrente = l.primeiro;
-            while (lCorrente != null) {
-                incluir(lCorrente.objeto);
-                lCorrente = lCorrente.proximo;
-            }
+            primeiro = l.primeiro;
+            ultimo = l.ultimo;
         }
     }
 
