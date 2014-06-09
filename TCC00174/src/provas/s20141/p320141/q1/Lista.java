@@ -52,6 +52,45 @@ public class Lista<T> {
             }
     }
 
+    public Lista subdividirLista() {
+        Lista l = new Lista();
+        No<T> corrente = primeiro;
+        No<T> proximo = null;
+        No<T> pproximo = null;
+
+        while (corrente != null) {
+            proximo = corrente.proximo;
+            pproximo = null;
+            if (proximo != null)
+                pproximo = proximo.proximo;
+
+            if (l.primeiro == null && proximo != null) {
+                // armazena o no na nova lista
+                l.primeiro = proximo;
+                l.ultimo = proximo;
+                // desconecta o novo no
+                proximo.proximo = null;
+                proximo.anterior = null;
+                // repontera a lista original
+                corrente.proximo = pproximo;
+                if (pproximo != null)
+                    pproximo.anterior = corrente;
+            } else if (proximo != null) {
+                // transfere o novo no para l
+                proximo.proximo = null;
+                proximo.anterior = l.ultimo;
+                l.ultimo.proximo = proximo;
+                l.ultimo = proximo;
+                // repontera lista original
+                corrente.proximo = pproximo;
+                if (pproximo != null)
+                    pproximo.anterior = corrente;
+            }
+            corrente = pproximo;
+        }
+        return l;
+    }
+
     public void receber(Lista<T> l) {
         if (l != null) {
             primeiro = l.primeiro;

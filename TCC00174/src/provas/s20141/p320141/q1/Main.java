@@ -20,6 +20,9 @@ public class Main {
         l1.intercalarCom(l2);
         l1.imprimir();
 
+        l1.subdividirLista().imprimir();
+        l1.imprimir();
+
     }
 
 }
