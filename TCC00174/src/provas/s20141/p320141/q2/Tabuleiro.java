@@ -85,11 +85,14 @@ public class Tabuleiro {
 
     private boolean eValidoMov(Movimento mv) {
         if (mv != null && estado != null)
-            if (mv.a.i >= 0 && mv.a.i < estado.length && mv.a.j >= 0 && mv.a.j < estado[0].length
-                && mv.b.i >= 0 && mv.b.i < estado.length && mv.b.j >= 0 && mv.b.j < estado[0].length
+            if (mv.a.i >= 0 && mv.a.i < estado.length 
+                && mv.a.j >= 0 && mv.a.j < estado[0].length
+                && mv.b.i >= 0 && mv.b.i < estado.length 
+                && mv.b.j >= 0 && mv.b.j < estado[0].length
                 && Math.abs(mv.a.i - mv.b.i) <= 2 && Math.abs(mv.a.j - mv.b.j) <= 2
                 && (Math.abs(mv.a.i - mv.b.i) == 2 || Math.abs(mv.a.j - mv.b.j) == 2)
-                && estado[mv.a.i][mv.a.j] == 1 && estado[mv.m.i][mv.m.j] == 1
+                && estado[mv.a.i][mv.a.j] == 1 
+                && estado[mv.m.i][mv.m.j] == 1
                 && estado[mv.b.i][mv.b.j] == 0)
                 return true;
         return false;
@@ -97,11 +100,14 @@ public class Tabuleiro {
 
     public boolean eValidoRev(Movimento mv) {
         if (mv != null && estado != null)
-            if (mv.a.i >= 0 && mv.a.i < estado.length && mv.a.j >= 0 && mv.a.j < estado[0].length
-                && mv.b.i >= 0 && mv.b.i < estado.length && mv.b.j >= 0 && mv.b.j < estado[0].length
+            if (mv.a.i >= 0 && mv.a.i < estado.length 
+                && mv.a.j >= 0 && mv.a.j < estado[0].length
+                && mv.b.i >= 0 && mv.b.i < estado.length 
+                && mv.b.j >= 0 && mv.b.j < estado[0].length
                 && Math.abs(mv.a.i - mv.b.i) <= 2 && Math.abs(mv.a.j - mv.b.j) <= 2
                 && (Math.abs(mv.a.i - mv.b.i) == 2 || Math.abs(mv.a.j - mv.b.j) == 2)
-                && estado[mv.a.i][mv.a.j] == 0 && estado[mv.m.i][mv.m.j] == 0
+                && estado[mv.a.i][mv.a.j] == 0 
+                && estado[mv.m.i][mv.m.j] == 0
                 && estado[mv.b.i][mv.b.j] == 1)
                 return true;
         return false;
@@ -135,14 +141,7 @@ public class Tabuleiro {
         int deltaJ2 = Math.abs(mv.m.j - centro.j);
         int score = raio - Math.max(deltaI1, deltaJ1) + raio - Math.max(deltaI2, deltaJ2);
 
-        // Favorece movimento que concentra casas vazias
-        int cont1 = contaZeroEmTorno(mv.a, mv.m);
-        int cont2 = contaZeroEmTorno(mv.m, mv.a);
-
-        cont1 = 0;
-        cont2 = 0;
-
-        return score - cont1 - cont2;
+        return score;
     }
 
     public int contarUns() {
