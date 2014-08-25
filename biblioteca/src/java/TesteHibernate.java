@@ -9,7 +9,8 @@ import ic.tcc00175.biblioteca.model.Usuario;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
-import org.hibernate.classic.Session;
+import org.hibernate.Session;
+
 
 /*
  * To change this template, choose Tools | Templates
@@ -37,7 +38,6 @@ public class TesteHibernate {
         Reserva r1 = new Reserva(1, op1, l1);
         session1.save(r1);
         session1.getTransaction().commit();
-
 
         Session session2 = DAOHibernateUtil.getSessionFactory().getCurrentSession();
         session2.beginTransaction();
