@@ -8,8 +8,12 @@
             <explicit-platform explicit-source-supported="true"/>
             <web-module-libraries/>
             <web-module-additional-libraries/>
-            <source-roots/>
-            <test-roots/>
+            <source-roots>
+                <root id="src.java.dir" name="Pacotes de Códigos-fonte"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.test.dir" name="Pacotes de Teste"/>
+            </test-roots>
         </data>
     </configuration>
 </project>
