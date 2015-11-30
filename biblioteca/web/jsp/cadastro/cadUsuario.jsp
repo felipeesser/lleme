@@ -1,5 +1,6 @@
 <jsp:useBean id="mensagem" class="java.lang.String" scope="session" />
-<%ic.tcc00175.biblioteca.view.Tabela tabela = (ic.tcc00175.biblioteca.view.Tabela) request.getSession().getAttribute("tabela");
+<%
+    ic.tcc00175.biblioteca.view.Tabela tabela = (ic.tcc00175.biblioteca.view.Tabela) request.getSession().getAttribute("tabela");
     if (tabela == null
             || !tabela.getClass().getName().equals(
             "ic.tcc00175.biblioteca.view.TabelaUsuario")) {
