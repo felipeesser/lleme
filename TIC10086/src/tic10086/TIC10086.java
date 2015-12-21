@@ -22,11 +22,11 @@ public class TIC10086 {
             Resource subj = s.getSubject();
             Property prop = s.getPredicate();
             RDFNode obj = s.getObject();
-            
+
             System.out.println(subj.getURI());
             System.out.println(prop.getURI());
             System.out.println(obj.toString());
-            System.out.println("");
+            System.out.println("*");
         }
         dataset.end();
 
